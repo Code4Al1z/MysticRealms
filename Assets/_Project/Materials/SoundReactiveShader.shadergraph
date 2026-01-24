@@ -4201,6 +4201,16 @@
             "id": 5,
             "displayName": "Leaves",
             "referenceName": "LEAVES"
+        },
+        {
+            "id": 8,
+            "displayName": "Grass",
+            "referenceName": "GRASS"
+        },
+        {
+            "id": 3,
+            "displayName": "Soil",
+            "referenceName": "SOIL"
         }
     ],
     "m_Value": 0,
