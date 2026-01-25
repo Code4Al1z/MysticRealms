@@ -62,6 +62,10 @@ sysinfo.txt
 *.akd.bak
 *.prof
 
+# Wwise / macOS debug symbols
+*.dSYM/
+**/*.dSYM/
+
 # Generated Wwise Unity data (safe to ignore)
 **/AkWwiseProjectData.asset
 
