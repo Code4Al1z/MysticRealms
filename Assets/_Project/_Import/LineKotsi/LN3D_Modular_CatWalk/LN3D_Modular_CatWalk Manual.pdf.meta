@@ -10,5 +10,6 @@ AssetOrigin:
   productId: 287064
   packageName: 'Modular Industrial Catwalk Kit [Free]'
   packageVersion: 1.0
-  assetPath: Assets/LineKotsi/LN3D_Modular_CatWalk/LN3D_Modular_CatWalk Manual.pdf
+  assetPath: Assets/_Project/_Import/LineKotsi/LN3D_Modular_CatWalk/LN3D_Modular_CatWalk
+    Manual.pdf
   uploadId: 669837
