@@ -13,5 +13,6 @@ AssetOrigin:
   productId: 231124
   packageName: 3D set of stylized nature - GHIBLI style
   packageVersion: 1.0.0
-  assetPath: Assets/3D set of stylized nature - GHIBLI style/Art/Shaders/Zero Layer.shadersubgraph
+  assetPath: Assets/_Project/_Import/3D set of stylized nature - GHIBLI style/Art/Shaders/Zero
+    Layer.shadersubgraph
   uploadId: 522510
