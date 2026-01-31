@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - MovingPlatform
   - LevelExit
+  - Obstacle
   layers:
   - Default
   - TransparentFX
