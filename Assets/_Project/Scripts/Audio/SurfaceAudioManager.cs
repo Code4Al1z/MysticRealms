@@ -21,6 +21,10 @@ public class SurfaceAudioManager : MonoBehaviour
     [Tooltip("Optional RTPC to set the current surface type as a numeric value")]
     public AK.Wwise.RTPC surfaceTypeRTPC;
 
+    [Header(("Switch Configuration"))]
+    [Tooltip(("Array of Wwise switches - one per surface type"))]
+    public AK.Wwise.Switch[] surfaceSwitches = new AK.Wwise.Switch[7];
+
     [Tooltip("Enable debug logging to see surface type detection")]
     public bool enableDebugLog = false;
 
@@ -101,6 +105,14 @@ public class SurfaceAudioManager : MonoBehaviour
         // Find matching mapping
         SurfaceAudioMapping mapping = GetMappingForIndex(surfaceIndex);
         currentSurfaceName = mapping != null ? mapping.surfaceName : "Unknown";
+
+        //Set the Wwise switch
+        if (surfaceIndex >= 0 && surfaceIndex < surfaceSwitches.Length && surfaceSwitches[surfaceIndex] != null)
+        {
+            surfaceSwitches[surfaceIndex].SetValue(gameObject);
+            if (enableDebugLog)
+                Debug.Log($"[Wwise] Switch set to: {surfaceSwitches[surfaceIndex].Name}");
+        }
 
         // Update Wwise RTPC if assigned
         if (surfaceTypeRTPC != null)
