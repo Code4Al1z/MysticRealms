@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8860032849346482942}
   - component: {fileID: 7854858461222437498}
   - component: {fileID: 379263346843539829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Stairs2x4x4_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1418863410817056802}
   - component: {fileID: 1240463754213939150}
   - component: {fileID: 5154567144776787585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 680023075447192011}
   - component: {fileID: 101848863781889206}
   - component: {fileID: 8362565922783257933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Stairs2x4x4_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 5274256677836772143}
   - component: {fileID: 1991817114454236427}
   - component: {fileID: 722042674273531832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Stairs2x4x4_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,9 +394,9 @@ GameObject:
   - component: {fileID: 5358576170981433752}
   - component: {fileID: 1692263980009693117}
   - component: {fileID: 1419580725941177001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Stairs2x4x4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

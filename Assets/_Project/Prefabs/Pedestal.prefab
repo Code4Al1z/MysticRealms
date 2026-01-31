@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 375540306473242086}
   - component: {fileID: 4750234463341267690}
   - component: {fileID: 3403427324225506786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pedestal
-  m_TagString: Untagged
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

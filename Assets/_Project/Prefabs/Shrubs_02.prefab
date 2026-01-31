@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3289413555270306440}
   - component: {fileID: 1139322050878537377}
   - component: {fileID: 3358869617591713821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shrubs_02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

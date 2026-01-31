@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8237796853541409381}
   - component: {fileID: 6463884238709329780}
   - component: {fileID: 3131180846114551506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_Wooden_10
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

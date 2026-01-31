@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6209537572435034743}
   - component: {fileID: 3362359133226967136}
   - component: {fileID: 2052436988656282707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Line2x2_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 7950860258547105962}
   - component: {fileID: 2212394141514977609}
   - component: {fileID: 3147324080555631260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Line2x2_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,9 +209,9 @@ GameObject:
   - component: {fileID: 5198903856181393635}
   - component: {fileID: 7555793111023161429}
   - component: {fileID: 2558799563329684630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Line2x2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 2279316038522516170}
   - component: {fileID: 2798743628912383284}
   - component: {fileID: 1984762110438424902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Line2x2_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

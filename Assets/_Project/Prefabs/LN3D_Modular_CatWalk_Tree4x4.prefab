@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1444444721712474915}
   - component: {fileID: 39211618979246704}
   - component: {fileID: 3821236157382189754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Tree4x4_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 3561253744521152095}
   - component: {fileID: 6940827803240824394}
   - component: {fileID: 4216549149664435309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Tree4x4_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 2682149405976264579}
   - component: {fileID: 4825368635664606435}
   - component: {fileID: 3244377494672735072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Tree4x4_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,9 +318,9 @@ GameObject:
   - component: {fileID: 4893166774623773042}
   - component: {fileID: 2253293541141586712}
   - component: {fileID: 372950603967494015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Tree4x4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

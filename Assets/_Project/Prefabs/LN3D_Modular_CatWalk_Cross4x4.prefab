@@ -62,9 +62,9 @@ GameObject:
   - component: {fileID: 6814089945810850259}
   - component: {fileID: 1825222767518489531}
   - component: {fileID: 2250283237349316051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Cross4x4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1236,7 +1236,7 @@ GameObject:
   - component: {fileID: 1361407589559724351}
   - component: {fileID: 4984184649774419388}
   - component: {fileID: 3429056816236761693}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Cross4x4_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,7 +1326,7 @@ GameObject:
   - component: {fileID: 3373970178914013693}
   - component: {fileID: 8696099111058903843}
   - component: {fileID: 8551078037516738234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Cross4x4_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1416,7 +1416,7 @@ GameObject:
   - component: {fileID: 1058017129535990296}
   - component: {fileID: 530655187349830898}
   - component: {fileID: 3226111775824923067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LN3D_Modular_CatWalk_Cross4x4_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

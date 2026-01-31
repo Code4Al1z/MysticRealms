@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4149265830163032239}
   - component: {fileID: 2639295403950656462}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BridgePontoon
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 7644781313260693540}
   - component: {fileID: 1992945616405297730}
   - component: {fileID: 8467551780113644647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bridge_pontoon_01.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 2969915812487562935}
   - component: {fileID: 2807745506528252727}
   - component: {fileID: 1432482631875270952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bridge_pontoon_01_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

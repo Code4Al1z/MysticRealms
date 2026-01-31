@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9176861305001948528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BridgeRock
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8980729016487891613}
   - component: {fileID: 2208728166901666103}
   - component: {fileID: 3669200240751143895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bridge_rock_01.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1657553340135143646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BridgeRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
