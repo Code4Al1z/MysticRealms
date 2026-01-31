@@ -5280,19 +5280,9 @@
             "referenceName": "DEFAULT"
         },
         {
-            "id": 4,
-            "displayName": "Wood",
-            "referenceName": "WOOD"
-        },
-        {
-            "id": 1,
-            "displayName": "Metal",
-            "referenceName": "METAL"
-        },
-        {
-            "id": 2,
-            "displayName": "Stone",
-            "referenceName": "STONE"
+            "id": 8,
+            "displayName": "Grass",
+            "referenceName": "GRASS"
         },
         {
             "id": 5,
@@ -5300,14 +5290,24 @@
             "referenceName": "LEAVES"
         },
         {
-            "id": 8,
-            "displayName": "Grass",
-            "referenceName": "GRASS"
+            "id": 1,
+            "displayName": "Metal",
+            "referenceName": "METAL"
         },
         {
             "id": 3,
             "displayName": "Soil",
             "referenceName": "SOIL"
+        },
+        {
+            "id": 2,
+            "displayName": "Stone",
+            "referenceName": "STONE"
+        },
+        {
+            "id": 4,
+            "displayName": "Wood",
+            "referenceName": "WOOD"
         }
     ],
     "m_Value": 0,

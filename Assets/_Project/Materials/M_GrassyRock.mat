@@ -38,6 +38,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlphaMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: c760d9acf22ad1542be62d3eed1a918d, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -144,7 +148,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SURFACETYPE: 5
+    - _SURFACETYPE: 1
     - _Smoothness: 0.807
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
