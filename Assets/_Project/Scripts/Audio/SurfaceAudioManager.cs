@@ -1,9 +1,8 @@
 using UnityEngine;
-using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// Manages surface-based audio responses for Wwise integration
+/// Manages surface-based audio responses for Wwise integration (Footstep System)
 /// Reads surface type from Shader Graph enum and triggers appropriate Wwise events
 /// Fully expandable via Inspector - no hardcoded surface types
 /// </summary>
@@ -17,13 +16,13 @@ public class SurfaceAudioManager : MonoBehaviour
     [Tooltip("Map each surface type enum value to its corresponding Wwise events")]
     public List<SurfaceAudioMapping> surfaceMappings = new List<SurfaceAudioMapping>();
 
+    [Header("Switch Configuration (If Using Switch Containers)")]
+    [Tooltip("Array of Wwise switches - one per surface type (optional, for Switch Container approach)")]
+    public AK.Wwise.Switch[] surfaceSwitches = new AK.Wwise.Switch[7];
+
     [Header("Global Audio Settings")]
     [Tooltip("Optional RTPC to set the current surface type as a numeric value")]
     public AK.Wwise.RTPC surfaceTypeRTPC;
-
-    [Header(("Switch Configuration"))]
-    [Tooltip(("Array of Wwise switches - one per surface type"))]
-    public AK.Wwise.Switch[] surfaceSwitches = new AK.Wwise.Switch[7];
 
     [Tooltip("Enable debug logging to see surface type detection")]
     public bool enableDebugLog = false;
@@ -106,12 +105,16 @@ public class SurfaceAudioManager : MonoBehaviour
         SurfaceAudioMapping mapping = GetMappingForIndex(surfaceIndex);
         currentSurfaceName = mapping != null ? mapping.surfaceName : "Unknown";
 
-        //Set the Wwise switch
-        if (surfaceIndex >= 0 && surfaceIndex < surfaceSwitches.Length && surfaceSwitches[surfaceIndex] != null)
+        // Set the Wwise switch (if using Switch Container approach)
+        if (surfaceIndex >= 0 && surfaceIndex < surfaceSwitches.Length)
         {
-            surfaceSwitches[surfaceIndex].SetValue(gameObject);
-            if (enableDebugLog)
-                Debug.Log($"[Wwise] Switch set to: {surfaceSwitches[surfaceIndex].Name}");
+            if (surfaceSwitches[surfaceIndex] != null)
+            {
+                surfaceSwitches[surfaceIndex].SetValue(gameObject);
+
+                if (enableDebugLog)
+                    Debug.Log($"[Wwise] Switch set to: {surfaceSwitches[surfaceIndex].Name}");
+            }
         }
 
         // Update Wwise RTPC if assigned
@@ -125,6 +128,21 @@ public class SurfaceAudioManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Called when player takes a footstep - triggers surface-specific footstep sound
+    /// </summary>
+    public void OnFootstep(GameObject emitter)
+    {
+        SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
+        if (mapping != null && mapping.footstepEvent != null)
+        {
+            mapping.footstepEvent.Post(emitter);
+
+            if (enableDebugLog)
+                Debug.Log($"[SurfaceAudio] Footstep sound triggered for {currentSurfaceName}");
+        }
+    }
+
+    /// <summary>
     /// Called when player jumps - triggers surface-specific jump sound
     /// </summary>
     public void OnJump(GameObject emitter)
@@ -133,7 +151,7 @@ public class SurfaceAudioManager : MonoBehaviour
         if (mapping != null && mapping.jumpEvent != null)
         {
             mapping.jumpEvent.Post(emitter);
-            
+
             if (enableDebugLog)
                 Debug.Log($"[SurfaceAudio] Jump sound triggered for {currentSurfaceName}");
         }
@@ -148,24 +166,9 @@ public class SurfaceAudioManager : MonoBehaviour
         if (mapping != null && mapping.landEvent != null)
         {
             mapping.landEvent.Post(emitter);
-            
+
             if (enableDebugLog)
                 Debug.Log($"[SurfaceAudio] Land sound triggered for {currentSurfaceName}");
-        }
-    }
-
-    /// <summary>
-    /// Called during player movement - triggers surface-specific movement sound
-    /// </summary>
-    public void OnMove(GameObject emitter)
-    {
-        SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
-        if (mapping != null && mapping.moveEvent != null)
-        {
-            mapping.moveEvent.Post(emitter);
-            
-            if (enableDebugLog)
-                Debug.Log($"[SurfaceAudio] Move sound triggered for {currentSurfaceName}");
         }
     }
 
@@ -225,9 +228,9 @@ public class SurfaceAudioManager : MonoBehaviour
             {
                 surfaceName = defaultSurfaces[i],
                 surfaceEnumIndex = i,
+                footstepEvent = null,
                 jumpEvent = null,
-                landEvent = null,
-                moveEvent = null
+                landEvent = null
             });
         }
 
@@ -243,11 +246,13 @@ public class SurfaceAudioManager : MonoBehaviour
         if (!enableDebugLog) return;
 
         // Display current surface info in Scene view
+#if UNITY_EDITOR
         if (currentSurfaceIndex >= 0)
         {
-            UnityEditor.Handles.Label(transform.position + Vector3.up * 2f, 
+            UnityEditor.Handles.Label(transform.position + Vector3.up * 2f,
                 $"Surface: {currentSurfaceName} ({currentSurfaceIndex})");
         }
+#endif
     }
 }
 
@@ -265,18 +270,18 @@ public class SurfaceAudioMapping
     [Tooltip("The enum index value from the shader (0 = Default, 1 = Wood, 2 = Metal, etc.)")]
     public int surfaceEnumIndex = 0;
 
-    [Header("Wwise Events")]
+    [Header("Wwise Events - Footstep System")]
+    [Tooltip("Wwise event to play for footsteps on this surface")]
+    public AK.Wwise.Event footstepEvent;
+
     [Tooltip("Wwise event to play when jumping from this surface")]
     public AK.Wwise.Event jumpEvent;
 
     [Tooltip("Wwise event to play when landing on this surface")]
     public AK.Wwise.Event landEvent;
 
-    [Tooltip("Wwise event to play when moving across this surface")]
-    public AK.Wwise.Event moveEvent;
-
     [Header("Optional: Surface-Specific RTPCs")]
-    [Tooltip("Optional RTPC to control when on this surface (e.g., resonance frequency)")]
+    [Tooltip("Optional RTPC to control when on this surface (e.g., footstep pitch)")]
     public AK.Wwise.RTPC surfaceSpecificRTPC;
 
     [Tooltip("Value to set the RTPC to when on this surface")]

@@ -1,9 +1,9 @@
 using UnityEngine;
 
 /// <summary>
-/// Handles hovering creature movement, jumping, and input for 2.5D platformer
+/// Handles player movement, jumping, and footsteps for 2.5D platformer
 /// Unity 6.3 + Wwise 2025.1.4 compatible
-/// Mystic Realms - Hovering Character Controller with Jump
+/// Mystic Realms - Grounded Character Controller with Footsteps
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -11,31 +11,44 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 5f;
     public float maxSpeed = 10f;
-    public float hoverHeight = 2f;
-    public float hoverForce = 10f;
-    public float hoverDamping = 5f;
-    public float movementDrag = 6f;
+    public float groundDrag = 6f;
+    public float airDrag = 2f;
 
     [Header("Jump")]
     public float jumpForce = 8f;
     public float jumpCooldown = 0.5f;
     private float lastJumpTime = -999f;
 
-    [Header("Hover Check")]
+    [Header("Ground Check")]
     public Transform groundCheck;
-    public float groundCheckDistance = 3f;
+    public float groundCheckRadius = 0.3f;
     public LayerMask groundLayer;
 
+    [Header("Footstep Timing")]
+    [Tooltip("Seconds between footsteps when walking (slow speed)")]
+    public float walkFootstepInterval = 0.5f;
+
+    [Tooltip("Seconds between footsteps when running (fast speed)")]
+    public float runFootstepInterval = 0.3f;
+
+    [Tooltip("Speed threshold - above this value, use run interval")]
+    public float runSpeedThreshold = 6f;
+
+    [Tooltip("Minimum speed to trigger footsteps (prevents footsteps when barely moving)")]
+    public float minSpeedForFootsteps = 0.5f;
+
     [Header("Wwise Audio")]
-    public AK.Wwise.Event hoverStartEvent;        // Triggered once when hovering begins
-    public AK.Wwise.Event hoverStopEvent;         // Triggered when hovering stops
-    public AK.Wwise.Event moveEvent;              // Movement whoosh sounds
-    public AK.Wwise.Event jumpEvent;              // Jump sound
-    public AK.Wwise.Event landEvent;              // Landing sound
-    public AK.Wwise.RTPC playerSpeedRTPC;         // Controls hover intensity based on speed
-    public AK.Wwise.RTPC hoverHeightRTPC;         // Controls hover pitch based on height from ground
+    [Tooltip("Optional: Generic jump event (use if not using surface-specific jumps)")]
+    public AK.Wwise.Event jumpEvent;
+
+    [Tooltip("Optional: Generic land event (use if not using surface-specific lands)")]
+    public AK.Wwise.Event landEvent;
+
+    [Tooltip("Optional: RTPC to control audio based on player speed")]
+    public AK.Wwise.RTPC playerSpeedRTPC;
 
     [Header("Surface Audio System")]
+    [Tooltip("Reference to SurfaceAudioManager - handles surface-specific sounds")]
     public SurfaceAudioManager surfaceAudioManager;
 
     private Rigidbody rb;
@@ -43,13 +56,12 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool wasGrounded;
     private float horizontalInput;
-    private float verticalInput; // For 2.5D movement (Z-axis)
+    private float verticalInput;
     private bool jumpInput;
-    
-    private bool isHovering;
-    private float currentHoverHeight;
-    private float moveTimer;
-    public float moveEventInterval = 0.3f; // How often to trigger movement whoosh
+
+    // Footstep timing
+    private float footstepTimer = 0f;
+    private float currentFootstepInterval;
 
     private void Start()
     {
@@ -58,16 +70,13 @@ public class PlayerController : MonoBehaviour
 
         // Lock rotation so player doesn't tip over
         rb.freezeRotation = true;
-
-        // Start hovering
-        StartHover();
     }
 
     private void Update()
     {
         // Input
         horizontalInput = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
-        verticalInput = Input.GetAxis("Vertical");     // W/S or Up/Down arrows (for 2.5D depth)
+        verticalInput = Input.GetAxis("Vertical");     // W/S or Up/Down arrows
 
         // Jump input
         if (Input.GetButtonDown("Jump") && isGrounded && Time.time > lastJumpTime + jumpCooldown)
@@ -75,27 +84,9 @@ public class PlayerController : MonoBehaviour
             jumpInput = true;
         }
 
-        // Check height from ground for hover calculations
-        RaycastHit hit;
+        // Ground check
         wasGrounded = isGrounded;
-        if (Physics.Raycast(groundCheck.position, Vector3.down, out hit, groundCheckDistance, groundLayer))
-        {
-            currentHoverHeight = hit.distance;
-            isGrounded = currentHoverHeight <= hoverHeight + 0.5f; // Within hover range = grounded
-            isHovering = true;
-
-            // Check surface type when grounded/near ground
-            if (surfaceAudioManager != null && isGrounded)
-            {
-                surfaceAudioManager.UpdateCurrentSurface(hit.collider);
-            }
-        }
-        else
-        {
-            currentHoverHeight = groundCheckDistance;
-            isGrounded = false;
-            isHovering = true; // Always hovering in this game
-        }
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
 
         // Landing detection
         if (isGrounded && !wasGrounded)
@@ -103,31 +94,47 @@ public class PlayerController : MonoBehaviour
             OnLand();
         }
 
-        // Update hover height RTPC for Wwise (affects pitch/filtering)
-        if (hoverHeightRTPC != null)
-        {
-            float normalizedHeight = Mathf.Clamp01(currentHoverHeight / groundCheckDistance);
-            hoverHeightRTPC.SetValue(gameObject, normalizedHeight * 100f); // 0-100 range
-        }
+        // Apply drag
+        rb.linearDamping = isGrounded ? groundDrag : airDrag;
 
-        // Movement sound triggers (whoosh when moving)
-        bool isMoving = Mathf.Abs(horizontalInput) > 0.1f || Mathf.Abs(verticalInput) > 0.1f;
-        if (isMoving && isGrounded)
+        // Calculate current movement speed (horizontal only, ignore Y velocity)
+        float currentSpeed = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z).magnitude;
+
+        // Determine footstep interval based on current speed
+        currentFootstepInterval = (currentSpeed > runSpeedThreshold) ? runFootstepInterval : walkFootstepInterval;
+
+        // Check if player is actively moving (input-based)
+        bool isMoving = (Mathf.Abs(horizontalInput) > 0.1f || Mathf.Abs(verticalInput) > 0.1f);
+        bool isMovingFastEnough = currentSpeed > minSpeedForFootsteps;
+
+        // Footstep logic - only when grounded, moving, and above minimum speed
+        if (isGrounded && isMoving && isMovingFastEnough)
         {
-            moveTimer += Time.deltaTime;
-            if (moveTimer >= moveEventInterval)
+            footstepTimer += Time.deltaTime;
+
+            if (footstepTimer >= currentFootstepInterval)
             {
-                PlayMoveSound();
-                moveTimer = 0f;
+                PlayFootstep();
+                footstepTimer = 0f; // Reset timer
             }
         }
         else
         {
-            moveTimer = 0f;
+            // Reset timer when not moving (prevents footstep immediately when starting to move)
+            footstepTimer = 0f;
         }
 
-        // Update speed RTPC for Wwise (affects hover hum intensity)
-        float currentSpeed = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z).magnitude;
+        // Update surface detection when grounded
+        if (isGrounded && surfaceAudioManager != null)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(groundCheck.position, Vector3.down, out hit, groundCheckRadius + 0.1f, groundLayer))
+            {
+                surfaceAudioManager.UpdateCurrentSurface(hit.collider);
+            }
+        }
+
+        // Optional: Update speed RTPC for Wwise (can control footstep pitch/volume)
         if (playerSpeedRTPC != null)
         {
             playerSpeedRTPC.SetValue(gameObject, currentSpeed);
@@ -139,20 +146,12 @@ public class PlayerController : MonoBehaviour
             float moveAmount = Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput);
             animator.SetFloat("Speed", moveAmount);
             animator.SetBool("IsGrounded", isGrounded);
-            animator.SetBool("IsHovering", isHovering);
-            animator.SetFloat("HoverHeight", currentHoverHeight);
             animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
         }
-
-        // Apply constant drag for floaty feel
-        rb.linearDamping = movementDrag;
     }
 
     private void FixedUpdate()
     {
-        // Apply hover force to maintain height
-        ApplyHoverForce();
-
         // Movement in 2.5D space (X and Z axes)
         Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
         rb.AddForce(moveDirection * moveSpeed, ForceMode.Acceleration);
@@ -183,55 +182,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ApplyHoverForce()
-    {
-        // Only apply hover force when grounded/close to ground
-        if (!isGrounded) return;
-
-        // Cast ray downward to detect ground
-        RaycastHit hit;
-        if (Physics.Raycast(groundCheck.position, Vector3.down, out hit, groundCheckDistance, groundLayer))
-        {
-            // Calculate hover force based on distance from desired height
-            float heightDifference = hoverHeight - hit.distance;
-            float force = heightDifference * hoverForce - rb.linearVelocity.y * hoverDamping;
-
-            // Apply upward force
-            rb.AddForce(Vector3.up * force, ForceMode.Acceleration);
-        }
-    }
-
-    private void StartHover()
-    {
-        if (hoverStartEvent != null)
-        {
-            hoverStartEvent.Post(gameObject);
-        }
-        isHovering = true;
-    }
-
-    private void StopHover()
-    {
-        if (hoverStopEvent != null)
-        {
-            hoverStopEvent.Post(gameObject);
-        }
-        isHovering = false;
-    }
-
     private void OnJump()
     {
-        if (jumpEvent != null)
-        {
-            jumpEvent.Post(gameObject);
-        }
+        // Generic jump event (not surface-specific)
+        //if (jumpEvent != null)
+        //{
+        //    jumpEvent.Post(gameObject);
+        //}
 
-        // Trigger surface-specific jump sound
+        // Surface-specific jump
         if (surfaceAudioManager != null)
         {
             surfaceAudioManager.OnJump(gameObject);
         }
 
+        // Trigger jump animation
         if (animator != null)
         {
             animator.SetTrigger("Jump");
@@ -240,29 +205,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnLand()
     {
-        if (landEvent != null)
-        {
-            landEvent.Post(gameObject);
-        }
+        // Generic land event
+        //if (landEvent != null)
+        //{
+        //    landEvent.Post(gameObject);
+        //}
 
-        // Trigger surface-specific landing sound
+        // Surface-specific land
         if (surfaceAudioManager != null)
         {
             surfaceAudioManager.OnLand(gameObject);
         }
     }
 
-    private void PlayMoveSound()
+    private void PlayFootstep()
     {
-        if (moveEvent != null)
-        {
-            moveEvent.Post(gameObject);
-        }
-
-        // Trigger surface-specific movement sound
+        // Trigger surface-specific footstep via SurfaceAudioManager
         if (surfaceAudioManager != null)
         {
-            surfaceAudioManager.OnMove(gameObject);
+            surfaceAudioManager.OnFootstep(gameObject);
         }
     }
 
@@ -270,24 +231,13 @@ public class PlayerController : MonoBehaviour
     {
         if (groundCheck != null)
         {
-            // Draw hover height indicator
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(groundCheck.position, 0.2f);
-            Gizmos.DrawLine(groundCheck.position, groundCheck.position + Vector3.down * groundCheckDistance);
-            
-            // Draw desired hover height
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(groundCheck.position + Vector3.down * hoverHeight, 0.3f);
+            // Draw ground check sphere
+            Gizmos.color = isGrounded ? Color.green : Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 
-            // Draw grounded threshold
+            // Draw raycast line for surface detection
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(groundCheck.position + Vector3.down * (hoverHeight + 0.5f), 0.25f);
+            Gizmos.DrawLine(groundCheck.position, groundCheck.position + Vector3.down * (groundCheckRadius + 0.1f));
         }
-    }
-
-    private void OnDestroy()
-    {
-        // Stop hover sound when destroyed
-        StopHover();
     }
 }
