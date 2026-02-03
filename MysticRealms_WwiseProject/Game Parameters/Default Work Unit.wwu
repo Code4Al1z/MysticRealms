@@ -3,13 +3,12 @@
 	<GameParameters>
 		<WorkUnit Name="Default Work Unit" ID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}" PersistMode="Standalone">
 			<ChildrenList>
-				<GameParameter Name="Player_Speed" ID="{D03115DF-D9E8-4C08-8BE3-742D86E26041}">
+				<GameParameter Name="Player_Speed" ID="{A0E3CD82-1EA2-43D3-8B84-159E19A4E667}">
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="0"/>
 						<Property Name="Max" Type="Real64" Value="10"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="Hover_Height" ID="{280000A1-2BD8-47BA-8E7F-64483B2CAC93}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

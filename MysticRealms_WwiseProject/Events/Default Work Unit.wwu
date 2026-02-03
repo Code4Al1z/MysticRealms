@@ -3,48 +3,23 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{9432C570-040A-4D00-A420-5FF6D0984665}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Set_Switch_Default" ID="{B4A32952-4379-42FB-BA1B-E05D573C5B9E}">
+				<Event Name="Player_Footstep" ID="{65BA12F1-2AAB-4AA1-9F64-C86862D3CBEC}">
 					<ChildrenList>
-						<Action Name="" ID="{B5C9B4BF-BA53-4F2C-8B65-E3F7710B39C4}" ShortID="718618161">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="23"/>
-							</PropertyList>
+						<Action Name="" ID="{475A43B5-051E-4106-9FBC-7B5B40780462}" ShortID="576494374">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
+									<ObjectRef Name="Player_Footstep_Surface" ID="{6934098A-C3FD-4F0B-A879-F44071723120}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Player_Jump" ID="{87971EC9-4E71-4FBE-AEEB-D7DDF882AE4A}">
+				<Event Name="Player_Land" ID="{28221DBC-EF06-4F3D-843A-17CAEA0ECA43}">
 					<ChildrenList>
-						<Action Name="" ID="{560A6E18-BD65-424C-96FC-82EE45AA18BE}" ShortID="910222648">
+						<Action Name="" ID="{4A21E69D-4E77-4201-BCEF-8087B673E734}" ShortID="857242746">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Player_Jump_Surface" ID="{CD5C47E6-DD3E-499E-B666-878ED54BAD25}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Player_Land" ID="{EE64233B-F431-4A3A-9416-C716A6E659D0}">
-					<ChildrenList>
-						<Action Name="" ID="{7F0F1958-35B8-4249-A164-AD23FAE2577E}" ShortID="343863489">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Player_Land_Surface" ID="{3C5A662F-D359-4CA6-A418-546031EBE443}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Player_Move" ID="{600E8831-4A5E-4CEE-A36C-5595B35E923B}">
-					<ChildrenList>
-						<Action Name="" ID="{1CD271A8-E7C2-4642-9444-AFEE16D9596F}" ShortID="859281699">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Player_Move_Surface" ID="{21F61E24-681C-42FC-9E09-A120892A7BB1}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
+									<ObjectRef Name="Player_Land_Surface" ID="{5807FDCE-458A-4265-B0EE-4FA28FFEE7ED}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -3,339 +3,255 @@
 	<Containers>
 		<WorkUnit Name="Player" ID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="Movement" ID="{FFA76EF7-4938-469D-828D-A0210E78D229}" ShortID="684995803">
+				<SwitchContainer Name="Player_Footstep_Surface" ID="{6934098A-C3FD-4F0B-A879-F44071723120}" ShortID="651186134">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="SurfaceType" ID="{E637F48A-2712-4BB2-9972-F06A31805736}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
+						</Reference>
+					</ReferenceList>
 					<ChildrenList>
-						<SwitchContainer Name="Player_Jump_Surface" ID="{CD5C47E6-DD3E-499E-B666-878ED54BAD25}" ShortID="754721561">
+						<RandomSequenceContainer Name="Default_Footstep" ID="{4B1D9B30-EA0E-47AD-8E21-8FF3E1D269AB}" ShortID="389927241">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-								</Reference>
-								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-								</Reference>
-								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="SurfaceType" ID="{E637F48A-2712-4BB2-9972-F06A31805736}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<RandomSequenceContainer Name="Wood_Jump" ID="{9CBB1D64-6157-478D-8869-ACC2A3B23F6D}" ShortID="907781512">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Default_Jump" ID="{F7AC5581-A2E8-4F6D-81B6-254300BCE203}" ShortID="352947274">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Metal_Jump" ID="{40C461B1-9669-4ECD-8986-7AB66493F672}" ShortID="666899496">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Stone_Jump" ID="{DE97C9FB-E9A6-422E-A6E2-6045E93DB8DA}" ShortID="991677207">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Leaves_Jump" ID="{A02FB259-A362-4270-821F-621FFF635A14}" ShortID="487453627">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Grass_Jump" ID="{E47EA6E8-E5F5-4E52-BB22-479DB60426FF}" ShortID="242336180">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Soil_Jump" ID="{4355345F-DCBD-4CE3-8B20-A441FC669460}" ShortID="458333444">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="Leaves_Jump" ID="{A02FB259-A362-4270-821F-621FFF635A14}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Soil_Jump" ID="{4355345F-DCBD-4CE3-8B20-A441FC669460}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Wood_Jump" ID="{9CBB1D64-6157-478D-8869-ACC2A3B23F6D}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Default_Jump" ID="{F7AC5581-A2E8-4F6D-81B6-254300BCE203}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Metal_Jump" ID="{40C461B1-9669-4ECD-8986-7AB66493F672}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Grass_Jump" ID="{E47EA6E8-E5F5-4E52-BB22-479DB60426FF}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Stone_Jump" ID="{DE97C9FB-E9A6-422E-A6E2-6045E93DB8DA}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}"/>
-										<ItemList>
-											<ItemRef Name="Default_Jump" ID="{F7AC5581-A2E8-4F6D-81B6-254300BCE203}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Metal" ID="{41AE0338-9D5F-408A-AF2E-400ED64D29E1}"/>
-										<ItemList>
-											<ItemRef Name="Metal_Jump" ID="{40C461B1-9669-4ECD-8986-7AB66493F672}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Soil" ID="{33DAB966-B97D-4B4A-B263-9DA16BE390B8}"/>
-										<ItemList>
-											<ItemRef Name="Soil_Jump" ID="{4355345F-DCBD-4CE3-8B20-A441FC669460}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Grass" ID="{95881575-EB94-40F3-BD4D-8ABDF3AE9D47}"/>
-										<ItemList>
-											<ItemRef Name="Grass_Jump" ID="{E47EA6E8-E5F5-4E52-BB22-479DB60426FF}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Wood" ID="{24EC2994-CE5F-428A-84DA-B3CD7D51C700}"/>
-										<ItemList>
-											<ItemRef Name="Wood_Jump" ID="{9CBB1D64-6157-478D-8869-ACC2A3B23F6D}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Stone" ID="{9EBCA49A-4510-47AA-B5E6-7ECAC6D6BBFA}"/>
-										<ItemList>
-											<ItemRef Name="Stone_Jump" ID="{DE97C9FB-E9A6-422E-A6E2-6045E93DB8DA}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Leaves" ID="{3F62C19A-1F44-4E41-8452-20934EDED48D}"/>
-										<ItemList>
-											<ItemRef Name="Leaves_Jump" ID="{A02FB259-A362-4270-821F-621FFF635A14}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
-							</GroupingInfo>
-						</SwitchContainer>
-						<SwitchContainer Name="Player_Land_Surface" ID="{3C5A662F-D359-4CA6-A418-546031EBE443}" ShortID="399787226">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-								</Reference>
-								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
-								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="SurfaceType" ID="{E637F48A-2712-4BB2-9972-F06A31805736}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
-								</Reference>
 							</ReferenceList>
-							<ChildrenList>
-								<RandomSequenceContainer Name="Wood_Land" ID="{51329228-3477-4C33-96DC-21D2896F050C}" ShortID="1022344159">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Default_Land" ID="{3D22D525-1749-46A8-95E2-CEC38663ECBC}" ShortID="771876497">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Grass_Land" ID="{6D60DC46-CD84-4822-BE60-1929C840D08C}" ShortID="398618489">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Leaves_Land" ID="{BAA641A0-9F68-4DA9-9013-E584EC77225A}" ShortID="486528116">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Metal_Land" ID="{FBEC79EC-B67E-4621-96AE-EA44BFA66FC7}" ShortID="18690642">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Soil_Land" ID="{CBF48C75-A9D0-4530-AC7D-213FD42BD73A}" ShortID="483562992">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Stone_Land" ID="{50A1B54C-5729-4422-8FC0-239A8E1D2BAC}" ShortID="109823916">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="Default_Land" ID="{3D22D525-1749-46A8-95E2-CEC38663ECBC}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Wood_Land" ID="{51329228-3477-4C33-96DC-21D2896F050C}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Grass_Land" ID="{6D60DC46-CD84-4822-BE60-1929C840D08C}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Stone_Land" ID="{50A1B54C-5729-4422-8FC0-239A8E1D2BAC}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Soil_Land" ID="{CBF48C75-A9D0-4530-AC7D-213FD42BD73A}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Leaves_Land" ID="{BAA641A0-9F68-4DA9-9013-E584EC77225A}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Metal_Land" ID="{FBEC79EC-B67E-4621-96AE-EA44BFA66FC7}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}"/>
-										<ItemList>
-											<ItemRef Name="Default_Land" ID="{3D22D525-1749-46A8-95E2-CEC38663ECBC}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Metal" ID="{41AE0338-9D5F-408A-AF2E-400ED64D29E1}"/>
-										<ItemList>
-											<ItemRef Name="Metal_Land" ID="{FBEC79EC-B67E-4621-96AE-EA44BFA66FC7}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Soil" ID="{33DAB966-B97D-4B4A-B263-9DA16BE390B8}"/>
-										<ItemList>
-											<ItemRef Name="Soil_Land" ID="{CBF48C75-A9D0-4530-AC7D-213FD42BD73A}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Grass" ID="{95881575-EB94-40F3-BD4D-8ABDF3AE9D47}"/>
-										<ItemList>
-											<ItemRef Name="Grass_Land" ID="{6D60DC46-CD84-4822-BE60-1929C840D08C}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Wood" ID="{24EC2994-CE5F-428A-84DA-B3CD7D51C700}"/>
-										<ItemList>
-											<ItemRef Name="Wood_Land" ID="{51329228-3477-4C33-96DC-21D2896F050C}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Stone" ID="{9EBCA49A-4510-47AA-B5E6-7ECAC6D6BBFA}"/>
-										<ItemList>
-											<ItemRef Name="Stone_Land" ID="{50A1B54C-5729-4422-8FC0-239A8E1D2BAC}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Leaves" ID="{3F62C19A-1F44-4E41-8452-20934EDED48D}"/>
-										<ItemList>
-											<ItemRef Name="Leaves_Land" ID="{BAA641A0-9F68-4DA9-9013-E584EC77225A}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
-							</GroupingInfo>
-						</SwitchContainer>
-						<SwitchContainer Name="Player_Move_Surface" ID="{21F61E24-681C-42FC-9E09-A120892A7BB1}" ShortID="455855846">
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Grass_Footstep" ID="{2F875836-5CEB-47CB-86A5-B6629C6A31C1}" ShortID="846107402">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
-								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Footstep_Grass_02" ID="{03B305A4-8E52-4DBE-BC79-F2FAF0D4D74E}" ShortID="209829431">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Grass_02" ID="{60EF65EE-EA92-4DCA-BC6A-7DE41B87CF25}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Grass_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="711091130"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Grass_02" ID="{60EF65EE-EA92-4DCA-BC6A-7DE41B87CF25}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Grass_04" ID="{B289E697-57E4-49DB-A182-B00DB3F00AE4}" ShortID="841444738">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Grass_04" ID="{A6880F5E-5C78-45F2-90D3-35E3706548AC}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Grass_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="358699782"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Grass_04" ID="{A6880F5E-5C78-45F2-90D3-35E3706548AC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Grass_03" ID="{BF2E53F8-6251-4FC2-AF77-A727680F318D}" ShortID="785942030">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Grass_03" ID="{96B37D8D-21D4-436C-9F5E-0A0ACE7F17DB}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Grass_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="970492995"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Grass_03" ID="{96B37D8D-21D4-436C-9F5E-0A0ACE7F17DB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Grass_01" ID="{0379A481-2B07-4412-AC6A-3AD3CFE6AA9B}" ShortID="784103709">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Grass_01" ID="{77F57224-2C75-4C68-82B2-3592F28E6651}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Grass_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1059915916"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Grass_01" ID="{77F57224-2C75-4C68-82B2-3592F28E6651}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Leaves_Footstep" ID="{17164098-516E-4B39-8AEF-07B094670E1A}" ShortID="228801536">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
-								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="SurfaceType" ID="{E637F48A-2712-4BB2-9972-F06A31805736}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Footstep_Leaves_01" ID="{2FD7A1B2-3DBF-41EC-8741-9C3254CEEE7B}" ShortID="1056049843">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Leaves_01" ID="{92AF6BD4-F5D8-43BA-BA13-C8A2839251A2}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Leaves_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="281619123"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Leaves_01" ID="{92AF6BD4-F5D8-43BA-BA13-C8A2839251A2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Leaves_02" ID="{BC660390-0527-4B44-9CEE-54DBEC10609D}" ShortID="981556033">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Leaves_02" ID="{5F743C22-3555-4725-971F-A2A99702BA90}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Leaves_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1022596507"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Leaves_02" ID="{5F743C22-3555-4725-971F-A2A99702BA90}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Leaves_04" ID="{A2C38221-5D44-4F15-956A-CA12B8388616}" ShortID="330336253">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Leaves_04" ID="{B6F3BE70-83DB-4011-AA03-5CCC7BD6A613}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Leaves_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="635134181"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Leaves_04" ID="{B6F3BE70-83DB-4011-AA03-5CCC7BD6A613}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Leaves_03" ID="{FE0CCFF4-B6FE-4F98-9160-73DFB6CFB715}" ShortID="203021802">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Leaves_03" ID="{DC764457-194A-4D1D-8370-5E6BFC0E5DD8}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Leaves_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="598005189"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Leaves_03" ID="{DC764457-194A-4D1D-8370-5E6BFC0E5DD8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Metal_Footstep" ID="{2762F5EB-376C-4F6B-837A-9588E00A2C53}" ShortID="1022952194">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<RandomSequenceContainer Name="Default_Move" ID="{7378B78F-90B6-4C60-936E-784794442F87}" ShortID="926495410">
+								<Sound Name="Footstep_Metal_01" ID="{6F6DD35E-9158-4818-B163-622B6C81FC6D}" ShortID="873311264">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -344,8 +260,20 @@
 											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 										</Reference>
 									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Grass_Move" ID="{87F97145-F554-414A-BF19-987D3CE10945}" ShortID="77217283">
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Metal_01" ID="{1B9BD256-6F78-4098-81B8-097F534601C1}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Metal_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="262685794"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Metal_01" ID="{1B9BD256-6F78-4098-81B8-097F534601C1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Metal_03" ID="{59E5782D-F56D-4A93-B7E6-887188635398}" ShortID="594511018">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -354,8 +282,20 @@
 											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 										</Reference>
 									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Leaves_Move" ID="{81CEF37B-2BC8-4546-BF08-0A96119AE474}" ShortID="403089246">
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Metal_03" ID="{96D6F172-82AE-453C-9980-AC66F284FE67}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Metal_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="686838333"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Metal_03" ID="{96D6F172-82AE-453C-9980-AC66F284FE67}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Metal_02" ID="{5755C761-4654-4F18-A9C6-6E9FE69CDFF1}" ShortID="666374164">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -364,8 +304,20 @@
 											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 										</Reference>
 									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Metal_Move" ID="{66268A87-CDE6-4F4E-B0EB-AFCF16584EEB}" ShortID="145068166">
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Metal_02" ID="{61818DCF-1978-4315-B306-DF2D8063767D}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Metal_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1065641014"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Metal_02" ID="{61818DCF-1978-4315-B306-DF2D8063767D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Metal_04" ID="{D2459F3F-5840-44F0-B341-A1605CD271EB}" ShortID="531932344">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -374,113 +326,1139 @@
 											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 										</Reference>
 									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Soil_Move" ID="{A7180487-4420-474A-8130-24DA84B8A2B6}" ShortID="477035024">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<SwitchContainer Name="Stone_Move" ID="{9F59EF99-F39C-4E86-B7EE-E9667164DF12}" ShortID="497218405">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-									<GroupingInfo/>
-								</SwitchContainer>
-								<RandomSequenceContainer Name="Wood_Move" ID="{08174066-1654-42FF-8B98-C62B6B763D1C}" ShortID="583068641">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Metal_04" ID="{99DD7D0A-CCB2-48AA-A42A-149C30CD23FD}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Metal_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="74810679"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Metal_04" ID="{99DD7D0A-CCB2-48AA-A42A-149C30CD23FD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="Grass_Move" ID="{87F97145-F554-414A-BF19-987D3CE10945}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Wood_Move" ID="{08174066-1654-42FF-8B98-C62B6B763D1C}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Leaves_Move" ID="{81CEF37B-2BC8-4546-BF08-0A96119AE474}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Soil_Move" ID="{A7180487-4420-474A-8130-24DA84B8A2B6}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Metal_Move" ID="{66268A87-CDE6-4F4E-B0EB-AFCF16584EEB}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Default_Move" ID="{7378B78F-90B6-4C60-936E-784794442F87}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Stone_Move" ID="{9F59EF99-F39C-4E86-B7EE-E9667164DF12}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}"/>
-										<ItemList>
-											<ItemRef Name="Default_Move" ID="{7378B78F-90B6-4C60-936E-784794442F87}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Metal" ID="{41AE0338-9D5F-408A-AF2E-400ED64D29E1}"/>
-										<ItemList>
-											<ItemRef Name="Metal_Move" ID="{66268A87-CDE6-4F4E-B0EB-AFCF16584EEB}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Soil" ID="{33DAB966-B97D-4B4A-B263-9DA16BE390B8}"/>
-										<ItemList>
-											<ItemRef Name="Soil_Move" ID="{A7180487-4420-474A-8130-24DA84B8A2B6}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Grass" ID="{95881575-EB94-40F3-BD4D-8ABDF3AE9D47}"/>
-										<ItemList>
-											<ItemRef Name="Grass_Move" ID="{87F97145-F554-414A-BF19-987D3CE10945}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Wood" ID="{24EC2994-CE5F-428A-84DA-B3CD7D51C700}"/>
-										<ItemList>
-											<ItemRef Name="Wood_Move" ID="{08174066-1654-42FF-8B98-C62B6B763D1C}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Stone" ID="{9EBCA49A-4510-47AA-B5E6-7ECAC6D6BBFA}"/>
-										<ItemList>
-											<ItemRef Name="Stone_Move" ID="{9F59EF99-F39C-4E86-B7EE-E9667164DF12}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Leaves" ID="{3F62C19A-1F44-4E41-8452-20934EDED48D}"/>
-										<ItemList>
-											<ItemRef Name="Leaves_Move" ID="{81CEF37B-2BC8-4546-BF08-0A96119AE474}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
-							</GroupingInfo>
-						</SwitchContainer>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Soil_Footstep" ID="{FDC1F0BF-61B0-4759-BDC9-CD0F19072CC1}" ShortID="919942438">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Footstep_Soil_02" ID="{EE70DF18-1005-4569-A024-22FEDF8D1D8D}" ShortID="1020792504">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Soil_02" ID="{B2542A6A-91AF-4EA8-995D-9A4D09C7BA7D}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Soil_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="129022438"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Soil_02" ID="{B2542A6A-91AF-4EA8-995D-9A4D09C7BA7D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Soil_03" ID="{E1476A5D-B90B-48D0-B15A-750B425E7973}" ShortID="408353792">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Soil_03" ID="{BA6DBA2C-D5EB-4BEE-9C76-C7903AB0F882}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Soil_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="471634421"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Soil_03" ID="{BA6DBA2C-D5EB-4BEE-9C76-C7903AB0F882}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Soil_04" ID="{A982BD61-347B-4E7B-9512-3AEBD9513098}" ShortID="828329856">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Soil_04" ID="{D786D11E-12F9-439B-93F0-8FA514DB118A}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Soil_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1048473209"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Soil_04" ID="{D786D11E-12F9-439B-93F0-8FA514DB118A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Soil_01" ID="{8FCB9C81-BF58-4DB1-91CF-71340C57B787}" ShortID="363587886">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Soil_01" ID="{FB11F6FA-B165-42C4-9D91-0B01EEC61B3A}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Soil_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="305407106"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Soil_01" ID="{FB11F6FA-B165-42C4-9D91-0B01EEC61B3A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Stone_Footstep" ID="{64446B95-350F-4659-A112-F1914FB59D42}" ShortID="454200209">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Footstep_Stone_01" ID="{830EB4AD-ED3A-4698-B0F2-24B4BF58CC8A}" ShortID="177695433">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Stone_01" ID="{0586D289-9486-4B5C-859B-1257901C6328}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Stone_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="681899867"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Stone_01" ID="{0586D289-9486-4B5C-859B-1257901C6328}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Stone_02" ID="{DABF4864-E319-4DCF-B54D-3D04E6212013}" ShortID="828264999">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Stone_02" ID="{2C4E7C6B-3878-46BB-8C12-1E0FEC05E52B}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Stone_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="374680735"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Stone_02" ID="{2C4E7C6B-3878-46BB-8C12-1E0FEC05E52B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Stone_03" ID="{D0C23192-CA2F-4C9A-B6D7-835E1E95583F}" ShortID="482797386">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Stone_03" ID="{7113D30F-B1A4-43A5-980E-1EC9AA676235}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Stone_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="911991177"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Stone_03" ID="{7113D30F-B1A4-43A5-980E-1EC9AA676235}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Stone_04" ID="{C10D4180-4240-47E1-9C93-227335E3989F}" ShortID="533512695">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Stone_04" ID="{05E9D6FE-3F82-4FB1-BE4F-B5716E12DD69}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Stone_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="10788316"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Stone_04" ID="{05E9D6FE-3F82-4FB1-BE4F-B5716E12DD69}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Wood_Footstep" ID="{86352BC7-9369-46A7-A411-DD3128571340}" ShortID="133908799">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Footstep_Wood_03" ID="{61844738-76AD-4F2F-B02C-019C37325108}" ShortID="882505744">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Wood_03" ID="{D7B35062-4F00-41B9-A568-1DD6CD5F16EA}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Wood_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="784522206"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Wood_03" ID="{D7B35062-4F00-41B9-A568-1DD6CD5F16EA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Wood_02" ID="{0AF44BDC-26B5-4877-9597-509AB1A9F706}" ShortID="230516189">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Wood_02" ID="{FD723C6F-D6A1-4ADF-969C-B0A142DA0574}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Wood_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="732395592"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Wood_02" ID="{FD723C6F-D6A1-4ADF-969C-B0A142DA0574}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Wood_04" ID="{9AA99B68-EB69-4926-9416-27CFE2EEC583}" ShortID="629294821">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Wood_04" ID="{A394C441-2093-4CDF-953B-228FD91065FC}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Wood_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="506643693"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Wood_04" ID="{A394C441-2093-4CDF-953B-228FD91065FC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Footstep_Wood_01" ID="{45A3AE0A-EC63-4F1B-9204-8D800FED1B84}" ShortID="328794391">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Wood_01" ID="{5977AC33-A99B-42FA-A360-F86CFDE72972}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Wood_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="425911221"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Wood_01" ID="{5977AC33-A99B-42FA-A360-F86CFDE72972}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
-				</Folder>
-				<Folder Name="Actions" ID="{39AB1A87-FC6D-4E06-9996-FAD1399661A7}" ShortID="945371321"/>
-				<Folder Name="Footsteps" ID="{D6C68BAB-F65E-4646-BF55-B9947FC46A9C}" ShortID="798696563"/>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{2CBE6E4C-C9A2-4CA4-8E0D-ADB910C0E315}" ShortID="4495714">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Pitch"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="Player_Speed" ID="{A0E3CD82-1EA2-43D3-8B84-159E19A4E667}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{1B4A583C-5903-4395-B98D-0B4C8C8480E2}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-100</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>5</XPos>
+														<YPos>0</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>10</XPos>
+														<YPos>200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Default_Footstep" ID="{4B1D9B30-EA0E-47AD-8E21-8FF3E1D269AB}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Grass_Footstep" ID="{2F875836-5CEB-47CB-86A5-B6629C6A31C1}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Stone_Footstep" ID="{64446B95-350F-4659-A112-F1914FB59D42}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Leaves_Footstep" ID="{17164098-516E-4B39-8AEF-07B094670E1A}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Soil_Footstep" ID="{FDC1F0BF-61B0-4759-BDC9-CD0F19072CC1}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Wood_Footstep" ID="{86352BC7-9369-46A7-A411-DD3128571340}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Metal_Footstep" ID="{2762F5EB-376C-4F6B-837A-9588E00A2C53}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}"/>
+								<ItemList>
+									<ItemRef Name="Default_Footstep" ID="{4B1D9B30-EA0E-47AD-8E21-8FF3E1D269AB}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Metal" ID="{41AE0338-9D5F-408A-AF2E-400ED64D29E1}"/>
+								<ItemList>
+									<ItemRef Name="Metal_Footstep" ID="{2762F5EB-376C-4F6B-837A-9588E00A2C53}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Soil" ID="{33DAB966-B97D-4B4A-B263-9DA16BE390B8}"/>
+								<ItemList>
+									<ItemRef Name="Soil_Footstep" ID="{FDC1F0BF-61B0-4759-BDC9-CD0F19072CC1}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Grass" ID="{95881575-EB94-40F3-BD4D-8ABDF3AE9D47}"/>
+								<ItemList>
+									<ItemRef Name="Grass_Footstep" ID="{2F875836-5CEB-47CB-86A5-B6629C6A31C1}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Wood" ID="{24EC2994-CE5F-428A-84DA-B3CD7D51C700}"/>
+								<ItemList>
+									<ItemRef Name="Wood_Footstep" ID="{86352BC7-9369-46A7-A411-DD3128571340}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Stone" ID="{9EBCA49A-4510-47AA-B5E6-7ECAC6D6BBFA}"/>
+								<ItemList>
+									<ItemRef Name="Stone_Footstep" ID="{64446B95-350F-4659-A112-F1914FB59D42}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Leaves" ID="{3F62C19A-1F44-4E41-8452-20934EDED48D}"/>
+								<ItemList>
+									<ItemRef Name="Leaves_Footstep" ID="{17164098-516E-4B39-8AEF-07B094670E1A}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+				<SwitchContainer Name="Player_Land_Surface" ID="{5807FDCE-458A-4265-B0EE-4FA28FFEE7ED}" ShortID="550510479">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="SurfaceType" ID="{E637F48A-2712-4BB2-9972-F06A31805736}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SwitchContainer Name="Default_Land" ID="{6FF4569C-C0E4-47B3-A800-51D2C6CDE556}" ShortID="354880026">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<GroupingInfo/>
+						</SwitchContainer>
+						<RandomSequenceContainer Name="Grass_Land" ID="{D05B9A08-7067-4E31-950A-07BD444F6E34}" ShortID="605849492">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Land_Grass_01" ID="{A07E8870-9BE6-46B3-B7B0-FE715EB4E658}" ShortID="570586020">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Grass_01" ID="{EFAB125D-646F-4FC7-B477-310A20942404}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Grass_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="723750938"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Grass_01" ID="{EFAB125D-646F-4FC7-B477-310A20942404}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Grass_04" ID="{07B2A48B-1A5E-4D8E-8E79-22D2629BF7B3}" ShortID="462254427">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Grass_04" ID="{DEE27B66-0BF5-4147-AB52-E0F941AC3868}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Grass_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="451256713"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Grass_04" ID="{DEE27B66-0BF5-4147-AB52-E0F941AC3868}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Grass_03" ID="{A1909BA3-CA60-47AF-A2AB-5524CD3DE59F}" ShortID="322858038">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Grass_03" ID="{473DA0E6-EFD9-4C98-89EA-66145020FCB6}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Grass_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="448555983"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Grass_03" ID="{473DA0E6-EFD9-4C98-89EA-66145020FCB6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Grass_02" ID="{B5CB5696-84F7-44CF-B82C-8270AA168A6F}" ShortID="542247334">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Grass_02" ID="{55BE1BC3-06D8-472A-973F-889B7D8FE409}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Grass_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1024142388"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Grass_02" ID="{55BE1BC3-06D8-472A-973F-889B7D8FE409}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Leaves_Land" ID="{19D977D1-7F9E-4856-AD70-45891F5F9A13}" ShortID="248833258">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Land_Leaves_01" ID="{3C39301A-99DA-42C5-A502-C51FC6B84DBA}" ShortID="1050766892">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Leaves_01" ID="{6FE5C837-5525-4202-87EE-991D3677C623}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Leaves_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="169697624"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Leaves_01" ID="{6FE5C837-5525-4202-87EE-991D3677C623}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Leaves_02" ID="{D3B4F500-2E6F-48D9-8E1F-3632A20711D2}" ShortID="940205944">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Leaves_02" ID="{2DAD7AD7-6908-413B-AF0C-D22A8587EB62}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Leaves_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="150220496"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Leaves_02" ID="{2DAD7AD7-6908-413B-AF0C-D22A8587EB62}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Leaves_03" ID="{8879FDBE-23A4-4563-BF8D-B39F53DA40D2}" ShortID="552626546">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Leaves_03" ID="{0FB3AEFE-BDC1-44B4-9818-CA8075AABE85}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Leaves_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1041219893"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Leaves_03" ID="{0FB3AEFE-BDC1-44B4-9818-CA8075AABE85}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Leaves_04" ID="{B6AD2E0E-20FD-431B-A9A4-754B3529F26B}" ShortID="595757477">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Leaves_04" ID="{80E35ED5-7559-401D-8539-22C8ED13CF9A}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Leaves_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="885533788"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Leaves_04" ID="{80E35ED5-7559-401D-8539-22C8ED13CF9A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Metal_Land" ID="{694477F7-C82D-4842-87EC-231DAD976EC2}" ShortID="940856296">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Land_Metal_03" ID="{148FCA35-C4AD-443C-9802-14CB0A021799}" ShortID="443803068">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Metal_03" ID="{C3C0D6A4-1D69-4E5B-9758-9B01C4610C06}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Metal_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="700109537"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Metal_03" ID="{C3C0D6A4-1D69-4E5B-9758-9B01C4610C06}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Metal_04" ID="{871BDFF6-EC6A-4D81-BD89-A5E8EF8CCD35}" ShortID="641648273">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Metal_04" ID="{BFA19498-640C-4616-A498-BBCB680C0E2F}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Metal_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="187481456"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Metal_04" ID="{BFA19498-640C-4616-A498-BBCB680C0E2F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Metal_02" ID="{0664FA70-EE94-4D2D-B0DE-4AC6E615ADDA}" ShortID="44759762">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Metal_02" ID="{832B8747-54EC-44E9-A9CF-24F7D0D55103}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Metal_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1019604063"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Metal_02" ID="{832B8747-54EC-44E9-A9CF-24F7D0D55103}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Metal_01" ID="{026147C7-2BE6-4CBA-A084-D06F4736C6A1}" ShortID="886949600">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Metal_01" ID="{6F6D0C1E-BAE0-4F92-B284-9487297FD2BA}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Metal_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="6265944"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Metal_01" ID="{6F6D0C1E-BAE0-4F92-B284-9487297FD2BA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Soil_Land" ID="{4DB3F16D-FFD7-49E1-A93D-03A8F2437F0F}" ShortID="288253253">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Land_Soil_01" ID="{B15C025A-DA0F-4173-BDBA-5BD5AC7DD141}" ShortID="1030223316">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Soil_01" ID="{9C6930F9-7DDB-4773-825E-EE8022154C90}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Soil_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="949169057"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Soil_01" ID="{9C6930F9-7DDB-4773-825E-EE8022154C90}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Soil_02" ID="{53849737-69A9-4A82-BF1F-A55B15CE3539}" ShortID="873684374">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Soil_02" ID="{F9C218B5-FC54-4236-A71E-67B736F7794B}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Soil_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="499093097"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Soil_02" ID="{F9C218B5-FC54-4236-A71E-67B736F7794B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Soil_03" ID="{9E16BF88-24D2-4E14-B7B1-A283CA8EDAA3}" ShortID="800786165">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Soil_03" ID="{820A813D-BF40-4E69-B686-2DAD1070EA97}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Soil_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1044259485"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Soil_03" ID="{820A813D-BF40-4E69-B686-2DAD1070EA97}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Soil_04" ID="{A84E202A-826F-461D-9083-62640FE98C62}" ShortID="927166159">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Soil_04" ID="{B8DCBD5A-C09D-4049-B2B0-D80136545251}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Soil_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="781432596"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Soil_04" ID="{B8DCBD5A-C09D-4049-B2B0-D80136545251}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Stone_Land" ID="{1B2B7C4C-D983-4779-8458-6EC5417133D2}" ShortID="301144524">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Land_Stone_04" ID="{B9E7F822-D589-4F15-B914-50B6ACAA29CC}" ShortID="144116191">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Stone_04" ID="{50333690-3692-4F5F-A84D-77EC7797CE09}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Stone_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="203499254"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Stone_04" ID="{50333690-3692-4F5F-A84D-77EC7797CE09}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Stone_01" ID="{D47E8FFC-BF5E-419D-9934-6E4BC1075FE7}" ShortID="260962322">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Stone_01" ID="{353F4D6D-626E-4CEE-9673-0E2A1C512166}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Stone_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="657545217"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Stone_01" ID="{353F4D6D-626E-4CEE-9673-0E2A1C512166}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Stone_02" ID="{50C7532A-EFA4-409D-AD4B-94FAA69F88C2}" ShortID="305207541">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Stone_02" ID="{31AAAE4B-4A31-464F-9673-31576B85C942}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Stone_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="237362321"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Stone_02" ID="{31AAAE4B-4A31-464F-9673-31576B85C942}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Stone_03" ID="{EE933D0F-CAAA-4967-913A-5898A56D9D37}" ShortID="48796918">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Stone_03" ID="{F60A1C15-C8A7-49B1-B817-2DFCFDD39C26}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Stone_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="868506474"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Stone_03" ID="{F60A1C15-C8A7-49B1-B817-2DFCFDD39C26}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Wood_Land" ID="{A0BF5A65-8203-4CE3-85C0-3E832EFE5DA6}" ShortID="818758002">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Land_Wood_04" ID="{F1A2977D-FDB1-4517-98A7-4F366789F987}" ShortID="704937304">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Wood_04" ID="{AFD5C9E7-75F5-4992-A49B-77AF9E3EDFAD}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Wood_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="750785456"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Wood_04" ID="{AFD5C9E7-75F5-4992-A49B-77AF9E3EDFAD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Wood_02" ID="{09FA8190-09FF-4AFB-B478-02041A3C2F23}" ShortID="560296231">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Wood_02" ID="{7DE0D464-7896-4EED-B256-1E72412A5CB6}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Wood_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="744709980"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Wood_02" ID="{7DE0D464-7896-4EED-B256-1E72412A5CB6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Wood_03" ID="{FF68980B-7278-4E37-AFA5-10453FA0B856}" ShortID="183096982">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Wood_03" ID="{B015F71C-ABA8-45C3-8A60-E9DA20DE9A1C}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Wood_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="675869273"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Wood_03" ID="{B015F71C-ABA8-45C3-8A60-E9DA20DE9A1C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Land_Wood_01" ID="{4F0C9D16-BA15-468A-A462-F0228371961B}" ShortID="253698058">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Wood_01" ID="{A7E4C36C-D55F-42A6-B3DF-182AE1DBF6E1}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Wood_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="765476307"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Wood_01" ID="{A7E4C36C-D55F-42A6-B3DF-182AE1DBF6E1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Grass_Land" ID="{D05B9A08-7067-4E31-950A-07BD444F6E34}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Stone_Land" ID="{1B2B7C4C-D983-4779-8458-6EC5417133D2}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Wood_Land" ID="{A0BF5A65-8203-4CE3-85C0-3E832EFE5DA6}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Soil_Land" ID="{4DB3F16D-FFD7-49E1-A93D-03A8F2437F0F}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Default_Land" ID="{6FF4569C-C0E4-47B3-A800-51D2C6CDE556}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Leaves_Land" ID="{19D977D1-7F9E-4856-AD70-45891F5F9A13}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Metal_Land" ID="{694477F7-C82D-4842-87EC-231DAD976EC2}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}"/>
+								<ItemList>
+									<ItemRef Name="Default_Land" ID="{6FF4569C-C0E4-47B3-A800-51D2C6CDE556}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Metal" ID="{41AE0338-9D5F-408A-AF2E-400ED64D29E1}"/>
+								<ItemList>
+									<ItemRef Name="Metal_Land" ID="{694477F7-C82D-4842-87EC-231DAD976EC2}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Soil" ID="{33DAB966-B97D-4B4A-B263-9DA16BE390B8}"/>
+								<ItemList>
+									<ItemRef Name="Soil_Land" ID="{4DB3F16D-FFD7-49E1-A93D-03A8F2437F0F}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Grass" ID="{95881575-EB94-40F3-BD4D-8ABDF3AE9D47}"/>
+								<ItemList>
+									<ItemRef Name="Grass_Land" ID="{D05B9A08-7067-4E31-950A-07BD444F6E34}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Wood" ID="{24EC2994-CE5F-428A-84DA-B3CD7D51C700}"/>
+								<ItemList>
+									<ItemRef Name="Wood_Land" ID="{A0BF5A65-8203-4CE3-85C0-3E832EFE5DA6}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Stone" ID="{9EBCA49A-4510-47AA-B5E6-7ECAC6D6BBFA}"/>
+								<ItemList>
+									<ItemRef Name="Stone_Land" ID="{1B2B7C4C-D983-4779-8458-6EC5417133D2}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Leaves" ID="{3F62C19A-1F44-4E41-8452-20934EDED48D}"/>
+								<ItemList>
+									<ItemRef Name="Leaves_Land" ID="{19D977D1-7F9E-4856-AD70-45891F5F9A13}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

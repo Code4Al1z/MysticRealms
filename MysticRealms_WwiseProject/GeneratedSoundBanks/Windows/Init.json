@@ -1,0 +1,115 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{210F40F6-B9D4-4AA8-A22D-0B1911C4284E}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Devices\\Default Work Unit\\No_Output",
+       "GUID": "{062491F2-26F5-400E-914F-AACFCF4632D3}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Devices\\Default Work Unit\\System",
+       "GUID": "{268612C6-BFD7-4AA1-8F06-7631E8F01FBD}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "1138681361",
+      "Name": "Player_Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Player_Bus",
+      "GUID": "{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}"
+     },
+     {
+      "Id": "2246998526",
+      "Name": "Main Audio Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1062779386",
+      "Name": "Player_Speed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Speed",
+      "GUID": "{A0E3CD82-1EA2-43D3-8B84-159E19A4E667}"
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "63790334",
+      "Name": "SurfaceType",
+      "ObjectPath": "\\Switches\\Default Work Unit\\SurfaceType",
+      "GUID": "{E637F48A-2712-4BB2-9972-F06A31805736}",
+      "Switches": [
+       {
+        "Id": "582824249",
+        "Name": "Leaves",
+        "ObjectPath": "\\Switches\\Default Work Unit\\SurfaceType\\Leaves",
+        "GUID": "{3F62C19A-1F44-4E41-8452-20934EDED48D}"
+       },
+       {
+        "Id": "687380132",
+        "Name": "Soil",
+        "ObjectPath": "\\Switches\\Default Work Unit\\SurfaceType\\Soil",
+        "GUID": "{33DAB966-B97D-4B4A-B263-9DA16BE390B8}"
+       },
+       {
+        "Id": "782826392",
+        "Name": "Default",
+        "ObjectPath": "\\Switches\\Default Work Unit\\SurfaceType\\Default",
+        "GUID": "{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}"
+       },
+       {
+        "Id": "1216965916",
+        "Name": "Stone",
+        "ObjectPath": "\\Switches\\Default Work Unit\\SurfaceType\\Stone",
+        "GUID": "{9EBCA49A-4510-47AA-B5E6-7ECAC6D6BBFA}"
+       },
+       {
+        "Id": "2058049674",
+        "Name": "Wood",
+        "ObjectPath": "\\Switches\\Default Work Unit\\SurfaceType\\Wood",
+        "GUID": "{24EC2994-CE5F-428A-84DA-B3CD7D51C700}"
+       },
+       {
+        "Id": "2473969246",
+        "Name": "Metal",
+        "ObjectPath": "\\Switches\\Default Work Unit\\SurfaceType\\Metal",
+        "GUID": "{41AE0338-9D5F-408A-AF2E-400ED64D29E1}"
+       },
+       {
+        "Id": "4248645337",
+        "Name": "Grass",
+        "ObjectPath": "\\Switches\\Default Work Unit\\SurfaceType\\Grass",
+        "GUID": "{95881575-EB94-40F3-BD4D-8ABDF3AE9D47}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{23EB7516-9676-CCF6-EDFD-68448B568893}"
+ }
+}
