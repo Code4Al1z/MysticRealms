@@ -3,53 +3,47 @@ using UnityEngine;
 /// <summary>
 /// Handles player movement, jumping, and footsteps for 2.5D platformer
 /// Unity 6.3 + Wwise 2025.1.4 compatible
-/// Mystic Realms - Grounded Character Controller with Footsteps
+/// Mystic Realms - Grounded Character Controller with Surface-Based Footsteps
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 5f;
-    public float maxSpeed = 10f;
-    public float groundDrag = 6f;
-    public float airDrag = 2f;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float maxSpeed = 10f;
+    [SerializeField] private float groundDrag = 6f;
+    [SerializeField] private float airDrag = 2f;
 
     [Header("Jump")]
-    public float jumpForce = 8f;
-    public float jumpCooldown = 0.5f;
+    [SerializeField] private float jumpForce = 8f;
+    [SerializeField] private float jumpCooldown = 0.5f;
     private float lastJumpTime = -999f;
 
     [Header("Ground Check")]
-    public Transform groundCheck;
-    public float groundCheckRadius = 0.3f;
-    public LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckRadius = 0.3f;
+    [SerializeField] private LayerMask groundLayer;
 
     [Header("Footstep Timing")]
     [Tooltip("Seconds between footsteps when walking (slow speed)")]
-    public float walkFootstepInterval = 0.5f;
+    [SerializeField] private float walkFootstepInterval = 0.5f;
 
     [Tooltip("Seconds between footsteps when running (fast speed)")]
-    public float runFootstepInterval = 0.3f;
+    [SerializeField] private float runFootstepInterval = 0.3f;
 
     [Tooltip("Speed threshold - above this value, use run interval")]
-    public float runSpeedThreshold = 6f;
+    [SerializeField] private float runSpeedThreshold = 6f;
 
     [Tooltip("Minimum speed to trigger footsteps (prevents footsteps when barely moving)")]
-    public float minSpeedForFootsteps = 0.5f;
+    [SerializeField] private float minSpeedForFootsteps = 0.5f;
 
-    [Header("Wwise Audio")]
-    [Tooltip("Optional: Generic jump event (use if not using surface-specific jumps)")]
-    public AK.Wwise.Event jumpEvent;
+    [Header("Wwise Audio - Optional")]
+    [Tooltip("Optional: RTPC to control audio based on player speed (pitch/volume)")]
+    [SerializeField] private AK.Wwise.RTPC playerSpeedRTPC;
 
-    [Tooltip("Optional: Generic land event (use if not using surface-specific lands)")]
-    public AK.Wwise.Event landEvent;
-
-    [Tooltip("Optional: RTPC to control audio based on player speed")]
-    public AK.Wwise.RTPC playerSpeedRTPC;
-
-    [Header("Surface Audio System")]
-    [Tooltip("Reference to SurfaceAudioManager - handles surface-specific sounds")]
-    public SurfaceAudioManager surfaceAudioManager;
+    [Header("Surface Audio System - Required")]
+    [Tooltip("REQUIRED: Reference to SurfaceAudioManager - handles all surface-specific sounds")]
+    [SerializeField] private SurfaceAudioManager surfaceAudioManager;
 
     private Rigidbody rb;
     private Animator animator;
@@ -61,7 +55,6 @@ public class PlayerController : MonoBehaviour
 
     // Footstep timing
     private float footstepTimer = 0f;
-    private float currentFootstepInterval;
 
     private void Start()
     {
@@ -70,6 +63,12 @@ public class PlayerController : MonoBehaviour
 
         // Lock rotation so player doesn't tip over
         rb.freezeRotation = true;
+
+        // Validate surface audio manager reference
+        if (surfaceAudioManager == null)
+        {
+            Debug.LogError("[PlayerController] SurfaceAudioManager reference is missing! Assign it in the Inspector.");
+        }
     }
 
     private void Update()
@@ -101,7 +100,7 @@ public class PlayerController : MonoBehaviour
         float currentSpeed = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z).magnitude;
 
         // Determine footstep interval based on current speed
-        currentFootstepInterval = (currentSpeed > runSpeedThreshold) ? runFootstepInterval : walkFootstepInterval;
+        float currentFootstepInterval = (currentSpeed > runSpeedThreshold) ? runFootstepInterval : walkFootstepInterval;
 
         // Check if player is actively moving (input-based)
         bool isMoving = (Mathf.Abs(horizontalInput) > 0.1f || Mathf.Abs(verticalInput) > 0.1f);
@@ -134,7 +133,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Optional: Update speed RTPC for Wwise (can control footstep pitch/volume)
+        // Optional: Update speed RTPC for Wwise (can control footstep pitch/volume dynamically)
         if (playerSpeedRTPC != null)
         {
             playerSpeedRTPC.SetValue(gameObject, currentSpeed);
@@ -182,18 +181,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when player jumps - triggers surface-specific jump sound via SurfaceAudioManager
+    /// NOTE: If you want jumps, uncomment the OnJump() call in SurfaceAudioManager
+    /// For minimal version, you can skip jump sounds entirely
+    /// </summary>
     private void OnJump()
     {
-        // Generic jump event (not surface-specific)
-        //if (jumpEvent != null)
-        //{
-        //    jumpEvent.Post(gameObject);
-        //}
-
-        // Surface-specific jump
         if (surfaceAudioManager != null)
         {
-            surfaceAudioManager.OnJump(gameObject);
+            // Uncomment this line if you have jump sounds:
+            // surfaceAudioManager.OnJump(gameObject);
         }
 
         // Trigger jump animation
@@ -203,24 +201,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when player lands - triggers surface-specific landing sound via SurfaceAudioManager
+    /// </summary>
     private void OnLand()
     {
-        // Generic land event
-        //if (landEvent != null)
-        //{
-        //    landEvent.Post(gameObject);
-        //}
-
-        // Surface-specific land
         if (surfaceAudioManager != null)
         {
             surfaceAudioManager.OnLand(gameObject);
         }
     }
 
+    /// <summary>
+    /// Called periodically while moving - triggers surface-specific footstep sound via SurfaceAudioManager
+    /// </summary>
     private void PlayFootstep()
     {
-        // Trigger surface-specific footstep via SurfaceAudioManager
         if (surfaceAudioManager != null)
         {
             surfaceAudioManager.OnFootstep(gameObject);
