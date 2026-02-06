@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3007090e409da7c4e825efba4d0bf883, type: 3}
   m_Name: 600E8831-4A5E-4CEE-A36C-5595B35E923B
   m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseEventReference
-  objectName: Player_Move
-  id: 2248092158
+  objectName: Player_Footstep
+  id: 2453392179
   guid: 600E8831-4A5E-4CEE-A36C-5595B35E923B
-  IsInUserDefinedSoundBank: 0
+  IsInUserDefinedSoundBank: 1

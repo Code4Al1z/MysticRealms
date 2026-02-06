@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Player_Jump
   id: 1305133589
   guid: 87971EC9-4E71-4FBE-AEEB-D7DDF882AE4A
-  IsInUserDefinedSoundBank: 0
+  IsInUserDefinedSoundBank: 1

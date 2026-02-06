@@ -74,48 +74,45 @@ public class SurfaceAudioManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Updates the current surface based on the collider the player is touching
-    /// Call this from PlayerController when detecting ground contact
-    /// </summary>
     public void UpdateCurrentSurface(Collider hitCollider)
     {
-        if (hitCollider == null) return;
+        if (hitCollider == null)
+        {
+            Debug.LogWarning("[SurfaceAudio] UpdateCurrentSurface called with null collider");
+            return;
+        }
 
-        // Check cache first for performance
+        // Check cache first
         if (colliderSurfaceCache.TryGetValue(hitCollider, out int cachedSurfaceIndex))
         {
             SetCurrentSurface(cachedSurfaceIndex);
             return;
         }
 
-        // Get material from collider's renderer
+        // Get material
         Renderer renderer = hitCollider.GetComponent<Renderer>();
         if (renderer == null || renderer.sharedMaterial == null)
         {
-            if (enableDebugLog)
-                Debug.LogWarning($"[SurfaceAudio] No renderer or material found on {hitCollider.name}");
+            Debug.LogWarning($"[SurfaceAudio] No renderer/material on {hitCollider.name}. Setting to Default (0)");
+            SetCurrentSurface(0); // Fallback to default
             return;
         }
 
         Material material = renderer.sharedMaterial;
 
-        // Try to get the enum value from the shader
+        // Check for shader property
         if (material.HasProperty(shaderPropertyID))
         {
-            // Get the enum as a float (Unity stores enums as floats in shaders)
             float enumValue = material.GetFloat(shaderPropertyID);
             int surfaceIndex = Mathf.RoundToInt(enumValue);
-
-            // Cache the result
             colliderSurfaceCache[hitCollider] = surfaceIndex;
-
             SetCurrentSurface(surfaceIndex);
+            Debug.Log($"[SurfaceAudio] Found surface type: {surfaceIndex} on {hitCollider.name}");
         }
         else
         {
-            if (enableDebugLog)
-                Debug.LogWarning($"[SurfaceAudio] Material '{material.name}' does not have property '{shaderEnumPropertyName}'");
+            Debug.LogWarning($"[SurfaceAudio] Material '{material.name}' missing property '{shaderEnumPropertyName}'. Setting to Default (0)");
+            SetCurrentSurface(0); // Fallback to default
         }
     }
 

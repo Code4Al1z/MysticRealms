@@ -38,6 +38,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	471634421	Footstep_Soil_03	.cache\16\{1640C361-62FD-82AF-6D63-7A4394E5BB85}.wem		\Containers\Player\Player_Footstep_Surface\Soil_Footstep\Footstep_Soil_03		230496
 	499093097	Land_Soil_02	.cache\7F\{7F301FB1-5CB3-DBE4-7B96-A8A099DA8CEA}.wem		\Containers\Player\Player_Land_Surface\Soil_Land\Land_Soil_02		284256
 	506643693	Footstep_Wood_04	.cache\8A\{8A1EAE6A-E582-0961-08BD-41903060E03C}.wem		\Containers\Player\Player_Footstep_Surface\Wood_Footstep\Footstep_Wood_04		230496
+	556324215	Footstep_Default_01	.cache\97\{97FADDD9-5B07-03B1-53A9-D53CD87E7552}.wem		\Containers\Player\Player_Footstep_Surface\Default_Footstep\Footstep_Default_01		230496
 	598005189	Footstep_Leaves_03	.cache\7F\{7FEDA71E-FE88-2ED9-FABE-7166D54EC1BD}.wem		\Containers\Player\Player_Footstep_Surface\Leaves_Footstep\Footstep_Leaves_03		230496
 	635134181	Footstep_Leaves_04	.cache\09\{09FA3CA3-7131-258B-83D0-96691EF2408D}.wem		\Containers\Player\Player_Footstep_Surface\Leaves_Footstep\Footstep_Leaves_04		230496
 	657545217	Land_Stone_01	.cache\A1\{A1535817-13CE-D5D4-96BF-7361816608B6}.wem		\Containers\Player\Player_Land_Surface\Stone_Land\Land_Stone_01		284256
@@ -50,6 +51,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	732395592	Footstep_Wood_02	.cache\26\{26C383D3-EEF9-B7CE-AF40-DA7405A76018}.wem		\Containers\Player\Player_Footstep_Surface\Wood_Footstep\Footstep_Wood_02		230496
 	744709980	Land_Wood_02	.cache\9F\{9F5089BF-D0B2-194A-7771-4B09E9A53A59}.wem		\Containers\Player\Player_Land_Surface\Wood_Land\Land_Wood_02		384096
 	750785456	Land_Wood_04	.cache\12\{1272FAC2-3C96-BD81-57AA-D206E23DEEEC}.wem		\Containers\Player\Player_Land_Surface\Wood_Land\Land_Wood_04		384096
+	764237654	Land_Default_01	.cache\7F\{7FAC68E4-7A32-F0C4-55CA-5A98EF77EDDB}.wem		\Containers\Player\Player_Land_Surface\Default_Land\Land_Default_01		230496
 	765476307	Land_Wood_01	.cache\F6\{F62209AB-819E-88D5-653E-1354EF9A6BE5}.wem		\Containers\Player\Player_Land_Surface\Wood_Land\Land_Wood_01		384096
 	781432596	Land_Soil_04	.cache\97\{97205961-8F93-6B07-B062-C058D08D2DBE}.wem		\Containers\Player\Player_Land_Surface\Soil_Land\Land_Soil_04		284256
 	784522206	Footstep_Wood_03	.cache\81\{819752A3-CA70-8496-CED8-A942E90C4F09}.wem		\Containers\Player\Player_Footstep_Surface\Wood_Footstep\Footstep_Wood_03		230496

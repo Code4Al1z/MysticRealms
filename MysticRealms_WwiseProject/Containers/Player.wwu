@@ -31,6 +31,30 @@
 									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Footstep_Default_01" ID="{62E83741-909C-4704-8943-AC394DEF1D37}" ShortID="1006225351">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Footstep_Default_01" ID="{B85973CE-544F-4137-B585-E8A72A8DB50B}">
+											<Language>SFX</Language>
+											<AudioFile>Footstep_Default_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="556324215"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Footstep_Default_01" ID="{B85973CE-544F-4137-B585-E8A72A8DB50B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Grass_Footstep" ID="{2F875836-5CEB-47CB-86A5-B6629C6A31C1}" ShortID="846107402">
 							<PropertyList>
@@ -777,17 +801,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<SwitchContainer Name="Default_Land" ID="{6FF4569C-C0E4-47B3-A800-51D2C6CDE556}" ShortID="354880026">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-								</Reference>
-							</ReferenceList>
-							<GroupingInfo/>
-						</SwitchContainer>
 						<RandomSequenceContainer Name="Grass_Land" ID="{D05B9A08-7067-4E31-950A-07BD444F6E34}" ShortID="605849492">
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1388,6 +1401,40 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Default_Land" ID="{2E83FAA3-3B35-429A-B013-78A460393C87}" ShortID="250592555">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Land_Default_01" ID="{651FF301-FB56-4CBE-AEC8-123B6208F26E}" ShortID="905931019">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Land_Default_01" ID="{1CAB8268-9733-4933-AB59-5EACD04D4647}">
+											<Language>SFX</Language>
+											<AudioFile>Land_Default_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="764237654"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Land_Default_01" ID="{1CAB8268-9733-4933-AB59-5EACD04D4647}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<GroupingInfo>
 						<GroupingBehaviorList>
@@ -1404,7 +1451,7 @@
 								<ItemRef Name="Soil_Land" ID="{4DB3F16D-FFD7-49E1-A93D-03A8F2437F0F}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
-								<ItemRef Name="Default_Land" ID="{6FF4569C-C0E4-47B3-A800-51D2C6CDE556}"/>
+								<ItemRef Name="Default_Land" ID="{2E83FAA3-3B35-429A-B013-78A460393C87}"/>
 							</GroupingBehavior>
 							<GroupingBehavior>
 								<ItemRef Name="Leaves_Land" ID="{19D977D1-7F9E-4856-AD70-45891F5F9A13}"/>
@@ -1417,7 +1464,7 @@
 							<Grouping>
 								<SwitchRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}"/>
 								<ItemList>
-									<ItemRef Name="Default_Land" ID="{6FF4569C-C0E4-47B3-A800-51D2C6CDE556}"/>
+									<ItemRef Name="Default_Land" ID="{2E83FAA3-3B35-429A-B013-78A460393C87}"/>
 								</ItemList>
 							</Grouping>
 							<Grouping>

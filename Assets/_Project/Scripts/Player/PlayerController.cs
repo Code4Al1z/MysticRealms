@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Handles player movement, jumping, and footsteps for 2.5D platformer
@@ -69,19 +70,44 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("[PlayerController] SurfaceAudioManager reference is missing! Assign it in the Inspector.");
         }
+
+        // If the ground check point starts already inside a ground collider, update the current surface immediately
+        if (groundCheck != null && surfaceAudioManager != null)
+        {
+            Collider[] overlaps = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer.value);
+            if (overlaps != null && overlaps.Length > 0)
+            {
+                // Use the first overlapping collider to initialize the surface
+                surfaceAudioManager.UpdateCurrentSurface(overlaps[0]);
+            }
+        }
     }
 
     private void Update()
     {
-        // Input
-        horizontalInput = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
-        verticalInput = Input.GetAxis("Vertical");     // W/S or Up/Down arrows
+        // Safe keyboard access
+        var kb = Keyboard.current;
 
-        // Jump input
-        if (Input.GetButtonDown("Jump") && isGrounded && Time.time > lastJumpTime + jumpCooldown)
+        // Compute horizontal and vertical input safely using KeyControl properties (dKey, aKey, wKey, sKey).
+        float h = 0f;
+        float v = 0f;
+
+        if (kb != null)
         {
-            jumpInput = true;
+            if (kb.dKey != null && kb.dKey.isPressed) h += 1f;
+            if (kb.aKey != null && kb.aKey.isPressed) h -= 1f;
+            if (kb.wKey != null && kb.wKey.isPressed) v += 1f;
+            if (kb.sKey != null && kb.sKey.isPressed) v -= 1f;
+
+            // Jump input using spaceKey (wasPressedThisFrame)
+            if (kb.spaceKey != null && kb.spaceKey.wasPressedThisFrame && isGrounded && Time.time > lastJumpTime + jumpCooldown)
+            {
+                jumpInput = true;
+            }
         }
+
+        horizontalInput = Mathf.Clamp(h, -1f, 1f);
+        verticalInput = Mathf.Clamp(v, -1f, 1f);
 
         // Ground check
         wasGrounded = isGrounded;
@@ -153,7 +179,10 @@ public class PlayerController : MonoBehaviour
     {
         // Movement in 2.5D space (X and Z axes)
         Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-        rb.AddForce(moveDirection * moveSpeed, ForceMode.Acceleration);
+
+        Vector3 targetVelocity = moveDirection * moveSpeed;
+        Vector3 velocityDifference = targetVelocity - new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+        rb.AddForce(velocityDifference, ForceMode.VelocityChange);
 
         // Clamp horizontal speed
         Vector3 flatVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
@@ -166,7 +195,7 @@ public class PlayerController : MonoBehaviour
         // Jump
         if (jumpInput)
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z); // Reset Y velocity
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jumpInput = false;
             lastJumpTime = Time.time;
