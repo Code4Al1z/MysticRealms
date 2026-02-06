@@ -1284,7 +1284,7 @@ Transform:
   m_GameObject: {fileID: 1171630539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.139, z: 0}
+  m_LocalPosition: {x: 9.17, y: 2.505, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1351,7 +1351,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: fd0b5f40c4984054cb2d20767ead2de9, type: 2}
   surfaceAudioManager: {fileID: 1062195967}
-  isGrounded: 0
 --- !u!136 &1171630544
 CapsuleCollider:
   m_ObjectHideFlags: 0

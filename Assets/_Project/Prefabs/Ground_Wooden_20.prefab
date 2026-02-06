@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4175222043961476440}
   - component: {fileID: 4717129359163193971}
   - component: {fileID: 6326470510713778765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_Wooden_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -135,10 +135,8 @@ public class SurfaceAudioManager : MonoBehaviour
         {
             if (surfaceSwitches[surfaceIndex] != null)
             {
-                surfaceSwitches[surfaceIndex].SetValue(gameObject);
-
                 if (enableDebugLog)
-                    Debug.Log($"[Wwise] Switch set to: {surfaceSwitches[surfaceIndex].Name}");
+                    Debug.Log($"[Wwise] Surface switch ready: {surfaceSwitches[surfaceIndex].Name}");
             }
             else
             {
@@ -162,17 +160,25 @@ public class SurfaceAudioManager : MonoBehaviour
 
     /// <summary>
     /// Called when player takes a footstep - triggers surface-specific footstep sound
-    /// Uses EITHER the assigned event in surfaceMappings OR relies on Switch Container
     /// </summary>
     public void OnFootstep(GameObject emitter)
     {
+        // Set the switch on the emitter (Player) before posting event
+        if (currentSurfaceIndex >= 0 && currentSurfaceIndex < surfaceSwitches.Count)
+        {
+            if (surfaceSwitches[currentSurfaceIndex] != null)
+            {
+                surfaceSwitches[currentSurfaceIndex].SetValue(emitter);
+            }
+        }
+
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
         if (mapping != null && mapping.footstepEvent != null)
         {
             mapping.footstepEvent.Post(emitter);
 
             if (enableDebugLog)
-                Debug.Log($"[SurfaceAudio] Footstep sound triggered for {currentSurfaceName}");
+                Debug.Log($"[SurfaceAudio] Footstep sound triggered for {currentSurfaceName} on {emitter.name}");
         }
         else if (enableDebugLog)
         {
@@ -182,17 +188,25 @@ public class SurfaceAudioManager : MonoBehaviour
 
     /// <summary>
     /// Called when player jumps - triggers surface-specific jump sound
-    /// OPTIONAL: Only used if you have jump sounds. Can skip for minimal version.
     /// </summary>
     public void OnJump(GameObject emitter)
     {
+        // Set the switch on the emitter before posting event
+        if (currentSurfaceIndex >= 0 && currentSurfaceIndex < surfaceSwitches.Count)
+        {
+            if (surfaceSwitches[currentSurfaceIndex] != null)
+            {
+                surfaceSwitches[currentSurfaceIndex].SetValue(emitter);
+            }
+        }
+
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
         if (mapping != null && mapping.jumpEvent != null)
         {
             mapping.jumpEvent.Post(emitter);
 
             if (enableDebugLog)
-                Debug.Log($"[SurfaceAudio] Jump sound triggered for {currentSurfaceName}");
+                Debug.Log($"[SurfaceAudio] Jump sound triggered for {currentSurfaceName} on {emitter.name}");
         }
     }
 
@@ -201,13 +215,22 @@ public class SurfaceAudioManager : MonoBehaviour
     /// </summary>
     public void OnLand(GameObject emitter)
     {
+        // Set the switch on the emitter before posting event
+        if (currentSurfaceIndex >= 0 && currentSurfaceIndex < surfaceSwitches.Count)
+        {
+            if (surfaceSwitches[currentSurfaceIndex] != null)
+            {
+                surfaceSwitches[currentSurfaceIndex].SetValue(emitter);
+            }
+        }
+
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
         if (mapping != null && mapping.landEvent != null)
         {
             mapping.landEvent.Post(emitter);
 
             if (enableDebugLog)
-                Debug.Log($"[SurfaceAudio] Land sound triggered for {currentSurfaceName}");
+                Debug.Log($"[SurfaceAudio] Land sound triggered for {currentSurfaceName} on {emitter.name}");
         }
         else if (enableDebugLog)
         {
