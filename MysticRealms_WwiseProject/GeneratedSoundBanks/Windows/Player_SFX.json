@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{07D70A79-D52D-41FD-85B7-DE6DE329538B}",
     "Language": "SFX",
-    "Hash": "{075F63E2-0AA4-465B-AF60-AB36BBF03450}",
+    "Hash": "{C689777E-1305-F9C4-FF7B-73C58F5D2D8D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Player_SFX",
     "ShortName": "Player_SFX",
     "Path": "Player_SFX.bnk",
@@ -21,7 +21,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Metal_01.wav",
-      "CachePath": "06/{06A449D5-A0B4-161E-F4FB-5CD4C6D3D473}.wem"
+      "CachePath": "4B/{4BF99022-A80E-0351-A215-CD77A2B6B60B}.wem"
      },
      {
       "Id": "10788316",
@@ -29,7 +29,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Stone_04.wav",
-      "CachePath": "C8/{C8595EDA-7687-3265-088F-0AC09E505F64}.wem"
+      "CachePath": "3B/{3BF6F723-3EE7-F131-5E65-F2E7C475683F}.wem"
      },
      {
       "Id": "74810679",
@@ -37,7 +37,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Metal_04.wav",
-      "CachePath": "4B/{4B487F5F-2FBA-0083-27DD-13FF08A5A601}.wem"
+      "CachePath": "F7/{F7337DA8-DE4D-1408-A53B-AF5B7D1308F5}.wem"
      },
      {
       "Id": "129022438",
@@ -45,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Soil_02.wav",
-      "CachePath": "40/{40B165A8-C18C-BBE5-8A44-EF1627B99710}.wem"
+      "CachePath": "85/{857E27DA-53F6-4CE0-7D6C-4291CFCA086A}.wem"
      },
      {
       "Id": "150220496",
@@ -53,7 +53,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Leaves_02.wav",
-      "CachePath": "C4/{C4185F58-4C77-60AB-BC77-DC4AEE35C138}.wem"
+      "CachePath": "75/{75C88906-5E7A-5A17-603B-CB80DCF10021}.wem"
      },
      {
       "Id": "169697624",
@@ -61,7 +61,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Leaves_01.wav",
-      "CachePath": "2C/{2C19409D-F00D-9CBD-4731-30D5CC2EC7CF}.wem"
+      "CachePath": "C8/{C88017E1-6AE8-772D-A1E8-4E42A2B25444}.wem"
      },
      {
       "Id": "187481456",
@@ -69,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Metal_04.wav",
-      "CachePath": "DB/{DBC1C563-05A0-83E9-3235-7C85CA06DE74}.wem"
+      "CachePath": "B0/{B042F468-8DDD-FBA4-DFD0-2511B609FAB9}.wem"
      },
      {
       "Id": "203499254",
@@ -77,7 +77,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Stone_04.wav",
-      "CachePath": "4B/{4BB31A6F-D45C-BCF6-0F44-29C175385785}.wem"
+      "CachePath": "40/{40327BF7-978E-F1AB-D9B3-2BF8C1651D37}.wem"
      },
      {
       "Id": "237362321",
@@ -85,7 +85,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Stone_02.wav",
-      "CachePath": "33/{33C9B473-E3F3-771A-3AB2-A59D44CF15D8}.wem"
+      "CachePath": "A9/{A9885ED9-D46D-AAC7-19BD-1053C3269190}.wem"
      },
      {
       "Id": "262685794",
@@ -93,7 +93,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Metal_01.wav",
-      "CachePath": "4D/{4D017BCB-2638-5792-8CF8-9B98E172E1B4}.wem"
+      "CachePath": "98/{98CBBC07-0884-9ABD-E36F-28E9C1DC93BF}.wem"
      },
      {
       "Id": "281619123",
@@ -101,7 +101,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Leaves_01.wav",
-      "CachePath": "F1/{F18F11F5-1DE0-00AA-1AA9-36F28523E434}.wem"
+      "CachePath": "FB/{FB87BC0B-307D-5475-9AAB-7FFB758AC513}.wem"
      },
      {
       "Id": "305407106",
@@ -109,7 +109,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Soil_01.wav",
-      "CachePath": "F4/{F4DB99BF-5275-F4F4-B1B3-9DB4D11AFD8A}.wem"
+      "CachePath": "92/{927F9547-B9C9-7C30-22D8-C55F452A6B2A}.wem"
      },
      {
       "Id": "358699782",
@@ -117,7 +117,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Grass_04.wav",
-      "CachePath": "F7/{F77B8788-3513-B5B3-A0B4-C30F417079C6}.wem"
+      "CachePath": "30/{3040EDDB-C332-51BC-0948-E6927D87407A}.wem"
      },
      {
       "Id": "374680735",
@@ -125,7 +125,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Stone_02.wav",
-      "CachePath": "D6/{D6763A20-24B1-787F-82C9-713C16135275}.wem"
+      "CachePath": "9E/{9E3C7D04-F76D-1C9F-EF22-35EA6388385F}.wem"
      },
      {
       "Id": "425911221",
@@ -133,7 +133,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Wood_01.wav",
-      "CachePath": "4E/{4E269EEF-C78D-214B-0156-17A6FEBDFBA4}.wem"
+      "CachePath": "CA/{CACDA211-ED98-1378-6615-036D142636B3}.wem"
      },
      {
       "Id": "448555983",
@@ -141,7 +141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Grass_03.wav",
-      "CachePath": "DD/{DDA7E3E6-8A9C-0A17-0BC8-5E0B0A6B6C91}.wem"
+      "CachePath": "43/{43437E1C-7B38-0EE8-03DB-7BE5F5F0CC6A}.wem"
      },
      {
       "Id": "451256713",
@@ -149,7 +149,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Grass_04.wav",
-      "CachePath": "6E/{6E94EDF1-D9AF-8EE9-7BDD-6E8A676F9BAA}.wem"
+      "CachePath": "0A/{0A938B3F-6180-CED6-3C00-47D14CCABF7F}.wem"
      },
      {
       "Id": "471634421",
@@ -157,7 +157,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Soil_03.wav",
-      "CachePath": "F7/{F744615D-B24C-2238-8CFC-AFD6BEC19BBD}.wem"
+      "CachePath": "BA/{BA8A6A22-5993-17F4-8FD8-5B47FB67C769}.wem"
      },
      {
       "Id": "499093097",
@@ -165,7 +165,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Soil_02.wav",
-      "CachePath": "93/{930BE158-B7B3-D5C1-ED65-AB4809DA420C}.wem"
+      "CachePath": "02/{02156ECA-3304-5FA3-8795-4D080371BD7D}.wem"
      },
      {
       "Id": "506643693",
@@ -173,7 +173,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Wood_04.wav",
-      "CachePath": "30/{3070C8B4-7560-E031-E1D3-E735E3094166}.wem"
+      "CachePath": "5A/{5A633E0B-BF24-DFEC-5842-6C421F189137}.wem"
      },
      {
       "Id": "556324215",
@@ -181,7 +181,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Default_01.wav",
-      "CachePath": "EB/{EB505EFF-4D7E-D4C6-EA26-052C203B061E}.wem"
+      "CachePath": "E1/{E13200F7-1F1E-4E9B-77CD-442CA4A7CF11}.wem"
      },
      {
       "Id": "598005189",
@@ -189,7 +189,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Leaves_03.wav",
-      "CachePath": "BB/{BB65115B-C2C8-2E83-446C-39F5FF085578}.wem"
+      "CachePath": "C2/{C2997363-9E54-AA90-AF42-152911392412}.wem"
      },
      {
       "Id": "635134181",
@@ -197,7 +197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Leaves_04.wav",
-      "CachePath": "1C/{1C3276BF-19C9-5418-B964-004EEBCEE077}.wem"
+      "CachePath": "08/{0838E282-02F8-3D3F-9542-DCC7BF97DA11}.wem"
      },
      {
       "Id": "657545217",
@@ -205,7 +205,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Stone_01.wav",
-      "CachePath": "10/{103EC6A8-330D-4F7C-B842-656D4BF26CE4}.wem"
+      "CachePath": "F7/{F7D83FB0-182A-9989-6424-7E756FA975C2}.wem"
      },
      {
       "Id": "675869273",
@@ -213,7 +213,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Wood_03.wav",
-      "CachePath": "90/{90D3B4EF-7158-274F-1CF0-B6FC76521786}.wem"
+      "CachePath": "EF/{EF992EEF-15D9-EC55-0BBD-572476116E2E}.wem"
      },
      {
       "Id": "681899867",
@@ -221,7 +221,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Stone_01.wav",
-      "CachePath": "01/{012E5B8B-0D1D-DD9F-867D-685BDDBCA2BD}.wem"
+      "CachePath": "AA/{AA1259CF-D2AC-936E-CFFD-CD2FA5B86AC4}.wem"
      },
      {
       "Id": "686838333",
@@ -229,7 +229,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Metal_03.wav",
-      "CachePath": "B7/{B7899997-E6C8-2F82-96FE-EC5739576AED}.wem"
+      "CachePath": "3A/{3AB8FD83-41A9-E239-0DE7-7857D63F19D2}.wem"
      },
      {
       "Id": "700109537",
@@ -237,7 +237,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Metal_03.wav",
-      "CachePath": "FE/{FE050413-61B3-B63B-3ACB-9EB60030C360}.wem"
+      "CachePath": "FE/{FEE77D4F-0798-1FA5-F91B-70C86884D932}.wem"
      },
      {
       "Id": "711091130",
@@ -253,7 +253,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Grass_01.wav",
-      "CachePath": "8A/{8AED18BF-00BF-C8B9-6312-CD72D36A12D7}.wem"
+      "CachePath": "6C/{6C9BB040-1C5E-2116-D67E-E4C50B1E6B07}.wem"
      },
      {
       "Id": "732395592",
@@ -269,7 +269,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Wood_02.wav",
-      "CachePath": "42/{42E2B782-51C4-713B-8DA2-7E97115C1D5B}.wem"
+      "CachePath": "B4/{B4B841D5-7364-4DD4-E9A6-9EC34872D1DF}.wem"
      },
      {
       "Id": "750785456",
@@ -277,7 +277,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Wood_04.wav",
-      "CachePath": "50/{50355C26-021A-2101-7F4A-EF8D9B8B1906}.wem"
+      "CachePath": "81/{8117F8B1-45A3-628A-5739-689981214801}.wem"
      },
      {
       "Id": "764237654",
@@ -285,7 +285,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Default_01.wav",
-      "CachePath": "EC/{EC9B59FF-3F97-4024-0DDA-8DB2C9083509}.wem"
+      "CachePath": "06/{0665D395-349A-53A3-C50D-2BECE980ABA6}.wem"
      },
      {
       "Id": "765476307",
@@ -293,7 +293,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Wood_01.wav",
-      "CachePath": "CD/{CDF842CD-045E-EC74-2EED-FCD5C694278E}.wem"
+      "CachePath": "B7/{B7E8C996-8FA9-B85F-8F25-A96B2CD2ECC1}.wem"
      },
      {
       "Id": "781432596",
@@ -301,7 +301,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Soil_04.wav",
-      "CachePath": "D3/{D3CE4488-2E0E-2828-3343-99EABEEE7569}.wem"
+      "CachePath": "D6/{D6BBC9A0-04EF-932E-0531-22CC485300B4}.wem"
      },
      {
       "Id": "784522206",
@@ -309,7 +309,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Wood_03.wav",
-      "CachePath": "64/{6476A99A-2CBE-C1F9-079A-49109F35217C}.wem"
+      "CachePath": "71/{71FB87AA-354C-C772-85BB-166E86290790}.wem"
      },
      {
       "Id": "868506474",
@@ -317,7 +317,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Stone_03.wav",
-      "CachePath": "57/{5789A95F-94E5-7054-530E-3A55DD60CEBB}.wem"
+      "CachePath": "28/{28B41404-AB60-DD84-2EAD-C2B9E8F3E7F9}.wem"
      },
      {
       "Id": "885533788",
@@ -325,7 +325,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Leaves_04.wav",
-      "CachePath": "A8/{A8EF06B9-137E-A6E6-FA59-F10D37F45C16}.wem"
+      "CachePath": "A8/{A8B3AC95-E51E-AFBA-6DF7-7F8A86048726}.wem"
      },
      {
       "Id": "911991177",
@@ -333,7 +333,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Stone_03.wav",
-      "CachePath": "87/{87A4243B-7194-3F0B-E1BF-0F3A25EC88E4}.wem"
+      "CachePath": "99/{99FB2ECB-E82C-769B-BCEF-0EC01DC6A4E1}.wem"
      },
      {
       "Id": "949169057",
@@ -341,7 +341,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Soil_01.wav",
-      "CachePath": "B6/{B64488F6-61CA-4F63-91E1-93F14CC9DB49}.wem"
+      "CachePath": "74/{742394E0-F41E-827E-81A1-A6471A833644}.wem"
      },
      {
       "Id": "970492995",
@@ -349,7 +349,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Grass_03.wav",
-      "CachePath": "4E/{4E07B48B-90B7-766E-CADA-63A2BF70F79E}.wem"
+      "CachePath": "18/{186D57CF-BC02-F097-FFD1-961A8EF8197D}.wem"
      },
      {
       "Id": "1019604063",
@@ -357,7 +357,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Metal_02.wav",
-      "CachePath": "AE/{AE3CDE32-F3B3-17D5-4842-00729A174C13}.wem"
+      "CachePath": "6A/{6A3EA389-EC07-6B08-EC69-BC7F6CD9359C}.wem"
      },
      {
       "Id": "1022596507",
@@ -365,7 +365,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Leaves_02.wav",
-      "CachePath": "41/{41466365-9D36-4A26-7E5B-CECC19BA0A77}.wem"
+      "CachePath": "C5/{C5841F67-BED8-AA31-610D-A57FBD0B1824}.wem"
      },
      {
       "Id": "1024142388",
@@ -373,7 +373,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Grass_02.wav",
-      "CachePath": "5F/{5FB4984C-5FF1-E75C-CE97-6E5D26AFD7BD}.wem"
+      "CachePath": "FF/{FF9DC759-9A2B-FD37-36FA-7D2482D13316}.wem"
      },
      {
       "Id": "1041219893",
@@ -381,7 +381,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Leaves_03.wav",
-      "CachePath": "62/{628F685E-93F6-3923-CA79-55E3B0EB393A}.wem"
+      "CachePath": "F5/{F5A13423-F846-C22C-D298-31F292D0D2D9}.wem"
      },
      {
       "Id": "1044259485",
@@ -389,7 +389,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Land_Soil_03.wav",
-      "CachePath": "F5/{F5598C52-970A-D3CA-BDB7-490047A616BC}.wem"
+      "CachePath": "9E/{9E17E39E-04D3-1221-AA78-511FC4DBE635}.wem"
      },
      {
       "Id": "1048473209",
@@ -397,7 +397,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Soil_04.wav",
-      "CachePath": "7F/{7F1EC82C-DDCE-0AB6-25C9-BEEBE63A9CCD}.wem"
+      "CachePath": "6C/{6CC97DDC-FA63-2E53-B3EC-6501ECE546E0}.wem"
      },
      {
       "Id": "1059915916",
@@ -405,7 +405,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Grass_01.wav",
-      "CachePath": "C6/{C61627A1-113F-E34E-BB2F-4CBF4E18CEE0}.wem"
+      "CachePath": "2F/{2F589F08-8F7F-94C4-6085-0378B2DEF46B}.wem"
      },
      {
       "Id": "1065641014",
@@ -413,7 +413,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Metal_02.wav",
-      "CachePath": "B7/{B7AA1138-F4AC-770F-F21E-9F310CAEDE52}.wem"
+      "CachePath": "59/{593AD040-0A68-B963-3734-DCCD6D2C29CC}.wem"
      }
     ],
     "Events": [
@@ -422,9 +422,8 @@
       "Name": "Player_Footstep",
       "ObjectPath": "\\Events\\Default Work Unit\\Player_Footstep",
       "GUID": "{65BA12F1-2AAB-4AA1-9F64-C86862D3CBEC}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.29048502",
-      "DurationMax": "0.8966418",
+      "MaxAttenuation": "100",
+      "DurationType": "Infinite",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -579,9 +578,8 @@
       "Name": "Player_Land",
       "ObjectPath": "\\Events\\Default Work Unit\\Player_Land",
       "GUID": "{28221DBC-EF06-4F3D-843A-17CAEA0ECA43}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.19673505",
-      "DurationMax": "0.63302237",
+      "MaxAttenuation": "100",
+      "DurationType": "Infinite",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -794,6 +792,6 @@
     ]
    }
   ],
-  "FileHash": "{3953141D-9EA1-AC24-58FE-38EC859C7784}"
+  "FileHash": "{32086CFE-69B4-9CDF-F0DB-2A877B1B5733}"
  }
 }

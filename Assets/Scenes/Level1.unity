@@ -1387,7 +1387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkGameObj
   m_listeners:
-    initialListenerList: []
+    initialListenerList:
+    - {fileID: 330585548}
     useDefaultListeners: 1
   isEnvironmentAware: 1
   isStaticObject: 0
