@@ -104,6 +104,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
+    - _Alpha: 1
     - _AlphaClip: 0
     - _AlphaClipThreshold: 0.5
     - _AlphaClipping: 0
@@ -115,9 +116,11 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
+    - _CutOffHeight: 1
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DitherSize: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -127,8 +130,10 @@ Material:
     - _IsChangingColour: 0
     - _IsMovingLeaves: 0
     - _Metallic: 0
+    - _NoiseStrength: -10
     - _NormalStrength: 1
     - _OcclusionStrength: 1
+    - _Opacity: 1
     - _Parallax: 0.005
     - _Pulse: 0
     - _PulseStrength: 0
