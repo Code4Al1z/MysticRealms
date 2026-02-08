@@ -7,6 +7,7 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
     [SerializeField] private float requiredFrequency = 440f;
     [SerializeField] private float frequencyTolerance = 20f;
     [SerializeField] private float chargeTimeRequired = 3f;
+    [SerializeField] private float drainTime = 9f;
 
     [Header("Visuals")]
     [SerializeField] private ShaderPropertyController shaderController;
@@ -83,7 +84,7 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
 
     private void Drain()
     {
-        charge -= Time.deltaTime / (chargeTimeRequired * 0.5f);
+        charge -= Time.deltaTime / (drainTime);
         charge = Mathf.Max(0f, charge);
 
         if (charge == 0f)

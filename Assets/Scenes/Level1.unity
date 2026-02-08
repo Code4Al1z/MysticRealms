@@ -748,13 +748,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 1171630540}
-  offset: {x: 0, y: 2, z: 0}
+  offset: {x: 0, y: 3, z: 0}
   smoothTime: 1
   maxSpeed: 20
   followYAxis: 1
-  minYPosition: 0
+  minYPosition: 5
   maxYPosition: 30
-  yDeadZone: 5
+  yDeadZonePercent: 0.8
+  idleAdjustDelay: 5
+  idleSmoothTime: 1
   enableRotation: 1
   maxRotationAngle: 5
   rotationSmoothTime: 0.5
