@@ -3807,7 +3807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShaderPropertyController
   targetRenderer: {fileID: 3072623197046484453}
   effectType: 0
-  effectDuration: 0.5
+  effectDuration: 8
   pulseColor: {r: 0.050980393, g: 0.16470589, b: 0.9843137, a: 1}
   pulseStrength: 1
   disableOnFadeOut: 0

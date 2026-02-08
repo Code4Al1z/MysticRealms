@@ -99,18 +99,31 @@ public class ShaderPropertyController : MonoBehaviour
         switch (effectType)
         {
             case EffectType.Pulse:
+            case EffectType.PulseAndColor:
+                materialInstance.SetInt(IsChangingColourProperty, 1);
+                if (effectType == EffectType.PulseAndColor)
+                {
+                    materialInstance.SetColor(PulseColorProperty, pulseColor);
+                }
                 // Animate Pulse from 0 to 1
                 while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
                     float t = elapsed / effectDuration;
 
-                    materialInstance.SetFloat(PulseProperty, Mathf.Lerp(0f, 1f, t));
-                    materialInstance.SetFloat(PulseStrengthProperty, pulseStrength);
+                    if (effectType == EffectType.PulseAndColor)
+                    {
+                        materialInstance.SetInt(IsChangingColourProperty, 1);
+                    }
 
+                    float oscillation = Mathf.Sin(Time.time * 5f) * 0.5f + 0.5f;
+                    float strength = Mathf.Lerp(0.1f, 1f, oscillation);
+
+                    SetPulseStrengthDirect(strength);
+                    SetPulseActive(true);
                     yield return null;
                 }
-                materialInstance.SetFloat(PulseProperty, 1f);
+                materialInstance.SetFloat(PulseProperty, 0f);
                 break;
 
             case EffectType.Opacity:
@@ -127,23 +140,6 @@ public class ShaderPropertyController : MonoBehaviour
                 }
                 materialInstance.SetFloat(OpacityProperty, 1f);
                 break;
-
-            case EffectType.PulseAndColor:
-                materialInstance.SetInt(IsChangingColourProperty, 1);
-                materialInstance.SetColor(PulseColorProperty, pulseColor);
-
-                while (elapsed < effectDuration)
-                {
-                    elapsed += Time.deltaTime;
-                    float t = elapsed / effectDuration;
-
-                    materialInstance.SetFloat(PulseProperty, Mathf.Lerp(0f, 1f, t));
-                    materialInstance.SetFloat(PulseStrengthProperty, pulseStrength);
-
-                    yield return null;
-                }
-                materialInstance.SetFloat(PulseProperty, 1f);
-                break;
         }
 
         currentCoroutine = null;
@@ -156,17 +152,7 @@ public class ShaderPropertyController : MonoBehaviour
         switch (effectType)
         {
             case EffectType.Pulse:
-                // Animate Pulse from 1 to 0
-                while (elapsed < effectDuration)
-                {
-                    elapsed += Time.deltaTime;
-                    float t = elapsed / effectDuration;
-
-                    materialInstance.SetFloat(PulseProperty, Mathf.Lerp(1f, 0f, t));
-
-                    yield return null;
-                }
-                materialInstance.SetFloat(PulseProperty, 0f);
+            case EffectType.PulseAndColor:
                 break;
 
             case EffectType.Opacity:
@@ -187,20 +173,6 @@ public class ShaderPropertyController : MonoBehaviour
                 {
                     gameObject.SetActive(false);
                 }
-                break;
-
-            case EffectType.PulseAndColor:
-                while (elapsed < effectDuration)
-                {
-                    elapsed += Time.deltaTime;
-                    float t = elapsed / effectDuration;
-
-                    materialInstance.SetFloat(PulseProperty, Mathf.Lerp(1f, 0f, t));
-
-                    yield return null;
-                }
-                materialInstance.SetFloat(PulseProperty, 0f);
-                materialInstance.SetInt(IsChangingColourProperty, 0);
                 break;
         }
 
@@ -226,11 +198,11 @@ public class ShaderPropertyController : MonoBehaviour
         {
             case EffectType.Pulse:
             case EffectType.PulseAndColor:
+                materialInstance.SetInt(IsChangingColourProperty, 1);
                 materialInstance.SetFloat(PulseProperty, 1f);
                 materialInstance.SetFloat(PulseStrengthProperty, pulseStrength);
                 if (effectType == EffectType.PulseAndColor)
                 {
-                    materialInstance.SetInt(IsChangingColourProperty, 1);
                     materialInstance.SetColor(PulseColorProperty, pulseColor);
                 }
                 break;
@@ -294,12 +266,4 @@ public class ShaderPropertyController : MonoBehaviour
         materialInstance.SetFloat(PulseProperty, active ? 1f : 0f);
     }
 
-    private void OnDestroy()
-    {
-        // Clean up material instance
-        if (materialInstance != null)
-        {
-            Destroy(materialInstance);
-        }
-    }
 }

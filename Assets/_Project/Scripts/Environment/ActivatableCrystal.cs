@@ -94,11 +94,7 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
     {
         if (!shaderController) return;
 
-        float oscillation = Mathf.Sin(Time.time * 5f) * 0.5f + 0.5f;
-        float strength = Mathf.Lerp(0.1f, 1f, oscillation);
-
-        shaderController.SetPulseStrengthDirect(strength);
-        shaderController.SetPulseActive(true);
+        shaderController.FadeIn();
     }
 
     private void StopAllVisuals()
