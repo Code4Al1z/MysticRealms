@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private float groundDrag = 6f;
     [SerializeField] private float airDrag = 2f;
+    [SerializeField] private float maxSlopeAngle = 45f;
+    private RaycastHit slopeHit;
 
     [Header("Jump")]
     [SerializeField] private float jumpForce = 8f;
@@ -177,20 +179,30 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Movement in 2.5D space (X and Z axes)
         Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
-        Vector3 targetVelocity = moveDirection * moveSpeed;
-        Vector3 velocityDifference = targetVelocity - new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-        rb.AddForce(velocityDifference, ForceMode.VelocityChange);
+        // Project direction onto slope
+        Vector3 slopeMoveDir = GetSlopeMoveDirection(moveDirection);
 
-        // Clamp horizontal speed
-        Vector3 flatVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-        if (flatVelocity.magnitude > maxSpeed)
+        // Apply force using the slope-adjusted direction
+        Vector3 targetVelocity = slopeMoveDir * moveSpeed;
+
+        // We compare against current rb.linearVelocity to find the force needed
+        Vector3 velocityDifference = targetVelocity - rb.linearVelocity;
+
+        // Disable gravity while on slopes to prevent sliding down
+        if (isGrounded && Vector3.Angle(Vector3.up, slopeHit.normal) > 0.1f)
         {
-            Vector3 limitedVelocity = flatVelocity.normalized * maxSpeed;
-            rb.linearVelocity = new Vector3(limitedVelocity.x, rb.linearVelocity.y, limitedVelocity.z);
+            rb.useGravity = false;
+            // Apply a slight downward force to keep the player "glued" to the slope
+            rb.AddForce(-slopeHit.normal * 10f, ForceMode.Force);
         }
+        else
+        {
+            rb.useGravity = true;
+        }
+
+        rb.AddForce(velocityDifference, ForceMode.VelocityChange);
 
         // Jump
         if (jumpInput)
@@ -250,6 +262,25 @@ public class PlayerController : MonoBehaviour
         {
             surfaceAudioManager.OnFootstep(gameObject);
         }
+    }
+
+    /// <summary>
+    /// Adjusts the movement vector to follow the angle of the ground.
+    /// </summary>
+    private Vector3 GetSlopeMoveDirection(Vector3 moveDir)
+    {
+        // Cast a ray slightly longer than the ground check to detect the slope normal
+        if (Physics.Raycast(groundCheck.position, Vector3.down, out slopeHit, groundCheckRadius + 0.2f, groundLayer))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+
+            // If the slope isn't too steep, project the movement onto the plane
+            if (angle < maxSlopeAngle && angle != 0)
+            {
+                return Vector3.ProjectOnPlane(moveDir, slopeHit.normal).normalized;
+            }
+        }
+        return moveDir;
     }
 
     private void OnDrawGizmosSelected()
