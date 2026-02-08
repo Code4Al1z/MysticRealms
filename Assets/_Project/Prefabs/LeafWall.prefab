@@ -63,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 8}
-  m_LocalScale: {x: 6, y: 10, z: 6}
+  m_LocalScale: {x: 6, y: 10, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6764626402594839889}
@@ -160,12 +160,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResonanceDoor
   maxResonanceDistance: 15
   doorObject: {fileID: 2434036270874206501}
-  doorSpeed: 3
+  doorSpeed: 0.5
   openParticles: {fileID: 0}
-  doorClosedPosition: {x: 0, y: 0, z: 8}
-  doorClosedScale: {x: 6, y: 10, z: 6}
   doorOpenPosition: {x: 0, y: 0, z: 10.65}
-  doorOpenScale: {x: 2.5, y: 10, z: 6}
+  doorOpenScale: {x: 2.5, y: 10, z: 3}
   doorOpenEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -209,7 +207,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -1.45}
-  m_LocalScale: {x: 6, y: 10, z: 6}
+  m_LocalScale: {x: 6, y: 10, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6764626402594839889}
@@ -306,12 +304,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResonanceDoor
   maxResonanceDistance: 15
   doorObject: {fileID: 7402036784936265872}
-  doorSpeed: 3
+  doorSpeed: 0.5
   openParticles: {fileID: 0}
-  doorClosedPosition: {x: 0, y: 0, z: -1.45}
-  doorClosedScale: {x: 6, y: 10, z: 6}
   doorOpenPosition: {x: 0, y: 0, z: -4.85}
-  doorOpenScale: {x: 2.5, y: 10, z: 6}
+  doorOpenScale: {x: 2.5, y: 10, z: 3}
   doorOpenEvent:
     idInternal: 0
     valueGuidInternal: 

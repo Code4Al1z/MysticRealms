@@ -40,7 +40,7 @@ public class ResonanceDoor : MonoBehaviour, IResonanceResponsive
 
     private void Start()
     {
-        doorClosedPosition = transform.position;
+        doorClosedPosition = transform.localPosition;
         doorClosedScale = transform.localScale;
     }
 
