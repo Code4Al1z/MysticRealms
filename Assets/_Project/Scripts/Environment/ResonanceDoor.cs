@@ -10,8 +10,8 @@ public class ResonanceDoor : MonoBehaviour, IResonanceResponsive
     [Tooltip("Maximum distance player can be for resonance to work")]
     [SerializeField] private float maxResonanceDistance = 15f;
 
-    [Tooltip("Objects to disable when door is open (e.g., door mesh, collider)")]
-    [SerializeField] private GameObject[] doorObjects;
+    [Tooltip("Objects to modify when door is open")]
+    [SerializeField] private Transform doorObject;
 
     [Tooltip("How fast the door opens/closes (0-1 per second)")]
     [SerializeField] private float doorSpeed = 2f;
@@ -20,11 +20,9 @@ public class ResonanceDoor : MonoBehaviour, IResonanceResponsive
     [Tooltip("Particle system for door opening")]
     [SerializeField] private ParticleSystem openParticles;
 
-    [Tooltip("Material when door is closed")]
-    [SerializeField] private Material closedMaterial;
-
-    [Tooltip("Material when door is opening/open")]
-    [SerializeField] private Material openMaterial;
+    [Tooltip("Target position and scale when door is opening/open")]
+    [SerializeField] private Vector3 doorOpenPosition;
+    [SerializeField] private Vector3 doorOpenScale;
 
     [Header("Wwise Events")]
     [SerializeField] private AK.Wwise.Event doorOpenEvent;
@@ -34,24 +32,16 @@ public class ResonanceDoor : MonoBehaviour, IResonanceResponsive
     [Header("Debug")]
     [SerializeField] private bool enableDebugLog = false;
 
+    private Vector3 doorClosedPosition;
+    private Vector3 doorClosedScale;
+
     private bool isOpen = false;
     private bool playerInRange = false;
-    private float openAmount = 0f; // 0 = closed, 1 = open
-    private Renderer doorRenderer;
 
     private void Start()
     {
-        doorRenderer = GetComponent<Renderer>();
-        SetDoorState(0f);
-    }
-
-    private void Update()
-    {
-        // Smoothly update door state
-        float targetOpen = (isOpen && playerInRange) ? 1f : 0f;
-        openAmount = Mathf.MoveTowards(openAmount, targetOpen, doorSpeed * Time.deltaTime);
-
-        SetDoorState(openAmount);
+        doorClosedPosition = transform.position;
+        doorClosedScale = transform.localScale;
     }
 
     public void OnResonanceHumActive(Vector3 sourcePosition, float distance)
@@ -96,6 +86,8 @@ public class ResonanceDoor : MonoBehaviour, IResonanceResponsive
             openParticles.Play();
         }
 
+        SetDoorState(isOpen);
+
         if (enableDebugLog)
             Debug.Log($"[ResonanceDoor] {name} opening");
     }
@@ -109,26 +101,18 @@ public class ResonanceDoor : MonoBehaviour, IResonanceResponsive
             doorCloseEvent.Post(gameObject);
         }
 
+        SetDoorState(isOpen);
+
         if (enableDebugLog)
             Debug.Log($"[ResonanceDoor] {name} closing");
     }
 
-    private void SetDoorState(float amount)
+    private void SetDoorState(bool isOpen)
     {
-        // Update visual appearance
-        if (doorRenderer != null)
-        {
-            doorRenderer.material = amount > 0.5f ? openMaterial : closedMaterial;
-        }
-
-        // Enable/disable door objects based on state
-        foreach (GameObject obj in doorObjects)
-        {
-            if (obj != null)
-            {
-                obj.SetActive(amount < 0.99f);
-            }
-        }
+        Vector3 targetPosition = isOpen ? doorOpenPosition : doorClosedPosition;
+        Vector3 targetScale = isOpen ? doorOpenScale : doorClosedScale;
+        gameObject.transform.localPosition = Vector3.Lerp(gameObject.transform.localPosition, targetPosition, doorSpeed);
+        gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, targetScale, doorSpeed);
     }
 
     private void OnDrawGizmos()
