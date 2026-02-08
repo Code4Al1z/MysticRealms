@@ -12,13 +12,13 @@ public class ShaderPropertyController : MonoBehaviour
 
     [Header("Effect Settings")]
     [SerializeField] private EffectType effectType = EffectType.Pulse;
-    [SerializeField] private float fadeDuration = 0.5f;
+    [SerializeField] private float effectDuration = 0.5f;
 
-    [Header("Pulse Effect (For Crystals)")]
+    [Header("Pulse Effect")]
     [SerializeField] private Color pulseColor = new Color(0.15f, 0.98f, 0.05f, 1f);
     [SerializeField] private float pulseStrength = 1f;
 
-    [Header("Alpha Clip Effect (For Bridges)")]
+    [Header("Alpha Clip Effect")]
     [SerializeField] private bool disableOnFadeOut = true;
 
     private Material materialInstance;
@@ -100,10 +100,10 @@ public class ShaderPropertyController : MonoBehaviour
         {
             case EffectType.Pulse:
                 // Animate Pulse from 0 to 1
-                while (elapsed < fadeDuration)
+                while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
-                    float t = elapsed / fadeDuration;
+                    float t = elapsed / effectDuration;
 
                     materialInstance.SetFloat(PulseProperty, Mathf.Lerp(0f, 1f, t));
                     materialInstance.SetFloat(PulseStrengthProperty, pulseStrength);
@@ -115,10 +115,10 @@ public class ShaderPropertyController : MonoBehaviour
 
             case EffectType.Opacity:
                 // Animate Opacity from 1 to 0 (fade in)
-                while (elapsed < fadeDuration)
+                while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
-                    float t = elapsed / fadeDuration;
+                    float t = elapsed / effectDuration;
                     
                     // Start at 0.0 (fully clipped/invisible) and lerp to 1.0 (fully visible)
                     materialInstance.SetFloat(OpacityProperty, Mathf.Lerp(0f, 1f, t));
@@ -132,10 +132,10 @@ public class ShaderPropertyController : MonoBehaviour
                 materialInstance.SetInt(IsChangingColourProperty, 1);
                 materialInstance.SetColor(PulseColorProperty, pulseColor);
 
-                while (elapsed < fadeDuration)
+                while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
-                    float t = elapsed / fadeDuration;
+                    float t = elapsed / effectDuration;
 
                     materialInstance.SetFloat(PulseProperty, Mathf.Lerp(0f, 1f, t));
                     materialInstance.SetFloat(PulseStrengthProperty, pulseStrength);
@@ -157,10 +157,10 @@ public class ShaderPropertyController : MonoBehaviour
         {
             case EffectType.Pulse:
                 // Animate Pulse from 1 to 0
-                while (elapsed < fadeDuration)
+                while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
-                    float t = elapsed / fadeDuration;
+                    float t = elapsed / effectDuration;
 
                     materialInstance.SetFloat(PulseProperty, Mathf.Lerp(1f, 0f, t));
 
@@ -171,10 +171,10 @@ public class ShaderPropertyController : MonoBehaviour
 
             case EffectType.Opacity:
                 // Animate Opacity from 0 to 1 (fade out)
-                while (elapsed < fadeDuration)
+                while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
-                    float t = elapsed / fadeDuration;
+                    float t = elapsed / effectDuration;
 
                     // Start at 1.0 (fully visible) and lerp to 0.0 (fully clipped/invisible)
                     materialInstance.SetFloat(OpacityProperty, Mathf.Lerp(1f, 0f, t));
@@ -190,10 +190,10 @@ public class ShaderPropertyController : MonoBehaviour
                 break;
 
             case EffectType.PulseAndColor:
-                while (elapsed < fadeDuration)
+                while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
-                    float t = elapsed / fadeDuration;
+                    float t = elapsed / effectDuration;
 
                     materialInstance.SetFloat(PulseProperty, Mathf.Lerp(1f, 0f, t));
 

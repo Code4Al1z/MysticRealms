@@ -11,8 +11,8 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
     [Header("Visuals")]
     [SerializeField] private ShaderPropertyController shaderController;
 
-    [Header("Bridge")]
-    [SerializeField] private GameObject[] connectedBridges;
+    [Header("Effected Object")]
+    [SerializeField] private GameObject[] connectedObjects;
 
     [Header("FX")]
     [SerializeField] private ParticleSystem activationParticles;
@@ -25,7 +25,7 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
     {
         shaderController?.SetInactiveInstant();
 
-        foreach (var b in connectedBridges)
+        foreach (var b in connectedObjects)
         {
             if (!b) continue;
 
@@ -117,7 +117,7 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
         if (activationParticles != null)
             activationParticles.Play();
 
-        foreach (var b in connectedBridges)
+        foreach (var b in connectedObjects)
         {
             if (!b) continue;
 
