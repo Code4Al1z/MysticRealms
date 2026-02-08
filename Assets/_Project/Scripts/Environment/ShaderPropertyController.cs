@@ -283,7 +283,7 @@ public class ShaderPropertyController : MonoBehaviour
         if (materialInstance == null) return;
 
         pulseStrength = strength;
-        Debug.Log("PulseStrength set to: " + strength);
+        
         materialInstance.SetFloat(PulseStrengthProperty, pulseStrength);
     }
 

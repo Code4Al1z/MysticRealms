@@ -16,9 +16,6 @@ public class PlayerAbilities : MonoBehaviour
     [Tooltip("Layer mask for objects that can be activated by echo pulse")]
     [SerializeField] private LayerMask echoTargetLayer;
 
-    [Tooltip("Target frequency to fully activate crystals (Hz)")]
-    [SerializeField] private float targetActivationFrequency = 440f; // A4 note
-
     [Header("Resonance Hum Settings")]
     [Tooltip("Maximum duration player can hold resonance hum in seconds")]
     [SerializeField] private float maxResonanceDuration = 8f;
@@ -145,27 +142,51 @@ public class PlayerAbilities : MonoBehaviour
     {
         if (!isEchoPulseActive) return;
 
-        // Ramp up frequency over time
-        currentEchoPulseFrequency += echoPulseFrequencyRampSpeed * Time.deltaTime;
-        currentEchoPulseFrequency = Mathf.Min(currentEchoPulseFrequency, targetActivationFrequency);
+        Collider[] hitColliders = Physics.OverlapSphere(
+            transform.position,
+            echoPulseRadius,
+            echoTargetLayer);
 
-        // Update Wwise RTPC for pitch/frequency
-        if (echoPulseFrequencyRTPC != null)
-        {
-            echoPulseFrequencyRTPC.SetValue(gameObject, currentEchoPulseFrequency);
-        }
+        IEchoResponsive closestTarget = null;
+        float closestDistance = float.MaxValue;
 
-        // Find and notify all crystals in radius
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, echoPulseRadius, echoTargetLayer);
-
+        // Find closest crystal
         foreach (Collider col in hitColliders)
         {
-            IEchoResponsive echoTarget = col.GetComponent<IEchoResponsive>();
-            if (echoTarget != null)
+            IEchoResponsive target = col.GetComponent<IEchoResponsive>();
+            if (target == null) continue;
+
+            float distance = Vector3.Distance(transform.position, col.transform.position);
+
+            if (distance < closestDistance)
             {
-                float distance = Vector3.Distance(transform.position, col.transform.position);
-                echoTarget.OnEchoPulseActive(transform.position, distance, currentEchoPulseFrequency);
+                closestDistance = distance;
+                closestTarget = target;
             }
+        }
+
+        // If we found one, steer frequency toward it
+        if (closestTarget is ActivatableCrystal crystal)
+        {
+            float targetFreq = crystal.GetRequiredFrequency();
+
+            currentEchoPulseFrequency = Mathf.MoveTowards(
+                currentEchoPulseFrequency,
+                targetFreq,
+                echoPulseFrequencyRampSpeed * Time.deltaTime);
+        }
+
+        // Update Wwise
+        echoPulseFrequencyRTPC?.SetValue(gameObject, currentEchoPulseFrequency);
+
+        // Notify ALL (so mechanics still work if many)
+        foreach (Collider col in hitColliders)
+        {
+            IEchoResponsive target = col.GetComponent<IEchoResponsive>();
+            if (target == null) continue;
+
+            float distance = Vector3.Distance(transform.position, col.transform.position);
+            target.OnEchoPulseActive(transform.position, distance, currentEchoPulseFrequency);
         }
     }
 
@@ -185,7 +206,7 @@ public class PlayerAbilities : MonoBehaviour
         }
         else if (echoPulsePlayingID != 0)
         {
-            AkSoundEngine.StopPlayingID(echoPulsePlayingID);
+            AkUnitySoundEngine.StopPlayingID(echoPulsePlayingID);
         }
 
         echoPulsePlayingID = 0;
@@ -417,6 +438,12 @@ public interface IEchoResponsive
     /// Called when Echo Pulse stops or crystal moves out of range
     /// </summary>
     void OnEchoPulseStopped();
+
+    /// <summary>
+    /// Gets the required frequency for the crystal to activate
+    /// </summary>
+    /// <returns></returns>
+    float GetRequiredFrequency();
 }
 
 /// <summary>

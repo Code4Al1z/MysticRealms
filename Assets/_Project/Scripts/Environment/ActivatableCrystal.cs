@@ -10,8 +10,6 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
 
     [Header("Visuals")]
     [SerializeField] private ShaderPropertyController shaderController;
-    [SerializeField] private AudioDrivenShaderPulse audioDrivenPulse;
-    [SerializeField] private bool useAudioDrivenPulse = false;
 
     [Header("Bridge")]
     [SerializeField] private GameObject[] connectedBridges;
@@ -25,10 +23,7 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
 
     private void Start()
     {
-        //shaderController?.SetInactiveInstant();
-
-        if (audioDrivenPulse != null)
-            audioDrivenPulse.enabled = false;
+        shaderController?.SetInactiveInstant();
 
         foreach (var b in connectedBridges)
         {
@@ -52,6 +47,11 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
         }
 
         ManualPulseUpdate();
+    }
+
+    public float GetRequiredFrequency()
+    {
+        return requiredFrequency;
     }
 
     // called every frame while player beams
@@ -92,13 +92,6 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
 
     private void ManualPulseUpdate()
     {
-        if (useAudioDrivenPulse)
-        {
-            if (audioDrivenPulse && !audioDrivenPulse.enabled)
-                audioDrivenPulse.enabled = true;
-            return;
-        }
-
         if (!shaderController) return;
 
         float oscillation = Mathf.Sin(Time.time * 5f) * 0.5f + 0.5f;
@@ -110,9 +103,6 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
 
     private void StopAllVisuals()
     {
-        if (audioDrivenPulse)
-            audioDrivenPulse.enabled = false;
-
         shaderController?.SetPulseActive(false);
     }
 

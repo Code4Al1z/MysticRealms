@@ -451,12 +451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7160f048b05368041a7d7aef62daa050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActivatableCrystal
-  requiredFrequency: 440
+  requiredFrequency: 220
   frequencyTolerance: 20
   chargeTimeRequired: 3
   shaderController: {fileID: 87572982}
-  audioDrivenPulse: {fileID: 87572981}
-  useAudioDrivenPulse: 0
   connectedBridges:
   - {fileID: 2128007410}
   activationParticles: {fileID: 0}
@@ -1863,7 +1861,6 @@ MonoBehaviour:
   echoTargetLayer:
     serializedVersion: 2
     m_Bits: 512
-  targetActivationFrequency: 440
   maxResonanceDuration: 8
   resonanceRechargeRate: 1
   resonanceRechargeDelay: 1
@@ -2840,12 +2837,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7160f048b05368041a7d7aef62daa050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActivatableCrystal
-  requiredFrequency: 440
+  requiredFrequency: 170
   frequencyTolerance: 20
   chargeTimeRequired: 3
   shaderController: {fileID: 1691520014}
-  audioDrivenPulse: {fileID: 1691520018}
-  useAudioDrivenPulse: 0
   connectedBridges:
   - {fileID: 823153148}
   activationParticles: {fileID: 0}
@@ -3238,7 +3233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShaderPropertyController
   targetRenderer: {fileID: 2128007413}
   effectType: 1
-  fadeDuration: 10
+  fadeDuration: 4
   pulseColor: {r: 0.15, g: 0.98, b: 0.05, a: 1}
   pulseStrength: 1
   disableOnFadeOut: 1
