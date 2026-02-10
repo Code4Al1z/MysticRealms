@@ -177,13 +177,6 @@ public class MovingPlatform : MonoBehaviour
 
             yield return MoveTo(next);
 
-            Vector3 targetPos = stops[next].localPosition;
-
-            Vector3 dist = targetPos - transform.localPosition;
-
-            if (dist.magnitude <= arrivalThreshold)
-                currentIndex = next;
-
             if (waitAtStop > 0f)
                 yield return new WaitForSeconds(waitAtStop);
         }
@@ -217,6 +210,13 @@ public class MovingPlatform : MonoBehaviour
 
             yield return new WaitForFixedUpdate();
         }
+
+        Vector3 targetPos = stops[index].localPosition;
+
+        Vector3 dist = targetPos - transform.localPosition;
+
+        if (dist.magnitude <= arrivalThreshold)
+            currentIndex = index;
 
         rb.MovePosition(target);
         currentSpeed = 0f;
