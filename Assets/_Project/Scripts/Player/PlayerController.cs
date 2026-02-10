@@ -181,31 +181,26 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
-        // Project direction onto slope
+        // Adjust movement to match the ground angle
         Vector3 slopeMoveDir = GetSlopeMoveDirection(moveDirection);
 
-        // Apply force using the slope-adjusted direction
+        // Target horizontal velocity
         Vector3 targetVelocity = slopeMoveDir * moveSpeed;
 
-        // We compare against current rb.linearVelocity to find the force needed
-        Vector3 velocityDifference = targetVelocity - rb.linearVelocity;
-
-        // Disable gravity while on slopes to prevent sliding down
-        if (isGrounded && Vector3.Angle(Vector3.up, slopeHit.normal) > 0.1f)
-        {
-            rb.useGravity = false;
-            // Apply a slight downward force to keep the player "glued" to the slope
-            rb.AddForce(-slopeHit.normal * 10f, ForceMode.Force);
-        }
-        else
-        {
-            rb.useGravity = true;
-        }
+        // Only affect XZ, never fight gravity on Y
+        Vector3 currentVelocity = rb.linearVelocity;
+        Vector3 velocityDifference = targetVelocity - new Vector3(currentVelocity.x, 0f, currentVelocity.z);
 
         rb.AddForce(velocityDifference, ForceMode.VelocityChange);
 
+        // Extra stick-to-ground force
+        if (isGrounded)
+        {
+            rb.AddForce(Vector3.down * 20f, ForceMode.Force);
+        }
+
         // Jump
-        if (jumpInput)
+        if (jumpInput && isGrounded)
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -214,7 +209,7 @@ public class PlayerController : MonoBehaviour
             OnJump();
         }
 
-        // Rotate player to face movement direction
+        // Rotate toward movement
         if (moveDirection.magnitude > 0.1f)
         {
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
@@ -269,13 +264,15 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private Vector3 GetSlopeMoveDirection(Vector3 moveDir)
     {
-        // Cast a ray slightly longer than the ground check to detect the slope normal
-        if (Physics.Raycast(groundCheck.position, Vector3.down, out slopeHit, groundCheckRadius + 0.2f, groundLayer))
+        if (!isGrounded)
+            return moveDir;
+
+        if (Physics.Raycast(groundCheck.position, Vector3.down, out slopeHit,
+            groundCheckRadius + 0.2f, groundLayer))
         {
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
 
-            // If the slope isn't too steep, project the movement onto the plane
-            if (angle < maxSlopeAngle && angle != 0)
+            if (angle > 0f && angle <= maxSlopeAngle)
             {
                 return Vector3.ProjectOnPlane(moveDir, slopeHit.normal).normalized;
             }

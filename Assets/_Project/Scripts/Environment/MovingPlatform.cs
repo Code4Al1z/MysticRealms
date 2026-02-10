@@ -45,7 +45,7 @@ public class MovingPlatform : MonoBehaviour
     #region Runtime
 
     private Rigidbody rb;
-    private int currentIndex = 0;
+    private int currentIndex;
     private int direction = 1;
 
     private bool isMoving;
@@ -73,6 +73,16 @@ public class MovingPlatform : MonoBehaviour
     private void OnEnable()
     {
         if (stops.Count == 0) return;
+
+        for (int i = 0; i < stops.Count; i++)
+        {
+            Vector3 targetPos = stops[i].localPosition;
+
+            Vector3 dist = targetPos - transform.localPosition;
+            Debug.Log($"Distance to stop {i}: {dist.magnitude}");
+            if (dist.magnitude <= 1)
+                currentIndex = i;
+        }
 
         if (moveToFirstStopOnEnable)
             SnapOrMoveToFirstStop();
@@ -166,7 +176,13 @@ public class MovingPlatform : MonoBehaviour
             int next = currentIndex + step;
 
             yield return MoveTo(next);
-            currentIndex = next;
+
+            Vector3 targetPos = stops[next].localPosition;
+
+            Vector3 dist = targetPos - transform.localPosition;
+
+            if (dist.magnitude <= arrivalThreshold)
+                currentIndex = next;
 
             if (waitAtStop > 0f)
                 yield return new WaitForSeconds(waitAtStop);
@@ -215,7 +231,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void SnapOrMoveToFirstStop()
     {
-        currentIndex = 0;
+        //currentIndex = 0;
         if (Vector3.Distance(rb.position, stops[0].position) <= arrivalThreshold)
         {
             rb.position = stops[0].position;
