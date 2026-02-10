@@ -13,10 +13,12 @@ public class ShaderPropertyController : MonoBehaviour
     [Header("Effect Settings")]
     [SerializeField] private EffectType effectType = EffectType.Pulse;
     [SerializeField] private float effectDuration = 0.5f;
+    [SerializeField] private float effectReversedDuration = 0.5f;
 
     [Header("Pulse Effect")]
     [SerializeField] private Color pulseColor = new Color(0.15f, 0.98f, 0.05f, 1f);
-    [SerializeField] private float pulseStrength = 1f;
+    [SerializeField] private float pulseStrength = 0f;
+    [SerializeField] private float maxPulseStrength = 1f;
 
     [Header("Alpha Clip Effect")]
     [SerializeField] private bool disableOnFadeOut = true;
@@ -35,7 +37,8 @@ public class ShaderPropertyController : MonoBehaviour
     {
         Pulse,          // Animates Pulse (0→1) - Best for crystals
         Opacity,      // Animates Opacity (1→0 to fade in) - For bridges
-        PulseAndColor   // Animates Pulse + enables color change - Advanced effect
+        PulseAndColor,   // Animates Pulse + enables color change - Advanced effect
+        LightFadeIn
     }
 
     private void Awake()
@@ -82,7 +85,7 @@ public class ShaderPropertyController : MonoBehaviour
         {
             StopCoroutine(currentCoroutine);
         }
-
+        Debug.Log($"[ShaderPropertyController] Starting FadeOut on {gameObject.name}");
         currentCoroutine = StartCoroutine(FadeOutCoroutine());
     }
 
@@ -105,19 +108,14 @@ public class ShaderPropertyController : MonoBehaviour
                 {
                     materialInstance.SetColor(PulseColorProperty, pulseColor);
                 }
-                // Animate Pulse from 0 to 1
+                // Animate Pulse from 0 to maxPulseStrength
                 while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
                     float t = elapsed / effectDuration;
 
-                    if (effectType == EffectType.PulseAndColor)
-                    {
-                        materialInstance.SetInt(IsChangingColourProperty, 1);
-                    }
-
                     float oscillation = Mathf.Sin(Time.time * 5f) * 0.5f + 0.5f;
-                    float strength = Mathf.Lerp(0.1f, 1f, oscillation);
+                    float strength = Mathf.Lerp(0.1f, maxPulseStrength, oscillation);
 
                     SetPulseStrengthDirect(strength);
                     SetPulseActive(true);
@@ -127,7 +125,7 @@ public class ShaderPropertyController : MonoBehaviour
                 break;
 
             case EffectType.Opacity:
-                // Animate Opacity from 1 to 0 (fade in)
+                // Animate Opacity from 0 to 1 (fade in)
                 while (elapsed < effectDuration)
                 {
                     elapsed += Time.deltaTime;
@@ -139,6 +137,25 @@ public class ShaderPropertyController : MonoBehaviour
                     yield return null;
                 }
                 materialInstance.SetFloat(OpacityProperty, 1f);
+                break;
+
+            case EffectType.LightFadeIn:
+                materialInstance.SetFloat(PulseProperty, 1f);
+                float currentStrength = materialInstance.GetFloat(PulseStrengthProperty);
+                // Animate Emission/Light from current pulse strength to maxPulseStrength (fade in)
+                while (elapsed < effectDuration)
+                {
+                    elapsed += Time.deltaTime;
+                    float t = elapsed / effectDuration;
+
+                    // Start at current pulse strength and lerp to maxPulseStrength
+                    float strength = Mathf.Lerp(currentStrength, maxPulseStrength, t);
+
+                    SetPulseStrengthDirect(strength);
+
+                    yield return null;
+                }
+                materialInstance.SetFloat(PulseStrengthProperty, maxPulseStrength);
                 break;
         }
 
@@ -174,6 +191,24 @@ public class ShaderPropertyController : MonoBehaviour
                     gameObject.SetActive(false);
                 }
                 break;
+
+                case EffectType.LightFadeIn:
+                Debug.Log($"[ShaderPropertyController] Starting LightFadeOut on {gameObject.name}");
+                float currentStrength = materialInstance.GetFloat(PulseStrengthProperty);
+                // Animate Emission/Light from current pulse strength to 0 (fade out)
+                while (elapsed < effectReversedDuration)
+                {
+                    elapsed += Time.deltaTime;
+                    float t = elapsed / effectDuration;
+                    // Start at current pulse strength and lerp to 0.0
+                    float strength = Mathf.Lerp(currentStrength, 0, t);
+
+                    SetPulseStrengthDirect(strength);
+
+                    yield return null;
+                }
+                materialInstance.SetFloat(PulseStrengthProperty, 0f);
+                break;
         }
 
         currentCoroutine = null;
@@ -199,8 +234,8 @@ public class ShaderPropertyController : MonoBehaviour
             case EffectType.Pulse:
             case EffectType.PulseAndColor:
                 materialInstance.SetInt(IsChangingColourProperty, 1);
-                materialInstance.SetFloat(PulseProperty, 1f);
-                materialInstance.SetFloat(PulseStrengthProperty, pulseStrength);
+                SetPulseActive(true);
+                SetPulseStrengthDirect(pulseStrength);
                 if (effectType == EffectType.PulseAndColor)
                 {
                     materialInstance.SetColor(PulseColorProperty, pulseColor);
@@ -209,6 +244,11 @@ public class ShaderPropertyController : MonoBehaviour
 
             case EffectType.Opacity:
                 materialInstance.SetFloat(OpacityProperty, 1f);
+                break;
+
+             case EffectType.LightFadeIn:
+                materialInstance.SetInt(IsChangingColourProperty, 1);
+                SetPulseActive(true);
                 break;
         }
     }
@@ -230,11 +270,9 @@ public class ShaderPropertyController : MonoBehaviour
         {
             case EffectType.Pulse:
             case EffectType.PulseAndColor:
-                materialInstance.SetFloat(PulseProperty, 0f);
-                if (effectType == EffectType.PulseAndColor)
-                {
-                    materialInstance.SetInt(IsChangingColourProperty, 0);
-                }
+            case EffectType.LightFadeIn:
+                SetPulseActive(false);
+                materialInstance.SetInt(IsChangingColourProperty, 0);
                 break;
 
             case EffectType.Opacity:
@@ -266,4 +304,13 @@ public class ShaderPropertyController : MonoBehaviour
         materialInstance.SetFloat(PulseProperty, active ? 1f : 0f);
     }
 
+    public float GetPulseStrength()
+    {
+        return pulseStrength;
+    }
+
+    public float GetMaxPulseStrength()
+    {
+        return maxPulseStrength;
+    }
 }
