@@ -87,8 +87,8 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
         charge -= Time.deltaTime / (drainTime);
         charge = Mathf.Max(0f, charge);
 
-        if (charge == 0f)
-            StopAllVisuals();
+        //if (charge == 0f)
+        //    StopAllVisuals();
     }
 
     private void ManualPulseUpdate()
@@ -107,7 +107,7 @@ public class ActivatableCrystal : MonoBehaviour, IEchoResponsive
     {
         isSolved = true;
 
-        StopAllVisuals();
+        //StopAllVisuals();
 
         shaderController.SetActiveInstant();
 
