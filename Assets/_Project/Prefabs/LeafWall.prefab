@@ -161,9 +161,34 @@ MonoBehaviour:
   maxResonanceDistance: 15
   doorObject: {fileID: 2434036270874206501}
   doorSpeed: 0.5
+  transitionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  openPosition: {x: 0, y: 0, z: 10.65}
+  openRotation: {x: 0, y: 0, z: 0}
+  openScale: {x: 2.5, y: 10, z: 3}
   openParticles: {fileID: 0}
-  doorOpenPosition: {x: 0, y: 0, z: 10.65}
-  doorOpenScale: {x: 2.5, y: 10, z: 3}
   doorOpenEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -172,11 +197,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  doorActiveLoopEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  enableDebugLog: 1
 --- !u!1 &8418171802708021049
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,9 +325,34 @@ MonoBehaviour:
   maxResonanceDistance: 15
   doorObject: {fileID: 7402036784936265872}
   doorSpeed: 0.5
+  transitionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  openPosition: {x: 0, y: 0, z: -4.85}
+  openRotation: {x: 0, y: 0, z: 0}
+  openScale: {x: 2.5, y: 10, z: 3}
   openParticles: {fileID: 0}
-  doorOpenPosition: {x: 0, y: 0, z: -4.85}
-  doorOpenScale: {x: 2.5, y: 10, z: 3}
   doorOpenEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -316,8 +361,3 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  doorActiveLoopEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  enableDebugLog: 1
