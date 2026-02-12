@@ -152,12 +152,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Update surface detection when grounded
-        if (isGrounded && surfaceAudioManager != null)
+        if (isGrounded && surfaceAudioManager != null && isMoving)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(groundCheck.position, Vector3.down, out hit, groundCheckRadius + 0.1f, groundLayer))
+            Collider[] overlaps = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer.value);
+            if (overlaps != null && overlaps.Length > 0)
             {
-                surfaceAudioManager.UpdateCurrentSurface(hit.collider);
+                // Use the first overlapping collider to initialize the surface
+                surfaceAudioManager.UpdateCurrentSurface(overlaps[0]);
             }
         }
 
