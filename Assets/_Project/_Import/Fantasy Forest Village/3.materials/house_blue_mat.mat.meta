@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 55e06fb37f62247028dcf683cfef0fa5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123484
+  packageName: Fantasy Forest Village
+  packageVersion: 1.0
+  assetPath: Assets/Fantasy Forest Village/3.materials/house_blue_mat.mat
+  uploadId: 256252
