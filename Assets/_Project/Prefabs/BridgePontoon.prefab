@@ -24,9 +24,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663230702848980279}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4, y: 2, z: 3}
+  m_LocalScale: {x: 2.4, y: 3.6, z: 3.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7644781313260693540}
@@ -43,11 +43,13 @@ GameObject:
   - component: {fileID: 7644781313260693540}
   - component: {fileID: 1992945616405297730}
   - component: {fileID: 8467551780113644647}
+  - component: {fileID: 3132392706893617699}
   - component: {fileID: 1405275049558428709}
   - component: {fileID: 1183718579768797296}
+  - component: {fileID: 3870548153558559539}
   m_Layer: 6
   m_Name: bridge_pontoon_01.001
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +126,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3132392706893617699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6733055708979820394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a113739fafb1dc9418f1badba6b7a013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShaderPropertyController
+  targetRenderer: {fileID: 8467551780113644647}
+  effectType: 1
+  effectDuration: 0.5
+  effectReversedDuration: 0.5
+  pulseColor: {r: 0.15, g: 0.98, b: 0.05, a: 1}
+  pulseStrength: 1
+  maxPulseStrength: 1
+  minPulseStrength: 0
+  disablePulseInactive: 0
+  disableOnFadeOut: 1
 --- !u!65 &1405275049558428709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -144,8 +168,29 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4.5, y: 0.5, z: 1.5}
-  m_Center: {x: 2, y: -0.16, z: 0}
+  m_Center: {x: 2, y: -0.21, z: 0}
 --- !u!65 &1183718579768797296
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6733055708979820394}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 0.05, z: 1.5}
+  m_Center: {x: 2.15, y: 0.08, z: 0}
+--- !u!65 &3870548153558559539
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
