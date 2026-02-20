@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     private bool jumpInput;
+    private Vector3 cachedMoveDirection = Vector3.zero;
 
     // Footstep timing
     private float footstepTimer = 0f;
@@ -180,7 +181,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+        Vector3 inputDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+
+        // Cache direction only while grounded (locks movement in air)
+        if (isGrounded)
+        {
+            cachedMoveDirection = inputDirection;
+        }
+
+        Vector3 moveDirection = cachedMoveDirection;
 
         // Adjust movement to match the ground angle
         Vector3 slopeMoveDir = GetSlopeMoveDirection(moveDirection);
@@ -194,8 +203,8 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(velocityDifference, ForceMode.VelocityChange);
 
-        // Extra stick-to-ground force
-        if (isGrounded)
+        // Stick to ground (but don't fight jumping upward)
+        if (isGrounded && rb.linearVelocity.y <= 0f)
         {
             rb.AddForce(Vector3.down * 20f, ForceMode.Force);
         }
