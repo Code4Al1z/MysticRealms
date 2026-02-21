@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SurfaceAudioManager surfaceAudioManager;
 
     private Rigidbody rb;
-    private Animator animator;
     private bool isGrounded;
     private bool wasGrounded;
     private float horizontalInput;
@@ -60,10 +59,14 @@ public class PlayerController : MonoBehaviour
     // Footstep timing
     private float footstepTimer = 0f;
 
+    public bool IsGrounded()
+    {
+        return isGrounded;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
 
         // Lock rotation so player doesn't tip over
         rb.freezeRotation = true;
@@ -168,15 +171,6 @@ public class PlayerController : MonoBehaviour
         {
             playerSpeedRTPC.SetValue(gameObject, currentSpeed);
         }
-
-        // Animation updates
-        if (animator != null)
-        {
-            float moveAmount = Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput);
-            animator.SetFloat("Speed", moveAmount);
-            animator.SetBool("IsGrounded", isGrounded);
-            animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
-        }
     }
 
     private void FixedUpdate()
@@ -238,12 +232,6 @@ public class PlayerController : MonoBehaviour
         {
             // Uncomment this line if you have jump sounds:
             // surfaceAudioManager.OnJump(gameObject);
-        }
-
-        // Trigger jump animation
-        if (animator != null)
-        {
-            animator.SetTrigger("Jump");
         }
     }
 
