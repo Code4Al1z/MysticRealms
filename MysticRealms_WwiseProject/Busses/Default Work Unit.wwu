@@ -11,6 +11,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}"/>
+						<Bus Name="Environment_Bus" ID="{6A31E3DE-FBCD-45CE-BFD7-F3CF8105CD51}">
+							<ChildrenList>
+								<Bus Name="Bus_Platform" ID="{581FCF3B-04CE-4BEB-83F2-8E9CB218CFA0}"/>
+								<Bus Name="Bus_Doors" ID="{73D2190D-99AD-45B7-8245-4A62FB656138}"/>
+								<Bus Name="Bus_Lamp" ID="{BCF952BD-0456-4931-9E81-08874D0B3B07}"/>
+							</ChildrenList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

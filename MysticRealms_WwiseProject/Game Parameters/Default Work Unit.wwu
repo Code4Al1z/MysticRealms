@@ -9,6 +9,33 @@
 						<Property Name="Max" Type="Real64" Value="10"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Door_OpenAmount" ID="{5C8FFDCA-2D75-47A0-9AA4-18399A49F4AA}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Lamp_Energy" ID="{DCF08911-3353-4438-A001-50DC6D933228}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="ResonanceHum_Intensity" ID="{2DB90B39-68D4-428C-97AE-0332A023E62C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="ResonanceHum_Energy" ID="{037FAD4A-F7B6-4EFF-8424-965ED8876219}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="EchoPulse_Frequency" ID="{B59496F2-51C7-4E3B-87A6-A1F6184A0598}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+						<Property Name="Max" Type="Real64" Value="800"/>
+						<Property Name="Min" Type="Real64" Value="80"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
