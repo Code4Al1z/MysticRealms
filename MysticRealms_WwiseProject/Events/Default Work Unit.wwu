@@ -25,6 +25,44 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Environment" ID="{9663BC45-14B9-4421-BB94-1DD80C235F88}" ShortID="831939003">
+					<ChildrenList>
+						<Folder Name="Platform" ID="{ABD4FA50-6DCE-4677-9DD5-B37F5D8BF1F4}" ShortID="519359984">
+							<ChildrenList>
+								<Event Name="Play_Platform_StartMove" ID="{9AC598BA-FF4C-41AC-9353-4C3BFFB3736B}"/>
+								<Event Name="Play_Platform_StopMove" ID="{49262E8E-502C-4443-9F1D-0DDFB97C9D96}"/>
+								<Event Name="Play_Platform_TravelLoop" ID="{08A9784E-4140-49E5-994C-FE170D4E2670}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Doors" ID="{392C1E2D-662A-47BC-A441-9FA0436F4ADF}" ShortID="1066168765">
+							<ChildrenList>
+								<Event Name="Play_ResonanceDoor_Open" ID="{CD1B8B73-3D6E-468B-8269-12D3FD6543CB}"/>
+								<Event Name="Play_ResonanceDoor_Close" ID="{7CE7B9B1-8C39-49C8-8943-38EEA82FDB08}"/>
+								<Event Name="Play_GateDoor_Open" ID="{9262AD56-F24B-4353-A00D-2C7EABA40A2B}"/>
+								<Event Name="Play_GateDoor_Close" ID="{42C019F0-E5BB-4B40-A373-13180D076D36}"/>
+								<Event Name="Play_GateDoor_MovingLoop" ID="{2793888D-9CAB-48AA-98BA-28DCCA5699BA}"/>
+								<Event Name="Play_GateDoor_Stop" ID="{ED25C303-B01E-4AAE-9EB1-CCE526703D53}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Lamp" ID="{76981147-10BD-4652-852E-8A0801A21DEE}" ShortID="879010007">
+							<ChildrenList>
+								<Event Name="Play_Lamp_Filling" ID="{107513C9-7FCA-47C5-8623-B749309E707C}"/>
+								<Event Name="Play_Lamp_Depleting" ID="{1887D9AD-F815-4BF0-AFD3-316142C41631}"/>
+								<Event Name="Play_Lamp_Full" ID="{A3DFC9EC-F7CF-4A8A-94C3-7F1CEE400C57}"/>
+								<Event Name="Play_Lamp_Empty" ID="{3510E493-CC02-4F91-A410-9FF8775C5DD0}"/>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="PlayerAbilities" ID="{A487F0E3-F22B-4B86-BF3B-D7B1406DFEB3}" ShortID="311357590">
+					<ChildrenList>
+						<Event Name="Play_EchoPulse_Start" ID="{2057F25B-2A81-4F62-B1A0-30B06BEBA1D3}"/>
+						<Event Name="Play_EchoPulse_Stop" ID="{390C5834-7D60-4BAF-96FE-37F415CE3E1A}"/>
+						<Event Name="Play_ResonanceHum_Start" ID="{33F30693-8568-422B-A217-1922CEFD8928}"/>
+						<Event Name="Play_ResonanceHum_Stop" ID="{CFA9A95B-8225-447E-B051-548530107169}"/>
+						<Event Name="Play_ResonanceHum_Depleted" ID="{45984DA6-E8A6-47FE-AD7C-F6BCEDA3F75B}"/>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
