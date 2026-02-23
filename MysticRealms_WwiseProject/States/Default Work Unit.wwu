@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{42349769-606B-45D4-8FBB-2DD43FACBB35}" SchemaVersion="133">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{42349769-606B-45D4-8FBB-2DD43FACBB35}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{42349769-606B-45D4-8FBB-2DD43FACBB35}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Lamp_State" ID="{14FFE450-A77F-428B-8488-203E6A5E682D}">
+					<ChildrenList>
+						<State Name="None" ID="{BFC7AC30-9510-487D-AAC3-DF6A54B3D58C}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="PlatformMovement_State" ID="{8DB20654-6119-48F8-83EC-7A2EC67179A5}">
+					<ChildrenList>
+						<State Name="None" ID="{80FBD5F8-40DB-40A5-9462-B2A72638CE4D}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

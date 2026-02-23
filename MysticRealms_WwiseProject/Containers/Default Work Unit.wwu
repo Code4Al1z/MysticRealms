@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{7F2C9695-70E4-49A3-9C24-80633200451E}" SchemaVersion="133">
 	<Containers>
-		<WorkUnit Name="Default Work Unit" ID="{7F2C9695-70E4-49A3-9C24-80633200451E}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{7F2C9695-70E4-49A3-9C24-80633200451E}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Player" ID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}" PersistMode="Reference"/>
+				<WorkUnit Name="Environment" ID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}" PersistMode="Reference"/>
+				<WorkUnit Name="PlayerAbilities" ID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Containers>
 </WwiseDocument>

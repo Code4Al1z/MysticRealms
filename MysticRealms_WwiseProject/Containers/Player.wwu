@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}" SchemaVersion="133">
+<WwiseDocument Type="WorkUnit" ID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}" SchemaVersion="133" RootDocumentID="{7F2C9695-70E4-49A3-9C24-80633200451E}" ParentDocumentID="{7F2C9695-70E4-49A3-9C24-80633200451E}">
 	<Containers>
-		<WorkUnit Name="Player" ID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}" PersistMode="Standalone">
+		<WorkUnit Name="Player" ID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}" OwnerID="{7F2C9695-70E4-49A3-9C24-80633200451E}" PersistMode="Nested">
 			<ChildrenList>
 				<SwitchContainer Name="Player_Footstep_Surface" ID="{6934098A-C3FD-4F0B-A879-F44071723120}" ShortID="651186134">
 					<PropertyList>
@@ -15,7 +15,7 @@
 							<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+							<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 						</Reference>
 						<Reference Name="SwitchGroupOrStateGroup">
 							<ObjectRef Name="SurfaceType" ID="{E637F48A-2712-4BB2-9972-F06A31805736}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
@@ -973,7 +973,7 @@
 							<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+							<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 						</Reference>
 						<Reference Name="SwitchGroupOrStateGroup">
 							<ObjectRef Name="SurfaceType" ID="{E637F48A-2712-4BB2-9972-F06A31805736}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
