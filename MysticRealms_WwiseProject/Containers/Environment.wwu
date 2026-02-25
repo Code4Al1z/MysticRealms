@@ -14,6 +14,34 @@
 									<ObjectRef Name="Bus_Platform" ID="{581FCF3B-04CE-4BEB-83F2-8E9CB218CFA0}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Platform_StartMove" ID="{4C427CFC-A213-4776-A272-0D41C7AD786E}" ShortID="714965528">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Platform_StartMove" ID="{F258C68F-F183-443F-B53C-8A03CED65AC7}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.682514527205494"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Platform_StartMove.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="679415353"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Platform_StartMove" ID="{F258C68F-F183-443F-B53C-8A03CED65AC7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Platform_StopMove" ID="{009A3A7D-B951-4379-A547-B808895B5DC1}" ShortID="569670849">
 							<ReferenceList>
@@ -24,7 +52,65 @@
 									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Platform_StopMove" ID="{023E0444-6657-4F26-8F60-A61C4BE922A9}" ShortID="348783420">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Platform_StopMove" ID="{95DA5CFA-D08F-4660-B7BD-DB291E8AA9B9}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.443740095087163"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Platform_StopMove.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="811615640"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Platform_StopMove" ID="{95DA5CFA-D08F-4660-B7BD-DB291E8AA9B9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="Platform_TravelLoop" ID="{E42597FE-71D6-4CF6-A611-6A50B961E558}" ShortID="247960463">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Platform_TravelLoop" ID="{7751FB3B-0EA7-4A3C-81F5-6D2EF7A180D2}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.917591125198098"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Platform_TravelLoop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="18518718"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Platform_TravelLoop" ID="{7751FB3B-0EA7-4A3C-81F5-6D2EF7A180D2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Doors" ID="{6722387C-B5EA-45BF-A65F-7D1493220D89}" ShortID="424264300">
@@ -38,6 +124,30 @@
 									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="ResonanceDoor_Open_01" ID="{9DA47B3A-3CC1-4BD7-B441-384DC229E16E}" ShortID="301400215">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ResonanceDoor_Open_01" ID="{9E0A6A2C-2BA4-4C1C-A935-9B462424C3D8}">
+											<Language>SFX</Language>
+											<AudioFile>ResonanceDoor_Open_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="500190460"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="ResonanceDoor_Open_01" ID="{9E0A6A2C-2BA4-4C1C-A935-9B462424C3D8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="ResonanceDoor_Close" ID="{7077277F-30B2-4CAB-A123-CC639AF3D7BC}" ShortID="791145623">
 							<ReferenceList>
@@ -48,6 +158,52 @@
 									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="ResonanceDoor_Close_01" ID="{24C00C9B-DC5E-443A-86DE-C3A05ECEE83D}" ShortID="524834713">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ResonanceDoor_Close_01" ID="{72F3728A-2D12-424F-84FD-301F4F21627F}">
+											<Language>SFX</Language>
+											<AudioFile>ResonanceDoor_Close_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="726924426"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="ResonanceDoor_Close_01" ID="{72F3728A-2D12-424F-84FD-301F4F21627F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="ResonanceDoor_Close_02" ID="{5AE309AA-D9C0-4DB5-9E69-FB4C5CEF8616}" ShortID="530893119">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ResonanceDoor_Close_02" ID="{C84D2B33-E94E-482B-8AD1-CF44F995F870}">
+											<Language>SFX</Language>
+											<AudioFile>ResonanceDoor_Close_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="869030125"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="ResonanceDoor_Close_02" ID="{C84D2B33-E94E-482B-8AD1-CF44F995F870}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="GateDoor_Open" ID="{EAEB86BC-49EE-4774-8FA6-35D8E5D02938}" ShortID="187519818">
 							<ReferenceList>
@@ -79,6 +235,19 @@
 								</Reference>
 							</ReferenceList>
 						</RandomSequenceContainer>
+						<Sound Name="GateDoor_MovingLoop" ID="{8AECF35E-AF8F-48F0-B560-A6A1CFCA1DDA}" ShortID="439811371">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Lamp" ID="{1C46CECE-0F5E-47A3-807D-6DBF8219C354}" ShortID="327796215">
@@ -103,6 +272,32 @@
 								</Reference>
 							</ReferenceList>
 						</RandomSequenceContainer>
+						<Sound Name="Lamp_Filling" ID="{BD82A961-D0CF-4C85-83AB-9A67AB586ECE}" ShortID="515368319">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
+						<Sound Name="Lamp_Depleting" ID="{E1C091EB-25DC-4F7C-9AF9-BB9447BC071C}" ShortID="714940165">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
