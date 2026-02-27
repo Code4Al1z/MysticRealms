@@ -3,27 +3,7 @@
 	<Containers>
 		<WorkUnit Name="PlayerAbilities" ID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}" OwnerID="{7F2C9695-70E4-49A3-9C24-80633200451E}" PersistMode="Nested">
 			<ChildrenList>
-				<Sound Name="EchoPulse_Start" ID="{86C13644-193E-419A-B63F-ACC496399F8A}" ShortID="623697334">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-						</Reference>
-					</ReferenceList>
-				</Sound>
-				<Sound Name="EchoPulse_Stop" ID="{52BD1E22-86B0-453F-B3F6-7EE3540B1B56}" ShortID="859052584">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-						</Reference>
-					</ReferenceList>
-				</Sound>
-				<Sound Name="ResonanceHum_Start" ID="{6BF4A69F-761D-4F7D-8D10-A1C8B59A2F79}" ShortID="373238802">
+				<Sound Name="EchoPulse_Start" ID="{77B72A6D-FBF1-4A4D-AD83-F6F434037207}" ShortID="630895531">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 					</PropertyList>
@@ -32,30 +12,462 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+							<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<SourcePlugin Name="Sine" ID="{4AA03476-E8EE-4E6C-8B48-B63FA13DFF49}" ShortID="963826701" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+							<PropertyList>
+								<Property Name="SineDuration" Type="Real32" Value="5"/>
+								<Property Name="SineFrequency" Type="Real32" Value="100"/>
+								<Property Name="SineGain" Type="Real32" Value="-9"/>
+							</PropertyList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{4B5F57AC-8E1C-4433-A2A5-EFDC9893AE58}" ShortID="312438794">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="SineFrequency"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="EchoPulse_Frequency" ID="{B59496F2-51C7-4E3B-87A6-A1F6184A0598}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{14CEFCE4-C897-4BFC-9091-37A0AD2AE13F}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="5"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>80</XPos>
+																<YPos>80</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>100</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>200</XPos>
+																<YPos>200</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>400</XPos>
+																<YPos>400</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>800</XPos>
+																<YPos>800</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<Language>SFX</Language>
+						</SourcePlugin>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<EffectSlot Name="" ID="{8AD5B705-E190-4B4A-AA59-CDDF0A6C325C}" ShortID="164323389">
+								<ReferenceList>
+									<Reference Name="Effect">
+										<Custom CreatedFrom="{FD181293-AC13-455A-B5BE-2FF717879960}">
+											<Effect Name="EchoPulse_Start_Flanger (Custom)" ID="{3AF9DB78-F8D7-4864-AD2D-5038E2BB4209}" ShortID="1037976615" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
+												<PropertyList>
+													<Property Name="ModDepth" Type="Real32" Value="20"/>
+													<Property Name="ModFrequency" Type="Real32" Value="0.5"/>
+													<Property Name="WetDryMix" Type="Real32" Value="30"/>
+												</PropertyList>
+											</Effect>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+						</ObjectList>
+					</ObjectLists>
+					<ActiveSourceList>
+						<ActiveSource Name="Sine" ID="{4AA03476-E8EE-4E6C-8B48-B63FA13DFF49}" Platform="Linked"/>
+					</ActiveSourceList>
 				</Sound>
-				<Sound Name="ResonanceHum_Stop" ID="{CB523498-49AD-4BA4-8319-063F4EB5D549}" ShortID="371165009">
+				<Sound Name="EchoPulse_Stop" ID="{B72A970D-E0AC-4719-A12A-F42E5ED0BB19}" ShortID="969790899">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+							<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<SourcePlugin Name="Sine" ID="{FCEF33B1-476E-420F-BBF4-4E08724843E8}" ShortID="11099875" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+							<PropertyList>
+								<Property Name="SineDuration" Type="Real32" Value="0.3"/>
+								<Property Name="SineFrequency" Type="Real32" Value="100"/>
+							</PropertyList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{CC906DED-0C66-46D2-B8D9-9C012B962E8A}" ShortID="907271336">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="SineFrequency"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="EchoPulse_Frequency" ID="{B59496F2-51C7-4E3B-87A6-A1F6184A0598}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{CB7B287D-5036-4A2C-B0C8-7904968E4272}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="5"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>80</XPos>
+																<YPos>80</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>100</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>200</XPos>
+																<YPos>200</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>400</XPos>
+																<YPos>400</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>800</XPos>
+																<YPos>800</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<Language>SFX</Language>
+						</SourcePlugin>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Sine" ID="{FCEF33B1-476E-420F-BBF4-4E08724843E8}" Platform="Linked"/>
+					</ActiveSourceList>
 				</Sound>
-				<RandomSequenceContainer Name="ResonanceHum_Depleted" ID="{794C50DC-43CC-4381-97C2-89556A954E49}" ShortID="507655107">
+				<Sound Name="ResonanceHum_Start" ID="{54C49B49-0E55-4938-A860-6BFBCCEAFF57}" ShortID="628433233">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+							<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 						</Reference>
 					</ReferenceList>
-				</RandomSequenceContainer>
+					<ChildrenList>
+						<SourcePlugin Name="Synth One" ID="{0C07DBDB-8268-4520-A47D-603E6BA16623}" ShortID="361663356" PluginName="Wwise Synth One" CompanyID="0" PluginID="148">
+							<PropertyList>
+								<Property Name="BaseFrequency" Type="Real32" Value="82"/>
+								<Property Name="Osc1Waveform" Type="int32" Value="3"/>
+								<Property Name="Osc2Level" Type="Real32" Value="-12"/>
+								<Property Name="Osc2Transpose" Type="int32" Value="-12"/>
+							</PropertyList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{7F312A98-7841-4D3B-87C7-0D13FAB4E4CD}" ShortID="433829334">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="OutputLevel"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<Custom>
+													<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{096D1095-2273-4F52-879E-DD0FC8A682E8}" ShortID="753734901">
+														<PropertyList>
+															<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.01"/>
+														</PropertyList>
+													</ModulatorEnvelope>
+												</Custom>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{C127F7AD-C800-43D2-BFDF-CA5E09A9DCFD}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-96</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<Language>SFX</Language>
+						</SourcePlugin>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<EffectSlot Name="" ID="{5558C4C8-AC82-4994-80BD-F485FF46C4E5}" ShortID="835116361">
+								<ReferenceList>
+									<Reference Name="Effect">
+										<Custom CreatedFrom="{500FE4DA-CBAA-4900-9C8F-1F5087D166BC}">
+											<Effect Name="ResonanceHum_Start_Parametric_EQ (Custom)" ID="{E6BE15D4-05D6-4CB6-B826-9AB0C8F4F7AE}" ShortID="331954239" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+												<PropertyList>
+													<Property Name="FilterTypeBand1" Type="int32" Value="6"/>
+													<Property Name="FrequencyBand1" Type="Real32" Value="500"/>
+													<Property Name="FrequencyBand2" Type="Real32" Value="1500"/>
+													<Property Name="GainBand1" Type="Real32" Value="4"/>
+													<Property Name="GainBand2" Type="Real32" Value="3"/>
+													<Property Name="QFactorBand1" Type="Real32" Value="1.5"/>
+													<Property Name="QFactorBand2" Type="Real32" Value="1.5"/>
+												</PropertyList>
+											</Effect>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+							<EffectSlot Name="" ID="{C456C2A8-C82D-4A82-AC69-4C9D39A832D3}" ShortID="512445666">
+								<ReferenceList>
+									<Reference Name="Effect">
+										<Custom CreatedFrom="{F6E3C52F-297D-48C2-981D-AA7855AE0878}">
+											<Effect Name="ResonanceHum_Start_Guitar_Distortion (Custom)" ID="{C8F83983-4D2F-40FF-BABC-D1CB2CB16F34}" ShortID="919275421" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+												<PropertyList>
+													<Property Name="DistortionDrive" Type="Real32" Value="20"/>
+													<Property Name="DistortionType" Type="int32" Value="1"/>
+													<Property Name="WetDryMix" Type="Real32" Value="25"/>
+												</PropertyList>
+												<ObjectLists>
+													<ObjectList Name="RTPC">
+														<RTPC Name="" ID="{043B8C8A-AEB6-4118-81B8-49CA7799BB2B}" ShortID="132225680">
+															<PropertyList>
+																<Property Name="PropertyName" Type="string" Value="DistortionDrive"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="ResonanceHum_Intensity" ID="{2DB90B39-68D4-428C-97AE-0332A023E62C}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+																</Reference>
+																<Reference Name="Curve">
+																	<Custom>
+																		<Curve Name="" ID="{28D29B08-15A5-44E8-BFE8-CC35AD9FA9B4}">
+																			<PropertyList>
+																				<Property Name="Flags" Type="int32" Value="1"/>
+																			</PropertyList>
+																			<PointList>
+																				<Point>
+																					<XPos>0</XPos>
+																					<YPos>0</YPos>
+																					<Flags>5</Flags>
+																				</Point>
+																				<Point>
+																					<XPos>60</XPos>
+																					<YPos>0</YPos>
+																					<Flags>0</Flags>
+																				</Point>
+																				<Point>
+																					<XPos>100</XPos>
+																					<YPos>40</YPos>
+																					<Flags>37</Flags>
+																				</Point>
+																			</PointList>
+																		</Curve>
+																	</Custom>
+																</Reference>
+															</ReferenceList>
+														</RTPC>
+													</ObjectList>
+												</ObjectLists>
+											</Effect>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+						</ObjectList>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{B848F7A9-1D52-4ED1-9E97-303F6FE7D52E}" ShortID="565664477">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Volume"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="ResonanceHum_Energy" ID="{037FAD4A-F7B6-4EFF-8424-965ED8876219}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{8538D3B0-6143-461C-8C51-FD2E7EED1534}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-3</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+							<RTPC Name="" ID="{2A0395CD-ABFA-4D95-9FD5-91C6C1BFBC74}" ShortID="387501997">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Pitch"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="ResonanceHum_PitchLFO" ID="{432DC4F7-9E81-4067-971E-6C9E37044D95}" WorkUnitID="{26E2572F-5203-4BAA-9ECB-43B30A305AFB}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{DF575F91-A0D3-4C78-A60C-42608771425B}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>21</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>0</YPos>
+														<Flags>53</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
+					<ActiveSourceList>
+						<ActiveSource Name="Synth One" ID="{0C07DBDB-8268-4520-A47D-603E6BA16623}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="ResonanceHum_Stop" ID="{60E3BE47-7A85-4B12-A33B-8923E99A9814}" ShortID="134376889">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SourcePlugin Name="Sine" ID="{18D2FBD5-FF18-4F3D-A855-8891B6070E23}" ShortID="623288895" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+							<PropertyList>
+								<Property Name="SineDuration" Type="Real32" Value="0.7"/>
+								<Property Name="SineFrequency" Type="Real32" Value="82"/>
+							</PropertyList>
+							<Language>SFX</Language>
+						</SourcePlugin>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<EffectSlot Name="" ID="{03FA6E59-BB39-47E5-8977-D878BE9EE5E6}" ShortID="161192990">
+								<ReferenceList>
+									<Reference Name="Effect">
+										<Custom CreatedFrom="{9BE2D26C-9F6F-40CD-8AF1-E614E3212565}">
+											<Effect Name="ResonanceHum_Stop_RoomVerb (Custom)" ID="{1D53A53D-6FB4-47BE-A096-A0884824240C}" ShortID="401304084" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+												<PropertyList>
+													<Property Name="DecayTime" Type="Real32" Value="0.5"/>
+													<Property Name="Density" Type="Real32" Value="60"/>
+													<Property Name="Diffusion" Type="Real32" Value="80"/>
+													<Property Name="DryLevel" Type="Real32" Value="-6"/>
+													<Property Name="ERLevel" Type="Real32" Value="-24"/>
+													<Property Name="EnableEarlyReflections" Type="bool" Value="False"/>
+													<Property Name="HFDamping" Type="Real32" Value="3"/>
+													<Property Name="PreDelay" Type="Real32" Value="0"/>
+													<Property Name="ReverbLevel" Type="Real32" Value="-18"/>
+													<Property Name="RoomShape" Type="Real32" Value="50"/>
+													<Property Name="StereoWidth" Type="Real32" Value="60"/>
+												</PropertyList>
+											</Effect>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+						</ObjectList>
+					</ObjectLists>
+					<ActiveSourceList>
+						<ActiveSource Name="Sine" ID="{18D2FBD5-FF18-4F3D-A855-8891B6070E23}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="ResonanceHum_Depleted" ID="{D8D00EF9-30FF-49DF-B3EE-46C1B79E69D0}" ShortID="982031222">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SourcePlugin Name="Tone Generator" ID="{890510C1-4343-4948-9329-977EEED6D4FB}" ShortID="361248912" PluginName="Wwise Tone Generator" CompanyID="0" PluginID="102">
+							<PropertyList>
+								<Property Name="DecayTime" Type="Real32" Value="0.1"/>
+								<Property Name="DurMode" Type="int32" Value="1"/>
+								<Property Name="ReleaseTime" Type="Real32" Value="0.4"/>
+								<Property Name="StartFreq" Type="Real32" Value="82"/>
+								<Property Name="StopFreq" Type="Real32" Value="41"/>
+								<Property Name="SustainTime" Type="Real32" Value="0.3"/>
+								<Property Name="SweepFreq" Type="bool" Value="True"/>
+								<Property Name="WaveGain" Type="Real32" Value="-6"/>
+							</PropertyList>
+							<Language>SFX</Language>
+						</SourcePlugin>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<EffectSlot Name="" ID="{D39890BF-B48B-4D26-A46F-B83F651AB014}" ShortID="1050488516">
+								<ReferenceList>
+									<Reference Name="Effect" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+										<ObjectRef Name="ResonanceHum_Depleted_Guitar_Distortion" ID="{7C5CA339-F61D-4A6E-AFE1-0126E820270C}" WorkUnitID="{2FA095AB-CFE8-4E0B-88AB-A9EB154BEFBE}"/>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+						</ObjectList>
+					</ObjectLists>
+					<ActiveSourceList>
+						<ActiveSource Name="Tone Generator" ID="{890510C1-4343-4948-9329-977EEED6D4FB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

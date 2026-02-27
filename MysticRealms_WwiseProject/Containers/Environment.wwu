@@ -6,6 +6,9 @@
 				<Folder Name="Platform" ID="{6A86A782-5BC2-4C07-85C8-04D1359C6055}" ShortID="589076007">
 					<ChildrenList>
 						<RandomSequenceContainer Name="Platform_StartMove" ID="{54C9DB2F-223D-4EDE-95C6-3A684C54B0B1}" ShortID="1035709696">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -44,6 +47,9 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Platform_StopMove" ID="{009A3A7D-B951-4379-A547-B808895B5DC1}" ShortID="569670849">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -83,6 +89,7 @@
 						</RandomSequenceContainer>
 						<Sound Name="Platform_TravelLoop" ID="{E42597FE-71D6-4CF6-A611-6A50B961E558}" ShortID="247960463">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -90,7 +97,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Bus_Platform" ID="{581FCF3B-04CE-4BEB-83F2-8E9CB218CFA0}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -116,12 +123,15 @@
 				<Folder Name="Doors" ID="{6722387C-B5EA-45BF-A65F-7D1493220D89}" ShortID="424264300">
 					<ChildrenList>
 						<RandomSequenceContainer Name="ResonanceDoor_Open" ID="{3AF00294-3539-49F5-8BDD-2F8265AFD052}" ShortID="149858234">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Bus_Doors" ID="{73D2190D-99AD-45B7-8245-4A62FB656138}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -150,12 +160,15 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="ResonanceDoor_Close" ID="{7077277F-30B2-4CAB-A123-CC639AF3D7BC}" ShortID="791145623">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Bus_Doors" ID="{73D2190D-99AD-45B7-8245-4A62FB656138}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -206,12 +219,15 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="GateDoor_Open" ID="{EAEB86BC-49EE-4774-8FA6-35D8E5D02938}" ShortID="187519818">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Bus_Doors" ID="{73D2190D-99AD-45B7-8245-4A62FB656138}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -240,6 +256,9 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="GateDoor_Close" ID="{BF2876D3-3ED1-435C-9168-194FA7C20F33}" ShortID="204901536">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -274,12 +293,15 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="GateDoor_Stop" ID="{046AB2A4-4ED4-4850-A80D-D281E2DFBB2F}" ShortID="880786421">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Bus_Doors" ID="{73D2190D-99AD-45B7-8245-4A62FB656138}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -309,6 +331,7 @@
 						</RandomSequenceContainer>
 						<Sound Name="GateDoor_MovingLoop" ID="{8AECF35E-AF8F-48F0-B560-A6A1CFCA1DDA}" ShortID="439811371">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -316,7 +339,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Bus_Doors" ID="{73D2190D-99AD-45B7-8245-4A62FB656138}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -337,16 +360,276 @@
 				<Folder Name="Lamp" ID="{1C46CECE-0F5E-47A3-807D-6DBF8219C354}" ShortID="327796215">
 					<ChildrenList>
 						<RandomSequenceContainer Name="Lamp_Full" ID="{CF5F4AB4-9D76-4CEB-A2B7-559EBA83D53E}" ShortID="12183842">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Lamp_Attenuation" ID="{94E9C02C-62EB-4C1B-AE01-B080219C92F7}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Bus_Lamp" ID="{BCF952BD-0456-4931-9E81-08874D0B3B07}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Lamp_Full_01" ID="{1EF48485-0152-4BA8-90AD-56F8981B308A}" ShortID="562850388">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<SourcePlugin Name="Sine" ID="{DAF8467D-3D36-4CFB-B7DA-B282973DDB37}" ShortID="48754536" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+											<PropertyList>
+												<Property Name="SineFrequency" Type="Real32" Value="261"/>
+												<Property Name="SineGain" Type="Real32" Value="-6"/>
+											</PropertyList>
+											<Language>SFX</Language>
+										</SourcePlugin>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Sine" ID="{DAF8467D-3D36-4CFB-B7DA-B282973DDB37}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{5D916458-4268-41CA-A2EC-7A2D05DA3B46}" ShortID="687664532">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom CreatedFrom="{2498C968-10E0-4861-8233-702E35E2834D}">
+													<Effect Name="Lamp_Full_RoomVerb (Custom)" ID="{82EED2EB-ABC0-4052-80C5-BA35CC731B45}" ShortID="369804542" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<PropertyList>
+															<Property Name="DecayTime" Type="Real32" Value="2"/>
+															<Property Name="DryLevel" Type="Real32" Value="-6"/>
+															<Property Name="ReverbLevel" Type="Real32" Value="-12"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Lamp_Empty" ID="{C4F88B04-FD10-4327-939E-C048423A692D}" ShortID="848779160">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Lamp_Attenuation" ID="{94E9C02C-62EB-4C1B-AE01-B080219C92F7}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Bus_Lamp" ID="{BCF952BD-0456-4931-9E81-08874D0B3B07}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Lamp_Empty_01" ID="{D33AEA2C-EC83-4832-ABBA-5C9082552394}" ShortID="755950744">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<SourcePlugin Name="Sine" ID="{68907224-2434-4D02-A872-7580708A9A5C}" ShortID="872248243" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+											<PropertyList>
+												<Property Name="SineFrequency" Type="Real32" Value="261"/>
+												<Property Name="SineGain" Type="Real32" Value="-9"/>
+											</PropertyList>
+											<Language>SFX</Language>
+										</SourcePlugin>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Sine" ID="{68907224-2434-4D02-A872-7580708A9A5C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{A46F4D96-2057-4333-8293-83628F402661}" ShortID="363624158">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+												<ObjectRef Name="Lamp_Empty_Guitar_Distortion" ID="{066D8A11-9382-4DF4-A476-4030B9EE7D03}" WorkUnitID="{2FA095AB-CFE8-4E0B-88AB-A9EB154BEFBE}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
+						<Sound Name="Lamp_Filling" ID="{081FF6B8-B1ED-43DB-B658-7230EE1AFDE7}" ShortID="578119952">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Lamp_Attenuation" ID="{94E9C02C-62EB-4C1B-AE01-B080219C92F7}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Bus_Lamp" ID="{BCF952BD-0456-4931-9E81-08874D0B3B07}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Sine" ID="{9D2636D3-0D79-41A8-B8F6-D5C7F6046C44}" ShortID="586149596" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+									<PropertyList>
+										<Property Name="SineDuration" Type="Real32" Value="5"/>
+										<Property Name="SineFrequency" Type="Real32" Value="110"/>
+									</PropertyList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<RTPC Name="" ID="{259D3E15-4637-4E93-946F-C8BD5085EC78}" ShortID="85166604">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="SineFrequency"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Lamp_Energy" ID="{DCF08911-3353-4438-A001-50DC6D933228}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{F184ACA5-96BC-4987-9923-78435F513C73}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="5"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>110</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>145</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</ObjectList>
+									</ObjectLists>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{5FACF6F7-B7C6-43DB-9E03-3531C7AB748B}" ShortID="774500057">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom CreatedFrom="{20BC3F96-6F83-4B10-AD4E-EA8C02E8ADA4}">
+													<Effect Name="Lamp_Filling_Guitar_Distortion (Custom)" ID="{AA6DD07D-AD20-4523-BD54-28B5F1D09032}" ShortID="940870896" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+														<PropertyList>
+															<Property Name="DistortionDrive" Type="Real32" Value="30"/>
+															<Property Name="DistortionType" Type="int32" Value="1"/>
+															<Property Name="WetDryMix" Type="Real32" Value="25"/>
+														</PropertyList>
+														<ObjectLists>
+															<ObjectList Name="RTPC">
+																<RTPC Name="" ID="{685BA052-24A7-4CFF-96D2-1AE49BDC1A21}" ShortID="765059431">
+																	<PropertyList>
+																		<Property Name="PropertyName" Type="string" Value="DistortionDrive"/>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="Lamp_Energy" ID="{DCF08911-3353-4438-A001-50DC6D933228}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+																		</Reference>
+																		<Reference Name="Curve">
+																			<Custom>
+																				<Curve Name="" ID="{1CCDACC2-DD72-46A3-A98E-40821C55DC59}">
+																					<PropertyList>
+																						<Property Name="Flags" Type="int32" Value="1"/>
+																					</PropertyList>
+																					<PointList>
+																						<Point>
+																							<XPos>0</XPos>
+																							<YPos>0</YPos>
+																							<Flags>5</Flags>
+																						</Point>
+																						<Point>
+																							<XPos>60</XPos>
+																							<YPos>0</YPos>
+																							<Flags>0</Flags>
+																						</Point>
+																						<Point>
+																							<XPos>100</XPos>
+																							<YPos>30</YPos>
+																							<Flags>37</Flags>
+																						</Point>
+																					</PointList>
+																				</Curve>
+																			</Custom>
+																		</Reference>
+																	</ReferenceList>
+																</RTPC>
+															</ObjectList>
+														</ObjectLists>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{09063F56-55A5-4B60-93F4-7D8601DDEA65}" ShortID="721277278">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Lamp_Energy" ID="{DCF08911-3353-4438-A001-50DC6D933228}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{97B13637-72A8-46F6-830C-6CA8BE88BD72}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-18</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>-6</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Sine" ID="{9D2636D3-0D79-41A8-B8F6-D5C7F6046C44}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Lamp_Depleting" ID="{FC71DB40-C76A-4C1B-9C4D-483C4F91C3EE}" ShortID="255960200">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -355,32 +638,68 @@
 									<ObjectRef Name="Bus_Lamp" ID="{BCF952BD-0456-4931-9E81-08874D0B3B07}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
-						</RandomSequenceContainer>
-						<Sound Name="Lamp_Filling" ID="{BD82A961-D0CF-4C85-83AB-9A67AB586ECE}" ShortID="515368319">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-								</Reference>
-							</ReferenceList>
-						</Sound>
-						<Sound Name="Lamp_Depleting" ID="{E1C091EB-25DC-4F7C-9AF9-BB9447BC071C}" ShortID="714940165">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
-								</Reference>
-							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Sine" ID="{C85A839C-6EF5-4319-8E94-DC758AEFB5DB}" ShortID="182596494" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+									<PropertyList>
+										<Property Name="SineFrequency" Type="Real32" Value="110"/>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{FAC40FBF-55B1-4E7B-B8C7-2B94515E4887}" ShortID="809664826">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom CreatedFrom="{44FB637A-BEBF-4A95-AE1F-1788ADD8EE5D}">
+													<Effect Name="Lamp_Depleting_Tremolo (Custom)" ID="{72CDD7BE-A38C-42A3-8763-7B9A46A8B1E4}" ShortID="386532778" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
+														<PropertyList>
+															<Property Name="ModDepth" Type="Real32" Value="20"/>
+															<Property Name="ModFrequency" Type="Real32" Value="0.5"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{65A4F3E8-A114-4B15-AB20-F9B200EA6B52}" ShortID="793686765">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Pitch"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="LampDepleting_PitchLFO" ID="{898599DE-0BB5-409D-AD47-429890FFCFA1}" WorkUnitID="{26E2572F-5203-4BAA-9ECB-43B30A305AFB}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{7CAE60EC-84C8-4A99-ACB1-A520705BDC3B}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Sine" ID="{C85A839C-6EF5-4319-8E94-DC758AEFB5DB}" Platform="Linked"/>
+							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
 				</Folder>

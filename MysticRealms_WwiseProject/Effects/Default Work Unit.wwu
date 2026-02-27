@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2FA095AB-CFE8-4E0B-88AB-A9EB154BEFBE}" SchemaVersion="133">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{2FA095AB-CFE8-4E0B-88AB-A9EB154BEFBE}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2FA095AB-CFE8-4E0B-88AB-A9EB154BEFBE}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="Lamp_Filling_Guitar_Distortion" ID="{20BC3F96-6F83-4B10-AD4E-EA8C02E8ADA4}" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3"/>
+				<Effect Name="Lamp_Depleting_Tremolo" ID="{44FB637A-BEBF-4A95-AE1F-1788ADD8EE5D}" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3"/>
+				<Effect Name="Lamp_Full_RoomVerb" ID="{2498C968-10E0-4861-8233-702E35E2834D}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3"/>
+				<Effect Name="Lamp_Empty_Guitar_Distortion" ID="{066D8A11-9382-4DF4-A476-4030B9EE7D03}" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+					<PropertyList>
+						<Property Name="DistortionDrive" Type="Real32" Value="40"/>
+						<Property Name="DistortionType" Type="int32" Value="4"/>
+						<Property Name="WetDryMix" Type="Real32" Value="30"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="EchoPulse_Start_Flanger" ID="{FD181293-AC13-455A-B5BE-2FF717879960}" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3"/>
+				<Effect Name="ResonanceHum_Start_Parametric_EQ" ID="{500FE4DA-CBAA-4900-9C8F-1F5087D166BC}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3"/>
+				<Effect Name="ResonanceHum_Start_Guitar_Distortion" ID="{F6E3C52F-297D-48C2-981D-AA7855AE0878}" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3"/>
+				<Effect Name="ResonanceHum_Stop_RoomVerb" ID="{9BE2D26C-9F6F-40CD-8AF1-E614E3212565}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3"/>
+				<Effect Name="ResonanceHum_Depleted_Guitar_Distortion" ID="{7C5CA339-F61D-4A6E-AFE1-0126E820270C}" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+					<PropertyList>
+						<Property Name="DistortionDrive" Type="Real32" Value="60"/>
+						<Property Name="DistortionType" Type="int32" Value="3"/>
+						<Property Name="WetDryMix" Type="Real32" Value="30"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

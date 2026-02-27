@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{26E2572F-5203-4BAA-9ECB-43B30A305AFB}" SchemaVersion="133">
 	<Modulators>
-		<WorkUnit Name="Default Work Unit" ID="{26E2572F-5203-4BAA-9ECB-43B30A305AFB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{26E2572F-5203-4BAA-9ECB-43B30A305AFB}" PersistMode="Standalone">
+			<ChildrenList>
+				<ModulatorLfo Name="LampDepleting_PitchLFO" ID="{898599DE-0BB5-409D-AD47-429890FFCFA1}" ShortID="418439564">
+					<PropertyList>
+						<Property Name="LfoDepth" Type="Real64" Value="30"/>
+						<Property Name="LfoFrequency" Type="Real64" Value="0.3"/>
+					</PropertyList>
+				</ModulatorLfo>
+				<ModulatorLfo Name="ResonanceHum_PitchLFO" ID="{432DC4F7-9E81-4067-971E-6C9E37044D95}" ShortID="143004858">
+					<PropertyList>
+						<Property Name="LfoFrequency" Type="Real64" Value="3"/>
+					</PropertyList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{930C2A6A-54DB-421A-B354-990223A46A7A}" ShortID="566930240">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="LfoDepth"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="ResonanceHum_Intensity" ID="{2DB90B39-68D4-428C-97AE-0332A023E62C}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{16493CA3-53F6-41A8-B21B-159C4B301AE4}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="1"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>100</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>100</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
+				</ModulatorLfo>
+			</ChildrenList>
+		</WorkUnit>
 	</Modulators>
 </WwiseDocument>
