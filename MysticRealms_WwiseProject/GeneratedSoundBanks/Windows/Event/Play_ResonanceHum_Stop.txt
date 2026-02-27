@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2563595731	Play_ResonanceHum_Stop			\Default Work Unit\PlayerAbilities\Play_ResonanceHum_Stop	
+

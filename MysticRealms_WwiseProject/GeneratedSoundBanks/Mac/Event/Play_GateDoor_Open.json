@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "194403786",
+    "Type": "Event",
+    "GUID": "{9262AD56-F24B-4353-A00D-2C7EABA40A2B}",
+    "Language": "SFX",
+    "Hash": "{B339F75C-D4B9-7471-D6D9-68D8FA9EEBE4}",
+    "ObjectPath": "Play_GateDoor_Open",
+    "ShortName": "Play_GateDoor_Open",
+    "Path": "Event/Play_GateDoor_Open.bnk",
+    "Events": [
+     {
+      "Id": "194403786",
+      "Name": "Play_GateDoor_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_Open",
+      "GUID": "{9262AD56-F24B-4353-A00D-2C7EABA40A2B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{5A291E40-49A5-A0C4-145C-B45BE88B083A}"
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3841466509",
+    "Type": "Event",
+    "GUID": "{2057F25B-2A81-4F62-B1A0-30B06BEBA1D3}",
+    "Language": "SFX",
+    "Hash": "{6C0762EE-F7AA-416C-DD58-21635FBB2F5B}",
+    "ObjectPath": "Play_EchoPulse_Start",
+    "ShortName": "Play_EchoPulse_Start",
+    "Path": "Event/Play_EchoPulse_Start.bnk",
+    "Events": [
+     {
+      "Id": "3841466509",
+      "Name": "Play_EchoPulse_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_EchoPulse_Start",
+      "GUID": "{2057F25B-2A81-4F62-B1A0-30B06BEBA1D3}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{B98B05CE-3CDD-6BB5-8ADD-2EEBDF7A0310}"
+ }
+}

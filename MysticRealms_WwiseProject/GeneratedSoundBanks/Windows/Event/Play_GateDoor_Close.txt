@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	4102059022	Play_GateDoor_Close			\Default Work Unit\Environment\Doors\Play_GateDoor_Close	
+

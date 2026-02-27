@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3114152379	Play_Lamp_Depleting			\Default Work Unit\Environment\Lamp\Play_Lamp_Depleting	
+

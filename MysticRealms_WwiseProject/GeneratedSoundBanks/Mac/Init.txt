@@ -1,5 +1,17 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	177703081	Lamp_State			\Default Work Unit\Lamp_State	
+	3250902065	PlatformMovement_State			\Default Work Unit\PlatformMovement_State	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Lamp_State			
+	748895195	None	PlatformMovement_State			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	130819113	Bus_Platform			\Default Work Unit\Main Audio Bus\Environment_Bus\Bus_Platform	
+	153992835	Bus_Doors			\Default Work Unit\Main Audio Bus\Environment_Bus\Bus_Doors	
+	677043558	Bus_Lamp			\Default Work Unit\Main Audio Bus\Environment_Bus\Bus_Lamp	
 	1138681361	Player_Bus			\Default Work Unit\Main Audio Bus\Player_Bus	
+	1523166483	Environment_Bus			\Default Work Unit\Main Audio Bus\Environment_Bus	
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
 
 Audio Devices	ID	Name	Type				Notes

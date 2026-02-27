@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3672837954",
+    "Type": "Event",
+    "GUID": "{3510E493-CC02-4F91-A410-9FF8775C5DD0}",
+    "Language": "SFX",
+    "Hash": "{485CCB6E-E692-FEF2-6270-B022A8532BAE}",
+    "ObjectPath": "Play_Lamp_Empty",
+    "ShortName": "Play_Lamp_Empty",
+    "Path": "Event/Play_Lamp_Empty.bnk",
+    "Events": [
+     {
+      "Id": "3672837954",
+      "Name": "Play_Lamp_Empty",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Empty",
+      "GUID": "{3510E493-CC02-4F91-A410-9FF8775C5DD0}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{07B870A8-1A12-559C-E76C-A971A8E83353}"
+ }
+}

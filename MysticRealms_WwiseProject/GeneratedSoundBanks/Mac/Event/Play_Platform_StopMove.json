@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4046392273",
+    "Type": "Event",
+    "GUID": "{49262E8E-502C-4443-9F1D-0DDFB97C9D96}",
+    "Language": "SFX",
+    "Hash": "{877A4322-5291-4997-23B0-C23401E438C9}",
+    "ObjectPath": "Play_Platform_StopMove",
+    "ShortName": "Play_Platform_StopMove",
+    "Path": "Event/Play_Platform_StopMove.bnk",
+    "Events": [
+     {
+      "Id": "4046392273",
+      "Name": "Play_Platform_StopMove",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Platform\\Play_Platform_StopMove",
+      "GUID": "{49262E8E-502C-4443-9F1D-0DDFB97C9D96}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{56BDDF35-EBF9-F0AE-7E9A-22B8CD376507}"
+ }
+}

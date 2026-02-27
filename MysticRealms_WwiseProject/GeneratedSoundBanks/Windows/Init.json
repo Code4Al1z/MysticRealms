@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{210F40F6-B9D4-4AA8-A22D-0B1911C4284E}",
+    "Hash": "{78246F9E-1E3C-17EB-4F00-FD81BA56E80F}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -36,10 +36,34 @@
     },
     "Busses": [
      {
+      "Id": "130819113",
+      "Name": "Bus_Platform",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Environment_Bus\\Bus_Platform",
+      "GUID": "{581FCF3B-04CE-4BEB-83F2-8E9CB218CFA0}"
+     },
+     {
+      "Id": "153992835",
+      "Name": "Bus_Doors",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Environment_Bus\\Bus_Doors",
+      "GUID": "{73D2190D-99AD-45B7-8245-4A62FB656138}"
+     },
+     {
+      "Id": "677043558",
+      "Name": "Bus_Lamp",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Environment_Bus\\Bus_Lamp",
+      "GUID": "{BCF952BD-0456-4931-9E81-08874D0B3B07}"
+     },
+     {
       "Id": "1138681361",
       "Name": "Player_Bus",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Player_Bus",
       "GUID": "{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}"
+     },
+     {
+      "Id": "1523166483",
+      "Name": "Environment_Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Environment_Bus",
+      "GUID": "{6A31E3DE-FBCD-45CE-BFD7-F3CF8105CD51}"
      },
      {
       "Id": "2246998526",
@@ -54,6 +78,66 @@
       "Name": "Player_Speed",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Speed",
       "GUID": "{A0E3CD82-1EA2-43D3-8B84-159E19A4E667}"
+     },
+     {
+      "Id": "1925913377",
+      "Name": "ResonanceHum_Intensity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\ResonanceHum_Intensity",
+      "GUID": "{2DB90B39-68D4-428C-97AE-0332A023E62C}"
+     },
+     {
+      "Id": "2086212122",
+      "Name": "Lamp_Energy",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Lamp_Energy",
+      "GUID": "{DCF08911-3353-4438-A001-50DC6D933228}"
+     },
+     {
+      "Id": "3773845682",
+      "Name": "EchoPulse_Frequency",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\EchoPulse_Frequency",
+      "GUID": "{B59496F2-51C7-4E3B-87A6-A1F6184A0598}"
+     },
+     {
+      "Id": "3818301486",
+      "Name": "ResonanceHum_Energy",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\ResonanceHum_Energy",
+      "GUID": "{037FAD4A-F7B6-4EFF-8424-965ED8876219}"
+     },
+     {
+      "Id": "3849429492",
+      "Name": "Door_OpenAmount",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Door_OpenAmount",
+      "GUID": "{5C8FFDCA-2D75-47A0-9AA4-18399A49F4AA}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "177703081",
+      "Name": "Lamp_State",
+      "ObjectPath": "\\States\\Default Work Unit\\Lamp_State",
+      "GUID": "{14FFE450-A77F-428B-8488-203E6A5E682D}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Lamp_State\\None",
+        "GUID": "{BFC7AC30-9510-487D-AAC3-DF6A54B3D58C}"
+       }
+      ]
+     },
+     {
+      "Id": "3250902065",
+      "Name": "PlatformMovement_State",
+      "ObjectPath": "\\States\\Default Work Unit\\PlatformMovement_State",
+      "GUID": "{8DB20654-6119-48F8-83EC-7A2EC67179A5}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\PlatformMovement_State\\None",
+        "GUID": "{80FBD5F8-40DB-40A5-9462-B2A72638CE4D}"
+       }
+      ]
      }
     ],
     "SwitchGroups": [
@@ -110,6 +194,6 @@
     ]
    }
   ],
-  "FileHash": "{23EB7516-9676-CCF6-EDFD-68448B568893}"
+  "FileHash": "{08A6B91D-3180-2585-67F6-C3B420A105FA}"
  }
 }

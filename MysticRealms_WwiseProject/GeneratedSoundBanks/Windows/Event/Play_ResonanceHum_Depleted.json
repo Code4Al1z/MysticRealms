@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4169607118",
+    "Type": "Event",
+    "GUID": "{45984DA6-E8A6-47FE-AD7C-F6BCEDA3F75B}",
+    "Language": "SFX",
+    "Hash": "{A8F2545A-2513-277C-CFEA-8A4474E37088}",
+    "ObjectPath": "Play_ResonanceHum_Depleted",
+    "ShortName": "Play_ResonanceHum_Depleted",
+    "Path": "Event/Play_ResonanceHum_Depleted.bnk",
+    "Events": [
+     {
+      "Id": "4169607118",
+      "Name": "Play_ResonanceHum_Depleted",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_ResonanceHum_Depleted",
+      "GUID": "{45984DA6-E8A6-47FE-AD7C-F6BCEDA3F75B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0647D1DC-9595-F380-674B-C1EECB804CE2}"
+ }
+}

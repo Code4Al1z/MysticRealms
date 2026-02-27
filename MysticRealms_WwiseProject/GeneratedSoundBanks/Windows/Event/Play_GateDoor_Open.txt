@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	194403786	Play_GateDoor_Open			\Default Work Unit\Environment\Doors\Play_GateDoor_Open	
+

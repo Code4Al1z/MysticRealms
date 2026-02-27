@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3318357497",
+    "Type": "Event",
+    "GUID": "{9AC598BA-FF4C-41AC-9353-4C3BFFB3736B}",
+    "Language": "SFX",
+    "Hash": "{BF225B1F-80C8-864F-9EA4-40E0C30D8452}",
+    "ObjectPath": "Play_Platform_StartMove",
+    "ShortName": "Play_Platform_StartMove",
+    "Path": "Event/Play_Platform_StartMove.bnk",
+    "Events": [
+     {
+      "Id": "3318357497",
+      "Name": "Play_Platform_StartMove",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Platform\\Play_Platform_StartMove",
+      "GUID": "{9AC598BA-FF4C-41AC-9353-4C3BFFB3736B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{1D3DA6FB-C397-C993-AB40-D9E60A8E5AAB}"
+ }
+}

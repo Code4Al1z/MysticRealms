@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3367557195",
+    "Type": "Event",
+    "GUID": "{7CE7B9B1-8C39-49C8-8943-38EEA82FDB08}",
+    "Language": "SFX",
+    "Hash": "{46B99ECD-8DA5-8CA0-DD81-58E654BDA3BF}",
+    "ObjectPath": "Play_ResonanceDoor_Close",
+    "ShortName": "Play_ResonanceDoor_Close",
+    "Path": "Event/Play_ResonanceDoor_Close.bnk",
+    "Events": [
+     {
+      "Id": "3367557195",
+      "Name": "Play_ResonanceDoor_Close",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_ResonanceDoor_Close",
+      "GUID": "{7CE7B9B1-8C39-49C8-8943-38EEA82FDB08}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{530ADBED-D825-4322-9D27-17A04F65E4C2}"
+ }
+}

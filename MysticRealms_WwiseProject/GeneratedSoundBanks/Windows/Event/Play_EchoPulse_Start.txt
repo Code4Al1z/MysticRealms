@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3841466509	Play_EchoPulse_Start			\Default Work Unit\PlayerAbilities\Play_EchoPulse_Start	
+

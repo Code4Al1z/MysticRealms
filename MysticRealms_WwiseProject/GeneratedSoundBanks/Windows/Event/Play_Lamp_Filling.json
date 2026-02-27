@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3244476280",
+    "Type": "Event",
+    "GUID": "{107513C9-7FCA-47C5-8623-B749309E707C}",
+    "Language": "SFX",
+    "Hash": "{B276EEC6-9DC5-5D2E-EA9A-40DA4A47DD2D}",
+    "ObjectPath": "Play_Lamp_Filling",
+    "ShortName": "Play_Lamp_Filling",
+    "Path": "Event/Play_Lamp_Filling.bnk",
+    "Events": [
+     {
+      "Id": "3244476280",
+      "Name": "Play_Lamp_Filling",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Filling",
+      "GUID": "{107513C9-7FCA-47C5-8623-B749309E707C}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{8DD03B3E-A95A-7FCB-B1D2-F4754BC4F6F2}"
+ }
+}

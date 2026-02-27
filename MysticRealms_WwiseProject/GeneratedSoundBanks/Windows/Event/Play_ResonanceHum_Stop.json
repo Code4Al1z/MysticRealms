@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2563595731",
+    "Type": "Event",
+    "GUID": "{CFA9A95B-8225-447E-B051-548530107169}",
+    "Language": "SFX",
+    "Hash": "{C92C88B4-113C-D32E-79DE-FC1559BB9D84}",
+    "ObjectPath": "Play_ResonanceHum_Stop",
+    "ShortName": "Play_ResonanceHum_Stop",
+    "Path": "Event/Play_ResonanceHum_Stop.bnk",
+    "Events": [
+     {
+      "Id": "2563595731",
+      "Name": "Play_ResonanceHum_Stop",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_ResonanceHum_Stop",
+      "GUID": "{CFA9A95B-8225-447E-B051-548530107169}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0CD240A9-6915-A379-7ABA-9CB01D3D5F8E}"
+ }
+}

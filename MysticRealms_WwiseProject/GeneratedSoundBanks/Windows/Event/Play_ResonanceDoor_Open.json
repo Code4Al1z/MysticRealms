@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "616110093",
+    "Type": "Event",
+    "GUID": "{CD1B8B73-3D6E-468B-8269-12D3FD6543CB}",
+    "Language": "SFX",
+    "Hash": "{F0567A1E-D0DC-A7CF-EBC1-B78D9DFD2D34}",
+    "ObjectPath": "Play_ResonanceDoor_Open",
+    "ShortName": "Play_ResonanceDoor_Open",
+    "Path": "Event/Play_ResonanceDoor_Open.bnk",
+    "Events": [
+     {
+      "Id": "616110093",
+      "Name": "Play_ResonanceDoor_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_ResonanceDoor_Open",
+      "GUID": "{CD1B8B73-3D6E-468B-8269-12D3FD6543CB}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{FC44BA94-603A-25D6-3686-3377212C5AF4}"
+ }
+}
