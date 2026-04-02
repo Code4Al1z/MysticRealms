@@ -142,23 +142,23 @@ MonoBehaviour:
   lampFillingEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 4daba0b26f080ed41a17b8f3e5c86b8d, type: 2}
   lampDepletingEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: bc25845b980a320428564d2f6a3bee36, type: 2}
   lampFullEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 56b85ffe1094ba64fad8b380d1815283, type: 2}
   lampEmptyEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: b9f994ddb768c40498cdf1c0bc06c00b, type: 2}
   lampEnergyRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: adfbfa6d5fa311b40a0b5d0a01e4a28e, type: 2}
   enableDebugLog: 1
 --- !u!114 &4284788842093983195
 MonoBehaviour:
@@ -179,6 +179,8 @@ MonoBehaviour:
   pulseColor: {r: 1, g: 1, b: 1, a: 0}
   pulseStrength: 0
   maxPulseStrength: 50
+  minPulseStrength: 0
+  disablePulseInactive: 0
   disableOnFadeOut: 0
 --- !u!65 &8160214691239953001
 BoxCollider:

@@ -138,11 +138,11 @@ MonoBehaviour:
   doorOpenEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 08091c86204567247be47d40dc1a4adc, type: 2}
   doorCloseEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 0027ca53028957e488209e1dab7bee6f, type: 2}
 --- !u!65 &8503786171373352551
 BoxCollider:
   m_ObjectHideFlags: 0
