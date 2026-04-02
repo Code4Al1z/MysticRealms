@@ -1,3 +1,23 @@
+Event	ID	Name			Wwise Object Path	Notes
+	194403786	Play_GateDoor_Open			\Default Work Unit\Environment\Doors\Play_GateDoor_Open	
+	411136912	Play_Platform_TravelLoop			\Default Work Unit\Environment\Platform\Play_Platform_TravelLoop	
+	616110093	Play_ResonanceDoor_Open			\Default Work Unit\Environment\Doors\Play_ResonanceDoor_Open	
+	700059983	Play_EchoPulse_Stop			\Default Work Unit\PlayerAbilities\Play_EchoPulse_Stop	
+	1378571526	Play_GateDoor_MovingLoop			\Default Work Unit\Environment\Doors\Play_GateDoor_MovingLoop	
+	1896094386	Play_GateDoor_Stop			\Default Work Unit\Environment\Doors\Play_GateDoor_Stop	
+	1953327225	Play_ResonanceHum_Start			\Default Work Unit\PlayerAbilities\Play_ResonanceHum_Start	
+	2563595731	Play_ResonanceHum_Stop			\Default Work Unit\PlayerAbilities\Play_ResonanceHum_Stop	
+	2703900524	Play_Lamp_Full			\Default Work Unit\Environment\Lamp\Play_Lamp_Full	
+	3114152379	Play_Lamp_Depleting			\Default Work Unit\Environment\Lamp\Play_Lamp_Depleting	
+	3244476280	Play_Lamp_Filling			\Default Work Unit\Environment\Lamp\Play_Lamp_Filling	
+	3318357497	Play_Platform_StartMove			\Default Work Unit\Environment\Platform\Play_Platform_StartMove	
+	3367557195	Play_ResonanceDoor_Close			\Default Work Unit\Environment\Doors\Play_ResonanceDoor_Close	
+	3672837954	Play_Lamp_Empty			\Default Work Unit\Environment\Lamp\Play_Lamp_Empty	
+	3841466509	Play_EchoPulse_Start			\Default Work Unit\PlayerAbilities\Play_EchoPulse_Start	
+	4046392273	Play_Platform_StopMove			\Default Work Unit\Environment\Platform\Play_Platform_StopMove	
+	4102059022	Play_GateDoor_Close			\Default Work Unit\Environment\Doors\Play_GateDoor_Close	
+	4169607118	Play_ResonanceHum_Depleted			\Default Work Unit\PlayerAbilities\Play_ResonanceHum_Depleted	
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1925913377	ResonanceHum_Intensity			\Default Work Unit\ResonanceHum_Intensity	
 	2086212122	Lamp_Energy			\Default Work Unit\Lamp_Energy	

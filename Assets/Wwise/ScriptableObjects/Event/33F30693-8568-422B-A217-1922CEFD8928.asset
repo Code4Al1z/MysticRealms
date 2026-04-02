@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Play_ResonanceHum_Start
   id: 1953327225
   guid: 33F30693-8568-422B-A217-1922CEFD8928
-  IsInUserDefinedSoundBank: 0
+  IsInUserDefinedSoundBank: 1

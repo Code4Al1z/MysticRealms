@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Play_EchoPulse_Stop
   id: 700059983
   guid: 390C5834-7D60-4BAF-96FE-37F415CE3E1A
-  IsInUserDefinedSoundBank: 0
+  IsInUserDefinedSoundBank: 1

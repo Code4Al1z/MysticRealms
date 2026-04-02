@@ -29,38 +29,218 @@
 					<ChildrenList>
 						<Folder Name="Platform" ID="{ABD4FA50-6DCE-4677-9DD5-B37F5D8BF1F4}" ShortID="519359984">
 							<ChildrenList>
-								<Event Name="Play_Platform_StartMove" ID="{9AC598BA-FF4C-41AC-9353-4C3BFFB3736B}"/>
-								<Event Name="Play_Platform_StopMove" ID="{49262E8E-502C-4443-9F1D-0DDFB97C9D96}"/>
-								<Event Name="Play_Platform_TravelLoop" ID="{08A9784E-4140-49E5-994C-FE170D4E2670}"/>
+								<Event Name="Play_Platform_StartMove" ID="{AD1AD8D6-3A3D-44D5-A8FE-B610B2153C01}">
+									<ChildrenList>
+										<Action Name="" ID="{4D616557-47EC-47DC-9402-4EDB3E4A41D0}" ShortID="475177268">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Platform_StartMove" ID="{54C9DB2F-223D-4EDE-95C6-3A684C54B0B1}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Platform_StopMove" ID="{72ECD7ED-3B35-476E-9521-B8EA3B3EA5A6}">
+									<ChildrenList>
+										<Action Name="" ID="{052445FA-02C9-431F-A7E8-9C243C297C46}" ShortID="386989040">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Platform_StopMove" ID="{009A3A7D-B951-4379-A547-B808895B5DC1}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Platform_TravelLoop" ID="{78EEFEAD-FDDD-4AEC-AF4B-74959BA94FF1}">
+									<ChildrenList>
+										<Action Name="" ID="{1C239AB3-CDAE-4220-A8DE-D6BDE2D763D0}" ShortID="238815151">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Platform_TravelLoop" ID="{E42597FE-71D6-4CF6-A611-6A50B961E558}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Doors" ID="{392C1E2D-662A-47BC-A441-9FA0436F4ADF}" ShortID="1066168765">
 							<ChildrenList>
-								<Event Name="Play_ResonanceDoor_Open" ID="{CD1B8B73-3D6E-468B-8269-12D3FD6543CB}"/>
-								<Event Name="Play_ResonanceDoor_Close" ID="{7CE7B9B1-8C39-49C8-8943-38EEA82FDB08}"/>
-								<Event Name="Play_GateDoor_Open" ID="{9262AD56-F24B-4353-A00D-2C7EABA40A2B}"/>
-								<Event Name="Play_GateDoor_Close" ID="{42C019F0-E5BB-4B40-A373-13180D076D36}"/>
-								<Event Name="Play_GateDoor_MovingLoop" ID="{2793888D-9CAB-48AA-98BA-28DCCA5699BA}"/>
-								<Event Name="Play_GateDoor_Stop" ID="{ED25C303-B01E-4AAE-9EB1-CCE526703D53}"/>
+								<Event Name="Play_GateDoor_Open" ID="{92274D69-7645-4F82-AEC0-17D2BBCDB15E}">
+									<ChildrenList>
+										<Action Name="" ID="{9E2DE9B5-8B52-4F19-953C-4B3951F9EC22}" ShortID="791478177">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="GateDoor_Open" ID="{EAEB86BC-49EE-4774-8FA6-35D8E5D02938}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_GateDoor_Close" ID="{587D98DB-D5BC-472F-B5C2-8F48288F0A48}">
+									<ChildrenList>
+										<Action Name="" ID="{26377134-3927-4655-BEE6-806BE50D09BC}" ShortID="115686383">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="GateDoor_Close" ID="{BF2876D3-3ED1-435C-9168-194FA7C20F33}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_GateDoor_Stop" ID="{30A86BF8-C25A-4561-93F6-EF14931A549C}">
+									<ChildrenList>
+										<Action Name="" ID="{039BBF78-689F-4DD6-9E3A-9EE18711EBAB}" ShortID="720951821">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="GateDoor_Stop" ID="{046AB2A4-4ED4-4850-A80D-D281E2DFBB2F}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_GateDoor_MovingLoop" ID="{D0F619B9-08AE-4B1C-8C73-6C041E7F0AA7}">
+									<ChildrenList>
+										<Action Name="" ID="{AAD2ED16-1CD8-4F95-B54C-1C4CCD09411A}" ShortID="118316014">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="GateDoor_MovingLoop" ID="{8AECF35E-AF8F-48F0-B560-A6A1CFCA1DDA}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_ResonanceDoor_Open" ID="{C2C9F5BB-4DC0-4748-AF6C-9BFD8013EDC8}">
+									<ChildrenList>
+										<Action Name="" ID="{B605FB88-41C7-4365-BE59-DC1EDD4DE32A}" ShortID="892868924">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="ResonanceDoor_Open" ID="{3AF00294-3539-49F5-8BDD-2F8265AFD052}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_ResonanceDoor_Close" ID="{815417C8-3BFD-4E8E-AFFE-3A5557268D5E}">
+									<ChildrenList>
+										<Action Name="" ID="{F3AFADE7-5BFA-4CA3-ADBC-EA4CE031D62C}" ShortID="960442384">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="ResonanceDoor_Close" ID="{7077277F-30B2-4CAB-A123-CC639AF3D7BC}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Lamp" ID="{76981147-10BD-4652-852E-8A0801A21DEE}" ShortID="879010007">
 							<ChildrenList>
-								<Event Name="Play_Lamp_Filling" ID="{107513C9-7FCA-47C5-8623-B749309E707C}"/>
-								<Event Name="Play_Lamp_Depleting" ID="{1887D9AD-F815-4BF0-AFD3-316142C41631}"/>
-								<Event Name="Play_Lamp_Full" ID="{A3DFC9EC-F7CF-4A8A-94C3-7F1CEE400C57}"/>
-								<Event Name="Play_Lamp_Empty" ID="{3510E493-CC02-4F91-A410-9FF8775C5DD0}"/>
+								<Event Name="Play_Lamp_Full" ID="{A05A401D-489F-4282-856A-65DD59E570F9}">
+									<ChildrenList>
+										<Action Name="" ID="{55BD4185-2627-40FB-81C3-8F9329458798}" ShortID="413351728">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Lamp_Full" ID="{CF5F4AB4-9D76-4CEB-A2B7-559EBA83D53E}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Lamp_Filling" ID="{EFB8782A-AE34-4D69-A4BE-1AE191EC7C91}">
+									<ChildrenList>
+										<Action Name="" ID="{CF0E8EB0-0CBA-4E25-8F65-7C0D94FABBBC}" ShortID="339018854">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Lamp_Filling" ID="{081FF6B8-B1ED-43DB-B658-7230EE1AFDE7}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Lamp_Depleting" ID="{2D080E10-56DD-4965-AE0E-AA74025CE3BA}">
+									<ChildrenList>
+										<Action Name="" ID="{C8D68731-9ADA-44A6-8D43-6EF425DC8080}" ShortID="564985905">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Lamp_Depleting" ID="{FC71DB40-C76A-4C1B-9C4D-483C4F91C3EE}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Lamp_Empty" ID="{31ADA175-E08F-4BBB-BCBC-7BA58804D6B3}">
+									<ChildrenList>
+										<Action Name="" ID="{D231104C-098A-476C-803E-99E1D3873C4C}" ShortID="652005006">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Lamp_Empty" ID="{C4F88B04-FD10-4327-939E-C048423A692D}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="PlayerAbilities" ID="{A487F0E3-F22B-4B86-BF3B-D7B1406DFEB3}" ShortID="311357590">
 					<ChildrenList>
-						<Event Name="Play_EchoPulse_Start" ID="{2057F25B-2A81-4F62-B1A0-30B06BEBA1D3}"/>
-						<Event Name="Play_EchoPulse_Stop" ID="{390C5834-7D60-4BAF-96FE-37F415CE3E1A}"/>
-						<Event Name="Play_ResonanceHum_Start" ID="{33F30693-8568-422B-A217-1922CEFD8928}"/>
-						<Event Name="Play_ResonanceHum_Stop" ID="{CFA9A95B-8225-447E-B051-548530107169}"/>
-						<Event Name="Play_ResonanceHum_Depleted" ID="{45984DA6-E8A6-47FE-AD7C-F6BCEDA3F75B}"/>
+						<Event Name="Play_EchoPulse_Start" ID="{2057F25B-2A81-4F62-B1A0-30B06BEBA1D3}">
+							<ChildrenList>
+								<Action Name="" ID="{B7B8A39D-9530-48AE-9E2E-E3B182B46452}" ShortID="304848000">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="EchoPulse_Start" ID="{77B72A6D-FBF1-4A4D-AD83-F6F434037207}" WorkUnitID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_ResonanceHum_Depleted" ID="{860B474D-8D19-49EC-96A4-ED9D47D8EFCA}">
+							<ChildrenList>
+								<Action Name="" ID="{1D26292B-A47A-4858-82F2-33DBF9AF232F}" ShortID="574460176">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ResonanceHum_Depleted" ID="{D8D00EF9-30FF-49DF-B3EE-46C1B79E69D0}" WorkUnitID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_ResonanceHum_Start" ID="{81769494-6367-4FC9-9010-37E5DB577F91}">
+							<ChildrenList>
+								<Action Name="" ID="{D4E70AAA-63F8-4900-84C5-FCA8CEB4AB80}" ShortID="674973800">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ResonanceHum_Start" ID="{54C49B49-0E55-4938-A860-6BFBCCEAFF57}" WorkUnitID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_EchoPulse_Stop" ID="{0473117D-77FB-4EBD-B5E6-F136200586E3}">
+							<ChildrenList>
+								<Action Name="" ID="{1F08EEFC-C4F7-4479-AD59-CE072D25B77C}" ShortID="246356694">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="EchoPulse_Stop" ID="{B72A970D-E0AC-4719-A12A-F42E5ED0BB19}" WorkUnitID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_ResonanceHum_Stop" ID="{1C58F377-324F-4426-B618-A5B6A376DA00}">
+							<ChildrenList>
+								<Action Name="" ID="{D8D09675-8F8C-43D5-855D-375C95196127}" ShortID="477853232">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ResonanceHum_Stop" ID="{60E3BE47-7A85-4B12-A33B-8923E99A9814}" WorkUnitID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

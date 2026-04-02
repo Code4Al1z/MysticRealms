@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3007090e409da7c4e825efba4d0bf883, type: 3}
-  m_Name: 2057F25B-2A81-4F62-B1A0-30B06BEBA1D3
+  m_Name: 2793888D-9CAB-48AA-98BA-28DCCA5699BA
   m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseEventReference
-  objectName: Play_EchoPulse_Start
-  id: 3841466509
-  guid: 2057F25B-2A81-4F62-B1A0-30B06BEBA1D3
+  objectName: Play_GateDoor_MovingLoop
+  id: 1378571526
+  guid: 2793888D-9CAB-48AA-98BA-28DCCA5699BA
   IsInUserDefinedSoundBank: 1

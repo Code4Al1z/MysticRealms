@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3007090e409da7c4e825efba4d0bf883, type: 3}
-  m_Name: 2057F25B-2A81-4F62-B1A0-30B06BEBA1D3
+  m_Name: CD1B8B73-3D6E-468B-8269-12D3FD6543CB
   m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseEventReference
-  objectName: Play_EchoPulse_Start
-  id: 3841466509
-  guid: 2057F25B-2A81-4F62-B1A0-30B06BEBA1D3
+  objectName: Play_ResonanceDoor_Open
+  id: 616110093
+  guid: CD1B8B73-3D6E-468B-8269-12D3FD6543CB
   IsInUserDefinedSoundBank: 1

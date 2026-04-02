@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Play_ResonanceHum_Stop
   id: 2563595731
   guid: CFA9A95B-8225-447E-B051-548530107169
-  IsInUserDefinedSoundBank: 0
+  IsInUserDefinedSoundBank: 1

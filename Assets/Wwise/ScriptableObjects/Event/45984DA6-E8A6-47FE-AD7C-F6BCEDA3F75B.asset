@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Play_ResonanceHum_Depleted
   id: 4169607118
   guid: 45984DA6-E8A6-47FE-AD7C-F6BCEDA3F75B
-  IsInUserDefinedSoundBank: 0
+  IsInUserDefinedSoundBank: 1

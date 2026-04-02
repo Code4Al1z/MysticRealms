@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9049C164-88B0-4D9B-A332-D9DF8F5D3A0B}",
     "Language": "SFX",
-    "Hash": "{02D622B1-6E09-838E-D491-DF7A7AB65AE8}",
+    "Hash": "{DACA201C-5CA4-66A8-2AF4-2FDEA4D08B6A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Environment_Bank",
     "ShortName": "Environment_Bank",
     "Path": "Environment_Bank.bnk",
@@ -246,6 +246,303 @@
       }
      ]
     },
+    "Events": [
+     {
+      "Id": "3841466509",
+      "Name": "Play_EchoPulse_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_EchoPulse_Start",
+      "GUID": "{2057F25B-2A81-4F62-B1A0-30B06BEBA1D3}",
+      "DurationType": "Infinite",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "963826701"
+        },
+        {
+         "Id": "1037976615"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "700059983",
+      "Name": "Play_EchoPulse_Stop",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_EchoPulse_Stop",
+      "GUID": "{0473117D-77FB-4EBD-B5E6-F136200586E3}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.3",
+      "DurationMax": "0.3",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "11099875"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "4102059022",
+      "Name": "Play_GateDoor_Close",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_Close",
+      "GUID": "{587D98DB-D5BC-472F-B5C2-8F48288F0A48}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "418782434"
+       }
+      ]
+     },
+     {
+      "Id": "1378571526",
+      "Name": "Play_GateDoor_MovingLoop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_MovingLoop",
+      "GUID": "{D0F619B9-08AE-4B1C-8C73-6C041E7F0AA7}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "959570204"
+       }
+      ]
+     },
+     {
+      "Id": "194403786",
+      "Name": "Play_GateDoor_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_Open",
+      "GUID": "{92274D69-7645-4F82-AEC0-17D2BBCDB15E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "726269731"
+       }
+      ]
+     },
+     {
+      "Id": "1896094386",
+      "Name": "Play_GateDoor_Stop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_Stop",
+      "GUID": "{30A86BF8-C25A-4561-93F6-EF14931A549C}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "426261744"
+       }
+      ]
+     },
+     {
+      "Id": "3114152379",
+      "Name": "Play_Lamp_Depleting",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Depleting",
+      "GUID": "{2D080E10-56DD-4965-AE0E-AA74025CE3BA}",
+      "DurationType": "Infinite",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "182596494"
+        },
+        {
+         "Id": "386532778"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3672837954",
+      "Name": "Play_Lamp_Empty",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Empty",
+      "GUID": "{31ADA175-E08F-4BBB-BCBC-7BA58804D6B3}",
+      "MaxAttenuation": "15",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "872248243"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "4150311356"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3244476280",
+      "Name": "Play_Lamp_Filling",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Filling",
+      "GUID": "{EFB8782A-AE34-4D69-A4BE-1AE191EC7C91}",
+      "MaxAttenuation": "15",
+      "DurationType": "Infinite",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "586149596"
+        },
+        {
+         "Id": "940870896"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "2703900524",
+      "Name": "Play_Lamp_Full",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Full",
+      "GUID": "{A05A401D-489F-4282-856A-65DD59E570F9}",
+      "MaxAttenuation": "15",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "48754536"
+        },
+        {
+         "Id": "369804542"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3318357497",
+      "Name": "Play_Platform_StartMove",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Platform\\Play_Platform_StartMove",
+      "GUID": "{AD1AD8D6-3A3D-44D5-A8FE-B610B2153C01}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.68251455",
+      "DurationMax": "0.68251455",
+      "MediaRefs": [
+       {
+        "Id": "679415353"
+       }
+      ]
+     },
+     {
+      "Id": "4046392273",
+      "Name": "Play_Platform_StopMove",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Platform\\Play_Platform_StopMove",
+      "GUID": "{72ECD7ED-3B35-476E-9521-B8EA3B3EA5A6}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.4437401",
+      "DurationMax": "0.4437401",
+      "MediaRefs": [
+       {
+        "Id": "811615640"
+       }
+      ]
+     },
+     {
+      "Id": "411136912",
+      "Name": "Play_Platform_TravelLoop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Platform\\Play_Platform_TravelLoop",
+      "GUID": "{78EEFEAD-FDDD-4AEC-AF4B-74959BA94FF1}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "18518718"
+       }
+      ]
+     },
+     {
+      "Id": "3367557195",
+      "Name": "Play_ResonanceDoor_Close",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_ResonanceDoor_Close",
+      "GUID": "{815417C8-3BFD-4E8E-AFFE-3A5557268D5E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "726924426"
+       },
+       {
+        "Id": "869030125"
+       }
+      ]
+     },
+     {
+      "Id": "616110093",
+      "Name": "Play_ResonanceDoor_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_ResonanceDoor_Open",
+      "GUID": "{C2C9F5BB-4DC0-4748-AF6C-9BFD8013EDC8}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "MediaRefs": [
+       {
+        "Id": "500190460"
+       }
+      ]
+     },
+     {
+      "Id": "4169607118",
+      "Name": "Play_ResonanceHum_Depleted",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_ResonanceHum_Depleted",
+      "GUID": "{860B474D-8D19-49EC-96A4-ED9D47D8EFCA}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8",
+      "DurationMax": "0.8",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "361248912"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "2029104418"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "1953327225",
+      "Name": "Play_ResonanceHum_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_ResonanceHum_Start",
+      "GUID": "{81769494-6367-4FC9-9010-37E5DB577F91}",
+      "DurationType": "Infinite",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "331954239"
+        },
+        {
+         "Id": "361663356"
+        },
+        {
+         "Id": "919275421"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "2563595731",
+      "Name": "Play_ResonanceHum_Stop",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_ResonanceHum_Stop",
+      "GUID": "{1C58F377-324F-4426-B618-A5B6A376DA00}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.7",
+      "DurationMax": "0.7",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "401304084"
+        },
+        {
+         "Id": "623288895"
+        }
+       ]
+      }
+     }
+    ],
     "GameParameters": [
      {
       "Id": "1925913377",
@@ -274,6 +571,6 @@
     ]
    }
   ],
-  "FileHash": "{779D5A3C-4FBC-9952-5D0F-3FFA45321420}"
+  "FileHash": "{5748B074-265F-8617-F614-5B1E3D33F00B}"
  }
 }

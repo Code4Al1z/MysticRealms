@@ -1,3 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	4169607118	Play_ResonanceHum_Depleted			\Default Work Unit\PlayerAbilities\Play_ResonanceHum_Depleted	
-
