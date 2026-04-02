@@ -92,6 +92,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID ENVIRONMENT_BANK = 430783581U;
         static const AkUniqueID PLAYER_SFX = 817096458U;
     } // namespace BANKS
 

@@ -11,6 +11,14 @@
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
+				<SoundBank Name="Environment_Bank" ID="{9049C164-88B0-4D9B-A332-D9DF8F5D3A0B}">
+					<ObjectInclusionList>
+						<ObjectRef Name="PlayerAbilities" ID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}" WorkUnitID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Environment" ID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}" WorkUnitID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundBanks>

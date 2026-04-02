@@ -1,0 +1,279 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "430783581",
+    "Type": "User",
+    "GUID": "{9049C164-88B0-4D9B-A332-D9DF8F5D3A0B}",
+    "Language": "SFX",
+    "Hash": "{02D622B1-6E09-838E-D491-DF7A7AB65AE8}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Environment_Bank",
+    "ShortName": "Environment_Bank",
+    "Path": "Environment_Bank.bnk",
+    "Media": [
+     {
+      "Id": "18518718",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Platform_TravelLoop.wav",
+      "CachePath": "93/{93662D8A-E0D9-F762-5EE2-4E5AD8EC9D77}.wem"
+     },
+     {
+      "Id": "418782434",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "GateDoor_Close_01.wav",
+      "CachePath": "2F/{2FA53111-1712-FEBD-32F6-B16FC2B10E2D}.wem"
+     },
+     {
+      "Id": "426261744",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "GateDoor_Stop_01.wav",
+      "CachePath": "A4/{A4943B66-C69A-2B5F-EE0F-D51F7A39D440}.wem"
+     },
+     {
+      "Id": "500190460",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ResonanceDoor_Open_01.wav",
+      "CachePath": "3B/{3B3E9D1D-44F7-61AA-8584-15E78822A034}.wem"
+     },
+     {
+      "Id": "679415353",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Platform_StartMove.wav",
+      "CachePath": "2E/{2E9F7B47-FB13-94A5-3B33-E9F45D0D65C0}.wem"
+     },
+     {
+      "Id": "726269731",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "GateDoor_Open_01.wav",
+      "CachePath": "AB/{AB5C5A0B-2C70-A6A3-7AEF-CE170416AE34}.wem"
+     },
+     {
+      "Id": "726924426",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ResonanceDoor_Close_01.wav",
+      "CachePath": "4A/{4A8737A5-EF15-F1E1-5A07-0EC854F04735}.wem"
+     },
+     {
+      "Id": "811615640",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Platform_StopMove.wav",
+      "CachePath": "F4/{F4C9692D-85D1-4185-6277-D4B29DCDE105}.wem"
+     },
+     {
+      "Id": "869030125",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ResonanceDoor_Close_02.wav",
+      "CachePath": "CE/{CEF9B91B-6A52-2F7D-008B-DEC31E798E78}.wem"
+     },
+     {
+      "Id": "959570204",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "GateDoor_MovingLoop_01.wav",
+      "CachePath": "94/{94553660-D4BF-6FB1-FC23-234A82F31F32}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "11099875",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\EchoPulse_Stop\\Sine",
+       "GUID": "{FCEF33B1-476E-420F-BBF4-4E08724843E8}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      },
+      {
+       "Id": "48754536",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Full\\Lamp_Full_01\\Sine",
+       "GUID": "{DAF8467D-3D36-4CFB-B7DA-B282973DDB37}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      },
+      {
+       "Id": "182596494",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Depleting\\Sine",
+       "GUID": "{C85A839C-6EF5-4319-8E94-DC758AEFB5DB}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      },
+      {
+       "Id": "331954239",
+       "Name": "ResonanceHum_Start_Parametric_EQ (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\ResonanceHum_Start\\[Effect Slot [0]: (Parametric EQ)]\\ResonanceHum_Start_Parametric_EQ (Custom)",
+       "GUID": "{E6BE15D4-05D6-4CB6-B826-9AB0C8F4F7AE}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "361248912",
+       "Name": "Tone Generator",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\ResonanceHum_Depleted\\Tone Generator",
+       "GUID": "{890510C1-4343-4948-9329-977EEED6D4FB}",
+       "LibName": "Wwise Tone Generator",
+       "LibId": "6684674"
+      },
+      {
+       "Id": "361663356",
+       "Name": "Synth One",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\ResonanceHum_Start\\Synth One",
+       "GUID": "{0C07DBDB-8268-4520-A47D-603E6BA16623}",
+       "LibName": "Wwise Synth One",
+       "LibId": "9699330"
+      },
+      {
+       "Id": "369804542",
+       "Name": "Lamp_Full_RoomVerb (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Full\\[Effect Slot [0]: (RoomVerb)]\\Lamp_Full_RoomVerb (Custom)",
+       "GUID": "{82EED2EB-ABC0-4052-80C5-BA35CC731B45}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "386532778",
+       "Name": "Lamp_Depleting_Tremolo (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Depleting\\[Effect Slot [0]: (Tremolo)]\\Lamp_Depleting_Tremolo (Custom)",
+       "GUID": "{72CDD7BE-A38C-42A3-8763-7B9A46A8B1E4}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      },
+      {
+       "Id": "401304084",
+       "Name": "ResonanceHum_Stop_RoomVerb (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\ResonanceHum_Stop\\[Effect Slot [0]: (RoomVerb)]\\ResonanceHum_Stop_RoomVerb (Custom)",
+       "GUID": "{1D53A53D-6FB4-47BE-A096-A0884824240C}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "586149596",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Filling\\Sine",
+       "GUID": "{9D2636D3-0D79-41A8-B8F6-D5C7F6046C44}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      },
+      {
+       "Id": "623288895",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\ResonanceHum_Stop\\Sine",
+       "GUID": "{18D2FBD5-FF18-4F3D-A855-8891B6070E23}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      },
+      {
+       "Id": "872248243",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Empty\\Lamp_Empty_01\\Sine",
+       "GUID": "{68907224-2434-4D02-A872-7580708A9A5C}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      },
+      {
+       "Id": "919275421",
+       "Name": "ResonanceHum_Start_Guitar_Distortion (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\ResonanceHum_Start\\[Effect Slot [1]: (Guitar Distortion)]\\ResonanceHum_Start_Guitar_Distortion (Custom)",
+       "GUID": "{C8F83983-4D2F-40FF-BABC-D1CB2CB16F34}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
+       "Id": "940870896",
+       "Name": "Lamp_Filling_Guitar_Distortion (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Filling\\[Effect Slot [0]: (Guitar Distortion)]\\Lamp_Filling_Guitar_Distortion (Custom)",
+       "GUID": "{AA6DD07D-AD20-4523-BD54-28B5F1D09032}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
+       "Id": "963826701",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\EchoPulse_Start\\Sine",
+       "GUID": "{4AA03476-E8EE-4E6C-8B48-B63FA13DFF49}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      },
+      {
+       "Id": "1037976615",
+       "Name": "EchoPulse_Start_Flanger (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\PlayerAbilities\\EchoPulse_Start\\[Effect Slot [0]: (Flanger)]\\EchoPulse_Start_Flanger (Custom)",
+       "GUID": "{3AF9DB78-F8D7-4864-AD2D-5038E2BB4209}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      }
+     ],
+     "ShareSets": [
+      {
+       "Id": "2029104418",
+       "Name": "ResonanceHum_Depleted_Guitar_Distortion",
+       "ObjectPath": "\\Effects\\Default Work Unit\\ResonanceHum_Depleted_Guitar_Distortion",
+       "GUID": "{7C5CA339-F61D-4A6E-AFE1-0126E820270C}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
+       "Id": "4150311356",
+       "Name": "Lamp_Empty_Guitar_Distortion",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Lamp_Empty_Guitar_Distortion",
+       "GUID": "{066D8A11-9382-4DF4-A476-4030B9EE7D03}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      }
+     ]
+    },
+    "GameParameters": [
+     {
+      "Id": "1925913377",
+      "Name": "ResonanceHum_Intensity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\ResonanceHum_Intensity",
+      "GUID": "{2DB90B39-68D4-428C-97AE-0332A023E62C}"
+     },
+     {
+      "Id": "2086212122",
+      "Name": "Lamp_Energy",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Lamp_Energy",
+      "GUID": "{DCF08911-3353-4438-A001-50DC6D933228}"
+     },
+     {
+      "Id": "3773845682",
+      "Name": "EchoPulse_Frequency",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\EchoPulse_Frequency",
+      "GUID": "{B59496F2-51C7-4E3B-87A6-A1F6184A0598}"
+     },
+     {
+      "Id": "3818301486",
+      "Name": "ResonanceHum_Energy",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\ResonanceHum_Energy",
+      "GUID": "{037FAD4A-F7B6-4EFF-8424-965ED8876219}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{779D5A3C-4FBC-9952-5D0F-3FFA45321420}"
+ }
+}

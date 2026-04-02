@@ -1,0 +1,47 @@
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1925913377	ResonanceHum_Intensity			\Default Work Unit\ResonanceHum_Intensity	
+	2086212122	Lamp_Energy			\Default Work Unit\Lamp_Energy	
+	3773845682	EchoPulse_Frequency			\Default Work Unit\EchoPulse_Frequency	
+	3818301486	ResonanceHum_Energy			\Default Work Unit\ResonanceHum_Energy	
+
+Modulator LFO	ID	Name			Wwise Object Path	Notes
+	143004858	ResonanceHum_PitchLFO			\Default Work Unit\ResonanceHum_PitchLFO	
+	418439564	LampDepleting_PitchLFO			\Default Work Unit\LampDepleting_PitchLFO	
+
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	753734901	Modulator Envelope (Custom)				
+
+Effect plug-ins	ID	Name	Type				Notes
+	331954239	ResonanceHum_Start_Parametric_EQ (Custom)	Wwise Parametric EQ			
+	369804542	Lamp_Full_RoomVerb (Custom)	Wwise RoomVerb			
+	386532778	Lamp_Depleting_Tremolo (Custom)	Wwise Tremolo			
+	401304084	ResonanceHum_Stop_RoomVerb (Custom)	Wwise RoomVerb			
+	919275421	ResonanceHum_Start_Guitar_Distortion (Custom)	Wwise Guitar Distortion			
+	940870896	Lamp_Filling_Guitar_Distortion (Custom)	Wwise Guitar Distortion			
+	1037976615	EchoPulse_Start_Flanger (Custom)	Wwise Flanger			
+	2029104418	ResonanceHum_Depleted_Guitar_Distortion	Wwise Guitar Distortion			
+	4150311356	Lamp_Empty_Guitar_Distortion	Wwise Guitar Distortion			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	11099875	Sine	Wwise Sine		\Containers\Default Work Unit\PlayerAbilities\EchoPulse_Stop\Sine	
+	48754536	Sine	Wwise Sine		\Containers\Default Work Unit\Environment\Lamp\Lamp_Full\Lamp_Full_01\Sine	
+	182596494	Sine	Wwise Sine		\Containers\Default Work Unit\Environment\Lamp\Lamp_Depleting\Sine	
+	361248912	Tone Generator	Wwise Tone Generator		\Containers\Default Work Unit\PlayerAbilities\ResonanceHum_Depleted\Tone Generator	
+	361663356	Synth One	Wwise Synth One		\Containers\Default Work Unit\PlayerAbilities\ResonanceHum_Start\Synth One	
+	586149596	Sine	Wwise Sine		\Containers\Default Work Unit\Environment\Lamp\Lamp_Filling\Sine	
+	623288895	Sine	Wwise Sine		\Containers\Default Work Unit\PlayerAbilities\ResonanceHum_Stop\Sine	
+	872248243	Sine	Wwise Sine		\Containers\Default Work Unit\Environment\Lamp\Lamp_Empty\Lamp_Empty_01\Sine	
+	963826701	Sine	Wwise Sine		\Containers\Default Work Unit\PlayerAbilities\EchoPulse_Start\Sine	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	18518718	Platform_TravelLoop	.cache\93\{93662D8A-E0D9-F762-5EE2-4E5AD8EC9D77}.wem		\Containers\Default Work Unit\Environment\Platform\Platform_TravelLoop		176272
+	418782434	GateDoor_Close_01	.cache\2F\{2FA53111-1712-FEBD-32F6-B16FC2B10E2D}.wem		\Containers\Default Work Unit\Environment\Doors\GateDoor_Close\GateDoor_Close_01		192096
+	426261744	GateDoor_Stop_01	.cache\A4\{A4943B66-C69A-2B5F-EE0F-D51F7A39D440}.wem		\Containers\Default Work Unit\Environment\Doors\GateDoor_Stop\GateDoor_Stop_01		192096
+	500190460	ResonanceDoor_Open_01	.cache\3B\{3B3E9D1D-44F7-61AA-8584-15E78822A034}.wem		\Containers\Default Work Unit\Environment\Doors\ResonanceDoor_Open\ResonanceDoor_Open_01		192096
+	679415353	Platform_StartMove	.cache\2E\{2E9F7B47-FB13-94A5-3B33-E9F45D0D65C0}.wem		\Containers\Default Work Unit\Environment\Platform\Platform_StartMove\Platform_StartMove		131140
+	726269731	GateDoor_Open_01	.cache\AB\{AB5C5A0B-2C70-A6A3-7AEF-CE170416AE34}.wem		\Containers\Default Work Unit\Environment\Doors\GateDoor_Open\GateDoor_Open_01		192096
+	726924426	ResonanceDoor_Close_01	.cache\4A\{4A8737A5-EF15-F1E1-5A07-0EC854F04735}.wem		\Containers\Default Work Unit\Environment\Doors\ResonanceDoor_Close\ResonanceDoor_Close_01		192096
+	811615640	Platform_StopMove	.cache\F4\{F4C9692D-85D1-4185-6277-D4B29DCDE105}.wem		\Containers\Default Work Unit\Environment\Platform\Platform_StopMove\Platform_StopMove		85296
+	869030125	ResonanceDoor_Close_02	.cache\CE\{CEF9B91B-6A52-2F7D-008B-DEC31E798E78}.wem		\Containers\Default Work Unit\Environment\Doors\ResonanceDoor_Close\ResonanceDoor_Close_02		192096
+	959570204	GateDoor_MovingLoop	.cache\94\{94553660-D4BF-6FB1-FC23-234A82F31F32}.wem		\Containers\Default Work Unit\Environment\Doors\GateDoor_MovingLoop		288096
+
