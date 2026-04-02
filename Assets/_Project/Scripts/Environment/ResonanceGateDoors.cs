@@ -52,7 +52,7 @@ public class ResonanceGateDoors : MonoBehaviour
     private bool isOpen = false;
     private bool isMoving = false;
     private float currentOpenAmount = 0f;
-    private uint movingLoopPlayingID = 0;
+    private uint movingLoopPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
 
     private void Start()
     {
@@ -105,12 +105,18 @@ public class ResonanceGateDoors : MonoBehaviour
         isOpen = true;
         isMoving = true;
 
+        if (movingLoopPlayingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        {
+            AkUnitySoundEngine.StopPlayingID(movingLoopPlayingID, 300);
+            movingLoopPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+        }
+
         if (doorOpenEvent != null)
         {
             doorOpenEvent.Post(gameObject);
         }
 
-        if (doorMovingLoopEvent != null && movingLoopPlayingID == 0)
+        if (doorMovingLoopEvent != null)
         {
             movingLoopPlayingID = doorMovingLoopEvent.Post(gameObject);
         }
@@ -129,12 +135,18 @@ public class ResonanceGateDoors : MonoBehaviour
         isOpen = false;
         isMoving = true;
 
+        if (movingLoopPlayingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        {
+            AkUnitySoundEngine.StopPlayingID(movingLoopPlayingID, 300);
+            movingLoopPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+        }
+
         if (doorCloseEvent != null)
         {
             doorCloseEvent.Post(gameObject);
         }
 
-        if (doorMovingLoopEvent != null && movingLoopPlayingID == 0)
+        if (doorMovingLoopEvent != null)
         {
             movingLoopPlayingID = doorMovingLoopEvent.Post(gameObject);
         }
@@ -159,14 +171,15 @@ public class ResonanceGateDoors : MonoBehaviour
         {
             isMoving = false;
 
+            if (movingLoopPlayingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+            {
+                AkUnitySoundEngine.StopPlayingID(movingLoopPlayingID, 300);
+                movingLoopPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+            }
+
             if (doorStopEvent != null)
             {
                 doorStopEvent.Post(gameObject);
-            }
-            else if (movingLoopPlayingID != 0)
-            {
-                AkUnitySoundEngine.StopPlayingID(movingLoopPlayingID);
-                movingLoopPlayingID = 0;
             }
         }
 
@@ -189,21 +202,6 @@ public class ResonanceGateDoors : MonoBehaviour
         {
             doorOpenAmountRTPC.SetValue(gameObject, currentOpenAmount * 100f);
         }
-    }
-
-    public bool IsFullyOpen()
-    {
-        return Mathf.Approximately(currentOpenAmount, 1f);
-    }
-
-    public bool IsFullyClosed()
-    {
-        return Mathf.Approximately(currentOpenAmount, 0f);
-    }
-
-    public float GetOpenAmount()
-    {
-        return currentOpenAmount;
     }
 
     private void OnDrawGizmos()

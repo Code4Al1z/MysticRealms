@@ -43,6 +43,8 @@ public class ResonanceHumAbility : MonoBehaviour
     private float timeSinceStop = 0f;
     private GameObject activeVFX;
 
+    private uint humPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+
     public delegate void OnEnergyChanged(float energyPercent);
     public event OnEnergyChanged OnEnergyChangedEvent;
 
@@ -89,7 +91,7 @@ public class ResonanceHumAbility : MonoBehaviour
 
         if (resonanceHumStartEvent != null)
         {
-            resonanceHumStartEvent.Post(gameObject);
+            humPlayingID = resonanceHumStartEvent.Post(gameObject);
         }
 
         if (resonanceHumVFXPrefab != null && activeVFX == null)
@@ -126,7 +128,13 @@ public class ResonanceHumAbility : MonoBehaviour
         if (currentEnergy <= 0f)
         {
             currentEnergy = 0f;
-            
+
+            if (humPlayingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+            {
+                AkUnitySoundEngine.StopPlayingID(humPlayingID, 300);
+                humPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+            }
+
             if (resonanceDepletedEvent != null)
             {
                 resonanceDepletedEvent.Post(gameObject);
@@ -145,6 +153,12 @@ public class ResonanceHumAbility : MonoBehaviour
 
         isActive = false;
         timeSinceStop = 0f;
+
+        if (humPlayingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        {
+            AkUnitySoundEngine.StopPlayingID(humPlayingID, 300);
+            humPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+        }
 
         if (resonanceHumStopEvent != null)
         {

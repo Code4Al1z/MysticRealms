@@ -2,10 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-#if AK_WWISE
-using AK.Wwise;
-#endif
-
 [RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
 public class MovingPlatform : MonoBehaviour
@@ -35,9 +31,11 @@ public class MovingPlatform : MonoBehaviour
 
 #if AK_WWISE
     [Header("Wwise")]
-    [SerializeField] private Event startMoveEvent;
-    [SerializeField] private Event stopMoveEvent;
-    [SerializeField] private Event travelLoopEvent;
+    [SerializeField] private AK.Wwise.Event startMoveEvent;
+    [SerializeField] private AK.Wwise.Event stopMoveEvent;
+    [SerializeField] private AK.Wwise.Event travelLoopEvent;
+
+    private uint playingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
 #endif
 
     #endregion
@@ -189,8 +187,17 @@ public class MovingPlatform : MonoBehaviour
         isMoving = true;
 
 #if AK_WWISE
-        startMoveEvent?.Post(gameObject);
-        travelLoopEvent?.Post(gameObject);
+
+        if (playingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        {
+            AkUnitySoundEngine.StopPlayingID(playingID, 300);
+            playingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+        }
+
+        if (startMoveEvent != null)
+            startMoveEvent.Post(gameObject);
+        if (travelLoopEvent != null)
+            playingID = travelLoopEvent.Post(gameObject);
 #endif
 
         while (Vector3.Distance(rb.position, target) > arrivalThreshold)
@@ -220,8 +227,17 @@ public class MovingPlatform : MonoBehaviour
 
         rb.MovePosition(target);
         currentSpeed = 0f;
+
 #if AK_WWISE
-        stopMoveEvent?.Post(gameObject);
+
+        if (playingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        {
+            AkUnitySoundEngine.StopPlayingID(playingID, 300);
+            playingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+        }
+
+        if (startMoveEvent != null)
+            stopMoveEvent.Post(gameObject);
 #endif
     }
 

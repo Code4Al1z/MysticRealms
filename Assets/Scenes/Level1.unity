@@ -9561,6 +9561,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3294929864288858453, guid: bdde162de1fe316439c93d4c2c6f85f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6059494753620537483, guid: bdde162de1fe316439c93d4c2c6f85f5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 9.95
@@ -9613,6 +9617,18 @@ PrefabInstance:
       propertyPath: waitAtStop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8825571922865809819, guid: bdde162de1fe316439c93d4c2c6f85f5, type: 3}
+      propertyPath: stopMoveEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: b7bbdf6384f01f5488b0ca7fb3d0edb5, type: 2}
+    - target: {fileID: 8825571922865809819, guid: bdde162de1fe316439c93d4c2c6f85f5, type: 3}
+      propertyPath: startMoveEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c9a28769de2f5a43adbaff6586fd70e, type: 2}
+    - target: {fileID: 8825571922865809819, guid: bdde162de1fe316439c93d4c2c6f85f5, type: 3}
+      propertyPath: travelLoopEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: c662829a571c30e4994edf9dfedd1e86, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -33,7 +33,7 @@ public class EchoPulseAbility : MonoBehaviour
     private float currentFrequency = 100f;
     private float frequencyRampSpeed = 50f;
     private GameObject activeVFX;
-    private uint playingID = 0;
+    private uint playingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
 
     private void Update()
     {
@@ -132,16 +132,16 @@ public class EchoPulseAbility : MonoBehaviour
 
         isActive = false;
 
+        if (playingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        {
+            AkUnitySoundEngine.StopPlayingID(playingID, 300);
+            playingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+        }
+
         if (echoPulseStopEvent != null)
         {
             echoPulseStopEvent.Post(gameObject);
         }
-        else if (playingID != 0)
-        {
-            AkSoundEngine.StopPlayingID(playingID);
-        }
-
-        playingID = 0;
 
         if (activeVFX != null)
         {

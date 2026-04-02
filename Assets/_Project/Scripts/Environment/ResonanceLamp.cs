@@ -29,6 +29,9 @@ public class ResonanceLamp : MonoBehaviour, IResonanceResponsive
     private bool wasFull = false;
     private bool wasEmpty = true;
 
+    private uint lampFillingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+    private uint lampDepletingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+
     public delegate void OnEnergyChanged(float energyPercent);
     public event OnEnergyChanged OnEnergyChangedEvent;
 
@@ -93,10 +96,10 @@ public class ResonanceLamp : MonoBehaviour, IResonanceResponsive
     {
         playerInRange = false;
 
-        //if (isFilling)
-        //{
-        //    StopFilling();
-        //}
+        if (isFilling)
+        {
+            StopFilling();
+        }
 
         // Start depleting when resonance hum stops (at any energy level)
         if (currentEnergy > 0f)
@@ -115,9 +118,15 @@ public class ResonanceLamp : MonoBehaviour, IResonanceResponsive
             shaderController.FadeIn();
         }
 
+        if (lampDepletingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        {
+            AkUnitySoundEngine.StopPlayingID(lampDepletingID, 300);
+            lampDepletingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+        }
+
         if (lampFillingEvent != null)
         {
-            lampFillingEvent.Post(gameObject);
+            lampFillingID = lampFillingEvent.Post(gameObject);
         }
 
         if (enableDebugLog)
@@ -142,9 +151,15 @@ public class ResonanceLamp : MonoBehaviour, IResonanceResponsive
             shaderController.FadeOut();
         }
 
+        if (lampFillingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        {
+            AkUnitySoundEngine.StopPlayingID(lampFillingID, 300);
+            lampFillingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+        }
+
         if (lampDepletingEvent != null)
         {
-            lampDepletingEvent.Post(gameObject);
+            lampDepletingID = lampDepletingEvent.Post(gameObject);
         }
 
         if (enableDebugLog)
@@ -167,6 +182,12 @@ public class ResonanceLamp : MonoBehaviour, IResonanceResponsive
             wasFull = true;
             wasEmpty = false;
 
+            if (lampFillingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+            {
+                AkUnitySoundEngine.StopPlayingID(lampFillingID, 300);
+                lampFillingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+            }
+
             if (lampFullEvent != null)
             {
                 lampFullEvent.Post(gameObject);
@@ -185,6 +206,12 @@ public class ResonanceLamp : MonoBehaviour, IResonanceResponsive
         {
             wasEmpty = true;
             wasFull = false;
+
+            if (lampDepletingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+            {
+                AkUnitySoundEngine.StopPlayingID(lampDepletingID, 300);
+                lampDepletingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+            }
 
             if (lampEmptyEvent != null)
             {

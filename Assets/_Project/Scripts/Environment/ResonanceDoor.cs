@@ -55,13 +55,15 @@ public class ResonanceDoor : MonoBehaviour, IResonanceResponsive
         // Sound & FX
         if (isOpen)
         {
-            doorOpenEvent?.Post(gameObject);
+            if (doorOpenEvent != null)
+                doorOpenEvent.Post(gameObject);
             if (openParticles != null)
                 openParticles.Play();
         }
         else
         {
-            doorCloseEvent?.Post(gameObject);
+            if (doorCloseEvent != null)
+                doorCloseEvent.Post(gameObject);
             if (openParticles != null)
                 openParticles.Stop();
         }
