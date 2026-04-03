@@ -10,6 +10,9 @@ public class EchoPulseAbility : MonoBehaviour
     [Tooltip("Radius of the echo pulse effect")]
     [SerializeField] private float echoPulseRadius = 10f;
 
+    [Tooltip("Time in seconds to grow from 0 to full radius after activating")]
+    [SerializeField] private float radiusRampDuration = 1f;
+
     [Tooltip("Layer mask for objects that can be activated by echo pulse")]
     [SerializeField] private LayerMask echoTargetLayer;
 
@@ -35,13 +38,26 @@ public class EchoPulseAbility : MonoBehaviour
     private GameObject activeVFX;
     private uint playingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
 
+    private float radiusRampTimer = 0f;
+    private float currentRadius = 0f;
+
     private void Update()
     {
         HandleInput();
         if (isActive)
         {
+            UpdateRadiusRamp();
             UpdateEchoPulse();
         }
+    }
+
+    private void UpdateRadiusRamp()
+    {
+        if (radiusRampTimer >= radiusRampDuration) return;
+
+        radiusRampTimer = Mathf.Min(radiusRampTimer + Time.deltaTime, radiusRampDuration);
+        float t = (radiusRampDuration > 0f) ? radiusRampTimer / radiusRampDuration : 1f;
+        currentRadius = Mathf.Lerp(0f, echoPulseRadius, t);
     }
 
     private void HandleInput()
@@ -66,6 +82,8 @@ public class EchoPulseAbility : MonoBehaviour
     {
         isActive = true;
         currentFrequency = 100f;
+        radiusRampTimer = 0f;
+        currentRadius = 0f;
 
         if (echoPulseStartEvent != null)
         {
@@ -85,7 +103,7 @@ public class EchoPulseAbility : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(
             transform.position,
-            echoPulseRadius,
+            currentRadius,
             echoTargetLayer);
 
         IEchoResponsive closestTarget = null;
@@ -149,7 +167,7 @@ public class EchoPulseAbility : MonoBehaviour
             activeVFX = null;
         }
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, echoPulseRadius, echoTargetLayer);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, currentRadius, echoTargetLayer);
         foreach (Collider col in hitColliders)
         {
             IEchoResponsive echoTarget = col.GetComponent<IEchoResponsive>();
@@ -178,6 +196,6 @@ public class EchoPulseAbility : MonoBehaviour
         if (!showDebugGizmos) return;
 
         Gizmos.color = isActive ? new Color(0f, 1f, 1f, 0.5f) : new Color(0f, 0.5f, 1f, 0.3f);
-        Gizmos.DrawWireSphere(transform.position, echoPulseRadius);
+        Gizmos.DrawWireSphere(transform.position, isActive ? currentRadius : echoPulseRadius);
     }
 }

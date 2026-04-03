@@ -5483,6 +5483,9 @@ MonoBehaviour:
     m_Bits: 64
   wallUnstickForce: 6
   wallNormalYThreshold: 0.4
+  wallLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   walkFootstepInterval: 0.5
   runFootstepInterval: 0.3
   runSpeedThreshold: 6
@@ -5618,6 +5621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EchoPulseAbility
   echoPulseRadius: 4
+  radiusRampDuration: 3
   echoTargetLayer:
     serializedVersion: 2
     m_Bits: 512
