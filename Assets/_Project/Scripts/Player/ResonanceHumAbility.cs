@@ -21,6 +21,7 @@ public class ResonanceHumAbility : MonoBehaviour
     [Header("Visual Effects")]
     [Tooltip("Prefab for resonance hum visual effect (orange glow)")]
     [SerializeField] private GameObject resonanceHumVFXPrefab;
+    [SerializeField] private Transform vfxSpawnPoint;
 
     [Header("Wwise Events")]
     [SerializeField] private AK.Wwise.Event resonanceHumStartEvent;
@@ -96,7 +97,7 @@ public class ResonanceHumAbility : MonoBehaviour
 
         if (resonanceHumVFXPrefab != null && activeVFX == null)
         {
-            activeVFX = Instantiate(resonanceHumVFXPrefab, transform);
+            activeVFX = Instantiate(resonanceHumVFXPrefab, vfxSpawnPoint);
         }
 
         if (enableDebugLog)
