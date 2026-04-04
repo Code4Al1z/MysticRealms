@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{07D70A79-D52D-41FD-85B7-DE6DE329538B}",
     "Language": "SFX",
-    "Hash": "{48CEE77D-ABD9-6614-2456-2DDB895137E8}",
+    "Hash": "{FDEB007C-CF3F-B215-E500-F2A344C21D26}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Player_SFX",
     "ShortName": "Player_SFX",
     "Path": "Player_SFX.bnk",
@@ -423,7 +423,9 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Player_Footstep",
       "GUID": "{65BA12F1-2AAB-4AA1-9F64-C86862D3CBEC}",
       "MaxAttenuation": "100",
-      "DurationType": "Infinite",
+      "DurationType": "OneShot",
+      "DurationMin": "0.29048502",
+      "DurationMax": "0.8966418",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -579,7 +581,9 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Player_Land",
       "GUID": "{28221DBC-EF06-4F3D-843A-17CAEA0ECA43}",
       "MaxAttenuation": "100",
-      "DurationType": "Infinite",
+      "DurationType": "OneShot",
+      "DurationMin": "0.19673505",
+      "DurationMax": "0.63302237",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -792,6 +796,6 @@
     ]
    }
   ],
-  "FileHash": "{9658DF2B-590E-B65E-0374-B3F9EE78D78D}"
+  "FileHash": "{240F264F-38D6-A9DB-88BE-9CC6B48C549D}"
  }
 }

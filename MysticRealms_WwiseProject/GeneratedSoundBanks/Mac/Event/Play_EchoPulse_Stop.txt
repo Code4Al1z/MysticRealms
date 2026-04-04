@@ -1,3 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	700059983	Play_EchoPulse_Stop			\Default Work Unit\PlayerAbilities\Play_EchoPulse_Stop	
-
