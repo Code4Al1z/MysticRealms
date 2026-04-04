@@ -37,7 +37,7 @@ public class RockGolemEnemy : BaseEnemy, IResonanceResponsive
     // ─── Inspector ─────────────────────────────────────────────────────────────
 
     [Header("Golem – Patrol")]
-    [SerializeField] private Transform[] patrolPoints;
+    [SerializeField] private Transform[] golemPatrolPoints;
     [SerializeField] private float patrolStoppingDistance = 0.6f;
 
     [Header("Golem – Resonance Hum Response")]
@@ -88,8 +88,25 @@ public class RockGolemEnemy : BaseEnemy, IResonanceResponsive
     [Tooltip("Particle system played on death (collapse cloud).")]
     [SerializeField] private ParticleSystem deathParticles;
 
+    [Header("Golem – Melee Attack")]
+    [Tooltip("Optional child Transform at the golem's fist for hit detection. Falls back to transform if null.")]
+    [SerializeField] private Transform attackPoint;
+
+    [Tooltip("Radius of the melee hit sphere.")]
+    [SerializeField] private float meleeRadius = 1.2f;
+
+    [Tooltip("Damage per melee swing.")]
+    [SerializeField] private float meleeDamage = 15f;
+
+    [Tooltip("Layer mask for the player.")]
+    [SerializeField] private LayerMask playerLayer;
+
+    [Tooltip("Optional particle burst played on a swing.")]
+    [SerializeField] private ParticleSystem swingParticles;
+
     [Header("Wwise – Golem Specific")]
     [SerializeField] private AK.Wwise.Event knockbackHitEvent;
+    [SerializeField] private AK.Wwise.Event meleeSwingEvent;
     [SerializeField] private AK.Wwise.RTPC golemSpeedRTPC;
     [SerializeField] private AK.Wwise.RTPC golemResonanceStressRTPC;
 
@@ -98,24 +115,22 @@ public class RockGolemEnemy : BaseEnemy, IResonanceResponsive
     private Rigidbody rb;
 
     // Resonance state
-    private bool isBeingDrained    = false;
-    private bool wasBeingDrained   = false;
-    private float resonanceStress  = 0f; // 0–1 for RTPC/VFX
-    private float knockbackTimer   = -999f;
-    private bool isKnockedBack     = false;
+    private bool isBeingDrained = false;
+    private bool wasBeingDrained = false;
+    private float resonanceStress = 0f; // 0–1 for RTPC/VFX
+    private float knockbackTimer = -999f;
+    private bool isKnockedBack = false;
     private float knockbackStunTimer = 0f;
 
     // Footstep state
     private float footstepTimer = 0f;
     private Collider lastSurfaceCollider = null;
 
-    // Patrol state
-    private int currentPatrolIndex = 0;
-
     // ─── BaseEnemy Overrides ────────────────────────────────────────────────────
 
     protected override void Awake()
     {
+        RegisterPatrolPoints(golemPatrolPoints);
         base.Awake();
         rb = GetComponent<Rigidbody>();
 
@@ -141,14 +156,36 @@ public class RockGolemEnemy : BaseEnemy, IResonanceResponsive
     protected override void OnEnemyUpdate()
     {
         HandleKnockbackRecovery();
-        UpdatePatrol();
         UpdateFootsteps();
         UpdateVisualStress();
         UpdateWwiseRTPCs();
 
         // Reset drain flag each frame — set back to true by OnResonanceHumActive
         wasBeingDrained = isBeingDrained;
-        isBeingDrained  = false;
+        isBeingDrained = false;
+    }
+
+    // ─── BaseEnemy Attack ───────────────────────────────────────────────────────
+
+    protected override void PerformAttack()
+    {
+        meleeSwingEvent?.Post(gameObject);
+        swingParticles?.Play();
+
+        Vector3 hitOrigin = attackPoint != null ? attackPoint.position : transform.position;
+        Collider[] hits = Physics.OverlapSphere(hitOrigin, meleeRadius, playerLayer);
+
+        foreach (Collider col in hits)
+        {
+            PlayerHealth ph = col.GetComponent<PlayerHealth>();
+            if (ph != null)
+            {
+                ph.TakeDamage(meleeDamage);
+
+                if (enableDebugLog)
+                    Debug.Log($"[RockGolem] Melee hit player for {meleeDamage}");
+            }
+        }
     }
 
     // ─── IResonanceResponsive ───────────────────────────────────────────────────
@@ -196,13 +233,13 @@ public class RockGolemEnemy : BaseEnemy, IResonanceResponsive
 
     private void ApplyKnockback(Vector3 sourcePosition)
     {
-        knockbackTimer       = Time.time;
-        isKnockedBack        = true;
-        knockbackStunTimer   = knockbackStunDuration;
+        knockbackTimer = Time.time;
+        isKnockedBack = true;
+        knockbackStunTimer = knockbackStunDuration;
 
         // Disable nav agent so physics can drive the body
         agent.isStopped = true;
-        agent.enabled   = false;
+        agent.enabled = false;
 
         // Direction: away from player
         Vector3 dir = (transform.position - sourcePosition).normalized;
@@ -229,7 +266,7 @@ public class RockGolemEnemy : BaseEnemy, IResonanceResponsive
             isKnockedBack = false;
 
             // Re-enable nav agent on NavMesh
-            agent.enabled   = true;
+            agent.enabled = true;
             agent.isStopped = false;
             agent.Warp(transform.position); // resync position after physics displacement
 
@@ -242,24 +279,24 @@ public class RockGolemEnemy : BaseEnemy, IResonanceResponsive
 
     // ─── Patrol ────────────────────────────────────────────────────────────────
 
-    private void UpdatePatrol()
+    protected override void AdvancePatrol()
     {
         if (isKnockedBack) return;
-        if (patrolPoints == null || patrolPoints.Length == 0) return;
+        if (golemPatrolPoints == null || golemPatrolPoints.Length == 0) return;
         if (!agent.enabled || !agent.isOnNavMesh) return;
 
         if (agent.remainingDistance <= patrolStoppingDistance && !agent.pathPending)
         {
-            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
+            currentPatrolIndex = (currentPatrolIndex + 1) % golemPatrolPoints.Length;
             SetNextPatrolTarget();
         }
     }
 
     private void SetNextPatrolTarget()
     {
-        if (patrolPoints == null || patrolPoints.Length == 0) return;
+        if (golemPatrolPoints == null || golemPatrolPoints.Length == 0) return;
         if (!agent.enabled || !agent.isOnNavMesh) return;
-        agent.SetDestination(patrolPoints[currentPatrolIndex].position);
+        agent.SetDestination(golemPatrolPoints[currentPatrolIndex].position);
     }
 
     // ─── Footsteps ─────────────────────────────────────────────────────────────
@@ -377,15 +414,15 @@ public class RockGolemEnemy : BaseEnemy, IResonanceResponsive
         Gizmos.color = new Color(1f, 0.5f, 0f, 0.2f);
         Gizmos.DrawWireSphere(transform.position, maxResonanceRange);
 
-        if (patrolPoints != null)
+        if (golemPatrolPoints != null)
         {
             Gizmos.color = new Color(0.8f, 0.4f, 0.1f);
-            for (int i = 0; i < patrolPoints.Length; i++)
+            for (int i = 0; i < golemPatrolPoints.Length; i++)
             {
-                if (patrolPoints[i] == null) continue;
-                Gizmos.DrawSphere(patrolPoints[i].position, 0.2f);
-                if (i < patrolPoints.Length - 1 && patrolPoints[i + 1] != null)
-                    Gizmos.DrawLine(patrolPoints[i].position, patrolPoints[i + 1].position);
+                if (golemPatrolPoints[i] == null) continue;
+                Gizmos.DrawSphere(golemPatrolPoints[i].position, 0.2f);
+                if (i < golemPatrolPoints.Length - 1 && golemPatrolPoints[i + 1] != null)
+                    Gizmos.DrawLine(golemPatrolPoints[i].position, golemPatrolPoints[i + 1].position);
             }
         }
 

@@ -1,156 +1,181 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 /// <summary>
 /// WispEnemy — Floating energy orb. Affected only by Echo Pulse.
 ///
-/// BEHAVIOUR:
-///   • Floats and patrols (no footsteps).
-///   • Echo Pulse in range: slows it, shakes at high frequency, tints colour toward death colour.
-///   • When pulse stops or player leaves range: gradually recovers speed and colour.
-///   • Only killable via Echo Pulse damage-over-time while in range.
-///   • On death: spawns a collectable pickup and plays death VFX.
+/// ── ATTACK ─────────────────────────────────────────────────────────────────
+///   The wisp uses a TRIGGER COLLIDER attack — no separate prefab needed.
+///   When the attack fires, the wisp charges through the player in a straight
+///   line (forward + back). A Trigger Collider on the wisp (set IsTrigger=true
+///   in the Inspector) calls OnTriggerEnter each time the player enters it.
 ///
-/// WWISE SETUP REQUIRED:
-///   • RTPC "Wisp_Speed"       — float 0–100, drives pitch/speed of ambient hum loop.
-///   • RTPC "Wisp_PulseStress" — float 0–100, drives distortion/intensity while being pulsed.
-///   • RTPC "Wisp_HealthPct"   — float 0–100 (inherited from BaseEnemy's healthPercentRTPC).
-///   • Event "Wisp_Spawn"      — ambient loop (looping event, stopped on death).
-///   • Event "Wisp_Death"      — one-shot death burst.
-///   • Event "Wisp_PulseHit"   — short accent when pulse first connects.
-///   • Event "Wisp_Recover"    — subtle exhale when pulse is released.
+///   ALIVE:   OnTriggerEnter → deal damage to PlayerHealth
+///   DEAD:    OnTriggerEnter → award collectable point to PlayerHealth
+///            (the wisp body lingers briefly as a pickup — no separate prefab)
 ///
-/// UI READINESS:
-///   Inherits OnHealthChanged, OnDied, OnStatusEffectChanged events from BaseEnemy.
-///   Subscribe from a future EnemyHealthBarUI component — no changes needed here.
+/// ── ECHO PULSE RESPONSE ────────────────────────────────────────────────────
+///   • Slows the wisp (stressLevel → speed multiplier)
+///   • Shakes at high stress
+///   • Tints colour from healthyColor → stressedColor
+///   • Damage-over-time when frequency matches requiredFrequency ± tolerance
+///   • Stress/speed recover when pulse stops or player is out of range
+///
+/// ── WWISE RTPCs REQUIRED ───────────────────────────────────────────────────
+///   Wisp_Speed        0–100  ambient hum pitch/rate
+///   Wisp_PulseStress  0–100  distortion intensity
+///   healthPercentRTPC 0–100  (from BaseEnemy inspector field)
+///
+/// ── WWISE EVENTS REQUIRED ──────────────────────────────────────────────────
+///   spawnEvent / deathEvent  (BaseEnemy inspector fields)
+///   Wisp_PulseHit            one-shot on first pulse contact
+///   Wisp_Recover             one-shot when pulse is released
+///   Wisp_ChargeAttack        one-shot when charge begins
 /// </summary>
 public class WispEnemy : BaseEnemy, IEchoResponsive
 {
-    // ─── Inspector ─────────────────────────────────────────────────────────────
+    // ─────────────────────────────────────────────────────────── Inspector ───
 
-    [Header("Wisp – Patrol")]
-    [Tooltip("World-space positions the wisp floats between when idle.")]
-    [SerializeField] private Transform[] patrolPoints;
+    [Header("Wisp - Patrol Points")]
+    [SerializeField] private Transform[] wispPatrolPoints;
 
-    [Tooltip("Hover amplitude (metres) added as a sine wave to Y position.")]
-    [SerializeField] private float hoverAmplitude = 0.3f;
+    [Header("Wisp - Hover")]
+    [SerializeField] private float hoverAmplitude = 0.35f;
+    [SerializeField] private float hoverFrequency = 0.9f;
 
-    [Tooltip("Hover frequency (cycles per second).")]
-    [SerializeField] private float hoverFrequency = 0.8f;
-
-    [Header("Wisp – Echo Pulse Response")]
-    [Tooltip("Maximum distance at which Echo Pulse affects this wisp.")]
+    [Header("Wisp - Echo Pulse Response")]
     [SerializeField] private float maxPulseRange = 12f;
-
-    [Tooltip("Damage per second dealt while pulse frequency is within tolerance.")]
     [SerializeField] private float damagePerSecond = 8f;
-
-    [Tooltip("Frequency this wisp is tuned to. Pulse must be within tolerance to deal damage.")]
     [SerializeField] private float requiredFrequency = 300f;
-
-    [Tooltip("How far from requiredFrequency the pulse can be and still deal damage.")]
     [SerializeField] private float frequencyTolerance = 30f;
-
-    [Tooltip("Speed multiplier applied instantly when pulse first hits (0–1).")]
     [SerializeField] private float pulseSlowMultiplier = 0.35f;
-
-    [Tooltip("Additional slow applied when frequency matches (stacks with pulseSlowMultiplier).")]
-    [SerializeField] private float frequencyMatchExtraSlowMultiplier = 0.6f;
-
-    [Tooltip("Speed recovery rate when not being pulsed (0–1 per second).")]
-    [SerializeField] private float recoveryRate = 0.4f;
-
-    [Tooltip("Shake magnitude at full frequency match stress.")]
+    [SerializeField] private float freqMatchExtraSlow = 0.6f;
+    [SerializeField] private float stressRecoveryRate = 0.4f;
     [SerializeField] private float maxShakeAmplitude = 0.08f;
-
-    [Tooltip("Shake frequency (Hz).")]
     [SerializeField] private float shakeFrequency = 18f;
-
-    [Tooltip("Frequency stress threshold (0–1) above which shaking starts.")]
     [SerializeField] private float shakeThreshold = 0.5f;
 
-    [Header("Wisp – Visuals")]
-    [Tooltip("Main renderer whose material tint changes as the wisp is stressed.")]
+    [Header("Wisp - Visuals")]
     [SerializeField] private Renderer wispRenderer;
-
-    [Tooltip("Resting colour (healthy, unstressed).")]
     [SerializeField] private Color healthyColor = new Color(0.4f, 0.8f, 1f);
-
-    [Tooltip("Colour at maximum stress / near death.")]
     [SerializeField] private Color stressedColor = new Color(1f, 0.2f, 0.1f);
-
-    [Tooltip("Particle system representing the wisp's ambient 'body'.")]
     [SerializeField] private ParticleSystem wispBodyParticles;
-
-    [Tooltip("Particle system played on death.")]
     [SerializeField] private ParticleSystem deathBurstParticles;
 
-    [Header("Wisp – Collectable")]
-    [Tooltip("Prefab spawned at wisp position when it dies.")]
-    [SerializeField] private GameObject collectablePrefab;
+    [Header("Wisp - Attack (Charge)")]
+    [Tooltip("Damage dealt each time the player enters the wisp trigger while alive.")]
+    [SerializeField] private float contactDamage = 10f;
+    [Tooltip("Speed of the charge dash.")]
+    [SerializeField] private float chargeSpeed = 14f;
+    [Tooltip("Distance past the player the wisp flies before returning.")]
+    [SerializeField] private float chargeDistance = 4f;
+    [Tooltip("Collectable points awarded when a dead wisp is collected.")]
+    [SerializeField] private int collectableValue = 1;
 
-    [Header("Wwise – Wisp Specific")]
+    [Header("Wwise - Wisp Specific")]
     [SerializeField] private AK.Wwise.Event wispPulseHitEvent;
     [SerializeField] private AK.Wwise.Event wispRecoverEvent;
+    [SerializeField] private AK.Wwise.Event wispChargeEvent;
     [SerializeField] private AK.Wwise.RTPC wispSpeedRTPC;
     [SerializeField] private AK.Wwise.RTPC wispPulseStressRTPC;
 
-    // ─── Runtime State ──────────────────────────────────────────────────────────
+    // ───────────────────────────────────────────────────────── Runtime State ─
 
-    // 0 = no stress, 1 = max stress
     private float stressLevel = 0f;
-    // tracks whether pulse is currently hitting us
     private bool isBeingPulsed = false;
-    // tracks whether it was a fresh connection this frame (for one-shot sound)
-    private bool pulseJustConnected = false;
+    private bool wasPulsedLastFrame = false;
 
-    private float currentSpeedRecovery = 1f; // 0–1, actual multiplier toward base
-    private Vector3 basePosition;
-    private int currentPatrolIndex = 0;
     private float hoverTimer = 0f;
+    private float hoverBaseY;            // float — only the Y value matters
 
-    // Shader colour property (standard URP lit uses "_BaseColor")
-    private static readonly int ShaderColorID = Shader.PropertyToID("_BaseColor");
-    private Material wispMaterialInstance;
+    // Charge is XZ only. Y is solely owned by hover and never written by charge.
+    private bool isCharging = false;
+    private bool isReturning = false;
+    private Vector2 chargeTargetXZ;
+    private Vector2 returnTargetXZ;
 
-    // ─── BaseEnemy Overrides ────────────────────────────────────────────────────
+    private static readonly int ShaderBaseColor = Shader.PropertyToID("_BaseColor");
+    private Material wispMat;
+
+    // ─────────────────────────────────────────────────────── BaseEnemy Setup ─
 
     protected override void Awake()
     {
         base.Awake();
+        RegisterPatrolPoints(wispPatrolPoints);
 
         if (wispRenderer != null)
-            wispMaterialInstance = wispRenderer.material; // instanced copy
-
-        basePosition = transform.position;
+            wispMat = wispRenderer.material;
     }
 
     protected override void Start()
     {
+        // Save the placed Y BEFORE base.Start() runs.
+        // base.Start() enables the NavMeshAgent which snaps transform down to the
+        // NavMesh surface as a side effect. Saving first means hoverBaseY holds
+        // the height you placed the wisp at in the scene, not the ground Y.
+        hoverBaseY = transform.position.y;
+
         base.Start();
 
-        // Wisps float — disable NavMeshAgent gravity/y-control; we'll drive Y manually.
-        agent.updateUpAxis    = false;
-        agent.updateRotation  = false;
-        agent.baseOffset      = 0f;
+        // Tell the agent not to control Y at all.
+        // Do NOT assign agent.baseOffset here — leave the Inspector value alone.
+        agent.updateUpAxis = false;
+        agent.updateRotation = false;
 
-        SetNextPatrolTarget();
+        // Restore our saved Y in case the agent pulled us down.
+        Vector3 pos = transform.position;
+        pos.y = hoverBaseY;
+        transform.position = pos;
     }
 
     public override string GetEnemyTypeID() => "Wisp";
 
+    // ──────────────────────────────────────────────────── Override: Patrol ───
+
+    protected override void AdvancePatrol()
+    {
+        if (wispPatrolPoints == null || wispPatrolPoints.Length == 0) return;
+        if (!agent.enabled || !agent.isOnNavMesh) return;
+
+        // Force destination Y to match current Y so the agent only steers XZ.
+        Vector3 target = wispPatrolPoints[currentPatrolIndex].position;
+        target.y = transform.position.y;
+        agent.SetDestination(target);
+
+        float flatDist = new Vector2(
+            transform.position.x - wispPatrolPoints[currentPatrolIndex].position.x,
+            transform.position.z - wispPatrolPoints[currentPatrolIndex].position.z).magnitude;
+
+        if (flatDist < 0.5f)
+            currentPatrolIndex = (currentPatrolIndex + 1) % wispPatrolPoints.Length;
+    }
+
+    // ──────────────────────────────────────────────────── Override: Update ───
+
     protected override void OnEnemyUpdate()
     {
+        // Hover runs first and writes Y. Charge runs second but only touches XZ,
+        // so the two never conflict. Y is hover's exclusively.
         UpdateHover();
-        UpdatePatrol();
+        UpdateCharge();
         UpdateStressRecovery();
         UpdateVisuals();
         UpdateWwiseRTPCs();
 
-        isBeingPulsed = false; // reset each frame; set back to true by OnEchoPulseActive if called
+        wasPulsedLastFrame = isBeingPulsed;
+        isBeingPulsed = false;
     }
 
-    // ─── IEchoResponsive ────────────────────────────────────────────────────────
+    // ─────────────────────────────────────────────────── Override: Attack ────
+
+    protected override void PerformAttack()
+    {
+        if (isCharging || isReturning) return;
+        if (playerTransform == null) return;
+        StartCharge();
+    }
+
+    // ─────────────────────────────────────────────────── IEchoResponsive ─────
 
     public float GetRequiredFrequency() => requiredFrequency;
 
@@ -159,186 +184,206 @@ public class WispEnemy : BaseEnemy, IEchoResponsive
         if (isDead) return;
         if (distance > maxPulseRange) return;
 
-        bool wasBeingPulsed = isBeingPulsed;
         isBeingPulsed = true;
 
-        // One-shot hit sound on first frame of connection
-        if (!wasBeingPulsed)
+        if (!wasPulsedLastFrame)
         {
             wispPulseHitEvent?.Post(gameObject);
             NotifyStatusEffect("EchoPulse", true);
         }
 
-        bool frequencyMatches = Mathf.Abs(frequency - requiredFrequency) <= frequencyTolerance;
+        bool freqMatch = Mathf.Abs(frequency - requiredFrequency) <= frequencyTolerance;
+        float stressSpd = freqMatch ? 1.5f : 0.6f;
+        stressLevel = Mathf.MoveTowards(stressLevel, 1f, stressSpd * Time.deltaTime);
 
-        // Stress climbs faster when frequency matches
-        float stressSpeed = frequencyMatches ? 1.5f : 0.6f;
-        stressLevel = Mathf.MoveTowards(stressLevel, 1f, stressSpeed * Time.deltaTime);
+        float slow = pulseSlowMultiplier * (freqMatch ? freqMatchExtraSlow : 1f);
+        SetSpeedMultiplier("echo_pulse", slow);
 
-        // Speed: base slow + extra slow on freq match
-        float speedMult = pulseSlowMultiplier;
-        if (frequencyMatches)
-            speedMult *= frequencyMatchExtraSlowMultiplier;
-
-        SetSpeedMultiplier("echo_pulse", speedMult);
-        currentSpeedRecovery = speedMult;
-
-        // Damage only on frequency match
-        if (frequencyMatches)
-        {
+        if (freqMatch)
             TakeDamage(damagePerSecond * Time.deltaTime, "EchoPulse");
-        }
 
-        // Shake the transform when stress is high
         if (stressLevel >= shakeThreshold)
         {
-            float shakeMag = Mathf.InverseLerp(shakeThreshold, 1f, stressLevel) * maxShakeAmplitude;
-            Vector3 shakeOffset = new Vector3(
-                Mathf.Sin(Time.time * shakeFrequency * 1.3f) * shakeMag,
-                Mathf.Sin(Time.time * shakeFrequency)        * shakeMag * 0.5f,
-                Mathf.Sin(Time.time * shakeFrequency * 0.7f) * shakeMag
-            );
-            transform.position += shakeOffset;
+            float mag = Mathf.InverseLerp(shakeThreshold, 1f, stressLevel) * maxShakeAmplitude;
+            transform.position += new Vector3(
+                Mathf.Sin(Time.time * shakeFrequency * 1.3f) * mag,
+                Mathf.Sin(Time.time * shakeFrequency) * mag * 0.5f,
+                Mathf.Sin(Time.time * shakeFrequency * 0.7f) * mag);
         }
     }
 
     public void OnEchoPulseStopped()
     {
-        if (!isBeingPulsed) return; // already clean
-
         isBeingPulsed = false;
         wispRecoverEvent?.Post(gameObject);
         NotifyStatusEffect("EchoPulse", false);
     }
 
-    // ─── Patrol & Hover ────────────────────────────────────────────────────────
+    // ──────────────────────────────────────────────────────── Trigger Attack ─
 
-    private void UpdatePatrol()
+    private void OnTriggerEnter(Collider other)
     {
-        if (patrolPoints == null || patrolPoints.Length == 0) return;
-        if (agent == null || !agent.enabled || !agent.isOnNavMesh) return;
+        if (!other.CompareTag("Player")) return;
 
-        // Set destination on XZ plane only — Y is driven by hover
-        Vector3 target = patrolPoints[currentPatrolIndex].position;
-        target.y = transform.position.y;
-        agent.SetDestination(target);
+        PlayerHealth ph = other.GetComponent<PlayerHealth>();
+        if (ph == null) return;
 
-        float flatDist = Vector2.Distance(
-            new Vector2(transform.position.x, transform.position.z),
-            new Vector2(target.x, target.z));
-
-        if (flatDist < 0.5f)
+        if (isDead)
         {
-            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
-            SetNextPatrolTarget();
+            ph.AddCollectable(collectableValue);
+            Destroy(gameObject);
+        }
+        else
+        {
+            ph.TakeDamage(contactDamage);
         }
     }
 
-    private void SetNextPatrolTarget()
+    // ───────────────────────────────────────────────────────── Charge Logic ──
+
+    private void StartCharge()
     {
-        if (patrolPoints == null || patrolPoints.Length == 0) return;
-        basePosition = patrolPoints[currentPatrolIndex].position;
+        if (playerTransform == null) return;
+
+        isCharging = true;
+        isReturning = false;
+
+        // Everything is XZ. Y is not stored, not used, not touched.
+        Vector2 selfXZ = new Vector2(transform.position.x, transform.position.z);
+        Vector2 playerXZ = new Vector2(playerTransform.position.x, playerTransform.position.z);
+        Vector2 dirXZ = (playerXZ - selfXZ).normalized;
+
+        chargeTargetXZ = playerXZ + dirXZ * chargeDistance;
+        returnTargetXZ = selfXZ;
+
+        if (agent.enabled)
+        {
+            agent.isStopped = true;
+            agent.enabled = false;
+        }
+
+        wispChargeEvent?.Post(gameObject);
+
+        if (enableDebugLog)
+            Debug.Log($"[Wisp] Charge toward XZ {chargeTargetXZ}");
     }
 
-    private void UpdateHover()
+    private void UpdateCharge()
     {
-        hoverTimer += Time.deltaTime * hoverFrequency * Mathf.PI * 2f;
-        float yOffset = Mathf.Sin(hoverTimer) * hoverAmplitude;
-        Vector3 pos = transform.position;
-        pos.y = basePosition.y + yOffset;
-        transform.position = pos;
+        if (!isCharging && !isReturning) return;
+
+        Vector2 currentXZ = new Vector2(transform.position.x, transform.position.z);
+        Vector2 targetXZ = isCharging ? chargeTargetXZ : returnTargetXZ;
+        float speed = isCharging ? chargeSpeed : chargeSpeed * 0.7f;
+
+        // Move on XZ only. Y stays exactly as hover set it this frame.
+        Vector2 nextXZ = Vector2.MoveTowards(currentXZ, targetXZ, speed * Time.deltaTime);
+        transform.position = new Vector3(nextXZ.x, transform.position.y, nextXZ.y);
+
+        float dist = Vector2.Distance(nextXZ, targetXZ);
+
+        if (isCharging && dist < 0.15f)
+        {
+            isCharging = false;
+            isReturning = true;
+        }
+        else if (isReturning && dist < 0.2f)
+        {
+            isReturning = false;
+            agent.enabled = true;
+            agent.isStopped = false;
+            // No Warp — agent resumes from current transform, updateUpAxis=false
+            // means it will never write Y again.
+        }
     }
 
-    // ─── Stress / Recovery ─────────────────────────────────────────────────────
+    // ─────────────────────────────────────────────────── Stress / Recovery ───
 
     private void UpdateStressRecovery()
     {
         if (isBeingPulsed) return;
 
-        // Gradually relieve stress
-        stressLevel = Mathf.MoveTowards(stressLevel, 0f, recoveryRate * Time.deltaTime);
+        stressLevel = Mathf.MoveTowards(stressLevel, 0f, stressRecoveryRate * Time.deltaTime);
 
-        // Recover speed
-        currentSpeedRecovery = Mathf.MoveTowards(currentSpeedRecovery, 1f, recoveryRate * Time.deltaTime);
-        SetSpeedMultiplier("echo_pulse", currentSpeedRecovery);
+        float recovery = Mathf.Lerp(pulseSlowMultiplier, 1f, 1f - stressLevel);
+        SetSpeedMultiplier("echo_pulse", recovery);
 
         if (stressLevel <= 0f)
             ClearSpeedMultiplier("echo_pulse");
     }
 
-    // ─── Visuals ───────────────────────────────────────────────────────────────
+    // ──────────────────────────────────────────────────────────── Hover ──────
+
+    private void UpdateHover()
+    {
+        // Sole owner of transform.position.y. Always runs — charge only touches XZ.
+        hoverTimer += Time.deltaTime * hoverFrequency * Mathf.PI * 2f;
+        Vector3 pos = transform.position;
+        pos.y = hoverBaseY + Mathf.Sin(hoverTimer) * hoverAmplitude;
+        transform.position = pos;
+    }
+
+    // ─────────────────────────────────────────────────────── Visuals / RTPC ──
 
     private void UpdateVisuals()
     {
-        if (wispMaterialInstance == null) return;
+        if (wispMat != null)
+            wispMat.SetColor(ShaderBaseColor, Color.Lerp(healthyColor, stressedColor, stressLevel));
 
-        // Interpolate colour by stress level
-        Color targetColor = Color.Lerp(healthyColor, stressedColor, stressLevel);
-        wispMaterialInstance.SetColor(ShaderColorID, targetColor);
-
-        // Drive particle emission rate down as stress increases
         if (wispBodyParticles != null)
         {
-            var emission = wispBodyParticles.emission;
-            float baseRate = 30f;
-            emission.rateOverTime = Mathf.Lerp(baseRate, baseRate * 0.2f, stressLevel);
+            var em = wispBodyParticles.emission;
+            em.rateOverTime = Mathf.Lerp(30f, 6f, stressLevel);
         }
     }
 
-    // ─── Wwise ─────────────────────────────────────────────────────────────────
-
     private void UpdateWwiseRTPCs()
     {
-        float speedNorm = (baseMoveSpeed > 0f)
-            ? (agent != null ? agent.speed / baseMoveSpeed : 1f)
-            : 1f;
+        float speedNorm = (baseMoveSpeed > 0f && agent != null)
+            ? agent.speed / baseMoveSpeed : 1f;
 
         wispSpeedRTPC?.SetValue(gameObject, speedNorm * 100f);
         wispPulseStressRTPC?.SetValue(gameObject, stressLevel * 100f);
     }
 
-    // ─── Death ─────────────────────────────────────────────────────────────────
+    // ──────────────────────────────────────────────────── Death Override ──────
 
     protected override void OnEnemyDeath()
     {
-        // Stop ambient body particles
-        if (wispBodyParticles != null)
-            wispBodyParticles.Stop();
+        wispBodyParticles?.Stop();
 
-        // Play death burst (detached so it outlives the object)
         if (deathBurstParticles != null)
         {
-            deathBurstParticles.transform.SetParent(null);
+            //deathBurstParticles.transform.SetParent(null);
             deathBurstParticles.Play();
         }
 
-        // Spawn collectable
-        if (collectablePrefab != null)
-            Instantiate(collectablePrefab, transform.position, Quaternion.identity);
+        isCharging = false;
+        isReturning = false;
 
-        // Destroy self after a short delay (lets Wwise death event finish)
-        Destroy(gameObject, 0.5f);
+        Invoke(nameof(CleanupBody), 10f);
     }
 
-    // ─── Gizmos ────────────────────────────────────────────────────────────────
+    private void CleanupBody()
+    {
+        if (this != null && gameObject != null)
+            Destroy(gameObject);
+    }
+
+    // ─────────────────────────────────────────────────────────── Gizmos ──────
 
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
 
-        Gizmos.color = new Color(0.4f, 0.8f, 1f, 0.25f);
+        Gizmos.color = new Color(0.4f, 0.8f, 1f, 0.18f);
         Gizmos.DrawWireSphere(transform.position, maxPulseRange);
 
-        if (patrolPoints != null)
+        if (Application.isPlaying && isCharging)
         {
-            Gizmos.color = Color.cyan;
-            for (int i = 0; i < patrolPoints.Length; i++)
-            {
-                if (patrolPoints[i] == null) continue;
-                Gizmos.DrawSphere(patrolPoints[i].position, 0.15f);
-                if (i < patrolPoints.Length - 1 && patrolPoints[i + 1] != null)
-                    Gizmos.DrawLine(patrolPoints[i].position, patrolPoints[i + 1].position);
-            }
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawLine(transform.position,
+                new Vector3(chargeTargetXZ.x, transform.position.y, chargeTargetXZ.y));
         }
     }
 }
