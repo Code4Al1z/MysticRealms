@@ -86,6 +86,7 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
     protected float currentHealth;
     protected bool isDead = false;
     private float attackTimer = 0f;
+    protected bool isAttackLocked = false;
 
     // Patrol
     protected Transform[] patrolPoints = System.Array.Empty<Transform>();
@@ -185,6 +186,11 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
         patrolPoints = points ?? System.Array.Empty<Transform>();
     }
 
+    protected void ResetPatrolToStart()
+    {
+        currentPatrolIndex = 0;
+    }
+
     // ──── Leash / Path Bake ───────────────────────────────────────────────────
 
     private void BakePatrolPath()
@@ -279,6 +285,17 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
         if (next == _state) return;
         EnemyState prev = _state;
         _state = next;
+
+        if (prev == EnemyState.Attack && agent.enabled && agent.isOnNavMesh)
+            agent.isStopped = false;
+
+        if (next == EnemyState.Return)
+        {
+            returnDestination = NearestPatrolPoint(transform.position);
+            if (agent.enabled && agent.isOnNavMesh)
+                agent.SetDestination(returnDestination);
+        }
+
         OnStateChanged(prev, next);
 
         if (enableDebugLog)
@@ -316,6 +333,13 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
 
     private void TickAttack()
     {
+        // Stop the agent while attacking — no sliding into the player
+        if (agent.enabled && agent.isOnNavMesh)
+            agent.isStopped = true;
+
+        // While an attack animation is playing, don't evaluate transitions
+        if (isAttackLocked) return;
+
         if (playerTransform == null) { SetState(EnemyState.Return); return; }
         if (!WithinLeash() || !PlayerInView()) { SetState(EnemyState.Return); return; }
         if (!PlayerInAttackRange()) { SetState(EnemyState.Chase); return; }
@@ -334,6 +358,8 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
         }
     }
 
+    private Vector3 returnDestination;
+
     private void TickReturn()
     {
         if (!agent.enabled || !agent.isOnNavMesh) return;
@@ -341,13 +367,9 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
         agent.speed = baseMoveSpeed;
         agent.isStopped = false;
 
-        Vector3 nearest = NearestPatrolPoint(transform.position);
-        if (agent.enabled && agent.isOnNavMesh)
-            agent.SetDestination(nearest);
-
-        if (Vector3.Distance(transform.position, nearest) <= agent.stoppingDistance + 0.35f)
+        if (Vector3.Distance(transform.position, returnDestination) <= agent.stoppingDistance + 0.35f)
         {
-            leashOrigin = nearest;
+            leashOrigin = returnDestination;
             SetState(EnemyState.Patrol);
         }
     }
