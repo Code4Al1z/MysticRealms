@@ -11,11 +11,20 @@ public class GolemAnimator : MonoBehaviour
 
     private enum State { Idle = 0, Walk = 1, Attack = 2, Damage = 3, Dead = 4 }
 
-    public void SetIdle() => animator.SetInteger(StateHash, (int)State.Idle);
-    public void SetWalk() => animator.SetInteger(StateHash, (int)State.Walk);
-    public void SetAttack() => animator.SetInteger(StateHash, (int)State.Attack);
-    public void SetDamage() => animator.SetInteger(StateHash, (int)State.Damage);
-    public void SetDead() => animator.SetInteger(StateHash, (int)State.Dead);
+    private int currentState = -1;
+
+    private void SetState(int state)
+    {
+        if (state == currentState) return;
+        currentState = state;
+        animator.SetInteger(StateHash, state);
+    }
+
+    public void SetIdle() => SetState((int)State.Idle);
+    public void SetWalk() => SetState((int)State.Walk);
+    public void SetAttack() => SetState((int)State.Attack);
+    public void SetDamage() => SetState((int)State.Damage);
+    public void SetDead() => SetState((int)State.Dead);
 
     public float AttackClipLength()
     {

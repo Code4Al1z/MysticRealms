@@ -35,7 +35,7 @@ public class RockGolemEnemy : BaseEnemy
 
         rb = GetComponent<Rigidbody>() ?? gameObject.AddComponent<Rigidbody>();
         rb.freezeRotation = true;
-        rb.isKinematic = false;
+        rb.isKinematic = true;
     }
 
     protected override void Start()
@@ -62,10 +62,22 @@ public class RockGolemEnemy : BaseEnemy
     {
         SyncAnimator();
 
-        if (next == EnemyState.Patrol && prev == EnemyState.Return)
+        if (next == EnemyState.Patrol)
         {
-            ResetPatrolToStart();
+            float closestDist = float.MaxValue;
+            for (int i = 0; i < golemPatrolPoints.Length; i++)
+            {
+                float d = Vector3.Distance(transform.position, golemPatrolPoints[i].position);
+                if (d < closestDist)
+                {
+                    closestDist = d;
+                    currentPatrolIndex = i;
+                }
+            }
+
+            currentPatrolIndex = (currentPatrolIndex + 1) % golemPatrolPoints.Length;
             SetNextPatrolTarget();
+
             if (resonanceHandler != null)
                 resonanceHandler.ResetDrainState();
         }
@@ -150,20 +162,18 @@ public class RockGolemEnemy : BaseEnemy
     {
         if (golemAnimator == null) return;
         if (isDead) { golemAnimator.SetDead(); return; }
-
-        // While the attack animation is running, don't touch the animator —
-        // let the clip play to completion before transitioning.
         if (isAttackLocked) return;
 
         switch (CurrentState)
         {
+            case EnemyState.Idle:
+                golemAnimator.SetIdle();
+                break;
+
             case EnemyState.Patrol:
             case EnemyState.Chase:
             case EnemyState.Return:
-                if (agent.velocity.magnitude > 0.1f)
-                    golemAnimator.SetWalk();
-                else
-                    golemAnimator.SetIdle();
+                golemAnimator.SetWalk();
                 break;
 
                 // Attack is set exclusively in PerformAttack, never here.

@@ -51,6 +51,9 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
     [Tooltip("Seconds between attack attempts.")]
     [SerializeField] protected float attackCooldown = 1.5f;
 
+    [Tooltip("How long the enemy idles at a patrol point after returning from a chase.")]
+    [SerializeField] protected float idleDuration = 3f;
+
     [Header("AI – Leash")]
     [Tooltip("Multiplies the baked patrol perimeter to produce the leash radius.\n" +
              "1.0 = can chase as far as the full patrol loop length.\n" +
@@ -74,7 +77,7 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
 
     // ─── Runtime State ──────────────────────────────────────────────────────────
 
-    public enum EnemyState { Patrol, Chase, Attack, Return }
+    public enum EnemyState { Patrol, Chase, Attack, Return, Idle }
 
     private EnemyState _state = EnemyState.Patrol;
     public EnemyState CurrentState => _state;
@@ -87,6 +90,7 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
     protected bool isDead = false;
     private float attackTimer = 0f;
     protected bool isAttackLocked = false;
+    private float idleTimer = 0f;
 
     // Patrol
     protected Transform[] patrolPoints = System.Array.Empty<Transform>();
@@ -277,6 +281,7 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
             case EnemyState.Chase: TickChase(); break;
             case EnemyState.Attack: TickAttack(); break;
             case EnemyState.Return: TickReturn(); break;
+            case EnemyState.Idle: TickIdle(); break;
         }
     }
 
@@ -295,6 +300,12 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
             if (agent.enabled && agent.isOnNavMesh)
                 agent.SetDestination(returnDestination);
         }
+
+        if (next == EnemyState.Idle)
+            idleTimer = idleDuration;
+
+        if (prev == EnemyState.Idle && agent.enabled && agent.isOnNavMesh)
+            agent.isStopped = false;
 
         OnStateChanged(prev, next);
 
@@ -367,11 +378,27 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
         agent.speed = baseMoveSpeed;
         agent.isStopped = false;
 
-        if (Vector3.Distance(transform.position, returnDestination) <= agent.stoppingDistance + 0.35f)
+        Vector2 currentXZ = new Vector2(transform.position.x, transform.position.z);
+        Vector2 destinationXZ = new Vector2(returnDestination.x, returnDestination.z);
+
+        if (Vector2.Distance(currentXZ, destinationXZ) <= agent.stoppingDistance + 0.35f)
         {
             leashOrigin = returnDestination;
-            SetState(EnemyState.Patrol);
+            SetState(EnemyState.Idle);
         }
+    }
+
+    private void TickIdle()
+    {
+        if (agent.enabled && agent.isOnNavMesh)
+            agent.isStopped = true;
+
+        if (PlayerInView()) { SetState(EnemyState.Chase); return; }
+        if (PlayerInAttackRange()) { SetState(EnemyState.Attack); return; }
+
+        idleTimer -= Time.deltaTime;
+        if (idleTimer <= 0f)
+            SetState(EnemyState.Patrol);
     }
 
     // ──── Damage / Health ─────────────────────────────────────────────────

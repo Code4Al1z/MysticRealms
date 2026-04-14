@@ -2025,10 +2025,11 @@ MonoBehaviour:
   enemyDisplayName: Enemy
   maxHealth: 100
   baseMoveSpeed: 3
-  chaseSpeedBoost: 1.4
+  chaseSpeedBoost: 0.8
   viewRange: 10
   attackRange: 1.8
   attackCooldown: 1.5
+  idleDuration: 3
   leashRadiusMultiplier: 0.6
   showLeashGizmo: 1
   spawnEvent:
@@ -2043,13 +2044,13 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  enableDebugLog: 0
+  enableDebugLog: 1
   golemPatrolPoints:
   - {fileID: 1644176525}
   - {fileID: 1763543931}
   patrolStoppingDistance: 0.6
   attackPoint: {fileID: 274103812}
-  meleeRadius: 1.2
+  meleeRadius: 0.4
   meleeDamage: 15
   playerLayer:
     serializedVersion: 2
@@ -2077,7 +2078,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -8632,6 +8633,7 @@ MonoBehaviour:
   viewRange: 10
   attackRange: 1.8
   attackCooldown: 1.5
+  idleDuration: 3
   leashRadiusMultiplier: 0.6
   showLeashGizmo: 1
   spawnEvent:

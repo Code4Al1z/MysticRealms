@@ -92,6 +92,7 @@ public class GolemResonanceHandler : MonoBehaviour, IResonanceResponsive
 
         agent.isStopped = true;
         agent.enabled = false;
+        rb.isKinematic = false;
 
         Vector3 dir = (transform.position - sourcePosition).normalized;
         dir.y = 0.3f;
@@ -124,6 +125,8 @@ public class GolemResonanceHandler : MonoBehaviour, IResonanceResponsive
         if (stunTimer > 0f) return;
 
         IsKnockedBack = false;
+        rb.linearVelocity = Vector3.zero;
+        rb.isKinematic = true;
         agent.enabled = true;
         agent.isStopped = false;
         agent.Warp(transform.position);
