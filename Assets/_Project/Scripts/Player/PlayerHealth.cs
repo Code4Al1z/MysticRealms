@@ -1,47 +1,17 @@
 using UnityEngine;
 
-/// <summary>
-/// PlayerHealth — manages health, lives, and collectables for Mystic Realms.
-///
-/// ── RESPONSIBILITIES ────────────────────────────────────────────────────────
-///   • Health pool with damage, heal, invincibility frames.
-///   • Lives system — on death: lose a life, respawn OR game over.
-///   • Collectable counter (wisp-body pickups, crystals, etc.).
-///   • All state changes fire events — the HUD subscribes, nothing else couples.
-///
-/// ── WWISE SETUP ─────────────────────────────────────────────────────────────
-///   Player_TakeDamage   one-shot on damage
-///   Player_Death        on last-life death
-///   Player_Respawn      on respawn
-///   Player_Collect      on collectable pickup
-///   Player_HealthPct    RTPC 0–100
-///
-/// ── HUD INTEGRATION ─────────────────────────────────────────────────────────
-///   GameHUD subscribes to all public events in Start().
-///   No direct HUD reference needed here — fully decoupled.
-///
-/// ── FUTURE: MENUS / GAME OVER ───────────────────────────────────────────────
-///   OnGameOver fires when lives hit 0. A future GameManager or MainMenu
-///   controller subscribes and transitions to the game-over / main-menu scene.
-/// </summary>
 public class PlayerHealth : MonoBehaviour
 {
-    // ─────────────────────────────────────────────────────────── Inspector ───
-
     [Header("Health")]
-    [SerializeField] private float maxHealth          = 100f;
-    [SerializeField] private float invincibilityTime  = 0.8f; // seconds after a hit
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float invincibilityTime = 0.8f;
 
     [Header("Lives")]
-    [SerializeField] private int   startingLives      = 3;
-    [SerializeField] private int   maxLives           = 5;
+    [SerializeField] private int startingLives = 3;
+    [SerializeField] private int maxLives = 5;
 
     [Header("Respawn")]
-    [Tooltip("Transform to warp the player to on respawn. If null, uses spawn position.")]
     [SerializeField] private Transform respawnPoint;
-    [SerializeField] private PlayerDropTracker dropTracker;
-
-    [Tooltip("Seconds of invincibility granted on respawn.")]
     [SerializeField] private float respawnInvincibilityTime = 2f;
 
     [Header("Wwise")]
@@ -49,92 +19,69 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private AK.Wwise.Event deathEvent;
     [SerializeField] private AK.Wwise.Event respawnEvent;
     [SerializeField] private AK.Wwise.Event collectEvent;
-    [SerializeField] private AK.Wwise.RTPC  healthPercentRTPC;
+    [SerializeField] private AK.Wwise.RTPC healthPercentRTPC;
 
     [Header("Debug")]
     [SerializeField] private bool enableDebugLog = false;
 
-    // ──────────────────────────────────────────────────────────────── Events ─
+    public float CurrentHealth => currentHealth;
+    public float MaxHealth => maxHealth;
+    public int Lives => currentLives;
+    public int MaxLives => maxLives;
+    public int Collectables => collectableCount;
+    public bool IsInvincible => invincibleTimer > 0f;
+    public bool IsAlive => currentLives > 0 || currentHealth > 0f;
 
-    /// <summary>Health changed. (currentHealth, maxHealth)</summary>
     public event System.Action<float, float> OnHealthChanged;
-
-    /// <summary>Player lost a life and is respawning. (livesRemaining)</summary>
-    public event System.Action<int>          OnLifeLost;
-
-    /// <summary>Gained a life (e.g. from a pickup). (livesRemaining)</summary>
-    public event System.Action<int>          OnLifeGained;
-
-    /// <summary>Lives hit 0 — game over. Subscribe in GameManager/MenuController.</summary>
-    public event System.Action               OnGameOver;
-
-    /// <summary>Collectable count changed. (newTotal)</summary>
-    public event System.Action<int>          OnCollectableChanged;
-
-    /// <summary>Invincibility state toggled. Useful for HUD flash effect. (isInvincible)</summary>
-    public event System.Action<bool>         OnInvincibilityChanged;
-
-    // ─────────────────────────────────────────────────────────── Properties ─
-
-    public float CurrentHealth    => currentHealth;
-    public float MaxHealth        => maxHealth;
-    public int   Lives            => currentLives;
-    public int   MaxLives         => maxLives;
-    public int   Collectables     => collectableCount;
-    public bool  IsInvincible     => invincibleTimer > 0f;
-    public bool  IsAlive          => currentLives > 0 || currentHealth > 0f;
-
-    // ──────────────────────────────────────────────────────── Runtime State ─
+    public event System.Action<int> OnLifeLost;
+    public event System.Action<int> OnLifeGained;
+    public event System.Action OnGameOver;
+    public event System.Action<int> OnCollectableChanged;
+    public event System.Action<bool> OnInvincibilityChanged;
 
     private float currentHealth;
-    private int   currentLives;
-    private int   collectableCount = 0;
-    private float invincibleTimer  = 0f;
+    private int currentLives;
+    private int collectableCount = 0;
+    private float invincibleTimer = 0f;
     private Vector3 spawnPosition;
-
-    // ────────────────────────────────────────────────────────── Lifecycle ────
+    private PlayerDropTracker dropTracker;
 
     private void Awake()
     {
         currentHealth = maxHealth;
-        currentLives  = startingLives;
+        currentLives = startingLives;
         spawnPosition = transform.position;
+        dropTracker = GetComponent<PlayerDropTracker>();
     }
 
     private void Start()
     {
         UpdateHealthRTPC();
-
-        if (enableDebugLog)
-            Debug.Log($"[PlayerHealth] Ready. HP: {maxHealth}  Lives: {startingLives}");
     }
 
     private void Update()
     {
-        if (invincibleTimer > 0f)
-        {
-            invincibleTimer -= Time.deltaTime;
+        if (invincibleTimer <= 0f) return;
 
-            if (invincibleTimer <= 0f)
-            {
-                invincibleTimer = 0f;
-                OnInvincibilityChanged?.Invoke(false);
-            }
+        invincibleTimer -= Time.deltaTime;
+        if (invincibleTimer <= 0f)
+        {
+            invincibleTimer = 0f;
+            if (OnInvincibilityChanged != null) OnInvincibilityChanged.Invoke(false);
         }
     }
 
-    // ──────────────────────────────────────────────────────── Public API ─────
-
-    /// <summary>Apply damage. Respects invincibility frames.</summary>
     public void TakeDamage(float amount)
     {
         if (IsInvincible) return;
         if (currentLives <= 0 && currentHealth <= 0f) return;
 
         currentHealth = Mathf.Max(0f, currentHealth - amount);
-        takeDamageEvent?.Post(gameObject);
+        if (takeDamageEvent != null)
+            takeDamageEvent.Post(gameObject);
         UpdateHealthRTPC();
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        if (OnHealthChanged != null)
+            OnHealthChanged.Invoke(currentHealth, maxHealth);
 
         if (enableDebugLog)
             Debug.Log($"[PlayerHealth] -{amount:F1}  HP: {currentHealth:F1}/{maxHealth}");
@@ -145,63 +92,56 @@ public class PlayerHealth : MonoBehaviour
             GrantInvincibility(invincibilityTime);
     }
 
-    /// <summary>Heal the player (clamps to maxHealth).</summary>
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
         UpdateHealthRTPC();
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        if (OnHealthChanged != null) OnHealthChanged.Invoke(currentHealth, maxHealth);
     }
 
-    /// <summary>Award collectable points (wisp pickups, crystals, etc.).</summary>
     public void AddCollectable(int amount = 1)
     {
         collectableCount += amount;
-        collectEvent?.Post(gameObject);
-        OnCollectableChanged?.Invoke(collectableCount);
+        if (collectEvent != null) collectEvent.Post(gameObject);
+        if (OnCollectableChanged != null) OnCollectableChanged.Invoke(collectableCount);
 
         if (enableDebugLog)
-            Debug.Log($"[PlayerHealth] +{amount} collectable. Total: {collectableCount}");
+            Debug.Log($"[PlayerHealth] Collectables: {collectableCount}");
     }
 
-    /// <summary>Add a life (e.g. from a life-pickup).</summary>
     public void AddLife(int amount = 1)
     {
         currentLives = Mathf.Min(maxLives, currentLives + amount);
-        OnLifeGained?.Invoke(currentLives);
+        if (OnLifeGained != null) OnLifeGained.Invoke(currentLives);
     }
 
-    /// <summary>Grant invincibility for a given duration (stacks — takes max).</summary>
     public void GrantInvincibility(float duration)
     {
         bool wasInvincible = IsInvincible;
         invincibleTimer = Mathf.Max(invincibleTimer, duration);
-        if (!wasInvincible) OnInvincibilityChanged?.Invoke(true);
+        if (!wasInvincible && OnInvincibilityChanged != null) OnInvincibilityChanged.Invoke(true);
     }
-
-    // ─────────────────────────────────────────────────────── Death / Respawn ──
 
     private void HandleDeath()
     {
         currentLives--;
 
-        if (enableDebugLog)
-            Debug.Log($"[PlayerHealth] Died. Lives remaining: {currentLives}");
-
         if (currentLives <= 0)
         {
             currentLives = 0;
-            deathEvent?.Post(gameObject);
-            OnLifeLost?.Invoke(0);
-            OnGameOver?.Invoke();
-
-            if (enableDebugLog)
-                Debug.Log("[PlayerHealth] GAME OVER.");
+            if (deathEvent != null)
+                deathEvent.Post(gameObject);
+            if (OnLifeLost != null)
+                OnLifeLost.Invoke(0);
+            if (OnGameOver != null)
+                OnGameOver.Invoke();
         }
         else
         {
-            deathEvent?.Post(gameObject);
-            OnLifeLost?.Invoke(currentLives);
+            if (deathEvent != null)
+                deathEvent.Post(gameObject);
+            if (OnLifeLost != null)
+                OnLifeLost.Invoke(currentLives);
             Respawn();
         }
     }
@@ -210,27 +150,32 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthRTPC();
-        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        if (OnHealthChanged != null)
+            OnHealthChanged.Invoke(currentHealth, maxHealth);
 
-        if (dropTracker.LastDropPoint != null)
-            respawnPoint = dropTracker.LastDropPoint;
+        // Collectables kept on respawn intentionally.
+        // When enemy respawning is added, revisit:
+        // collectableCount = 0; OnCollectableChanged?.Invoke(0); // C# delegate — ?. is fine here
 
-        Vector3 respawnPos = respawnPoint != null ? respawnPoint.position : spawnPosition;
-        transform.position = respawnPos;
+        Vector3 pos = spawnPosition;
+        if (respawnPoint != null) pos = respawnPoint.position;
+        if (dropTracker != null && dropTracker.LastDropPoint != null) pos = dropTracker.LastDropPoint.position;
+        transform.position = pos;
 
-        // Optionally reset velocity if Rigidbody present
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null) rb.linearVelocity = Vector3.zero;
 
-        respawnEvent?.Post(gameObject);
+        if (respawnEvent != null)
+            respawnEvent.Post(gameObject);
         GrantInvincibility(respawnInvincibilityTime);
 
         if (enableDebugLog)
-            Debug.Log($"[PlayerHealth] Respawned at {respawnPos}. Lives: {currentLives}");
+            Debug.Log($"[PlayerHealth] Respawned. Lives: {currentLives}");
     }
 
-    // ───────────────────────────────────────────────────────── Wwise Helper ──
-
     private void UpdateHealthRTPC()
-        => healthPercentRTPC?.SetValue(gameObject, (currentHealth / maxHealth) * 100f);
+    {
+        if (healthPercentRTPC != null)
+            healthPercentRTPC.SetValue(gameObject, (currentHealth / maxHealth) * 100f);
+    }
 }
