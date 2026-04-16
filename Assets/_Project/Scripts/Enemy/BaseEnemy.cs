@@ -136,7 +136,7 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
         BakePatrolPath();
         leashOrigin = transform.position;
 
-        spawnEvent?.Post(gameObject);
+        if (spawnEvent != null) spawnEvent.Post(gameObject);
         UpdateHealthRTPC();
 
         if (enableDebugLog)
@@ -474,14 +474,18 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
         if (agent.enabled || agent.isOnNavMesh)
             agent.isStopped = true;
         agent.enabled = false;
-        deathEvent?.Post(gameObject);
+        if (deathEvent != null) deathEvent.Post(gameObject);
         OnDied?.Invoke(gameObject);
         OnEnemyDeath();
         if (enableDebugLog) Debug.Log($"[{enemyDisplayName}] Died.");
     }
 
     private void UpdateHealthRTPC()
-        => healthPercentRTPC?.SetValue(gameObject, (currentHealth / maxHealth) * 100f);
+
+    {
+        if (healthPercentRTPC != null)
+            healthPercentRTPC.SetValue(gameObject, (currentHealth / maxHealth) * 100f);
+    }
 
     // ─── Gizmos ────────────────────────────────────────────────────────────────
 

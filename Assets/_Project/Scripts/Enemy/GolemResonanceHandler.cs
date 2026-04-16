@@ -32,6 +32,7 @@ public class GolemResonanceHandler : MonoBehaviour, IResonanceResponsive
     private bool wasBeingDrained = false;
     private float knockbackTimer = -999f;
     private float stunTimer = 0f;
+    private float lastStressRTPC = -1f;
 
     public void Initialise(RockGolemEnemy golem, NavMeshAgent agent, Rigidbody rb)
     {
@@ -45,7 +46,14 @@ public class GolemResonanceHandler : MonoBehaviour, IResonanceResponsive
         TickKnockbackRecovery();
         TickStressDecay();
         if (resonanceStressRTPC != null)
-            resonanceStressRTPC.SetValue(gameObject, ResonanceStress * 100f);
+        {
+            float stressValue = ResonanceStress * 100f;
+            if (!Mathf.Approximately(stressValue, lastStressRTPC))
+            {
+                lastStressRTPC = stressValue;
+                resonanceStressRTPC.SetValue(gameObject, stressValue);
+            }
+        }
 
         wasBeingDrained = isBeingDrained;
         isBeingDrained = false;

@@ -20,6 +20,7 @@ public class GolemFootstepHandler : MonoBehaviour
     private float baseMoveSpeed;
     private float footstepTimer = 0f;
     private Collider lastSurfaceCollider = null;
+    private float lastSpeedRTPC = -1f;
 
     public void Initialise(NavMeshAgent agent, float baseMoveSpeed)
     {
@@ -82,6 +83,9 @@ public class GolemFootstepHandler : MonoBehaviour
     private void UpdateSpeedRTPC(float speed)
     {
         if (speedRTPC == null || baseMoveSpeed <= 0f) return;
-        speedRTPC.SetValue(gameObject, (speed / baseMoveSpeed) * 100f);
+        float value = (speed / baseMoveSpeed) * 100f;
+        if (Mathf.Approximately(value, lastSpeedRTPC)) return;
+        lastSpeedRTPC = value;
+        speedRTPC.SetValue(gameObject, value);
     }
 }

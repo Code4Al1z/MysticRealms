@@ -31,6 +31,8 @@ public class WispEchoPulseHandler : MonoBehaviour, IEchoResponsive
     private WispEnemy wisp;
     private bool isBeingPulsed = false;
     private bool wasPulsedLastFrame = false;
+    private float lastSpeedRTPC = -1f;
+    private float lastStressRTPC = -1f;
 
     private static readonly int ShaderBaseColor = Shader.PropertyToID("_BaseColor");
     private Material wispMat;
@@ -49,9 +51,26 @@ public class WispEchoPulseHandler : MonoBehaviour, IEchoResponsive
 
         UpdateVisuals();
 
-        float speedNorm = wisp.BaseMoveSpeed > 0f ? wisp.Agent.speed / wisp.BaseMoveSpeed : 1f;
-        wispSpeedRTPC?.SetValue(gameObject, speedNorm * 100f);
-        wispPulseStressRTPC?.SetValue(gameObject, StressLevel * 100f);
+        if (wispSpeedRTPC != null)
+        {
+            float speedNorm = wisp.BaseMoveSpeed > 0f ? wisp.Agent.speed / wisp.BaseMoveSpeed : 1f;
+            float speedValue = speedNorm * 100f;
+            if (!Mathf.Approximately(speedValue, lastSpeedRTPC))
+            {
+                lastSpeedRTPC = speedValue;
+                wispSpeedRTPC.SetValue(gameObject, speedValue);
+            }
+        }
+
+        if (wispPulseStressRTPC != null)
+        {
+            float stressValue = StressLevel * 100f;
+            if (!Mathf.Approximately(stressValue, lastStressRTPC))
+            {
+                lastStressRTPC = stressValue;
+                wispPulseStressRTPC.SetValue(gameObject, stressValue);
+            }
+        }
 
         wasPulsedLastFrame = isBeingPulsed;
         isBeingPulsed = false;
@@ -67,7 +86,7 @@ public class WispEchoPulseHandler : MonoBehaviour, IEchoResponsive
 
         if (!wasPulsedLastFrame)
         {
-            wispPulseHitEvent?.Post(gameObject);
+            if (wispPulseHitEvent != null) wispPulseHitEvent.Post(gameObject);
             wisp.NotifyStatusEffectPublic("EchoPulse", true);
         }
 
@@ -94,11 +113,11 @@ public class WispEchoPulseHandler : MonoBehaviour, IEchoResponsive
     public void OnEchoPulseStopped()
     {
         isBeingPulsed = false;
-        wispRecoverEvent?.Post(gameObject);
+        if (wispRecoverEvent != null) wispRecoverEvent.Post(gameObject);
         wisp.NotifyStatusEffectPublic("EchoPulse", false);
     }
 
-    public void StopBodyParticles() => wispBodyParticles?.Stop();
+    public void StopBodyParticles() { if (wispBodyParticles != null) wispBodyParticles.Stop(); }
 
     private void TickStressRecovery()
     {
