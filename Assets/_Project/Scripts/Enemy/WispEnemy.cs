@@ -54,6 +54,12 @@ public class WispEnemy : BaseEnemy
 
     public override string GetEnemyTypeID() => "Wisp";
 
+    protected override Vector3 AdjustReturnDestination(Vector3 destination)
+    {
+        destination.y = transform.position.y;
+        return destination;
+    }
+
     protected override void AdvancePatrol()
     {
         if (wispPatrolPoints == null || wispPatrolPoints.Length == 0) return;
@@ -63,6 +69,8 @@ public class WispEnemy : BaseEnemy
         Vector3 target = wispPatrolPoints[currentPatrolIndex].position;
         target.y = transform.position.y;
         agent.SetDestination(target);
+
+        if (agent.pathPending) return;
 
         float flatDist = new Vector2(
             transform.position.x - wispPatrolPoints[currentPatrolIndex].position.x,
@@ -79,6 +87,26 @@ public class WispEnemy : BaseEnemy
         UpdateHover();
         chargeHandler.Tick();
         echoPulseHandler.Tick();
+    }
+
+    protected override void OnStateChanged(EnemyState prev, EnemyState next)
+    {
+        if (next == EnemyState.Patrol)
+        {
+            float closestDist = float.MaxValue;
+            for (int i = 0; i < wispPatrolPoints.Length; i++)
+            {
+                float d = Vector2.Distance(
+                    new Vector2(transform.position.x, transform.position.z),
+                    new Vector2(wispPatrolPoints[i].position.x, wispPatrolPoints[i].position.z));
+                if (d < closestDist)
+                {
+                    closestDist = d;
+                    currentPatrolIndex = i;
+                }
+            }
+            currentPatrolIndex = (currentPatrolIndex + 1) % wispPatrolPoints.Length;
+        }
     }
 
     protected override void PerformAttack()

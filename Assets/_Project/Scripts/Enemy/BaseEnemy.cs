@@ -258,6 +258,12 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
         return best;
     }
 
+    /// <summary>
+    /// Override to adjust the Y of the return destination before the agent path is set.
+    /// Wisp uses this to keep Y at hover height so the XZ-only agent steers correctly.
+    /// </summary>
+    protected virtual Vector3 AdjustReturnDestination(Vector3 destination) => destination;
+
     // ─── Range Helpers ───────────────────────────────────────────────────────
 
     protected bool PlayerInView()
@@ -296,7 +302,7 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
 
         if (next == EnemyState.Return)
         {
-            returnDestination = NearestPatrolPoint(transform.position);
+            returnDestination = AdjustReturnDestination(NearestPatrolPoint(transform.position));
             if (agent.enabled && agent.isOnNavMesh)
                 agent.SetDestination(returnDestination);
         }
