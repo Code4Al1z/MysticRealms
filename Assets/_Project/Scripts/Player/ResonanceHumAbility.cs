@@ -39,6 +39,7 @@ public class ResonanceHumAbility : MonoBehaviour
     [SerializeField] private bool showDebugGizmos = true;
     [SerializeField] private bool enableDebugLog = false;
 
+    private bool isLocked = true;
     private bool isActive = false;
     private float currentEnergy;
     private float timeSinceStop = 0f;
@@ -69,6 +70,8 @@ public class ResonanceHumAbility : MonoBehaviour
 
     private void HandleInput()
     {
+        if (isLocked) return;
+
         var kb = Keyboard.current;
         if (kb == null) return;
 
@@ -242,6 +245,20 @@ public class ResonanceHumAbility : MonoBehaviour
     public bool CanActivate()
     {
         return currentEnergy > 0f;
+    }
+
+    public bool IsLocked => isLocked;
+
+    public void SetLocked(bool locked)
+    {
+        isLocked = locked;
+    }
+
+    public float GetRechargeDelayRemaining()
+    {
+        if (isActive) return 0f;
+        float remaining = rechargeDelay - timeSinceStop;
+        return Mathf.Max(0f, remaining);
     }
 
     private void OnDrawGizmos()

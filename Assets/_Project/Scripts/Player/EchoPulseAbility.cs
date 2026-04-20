@@ -32,6 +32,7 @@ public class EchoPulseAbility : MonoBehaviour
     [SerializeField] private bool showDebugGizmos = true;
     [SerializeField] private bool enableDebugLog = false;
 
+    private bool isLocked = true;
     private bool isActive = false;
     private float currentFrequency = 100f;
     private float frequencyRampSpeed = 50f;
@@ -62,6 +63,8 @@ public class EchoPulseAbility : MonoBehaviour
 
     private void HandleInput()
     {
+        if (isLocked) return;
+
         var kb = Keyboard.current;
         if (kb == null) return;
 
@@ -189,6 +192,13 @@ public class EchoPulseAbility : MonoBehaviour
     public bool IsActive()
     {
         return isActive;
+    }
+
+    public bool IsLocked => isLocked;
+
+    public void SetLocked(bool locked)
+    {
+        isLocked = locked;
     }
 
     private void OnDrawGizmos()
