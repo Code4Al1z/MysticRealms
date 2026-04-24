@@ -4954,6 +4954,7 @@ GameObject:
   - component: {fileID: 1708962811790208544}
   - component: {fileID: 925677999122300136}
   - component: {fileID: 2624870170446048014}
+  - component: {fileID: 1882024455260459916}
   - component: {fileID: 8962777332732573749}
   m_Layer: 9
   m_Name: Wisp
@@ -5055,7 +5056,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.8
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1708962811790208544
 MonoBehaviour:
@@ -5162,6 +5163,19 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+--- !u!114 &1882024455260459916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117986350995567857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91943979ecc81e8489ebccf2ca913403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageNumberBridge
+  spawnHeightOffset: 0.5
 --- !u!195 &8962777332732573749
 NavMeshAgent:
   m_ObjectHideFlags: 0
