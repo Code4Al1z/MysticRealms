@@ -6899,9 +6899,11 @@ MonoBehaviour:
   enemyHeavyColor: {r: 1, g: 0.4, b: 0.1, a: 1}
   enemyHeavyThreshold: 20
   enemyVerticalOffset: 1.5
+  enemyHorizontalSpread: 0.4
   playerHitColor: {r: 0.95, g: 0.2, b: 0.2, a: 1}
   playerVerticalOffset: 2.2
   playerHorizontalSpread: 0.6
+  drainNumberInterval: 0.3
 --- !u!1001 &1053212814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7716,6 +7718,7 @@ GameObject:
   - component: {fileID: 1171630548}
   - component: {fileID: 1171630546}
   - component: {fileID: 1171630550}
+  - component: {fileID: 1171630552}
   - component: {fileID: 1171630542}
   - component: {fileID: 1171630544}
   m_Layer: 8
@@ -8010,6 +8013,18 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   enableDebugLog: 1
+--- !u!114 &1171630552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171630539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b6496d6eb81e94886a65de6602cca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageNumberBridge
 --- !u!1 &1179113862
 GameObject:
   m_ObjectHideFlags: 0
