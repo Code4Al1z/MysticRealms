@@ -8,6 +8,7 @@ public class AbilityUnlockTrigger : MonoBehaviour
     [SerializeField] private AbilityType abilityToUnlock = AbilityType.ResonanceHum;
     [SerializeField] private EchoPulseAbility echoPulse;
     [SerializeField] private ResonanceHumAbility resonanceHum;
+    [TextArea(6,10)]
     [SerializeField] private string unlockMessage = "New ability unlocked!";
     [SerializeField] private float displayDuration = 6f;
 

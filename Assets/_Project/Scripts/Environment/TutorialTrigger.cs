@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class TutorialTrigger : MonoBehaviour
 {
+    [TextArea(6, 10)]
     [SerializeField] private string message = "Use this ability to interact with the world.";
     [SerializeField] private float displayDuration = 5f;
     [SerializeField] private bool oneShot = true;
