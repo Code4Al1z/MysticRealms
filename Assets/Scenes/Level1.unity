@@ -2664,9 +2664,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29943881}
     m_Modifications:
+    - target: {fileID: 520532410563001131, guid: da736e23a82ad1849b22d19ab36d1406, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2197261804934206184, guid: da736e23a82ad1849b22d19ab36d1406, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a5eb1cc9a71e124783d88a33338fe39, type: 2}
     - target: {fileID: 2859113052897728197, guid: da736e23a82ad1849b22d19ab36d1406, type: 3}
       propertyPath: m_Name
       value: Wood_Block_LowTop (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922797449609471354, guid: da736e23a82ad1849b22d19ab36d1406, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6746796423477980862, guid: da736e23a82ad1849b22d19ab36d1406, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39042,6 +39054,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 161212548}
     m_Modifications:
+    - target: {fileID: 171932585936942714, guid: 34cae3ab66f2faa40aa71fbc523cc566, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564685647133308477, guid: 34cae3ab66f2faa40aa71fbc523cc566, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7580572661771130518, guid: 34cae3ab66f2faa40aa71fbc523cc566, type: 3}
       propertyPath: m_LocalPosition.x
       value: 117
