@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2408207067370401374}
   - component: {fileID: 3937756815414225953}
   - component: {fileID: 2191112024697698570}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Circle_alp_Ef_Ma_Ring_003_alp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4854,7 +4854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913551237584591486}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EchoPulseVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4888,7 +4888,7 @@ GameObject:
   - component: {fileID: 8392993203815476418}
   - component: {fileID: 6983467986234058529}
   - component: {fileID: 1170728850271370006}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9726,7 +9726,7 @@ GameObject:
   - component: {fileID: 7687795999734939313}
   - component: {fileID: 6164586460968184113}
   - component: {fileID: 9197300369617083783}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Circle_add_Ef_Ma_Ring_001_add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
