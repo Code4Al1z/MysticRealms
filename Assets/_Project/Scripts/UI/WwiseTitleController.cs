@@ -54,7 +54,7 @@ public class WwiseTitleController : MonoBehaviour
         _smoothedAmp = Mathf.Lerp(_smoothedAmp, finalAmp, smoothing);
 
         // --- WAVE LOGIC ---
-        _currentWavePos += Time.deltaTime * waveSpeed;
+        _currentWavePos += Time.unscaledDeltaTime * waveSpeed;
         if (_currentWavePos > 1.4f) _currentWavePos = -0.4f;
 
         // --- APPLY TO SHADER ---
