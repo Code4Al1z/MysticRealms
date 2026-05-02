@@ -1,4 +1,4 @@
-Shader "Custom/TMP_ArcaneOverload"
+Shader "Custom/TMP_ShiftingLights"
 {
     Properties
     {
