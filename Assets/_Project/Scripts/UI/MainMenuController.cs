@@ -52,10 +52,10 @@ public class MainMenuController : MonoBehaviour
         return default;
     }
 
-    public void OpenAudioSettings()
+    public void OpenAudioSettings(bool enable)
     {
-        objectsToDisable.ForEach(obj => obj.SetActive(false));
-        objectsToEnable.ForEach(obj => obj.SetActive(true));
+        objectsToDisable.ForEach(obj => obj.SetActive(!enable));
+        objectsToEnable.ForEach(obj => obj.SetActive(enable));
     }
 
     public void QuitGame()
