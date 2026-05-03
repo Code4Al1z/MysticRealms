@@ -5,7 +5,7 @@ using TMPro;
 public class PlayerHealthPanel : MonoBehaviour
 {
     [Header("Health Bar")]
-    [SerializeField] private Slider healthSlider;
+    [SerializeField] private WaveformHealthBar healthBar;
 
     [Header("Lives — Icon Row")]
     [SerializeField] private Image[] lifeIcons;
@@ -40,8 +40,8 @@ public class PlayerHealthPanel : MonoBehaviour
 
     private void OnHealthChanged(float current, float max)
     {
-        if (healthSlider != null)
-            healthSlider.value = max > 0f ? current / max : 0f;
+        if (healthBar != null)
+            healthBar.SetHealth(max > 0f ? current / max : 0f);
     }
 
     private void OnLivesChanged(int remaining)
