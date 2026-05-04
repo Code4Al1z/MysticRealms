@@ -90,41 +90,22 @@ public class WaveformSlider : Graphic,
     {
         vh.Clear();
 
-        Rect rect = rectTransform.rect;
-        float totalWidth = rect.width;
-        float height = rect.height;
-        float left = rect.xMin;
-        float bottom = rect.yMin;
-        float barWidth = (totalWidth - barGap * (barCount - 1)) / barCount;
-
-        if (barWidth <= 0f) return;
-
-        float minH = height * minHeightFraction;
-        float maxH = height * maxHeightFraction;
-
-        for (int i = 0; i < barCount; i++)
+        var s = new WaveformRenderer.Settings
         {
-            float t = (float)i / (barCount - 1);
+            barCount = barCount,
+            barGap = barGap,
+            minHeightFraction = minHeightFraction,
+            maxHeightFraction = maxHeightFraction,
+            waveFrequency = waveFrequency,
+            wavePhaseOffset = 0f,
+            breatheTimer = noiseTimer,
+            breatheAmount = idleNoiseAmount,
+        };
 
-            // Base sine wave
-            float sine = Mathf.Sin(t * waveFrequency * Mathf.PI * 2f);
-            // Idle noise offset — each bar has its own phase
-            float noise = Mathf.Sin(noiseTimer + t * 7.3f) * idleNoiseAmount;
-            float norm = Mathf.Clamp01((sine + 1f) * 0.5f + noise);
-            float barH = Mathf.Lerp(minH, maxH, norm);
+        WaveformRenderer.DrawSolid(vh, rectTransform.rect, s, value, activeColor, inactiveColor);
 
-            bool active = t <= value;
-            Color c = active ? activeColor : inactiveColor;
-
-            float x = left + i * (barWidth + barGap);
-            float y = bottom + (height - barH) * 0.5f;
-
-            AddQuad(vh, x, y, barWidth, barH, c);
-        }
-
-        // Handle bar — vertical line at value position
-        float handleX = left + value * (totalWidth - handleWidth);
-        AddQuad(vh, handleX, bottom, handleWidth, height, handleColor);
+        float handleX = rectTransform.rect.xMin + value * (rectTransform.rect.width - handleWidth);
+        AddQuad(vh, handleX, rectTransform.rect.yMin, handleWidth, rectTransform.rect.height, handleColor);
     }
 
     private static void AddQuad(VertexHelper vh, float x, float y, float w, float h, Color c)
