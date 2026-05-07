@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class BossHealthBarPanel : MonoBehaviour
 {
-    [SerializeField] private Slider   healthSlider;
+    [SerializeField] private WaveformHealthBar   healthBar;
     [SerializeField] private TMP_Text bossNameText;
 
     private IEnemyDamageable currentTarget;
@@ -29,8 +28,8 @@ public class BossHealthBarPanel : MonoBehaviour
 
         if (bossNameText  != null) 
             bossNameText.text = boss.DisplayName;
-        if (healthSlider  != null) 
-            healthSlider.value = 1f;
+        if (healthBar != null)
+            healthBar.SetHealth(1f);
 
         boss.OnHealthChanged += OnHealthChanged;
         boss.OnDied += OnDied;
@@ -38,11 +37,11 @@ public class BossHealthBarPanel : MonoBehaviour
 
     private void OnHealthChanged(float current, float max)
     {
-        if (healthSlider != null)
-            healthSlider.value = max > 0f ? current / max : 0f;
+        if (healthBar != null)
+            healthBar.SetHealth(max > 0f ? current / max : 0f);
     }
 
-    private void OnDied(UnityEngine.GameObject _)
+    private void OnDied(GameObject _)
     {
         gameObject.SetActive(false);
         currentTarget = null;
