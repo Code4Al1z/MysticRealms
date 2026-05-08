@@ -6,6 +6,7 @@
 				<WorkUnit Name="Player" ID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}" PersistMode="Reference"/>
 				<WorkUnit Name="Environment" ID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}" PersistMode="Reference"/>
 				<WorkUnit Name="PlayerAbilities" ID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}" PersistMode="Reference"/>
+				<WorkUnit Name="Enemies" ID="{C4B81293-275F-4562-9072-B5AC8688BFB9}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

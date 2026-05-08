@@ -243,6 +243,34 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Enemies" ID="{F892001D-6379-49FD-B993-CEE8EAB74FF8}" ShortID="436529421">
+					<ChildrenList>
+						<Event Name="Play_Enemy_Hit_Wisp" ID="{04F78477-4BCB-4237-913E-C289C2B8F9DC}">
+							<ChildrenList>
+								<Action Name="" ID="{B7AD22EF-EFDA-4ED4-BA5E-060DE5F036A9}" ShortID="431476853">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Wisp_Hit" ID="{65C5B8B6-1DAA-4792-89C7-F9DD2B23E0DB}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Enemy_Hit_Golem" ID="{C9D1864C-F7F0-4D89-82A1-C6C6AB1F4542}"/>
+						<Event Name="Play_Enemy_Death_Wisp" ID="{61224603-D60E-4D79-ADCC-F53539B16E37}">
+							<ChildrenList>
+								<Action Name="" ID="{2D84FBDD-B5D6-4ACE-B19A-E91080343CC4}" ShortID="842072022">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Wisp_Death" ID="{58CD63C9-9BFB-46AA-B99E-9475FDA97E53}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Enemy_Death_Golem" ID="{2AE52EBE-1D49-4FFA-81E3-883106A04315}"/>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

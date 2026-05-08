@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C4B81293-275F-4562-9072-B5AC8688BFB9}" SchemaVersion="133" RootDocumentID="{7F2C9695-70E4-49A3-9C24-80633200451E}" ParentDocumentID="{7F2C9695-70E4-49A3-9C24-80633200451E}">
+	<Containers>
+		<WorkUnit Name="Enemies" ID="{C4B81293-275F-4562-9072-B5AC8688BFB9}" OwnerID="{7F2C9695-70E4-49A3-9C24-80633200451E}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="Wisp" ID="{D41CAB29-1006-456F-B028-3A4BDB59BBF5}" ShortID="340057078">
+					<ChildrenList>
+						<Sound Name="Wisp_Hit" ID="{65C5B8B6-1DAA-4792-89C7-F9DD2B23E0DB}" ShortID="540660230">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Wisp_Hit_02" ID="{70D7F413-DDEB-4DB6-8408-A9623D9AD456}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.93451"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Wisp_Hit_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="423140782"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Wisp_Hit_02" ID="{70D7F413-DDEB-4DB6-8408-A9623D9AD456}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Wisp_Death" ID="{58CD63C9-9BFB-46AA-B99E-9475FDA97E53}" ShortID="567062389">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Wisp_Death_01" ID="{BC8C4FA3-F740-4737-8726-064693D58C1D}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.96119"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Wisp_Death_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="137125188"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Wisp_Death_01" ID="{BC8C4FA3-F740-4737-8726-064693D58C1D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>
