@@ -72,6 +72,133 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Golem" ID="{72DAF7A1-453F-416D-907C-DA564EC70C8F}" ShortID="422165469">
+					<ChildrenList>
+						<RandomSequenceContainer Name="Golem_Hit_Random" ID="{867BE83A-7785-4BAD-B0AE-5778DDA773EE}" ShortID="638735239">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Golem_Hit_01" ID="{36E57C62-5822-44B7-9F41-0D6CD3A28C7F}" ShortID="318228409">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Golem_Hit_01" ID="{F67C57BF-2524-4024-B6CD-9A448CD61149}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.2707"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.51893"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Golem_Hit_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="48132522"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Golem_Hit_01" ID="{F67C57BF-2524-4024-B6CD-9A448CD61149}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Golem_Hit_02" ID="{2B1572DB-65F0-4749-B801-4BEEF4FB1B75}" ShortID="1020454777">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Golem_Hit_02" ID="{D8334549-2682-4D40-9C6C-34DC7F6F939A}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.55461"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.89066"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Golem_Hit_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="423710600"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Golem_Hit_02" ID="{D8334549-2682-4D40-9C6C-34DC7F6F939A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Golem_Hit_03" ID="{40FF4837-4EB2-4317-99FB-20A1555634A0}" ShortID="649853423">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Golem_Hit_03" ID="{CA4F79B0-5D31-4000-9274-7B58A4398554}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.02066"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.20197"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Golem_Hit_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="893258507"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Golem_Hit_03" ID="{CA4F79B0-5D31-4000-9274-7B58A4398554}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="Golem_Death" ID="{7A2295CD-C2C0-42B8-8767-040C80150616}" ShortID="807869708">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Golem_Death" ID="{0080160E-DB97-4A0B-9578-7B66D8B446F6}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.74966"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Golem_Death.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="781024576"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Golem_Death" ID="{0080160E-DB97-4A0B-9578-7B66D8B446F6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

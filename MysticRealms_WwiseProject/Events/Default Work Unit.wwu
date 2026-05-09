@@ -256,7 +256,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Enemy_Hit_Golem" ID="{C9D1864C-F7F0-4D89-82A1-C6C6AB1F4542}"/>
+						<Event Name="Play_Enemy_Hit_Golem" ID="{C9D1864C-F7F0-4D89-82A1-C6C6AB1F4542}">
+							<ChildrenList>
+								<Action Name="" ID="{9BD1F6E3-1D76-4973-8010-53448080A2AA}" ShortID="449455432">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Golem_Hit_Random" ID="{867BE83A-7785-4BAD-B0AE-5778DDA773EE}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="Play_Enemy_Death_Wisp" ID="{61224603-D60E-4D79-ADCC-F53539B16E37}">
 							<ChildrenList>
 								<Action Name="" ID="{2D84FBDD-B5D6-4ACE-B19A-E91080343CC4}" ShortID="842072022">
