@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3300476880",
+    "Type": "Event",
+    "GUID": "{2AE52EBE-1D49-4FFA-81E3-883106A04315}",
+    "Language": "SFX",
+    "Hash": "{B250F7D0-22CC-ABA5-C9A2-661C6596189C}",
+    "ObjectPath": "Play_Enemy_Death_Golem",
+    "ShortName": "Play_Enemy_Death_Golem",
+    "Path": "Event/Play_Enemy_Death_Golem.bnk",
+    "Events": [
+     {
+      "Id": "3300476880",
+      "Name": "Play_Enemy_Death_Golem",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Golem\\Play_Enemy_Death_Golem",
+      "GUID": "{2AE52EBE-1D49-4FFA-81E3-883106A04315}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0CBF05F4-785F-CD22-FB5E-325A71B5CEFB}"
+ }
+}

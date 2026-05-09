@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3300476880	Play_Enemy_Death_Golem			\Default Work Unit\Enemies\Golem\Play_Enemy_Death_Golem	
+

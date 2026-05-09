@@ -53,6 +53,20 @@
     "StaticLib": "AkTremoloFX"
    },
    {
+    "LibName": "Wwise Pitch Shifter",
+    "LibId": "8912899",
+    "Type": "Effect",
+    "DLL": "AkPitchShifter",
+    "StaticLib": "AkPitchShifterFX"
+   },
+   {
+    "LibName": "Wwise Gain",
+    "LibId": "9109507",
+    "Type": "Effect",
+    "DLL": "AkGain",
+    "StaticLib": "AkGainFX"
+   },
+   {
     "LibName": "Wwise Synth One",
     "LibId": "9699330",
     "Type": "Source",
@@ -70,6 +84,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{F0C0139B-A8A0-A128-2C64-EC24169E7045}"
+  "FileHash": "{912CA7A9-F226-DEE7-AB71-C4E586A38BFD}"
  }
 }

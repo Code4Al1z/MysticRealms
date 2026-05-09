@@ -1,35 +1,27 @@
 {
  "SoundBanksInfo": {
-  "Platform": "Mac",
-  "BasePlatform": "Mac",
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
   "SchemaVersion": "16",
   "SoundBankVersion": "172",
   "SoundBanks": [
    {
-    "Id": "817096458",
+    "Id": "2242381963",
     "Type": "User",
-    "GUID": "{07D70A79-D52D-41FD-85B7-DE6DE329538B}",
+    "GUID": "{6D21033C-4256-47C1-BF54-1B1B2E4A89FE}",
     "Language": "SFX",
-    "Hash": "{FDEB007C-CF3F-B215-E500-F2A344C21D26}",
-    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Player_SFX",
-    "ShortName": "Player_SFX",
-    "Path": "Player_SFX.bnk",
+    "Hash": "{F2568C32-686F-D6F9-10A7-19CEBA88BCE3}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Enemies",
+    "ShortName": "Enemies",
+    "Path": "Enemies.bnk",
     "Media": [
      {
-      "Id": "6265944",
+      "Id": "48132522",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Land_Metal_01.wav",
-      "CachePath": "4B/{4BF99022-A80E-0351-A215-CD77A2B6B60B}.wem"
-     },
-     {
-      "Id": "10788316",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Footstep_Stone_04.wav",
-      "CachePath": "3B/{3BF6F723-3EE7-F131-5E65-F2E7C475683F}.wem"
+      "ShortName": "Golem_Hit_01.wav",
+      "CachePath": "5A/{5A36635E-B222-8EF1-0B91-AEAC0B5C2F98}.wem"
      },
      {
       "Id": "74810679",
@@ -48,44 +40,28 @@
       "CachePath": "85/{857E27DA-53F6-4CE0-7D6C-4291CFCA086A}.wem"
      },
      {
-      "Id": "150220496",
+      "Id": "137125188",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Land_Leaves_02.wav",
-      "CachePath": "75/{75C88906-5E7A-5A17-603B-CB80DCF10021}.wem"
+      "ShortName": "Wisp_Death_01.wav",
+      "CachePath": "34/{34DAFA20-940B-80C0-34FD-A3CA6C4EB9A1}.wem"
      },
      {
-      "Id": "169697624",
+      "Id": "146757872",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Land_Leaves_01.wav",
-      "CachePath": "C8/{C88017E1-6AE8-772D-A1E8-4E42A2B25444}.wem"
+      "ShortName": "Golem_Footstep_Stone_03.wav",
+      "CachePath": "13/{13374BE4-4420-BE37-FCE3-346F80430FFC}.wem"
      },
      {
-      "Id": "187481456",
+      "Id": "242271553",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Land_Metal_04.wav",
-      "CachePath": "B0/{B042F468-8DDD-FBA4-DFD0-2511B609FAB9}.wem"
-     },
-     {
-      "Id": "203499254",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Stone_04.wav",
-      "CachePath": "40/{40327BF7-978E-F1AB-D9B3-2BF8C1651D37}.wem"
-     },
-     {
-      "Id": "237362321",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Stone_02.wav",
-      "CachePath": "A9/{A9885ED9-D46D-AAC7-19BD-1053C3269190}.wem"
+      "ShortName": "Golem_Footstep_Stone_02.wav",
+      "CachePath": "92/{92E2742D-CDEC-4F70-4513-68591CE9C01F}.wem"
      },
      {
       "Id": "262685794",
@@ -112,6 +88,14 @@
       "CachePath": "92/{927F9547-B9C9-7C30-22D8-C55F452A6B2A}.wem"
      },
      {
+      "Id": "332751654",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Golem_Footstep_Stone_01.wav",
+      "CachePath": "FD/{FDD1B2CE-410F-842B-9502-4E4E5F259118}.wem"
+     },
+     {
       "Id": "358699782",
       "Language": "SFX",
       "Streaming": "false",
@@ -120,12 +104,20 @@
       "CachePath": "30/{3040EDDB-C332-51BC-0948-E6927D87407A}.wem"
      },
      {
-      "Id": "374680735",
+      "Id": "423140782",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Footstep_Stone_02.wav",
-      "CachePath": "9E/{9E3C7D04-F76D-1C9F-EF22-35EA6388385F}.wem"
+      "ShortName": "Wisp_Hit_02.wav",
+      "CachePath": "66/{6661DDCB-D069-0591-C775-0CC943863F36}.wem"
+     },
+     {
+      "Id": "423710600",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Golem_Hit_02.wav",
+      "CachePath": "40/{40186730-B323-2465-16A8-190E2A35606A}.wem"
      },
      {
       "Id": "425911221",
@@ -136,36 +128,12 @@
       "CachePath": "CA/{CACDA211-ED98-1378-6615-036D142636B3}.wem"
      },
      {
-      "Id": "448555983",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Grass_03.wav",
-      "CachePath": "43/{43437E1C-7B38-0EE8-03DB-7BE5F5F0CC6A}.wem"
-     },
-     {
-      "Id": "451256713",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Grass_04.wav",
-      "CachePath": "0A/{0A938B3F-6180-CED6-3C00-47D14CCABF7F}.wem"
-     },
-     {
       "Id": "471634421",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Soil_03.wav",
       "CachePath": "BA/{BA8A6A22-5993-17F4-8FD8-5B47FB67C769}.wem"
-     },
-     {
-      "Id": "499093097",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Soil_02.wav",
-      "CachePath": "02/{02156ECA-3304-5FA3-8795-4D080371BD7D}.wem"
      },
      {
       "Id": "506643693",
@@ -200,44 +168,12 @@
       "CachePath": "08/{0838E282-02F8-3D3F-9542-DCC7BF97DA11}.wem"
      },
      {
-      "Id": "657545217",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Stone_01.wav",
-      "CachePath": "F7/{F7D83FB0-182A-9989-6424-7E756FA975C2}.wem"
-     },
-     {
-      "Id": "675869273",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Wood_03.wav",
-      "CachePath": "EF/{EF992EEF-15D9-EC55-0BBD-572476116E2E}.wem"
-     },
-     {
-      "Id": "681899867",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Footstep_Stone_01.wav",
-      "CachePath": "AA/{AA1259CF-D2AC-936E-CFFD-CD2FA5B86AC4}.wem"
-     },
-     {
       "Id": "686838333",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Metal_03.wav",
       "CachePath": "3A/{3AB8FD83-41A9-E239-0DE7-7857D63F19D2}.wem"
-     },
-     {
-      "Id": "700109537",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Metal_03.wav",
-      "CachePath": "FE/{FEE77D4F-0798-1FA5-F91B-70C86884D932}.wem"
      },
      {
       "Id": "711091130",
@@ -248,14 +184,6 @@
       "CachePath": "E8/{E8C63CA2-48D6-3116-AF7E-D798766E1655}.wem"
      },
      {
-      "Id": "723750938",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Grass_01.wav",
-      "CachePath": "6C/{6C9BB040-1C5E-2116-D67E-E4C50B1E6B07}.wem"
-     },
-     {
       "Id": "732395592",
       "Language": "SFX",
       "Streaming": "false",
@@ -264,44 +192,20 @@
       "CachePath": "84/{844F895E-B7FF-3C70-3D10-4186B6D2B1FA}.wem"
      },
      {
-      "Id": "744709980",
+      "Id": "754897681",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Land_Wood_02.wav",
-      "CachePath": "B4/{B4B841D5-7364-4DD4-E9A6-9EC34872D1DF}.wem"
+      "ShortName": "Golem_Footstep_Stone_04.wav",
+      "CachePath": "7B/{7BEB18BB-BA1A-4701-5A9C-BBB5981A981F}.wem"
      },
      {
-      "Id": "750785456",
+      "Id": "781024576",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Land_Wood_04.wav",
-      "CachePath": "81/{8117F8B1-45A3-628A-5739-689981214801}.wem"
-     },
-     {
-      "Id": "764237654",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Default_01.wav",
-      "CachePath": "06/{0665D395-349A-53A3-C50D-2BECE980ABA6}.wem"
-     },
-     {
-      "Id": "765476307",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Wood_01.wav",
-      "CachePath": "B7/{B7E8C996-8FA9-B85F-8F25-A96B2CD2ECC1}.wem"
-     },
-     {
-      "Id": "781432596",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Soil_04.wav",
-      "CachePath": "D6/{D6BBC9A0-04EF-932E-0531-22CC485300B4}.wem"
+      "ShortName": "Golem_Death.wav",
+      "CachePath": "C5/{C55F7FEB-E5F7-293A-6F0F-E13D414BFC6A}.wem"
      },
      {
       "Id": "784522206",
@@ -312,36 +216,12 @@
       "CachePath": "71/{71FB87AA-354C-C772-85BB-166E86290790}.wem"
      },
      {
-      "Id": "868506474",
+      "Id": "893258507",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Land_Stone_03.wav",
-      "CachePath": "28/{28B41404-AB60-DD84-2EAD-C2B9E8F3E7F9}.wem"
-     },
-     {
-      "Id": "885533788",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Leaves_04.wav",
-      "CachePath": "A8/{A8B3AC95-E51E-AFBA-6DF7-7F8A86048726}.wem"
-     },
-     {
-      "Id": "911991177",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Footstep_Stone_03.wav",
-      "CachePath": "99/{99FB2ECB-E82C-769B-BCEF-0EC01DC6A4E1}.wem"
-     },
-     {
-      "Id": "949169057",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Soil_01.wav",
-      "CachePath": "74/{742394E0-F41E-827E-81A1-A6471A833644}.wem"
+      "ShortName": "Golem_Hit_03.wav",
+      "CachePath": "1D/{1D237381-E233-5D6A-6DD4-8E9FB8A7A4F1}.wem"
      },
      {
       "Id": "970492995",
@@ -352,44 +232,12 @@
       "CachePath": "18/{186D57CF-BC02-F097-FFD1-961A8EF8197D}.wem"
      },
      {
-      "Id": "1019604063",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Metal_02.wav",
-      "CachePath": "6A/{6A3EA389-EC07-6B08-EC69-BC7F6CD9359C}.wem"
-     },
-     {
       "Id": "1022596507",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Leaves_02.wav",
       "CachePath": "C5/{C5841F67-BED8-AA31-610D-A57FBD0B1824}.wem"
-     },
-     {
-      "Id": "1024142388",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Grass_02.wav",
-      "CachePath": "FF/{FF9DC759-9A2B-FD37-36FA-7D2482D13316}.wem"
-     },
-     {
-      "Id": "1041219893",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Leaves_03.wav",
-      "CachePath": "F5/{F5A13423-F846-C22C-D298-31F292D0D2D9}.wem"
-     },
-     {
-      "Id": "1044259485",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Land_Soil_03.wav",
-      "CachePath": "9E/{9E17E39E-04D3-1221-AA78-511FC4DBE635}.wem"
      },
      {
       "Id": "1048473209",
@@ -416,15 +264,101 @@
       "CachePath": "59/{593AD040-0A68-B963-3734-DCCD6D2C29CC}.wem"
      }
     ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "12672166",
+       "Name": "Pitch Shifter (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Golem\\Golem_Footstep_Surface\\[Effect Slot [1]: (Pitch Shifter)]\\Pitch Shifter (Custom)",
+       "GUID": "{4F1D5035-DA7D-4686-A75E-B70876A988F9}",
+       "LibName": "Wwise Pitch Shifter",
+       "LibId": "8912899"
+      },
+      {
+       "Id": "105087589",
+       "Name": "RoomVerb (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Golem\\Golem_Footstep_Surface\\[Effect Slot [3]: (RoomVerb)]\\RoomVerb (Custom)",
+       "GUID": "{ED4BA880-F10B-4D61-8534-B3676BADD28C}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "159190161",
+       "Name": "Parametric EQ (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Golem\\Golem_Footstep_Surface\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "GUID": "{62288E4D-6369-4C27-B75D-A4077AA4F0BD}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "344034413",
+       "Name": "Gain (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Golem\\Golem_Footstep_Surface\\[Effect Slot [2]: (Gain)]\\Gain (Custom)",
+       "GUID": "{8417B9F6-80CC-4431-9255-2F1423958C2B}",
+       "LibName": "Wwise Gain",
+       "LibId": "9109507"
+      }
+     ]
+    },
     "Events": [
      {
-      "Id": "2453392179",
-      "Name": "Player_Footstep",
-      "ObjectPath": "\\Events\\Default Work Unit\\Player_Footstep",
-      "GUID": "{65BA12F1-2AAB-4AA1-9F64-C86862D3CBEC}",
+      "Id": "4220059257",
+      "Name": "Play_Enemy_Death_Wisp",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Enemy_Death_Wisp",
+      "GUID": "{61224603-D60E-4D79-ADCC-F53539B16E37}",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.29048502",
+      "DurationMin": "0.96119",
+      "DurationMax": "0.96119",
+      "MediaRefs": [
+       {
+        "Id": "137125188"
+       }
+      ]
+     },
+     {
+      "Id": "103692789",
+      "Name": "Play_Enemy_Hit_Golem",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Golem\\Play_Enemy_Hit_Golem",
+      "GUID": "{C9D1864C-F7F0-4D89-82A1-C6C6AB1F4542}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.18131",
+      "DurationMax": "0.33605",
+      "MediaRefs": [
+       {
+        "Id": "48132522"
+       },
+       {
+        "Id": "423710600"
+       },
+       {
+        "Id": "893258507"
+       }
+      ]
+     },
+     {
+      "Id": "2982724738",
+      "Name": "Play_Enemy_Hit_Wisp",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Enemy_Hit_Wisp",
+      "GUID": "{04F78477-4BCB-4237-913E-C289C2B8F9DC}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.93451",
+      "DurationMax": "0.93451",
+      "MediaRefs": [
+       {
+        "Id": "423140782"
+       }
+      ]
+     },
+     {
+      "Id": "3759963795",
+      "Name": "Play_Golem_Footstep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Golem\\Play_Golem_Footstep",
+      "GUID": "{48C9942F-FD2A-4ED7-80DA-2677EAC713A7}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.12022",
       "DurationMax": "0.8966418",
       "SwitchContainers": [
        {
@@ -439,7 +373,23 @@
          {
           "Id": "556324215"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "Custom": [
+          {
+           "Id": "12672166"
+          },
+          {
+           "Id": "105087589"
+          },
+          {
+           "Id": "159190161"
+          },
+          {
+           "Id": "344034413"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -461,7 +411,23 @@
          {
           "Id": "1065641014"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "Custom": [
+          {
+           "Id": "12672166"
+          },
+          {
+           "Id": "105087589"
+          },
+          {
+           "Id": "159190161"
+          },
+          {
+           "Id": "344034413"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -483,7 +449,23 @@
          {
           "Id": "1048473209"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "Custom": [
+          {
+           "Id": "12672166"
+          },
+          {
+           "Id": "105087589"
+          },
+          {
+           "Id": "159190161"
+          },
+          {
+           "Id": "344034413"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -505,7 +487,23 @@
          {
           "Id": "1059915916"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "Custom": [
+          {
+           "Id": "12672166"
+          },
+          {
+           "Id": "105087589"
+          },
+          {
+           "Id": "159190161"
+          },
+          {
+           "Id": "344034413"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -527,7 +525,23 @@
          {
           "Id": "784522206"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "Custom": [
+          {
+           "Id": "12672166"
+          },
+          {
+           "Id": "105087589"
+          },
+          {
+           "Id": "159190161"
+          },
+          {
+           "Id": "344034413"
+          }
+         ]
+        }
        },
        {
         "SwitchValue": {
@@ -538,16 +552,16 @@
         },
         "MediaRefs": [
          {
-          "Id": "10788316"
+          "Id": "146757872"
          },
          {
-          "Id": "374680735"
+          "Id": "242271553"
          },
          {
-          "Id": "681899867"
+          "Id": "332751654"
          },
          {
-          "Id": "911991177"
+          "Id": "754897681"
          }
         ]
        },
@@ -571,175 +585,25 @@
          {
           "Id": "1022596507"
          }
-        ]
+        ],
+        "PluginRefs": {
+         "Custom": [
+          {
+           "Id": "12672166"
+          },
+          {
+           "Id": "105087589"
+          },
+          {
+           "Id": "159190161"
+          },
+          {
+           "Id": "344034413"
+          }
+         ]
+        }
        }
       ]
-     },
-     {
-      "Id": "3629196698",
-      "Name": "Player_Land",
-      "ObjectPath": "\\Events\\Default Work Unit\\Player_Land",
-      "GUID": "{28221DBC-EF06-4F3D-843A-17CAEA0ECA43}",
-      "MaxAttenuation": "100",
-      "DurationType": "OneShot",
-      "DurationMin": "0.19673505",
-      "DurationMax": "0.63302237",
-      "SwitchContainers": [
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "63790334",
-         "Id": "782826392",
-         "GUID": "{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}",
-         "Default": "true"
-        },
-        "MediaRefs": [
-         {
-          "Id": "764237654"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "63790334",
-         "Id": "2473969246",
-         "GUID": "{41AE0338-9D5F-408A-AF2E-400ED64D29E1}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "6265944"
-         },
-         {
-          "Id": "187481456"
-         },
-         {
-          "Id": "700109537"
-         },
-         {
-          "Id": "1019604063"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "63790334",
-         "Id": "687380132",
-         "GUID": "{33DAB966-B97D-4B4A-B263-9DA16BE390B8}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "499093097"
-         },
-         {
-          "Id": "781432596"
-         },
-         {
-          "Id": "949169057"
-         },
-         {
-          "Id": "1044259485"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "63790334",
-         "Id": "4248645337",
-         "GUID": "{95881575-EB94-40F3-BD4D-8ABDF3AE9D47}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "448555983"
-         },
-         {
-          "Id": "451256713"
-         },
-         {
-          "Id": "723750938"
-         },
-         {
-          "Id": "1024142388"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "63790334",
-         "Id": "2058049674",
-         "GUID": "{24EC2994-CE5F-428A-84DA-B3CD7D51C700}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "675869273"
-         },
-         {
-          "Id": "744709980"
-         },
-         {
-          "Id": "750785456"
-         },
-         {
-          "Id": "765476307"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "63790334",
-         "Id": "1216965916",
-         "GUID": "{9EBCA49A-4510-47AA-B5E6-7ECAC6D6BBFA}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "203499254"
-         },
-         {
-          "Id": "237362321"
-         },
-         {
-          "Id": "657545217"
-         },
-         {
-          "Id": "868506474"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "63790334",
-         "Id": "582824249",
-         "GUID": "{3F62C19A-1F44-4E41-8452-20934EDED48D}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "150220496"
-         },
-         {
-          "Id": "169697624"
-         },
-         {
-          "Id": "885533788"
-         },
-         {
-          "Id": "1041219893"
-         }
-        ]
-       }
-      ]
-     }
-    ],
-    "GameParameters": [
-     {
-      "Id": "1062779386",
-      "Name": "Player_Speed",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Speed",
-      "GUID": "{A0E3CD82-1EA2-43D3-8B84-159E19A4E667}"
      }
     ],
     "SwitchGroups": [
@@ -796,6 +660,6 @@
     ]
    }
   ],
-  "FileHash": "{7EFD331F-DD66-CCD1-3E20-451B85D4267D}"
+  "FileHash": "{909081E7-3A78-B42C-4791-44AD8452E46D}"
  }
 }

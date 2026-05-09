@@ -15,10 +15,15 @@ namespace AK
     {
         static const AkUniqueID PLAY_ECHOPULSE_START = 3841466509U;
         static const AkUniqueID PLAY_ECHOPULSE_STOP = 700059983U;
+        static const AkUniqueID PLAY_ENEMY_DEATH_GOLEM = 3300476880U;
+        static const AkUniqueID PLAY_ENEMY_DEATH_WISP = 4220059257U;
+        static const AkUniqueID PLAY_ENEMY_HIT_GOLEM = 103692789U;
+        static const AkUniqueID PLAY_ENEMY_HIT_WISP = 2982724738U;
         static const AkUniqueID PLAY_GATEDOOR_CLOSE = 4102059022U;
         static const AkUniqueID PLAY_GATEDOOR_MOVINGLOOP = 1378571526U;
         static const AkUniqueID PLAY_GATEDOOR_OPEN = 194403786U;
         static const AkUniqueID PLAY_GATEDOOR_STOP = 1896094386U;
+        static const AkUniqueID PLAY_GOLEM_FOOTSTEP = 3759963795U;
         static const AkUniqueID PLAY_LAMP_DEPLETING = 3114152379U;
         static const AkUniqueID PLAY_LAMP_EMPTY = 3672837954U;
         static const AkUniqueID PLAY_LAMP_FILLING = 3244476280U;
@@ -92,6 +97,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID ENEMIES = 2242381963U;
         static const AkUniqueID ENVIRONMENT_BANK = 430783581U;
         static const AkUniqueID PLAYER_SFX = 817096458U;
     } // namespace BANKS
