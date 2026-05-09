@@ -3809,7 +3809,7 @@ MonoBehaviour:
   knockbackHitEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 65918791a84069349bb37541791e9bbe, type: 2}
   resonanceStressRTPC:
     idInternal: 0
     valueGuidInternal: 
@@ -3881,7 +3881,7 @@ MonoBehaviour:
   deathEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 44969b2d3d807ca478a4b3b1d2e91c91, type: 2}
   healthPercentRTPC:
     idInternal: 0
     valueGuidInternal: 
@@ -9708,6 +9708,7 @@ GameObject:
   - component: {fileID: 1179113864}
   - component: {fileID: 1179113866}
   - component: {fileID: 1179113865}
+  - component: {fileID: 1179113867}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -9785,6 +9786,31 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 2fd4696263cffd34e8c0e577cc119559, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &1179113867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179113862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13cdfbe1b049900409ca7163b8978145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkBank
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f5eb4fee825367a4da832985a24e73a2, type: 2}
   decodeBank: 0
   overrideLoadSetting: 0
   loadAsynchronous: 0
@@ -43171,14 +43197,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29943881}
     m_Modifications:
-    - target: {fileID: 698296282740511613, guid: b1036b8f0962f2f43934afe5de714805, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 925677999122300136, guid: b1036b8f0962f2f43934afe5de714805, type: 3}
-      propertyPath: contactDamage
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1708962811790208544, guid: b1036b8f0962f2f43934afe5de714805, type: 3}
       propertyPath: 'wispPatrolPoints.Array.data[0]'
       value: 

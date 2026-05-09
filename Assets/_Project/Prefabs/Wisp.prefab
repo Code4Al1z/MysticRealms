@@ -5087,7 +5087,7 @@ MonoBehaviour:
   deathEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 873f6f996ceca0148bcdc4bcf7352e1c, type: 2}
   healthPercentRTPC:
     idInternal: 0
     valueGuidInternal: 
@@ -5150,7 +5150,7 @@ MonoBehaviour:
   wispPulseHitEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 2aba2dd621e33074185e7160854979ca, type: 2}
   wispRecoverEvent:
     idInternal: 0
     valueGuidInternal: 
