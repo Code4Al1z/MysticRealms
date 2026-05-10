@@ -3837,7 +3837,7 @@ MonoBehaviour:
   speedRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: f0ab3079169342e40a4cb98d4ae42e50, type: 2}
 --- !u!114 &556193793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3904,7 +3904,7 @@ MonoBehaviour:
   meleeSwingEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 96277e08e3b70894aa253c5d9ed4d1c5, type: 2}
   golemAnimator: {fileID: 556193793}
   resonanceHandler: {fileID: 556193791}
   footstepHandler: {fileID: 556193792}
@@ -6817,6 +6817,191 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859353823}
   m_CullTransparentMesh: 1
+--- !u!1 &868374192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 868374193}
+  - component: {fileID: 868374194}
+  m_Layer: 0
+  m_Name: SurfaceAudioManager_Golem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &868374193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868374192}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1897302712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &868374194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868374192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864a849549ca4094392b556bd0d90b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SurfaceAudioManager
+  shaderEnumPropertyName: _SURFACETYPE
+  surfaceSwitches:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b126c7a121607a941806c03cbc437c5a, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 40c1b9d66435cf94f9fcb018b2b91eb0, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 64df36a05136ff041a2ee15ec5fb94f5, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 997184a309c99c24cb926674bd811d7e, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8e44eeef29bb2964a80566ac6ca78686, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1a48bfbffabab8e489e69b59341e59fd, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ec41c7158e41daa4c9a08bad6cd6af79, type: 2}
+  surfaceMappings:
+  - surfaceName: Default
+    surfaceEnumIndex: 0
+    footstepEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+    jumpEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3fd052f6660c8448b65dcee1e737a4e, type: 2}
+    landEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
+  - surfaceName: Grass
+    surfaceEnumIndex: 1
+    footstepEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+    jumpEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3fd052f6660c8448b65dcee1e737a4e, type: 2}
+    landEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
+  - surfaceName: Leaves
+    surfaceEnumIndex: 2
+    footstepEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+    jumpEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3fd052f6660c8448b65dcee1e737a4e, type: 2}
+    landEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
+  - surfaceName: Metal
+    surfaceEnumIndex: 3
+    footstepEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+    jumpEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3fd052f6660c8448b65dcee1e737a4e, type: 2}
+    landEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
+  - surfaceName: Soil
+    surfaceEnumIndex: 4
+    footstepEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+    jumpEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3fd052f6660c8448b65dcee1e737a4e, type: 2}
+    landEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
+  - surfaceName: Stone
+    surfaceEnumIndex: 5
+    footstepEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+    jumpEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3fd052f6660c8448b65dcee1e737a4e, type: 2}
+    landEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
+  - surfaceName: Wood
+    surfaceEnumIndex: 6
+    footstepEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+    jumpEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3fd052f6660c8448b65dcee1e737a4e, type: 2}
+    landEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
+  surfaceTypeRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f0ab3079169342e40a4cb98d4ae42e50, type: 2}
+  enableDebugLog: 1
 --- !u!4 &872661539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1917657543434808570, guid: a65aba5f5254241c58e7772a43ec6b8e, type: 3}
@@ -8832,7 +9017,7 @@ MonoBehaviour:
   surfaceTypeRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: d754190c4ce5d984db49850b3def4359, type: 2}
   enableDebugLog: 0
 --- !u!1001 &1066235432
 PrefabInstance:
@@ -15278,6 +15463,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1062195966}
+  - {fileID: 868374193}
   - {fileID: 1179113863}
   - {fileID: 1327919292}
   m_Father: {fileID: 0}
