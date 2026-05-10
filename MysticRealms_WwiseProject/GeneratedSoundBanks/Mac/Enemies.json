@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{6D21033C-4256-47C1-BF54-1B1B2E4A89FE}",
     "Language": "SFX",
-    "Hash": "{F2568C32-686F-D6F9-10A7-19CEBA88BCE3}",
+    "Hash": "{327DCF1E-EB50-F7CE-B83E-A3E0CA9A75EB}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Enemies",
     "ShortName": "Enemies",
     "Path": "Enemies.bnk",
@@ -158,6 +158,14 @@
       "Location": "Memory",
       "ShortName": "Footstep_Leaves_03.wav",
       "CachePath": "C2/{C2997363-9E54-AA90-AF42-152911392412}.wem"
+     },
+     {
+      "Id": "634393758",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Golem_MeleeSwing_01.wav",
+      "CachePath": "7E/{7E25D3D7-95DE-DD42-1BED-318F1B480CED}.wem"
      },
      {
       "Id": "635134181",
@@ -604,6 +612,28 @@
         }
        }
       ]
+     },
+     {
+      "Id": "2780685299",
+      "Name": "Play_Golem_MeleeSwing",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Golem\\Play_Golem_MeleeSwing",
+      "GUID": "{FF87B9E5-9108-4DAA-9C1D-9839F5C36247}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2",
+      "DurationMax": "1.2",
+      "MediaRefs": [
+       {
+        "Id": "634393758"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "4071059179",
+      "Name": "Golem_Speed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Golem_Speed",
+      "GUID": "{024B9D93-0097-407C-A09F-7895089BD84D}"
      }
     ],
     "SwitchGroups": [
@@ -660,6 +690,6 @@
     ]
    }
   ],
-  "FileHash": "{5E0D01E6-9569-E7D4-5B89-8F61EC38A571}"
+  "FileHash": "{215EA797-C56A-3CD6-7174-99F869781592}"
  }
 }

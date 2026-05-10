@@ -17,7 +17,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -49,7 +49,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -80,7 +80,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -176,7 +176,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -206,7 +206,7 @@
 									<ObjectRef Name="Default" ID="{E798F52E-ADDE-42C8-AB7F-FE5BC720254E}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Player_Bus" ID="{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
 								</Reference>
 								<Reference Name="SwitchGroupOrStateGroup">
 									<ObjectRef Name="SurfaceType" ID="{E637F48A-2712-4BB2-9972-F06A31805736}" WorkUnitID="{025A66C0-49EE-4C77-9E63-3C14CF4279C0}"/>
@@ -1159,6 +1159,39 @@
 										</ReferenceList>
 									</EffectSlot>
 								</ObjectList>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{4F1C4F1E-838D-42C5-8FFE-9D216D030FAB}" ShortID="282684820">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Pitch"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Golem_Speed" ID="{024B9D93-0097-407C-A09F-7895089BD84D}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{7EDE8DFC-F5C1-4235-BEB6-41BC29922AC1}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>200</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
 							</ObjectLists>
 							<GroupingInfo>
 								<GroupingBehaviorList>
@@ -1230,6 +1263,28 @@
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
+						<Sound Name="Golem_MeleeSwing" ID="{FFF73639-CA33-4CE6-9CC4-B4373BD07BC5}" ShortID="52821223">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Golem_MeleeSwing_01" ID="{5F0CD3C6-2DB2-4EA4-A861-63C1B394EC68}">
+									<Language>SFX</Language>
+									<AudioFile>Golem_MeleeSwing_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="634393758"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Golem_MeleeSwing_01" ID="{5F0CD3C6-2DB2-4EA4-A861-63C1B394EC68}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

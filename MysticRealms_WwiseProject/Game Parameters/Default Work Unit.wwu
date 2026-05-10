@@ -36,6 +36,11 @@
 						<Property Name="Min" Type="Real64" Value="80"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Golem_Speed" ID="{024B9D93-0097-407C-A09F-7895089BD84D}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

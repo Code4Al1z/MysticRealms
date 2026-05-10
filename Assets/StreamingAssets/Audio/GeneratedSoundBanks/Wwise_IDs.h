@@ -24,6 +24,7 @@ namespace AK
         static const AkUniqueID PLAY_GATEDOOR_OPEN = 194403786U;
         static const AkUniqueID PLAY_GATEDOOR_STOP = 1896094386U;
         static const AkUniqueID PLAY_GOLEM_FOOTSTEP = 3759963795U;
+        static const AkUniqueID PLAY_GOLEM_MELEESWING = 2780685299U;
         static const AkUniqueID PLAY_LAMP_DEPLETING = 3114152379U;
         static const AkUniqueID PLAY_LAMP_EMPTY = 3672837954U;
         static const AkUniqueID PLAY_LAMP_FILLING = 3244476280U;
@@ -88,6 +89,7 @@ namespace AK
     {
         static const AkUniqueID DOOR_OPENAMOUNT = 3849429492U;
         static const AkUniqueID ECHOPULSE_FREQUENCY = 3773845682U;
+        static const AkUniqueID GOLEM_SPEED = 4071059179U;
         static const AkUniqueID LAMP_ENERGY = 2086212122U;
         static const AkUniqueID PLAYER_SPEED = 1062779386U;
         static const AkUniqueID RESONANCEHUM_ENERGY = 3818301486U;
@@ -107,9 +109,12 @@ namespace AK
         static const AkUniqueID BUS_DOORS = 153992835U;
         static const AkUniqueID BUS_LAMP = 677043558U;
         static const AkUniqueID BUS_PLATFORM = 130819113U;
+        static const AkUniqueID ENEMY_BUS = 1411040840U;
         static const AkUniqueID ENVIRONMENT_BUS = 1523166483U;
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
+        static const AkUniqueID MUSIC_BUS = 2680856269U;
         static const AkUniqueID PLAYER_BUS = 1138681361U;
+        static const AkUniqueID UI_BUS = 3247222208U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

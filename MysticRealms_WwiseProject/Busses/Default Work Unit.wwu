@@ -18,6 +18,9 @@
 								<Bus Name="Bus_Lamp" ID="{BCF952BD-0456-4931-9E81-08874D0B3B07}"/>
 							</ChildrenList>
 						</Bus>
+						<Bus Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}"/>
+						<Bus Name="UI_Bus" ID="{973E7F18-7E97-448E-8A4D-962DD635CBB4}"/>
+						<Bus Name="Music_Bus" ID="{D19BB0DF-D8F2-4D72-A31D-FA95EFE3A918}"/>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

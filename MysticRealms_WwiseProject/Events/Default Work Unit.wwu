@@ -270,6 +270,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_Golem_MeleeSwing" ID="{FF87B9E5-9108-4DAA-9C1D-9839F5C36247}">
+									<ChildrenList>
+										<Action Name="" ID="{D75F5A48-95E1-44F3-8B01-E9511D9B4499}" ShortID="302477697">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Golem_MeleeSwing" ID="{FFF73639-CA33-4CE6-9CC4-B4373BD07BC5}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Wisp" ID="{6D650AFC-4F6C-4E4B-8905-2E2CC5EBE0D0}" ShortID="10697475">

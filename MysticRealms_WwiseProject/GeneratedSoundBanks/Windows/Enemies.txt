@@ -1,5 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	103692789	Play_Enemy_Hit_Golem			\Default Work Unit\Enemies\Golem\Play_Enemy_Hit_Golem	
+	2780685299	Play_Golem_MeleeSwing			\Default Work Unit\Enemies\Golem\Play_Golem_MeleeSwing	
 	2982724738	Play_Enemy_Hit_Wisp			\Default Work Unit\Enemies\Wisp\Play_Enemy_Hit_Wisp	
 	3759963795	Play_Golem_Footstep			\Default Work Unit\Enemies\Golem\Play_Golem_Footstep	
 	4220059257	Play_Enemy_Death_Wisp			\Default Work Unit\Enemies\Wisp\Play_Enemy_Death_Wisp	
@@ -15,6 +16,9 @@ Switch	ID	Name	Switch Group			Notes
 	2058049674	Wood	SurfaceType			
 	2473969246	Metal	SurfaceType			
 	4248645337	Grass	SurfaceType			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	4071059179	Golem_Speed			\Default Work Unit\Golem_Speed	
 
 Effect plug-ins	ID	Name	Type				Notes
 	12672166	Pitch Shifter (Custom)	Wwise Pitch Shifter			
@@ -41,6 +45,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	506643693	Footstep_Wood_04	.cache\5A\{5A633E0B-BF24-DFEC-5842-6C421F189137}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Wood_Footstep\Footstep_Wood_04		73600
 	556324215	Footstep_Default_01	.cache\E1\{E13200F7-1F1E-4E9B-77CD-442CA4A7CF11}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Default_Footstep\Footstep_Default_01		132860
 	598005189	Footstep_Leaves_03	.cache\C2\{C2997363-9E54-AA90-AF42-152911392412}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Leaves_Footstep\Footstep_Leaves_03		137220
+	634393758	Golem_MeleeSwing	.cache\7E\{7E25D3D7-95DE-DD42-1BED-318F1B480CED}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_MeleeSwing		230496
 	635134181	Footstep_Leaves_04	.cache\08\{0838E282-02F8-3D3F-9542-DCC7BF97DA11}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Leaves_Footstep\Footstep_Leaves_04		159248
 	686838333	Footstep_Metal_03	.cache\3A\{3AB8FD83-41A9-E239-0DE7-7857D63F19D2}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Metal_Footstep\Footstep_Metal_03		142808
 	711091130	Footstep_Grass_02	.cache\E8\{E8C63CA2-48D6-3116-AF7E-D798766E1655}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Grass_Footstep\Footstep_Grass_02		117552

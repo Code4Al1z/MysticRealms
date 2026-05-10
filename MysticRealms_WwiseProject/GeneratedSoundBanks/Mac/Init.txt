@@ -11,8 +11,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	153992835	Bus_Doors			\Default Work Unit\Main Audio Bus\Environment_Bus\Bus_Doors	
 	677043558	Bus_Lamp			\Default Work Unit\Main Audio Bus\Environment_Bus\Bus_Lamp	
 	1138681361	Player_Bus			\Default Work Unit\Main Audio Bus\Player_Bus	
+	1411040840	Enemy_Bus			\Default Work Unit\Main Audio Bus\Enemy_Bus	
 	1523166483	Environment_Bus			\Default Work Unit\Main Audio Bus\Environment_Bus	
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
+	2680856269	Music_Bus			\Default Work Unit\Main Audio Bus\Music_Bus	
+	3247222208	UI_Bus			\Default Work Unit\Main Audio Bus\UI_Bus	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
