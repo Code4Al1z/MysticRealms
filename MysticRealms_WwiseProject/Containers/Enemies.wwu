@@ -8,6 +8,7 @@
 						<Sound Name="Wisp_Hit" ID="{65C5B8B6-1DAA-4792-89C7-F9DD2B23E0DB}" ShortID="540660230">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.15"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -40,6 +41,7 @@
 						<Sound Name="Wisp_Death" ID="{58CD63C9-9BFB-46AA-B99E-9475FDA97E53}" ShortID="567062389">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -70,12 +72,83 @@
 								<ActiveSource Name="Wisp_Death_01" ID="{BC8C4FA3-F740-4737-8726-064693D58C1D}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Wisp_Charge" ID="{CFDF4FF0-A7E4-4D68-8C67-3A4B63BFA289}" ShortID="754349475">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.15"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Sine" ID="{6ADB0E8A-F03A-4C21-9426-7FB0DAF07F42}" ShortID="901496801" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+									<PropertyList>
+										<Property Name="SineDuration" Type="Real32" Value="0.15"/>
+										<Property Name="SineFrequency" Type="Real32" Value="600"/>
+										<Property Name="SineGain" Type="Real32" Value="-6"/>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{90D7DA56-8205-46D8-9F7E-DB23643B4A85}" ShortID="1016768672">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Flanger (Custom)" ID="{2BAA50C5-BF85-47A9-99B3-30ADBC32F453}" ShortID="204995920" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
+														<PropertyList>
+															<Property Name="FeedBackLevel" Type="Real32" Value="0.4"/>
+															<Property Name="ModDepth" Type="Real32" Value="80"/>
+															<Property Name="ModFrequency" Type="Real32" Value="2"/>
+															<Property Name="WetDryMix" Type="Real32" Value="60"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+									<EffectSlot Name="" ID="{7295D2A9-0128-4394-BE01-A1F398C64605}" ShortID="185638381">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Parametric EQ (Custom)" ID="{1831DDE2-6358-4514-BB1E-EB233DFAAF54}" ShortID="545495337" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<PropertyList>
+															<Property Name="FilterTypeBand1" Type="int32" Value="5"/>
+															<Property Name="FrequencyBand1" Type="Real32" Value="2000"/>
+															<Property Name="GainBand1" Type="Real32" Value="4"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Sine" ID="{6ADB0E8A-F03A-4C21-9426-7FB0DAF07F42}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Golem" ID="{72DAF7A1-453F-416D-907C-DA564EC70C8F}" ShortID="422165469">
 					<ChildrenList>
 						<RandomSequenceContainer Name="Golem_Hit_Random" ID="{867BE83A-7785-4BAD-B0AE-5778DDA773EE}" ShortID="638735239">
+							<PropertyList>
+								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.25"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -208,6 +281,7 @@
 						</RandomSequenceContainer>
 						<Sound Name="Golem_Death" ID="{7A2295CD-C2C0-42B8-8767-040C80150616}" ShortID="807869708">
 							<PropertyList>
+								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.3"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>4</Value>
@@ -215,6 +289,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -241,7 +318,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<SwitchContainer Name="Golem_Footstep_Surface" ID="{7CA00441-B222-4D30-9547-881065A4D99E}" ShortID="582255207">
+							<PropertyList>
+								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.2"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -1307,7 +1390,13 @@
 							</GroupingInfo>
 						</SwitchContainer>
 						<Sound Name="Golem_MeleeSwing" ID="{FFF73639-CA33-4CE6-9CC4-B4373BD07BC5}" ShortID="52821223">
+							<PropertyList>
+								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.25"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>

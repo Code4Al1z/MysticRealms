@@ -307,6 +307,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_Wisp_Charge" ID="{71F139C5-2D08-413B-970D-9E3C1F77FFAF}">
+									<ChildrenList>
+										<Action Name="" ID="{D7DB4178-9A29-4CE7-9002-62BF840D514C}" ShortID="837919524">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Wisp_Charge" ID="{CFDF4FF0-A7E4-4D68-8C67-3A4B63BFA289}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
