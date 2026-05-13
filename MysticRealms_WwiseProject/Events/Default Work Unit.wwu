@@ -318,6 +318,39 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_Wisp_PulseHit" ID="{4D759606-B2E4-45C8-96E1-6239E1533D36}">
+									<ChildrenList>
+										<Action Name="" ID="{037D3AFA-B4BC-43ED-A9DA-B0CCB12B032C}" ShortID="476073506">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Wisp_PulseHit" ID="{944EC31C-5D7D-4309-85B7-ABE06F653148}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Wisp_Recover" ID="{CC8721B0-8E52-4DA6-BEF5-3E83434C6F0B}">
+									<ChildrenList>
+										<Action Name="" ID="{2E1EBD1E-976B-4F4B-B445-905F6C7E2C6F}" ShortID="32491203">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Wisp_Recover" ID="{B5FE7E10-C5DD-4E37-BAD6-3291B2F6DF0A}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Wisp_Ambient" ID="{B28084B4-900C-464A-A13B-37F0F626FD4C}">
+									<ChildrenList>
+										<Action Name="" ID="{44A536F2-CDDB-4131-B27E-B99C662C7EB1}" ShortID="840052291">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Wisp_Ambient_Loop" ID="{433B848B-753F-4F07-89AE-9A92CE0025C5}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

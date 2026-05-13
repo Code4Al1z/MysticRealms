@@ -134,6 +134,258 @@
 								<ActiveSource Name="Sine" ID="{6ADB0E8A-F03A-4C21-9426-7FB0DAF07F42}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Wisp_PulseHit" ID="{944EC31C-5D7D-4309-85B7-ABE06F653148}" ShortID="173548815">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Wisp_SFX" ID="{2DD4DB90-0940-4748-B3F0-3FD9BB3B32CD}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Wisp_Pulse_hit_01" ID="{106529F5-33F5-4345-9D08-C8A8A194B627}">
+									<Language>SFX</Language>
+									<AudioFile>Wisp_Pulse_hit_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="910199839"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Wisp_Pulse_hit_01" ID="{106529F5-33F5-4345-9D08-C8A8A194B627}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Wisp_Recover" ID="{B5FE7E10-C5DD-4E37-BAD6-3291B2F6DF0A}" ShortID="518354697">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Wisp_SFX" ID="{2DD4DB90-0940-4748-B3F0-3FD9BB3B32CD}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Sine" ID="{05C27943-883E-4B22-9CCD-B7BFC3A15FC9}" ShortID="1035839610" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+									<PropertyList>
+										<Property Name="SineDuration" Type="Real32" Value="0.3"/>
+										<Property Name="SineFrequency" Type="Real32" Value="600"/>
+										<Property Name="SineGain" Type="Real32" Value="-6"/>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{7DE628B1-F1B8-4BFB-B35A-43EA3DECB68F}" ShortID="588324350">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Flanger (Custom)" ID="{CAD517C1-6893-4892-8523-E03BC9382699}" ShortID="674888103" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
+														<PropertyList>
+															<Property Name="DelayTime" Type="Real32" Value="0.2"/>
+															<Property Name="FeedBackLevel" Type="Real32" Value="0.2"/>
+															<Property Name="ModDepth" Type="Real32" Value="40"/>
+															<Property Name="ModFrequency" Type="Real32" Value="0.5"/>
+															<Property Name="WetDryMix" Type="Real32" Value="50"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{6BB22E1E-7DE6-480F-957A-17C9131F41A8}" ShortID="788354229">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Pitch"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<Custom>
+													<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{4C3BADA1-4286-4934-83DD-5E51E4E645DA}" ShortID="379792855">
+														<PropertyList>
+															<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.3"/>
+															<Property Name="EnvelopeReleaseTime" Type="Real64" Value="0.05"/>
+															<Property Name="EnvelopeSustainLevel" Type="Real64" Value="0"/>
+														</PropertyList>
+													</ModulatorEnvelope>
+												</Custom>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{25BB3843-2D34-4A2F-A24D-F9C47FAD2895}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>1200</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+									<RTPC Name="" ID="{CB4D4D89-8B94-43D9-8B35-FDCCD298B634}" ShortID="736485344">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<Custom>
+													<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{CB4BC89D-1B01-438F-A85A-FA5A96ABFB0A}" ShortID="542014027">
+														<PropertyList>
+															<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.1"/>
+															<Property Name="EnvelopeReleaseTime" Type="Real64" Value="0.1"/>
+														</PropertyList>
+													</ModulatorEnvelope>
+												</Custom>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{3FB0B97F-D31E-4113-AC9C-81F2FD95EDF4}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Sine" ID="{05C27943-883E-4B22-9CCD-B7BFC3A15FC9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Wisp_Ambient_Loop" ID="{433B848B-753F-4F07-89AE-9A92CE0025C5}" ShortID="324659689">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Wisp_SFX" ID="{2DD4DB90-0940-4748-B3F0-3FD9BB3B32CD}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Enemy_Bus" ID="{839E1EF4-983D-4324-98CE-C89E6BDD62AC}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Wisp_Ambient_01" ID="{AD731D71-5A37-4240-B6B9-1FC577C774BA}">
+									<Language>SFX</Language>
+									<AudioFile>Wisp_Ambient_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="434960163"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{9A9EBD29-1FC0-4386-8F98-E840D069BEF3}" ShortID="435734900">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Pitch"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Wisp_Speed" ID="{2EA45A2D-37DF-444B-A2B0-CE287125DB17}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{EE659F4D-1D67-4706-A317-34C20A538E76}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-300</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+									<RTPC Name="" ID="{8006D71D-529A-4E35-8AEE-9EB35AB758E2}" ShortID="7879576">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Pitch"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Wisp_PulseStress" ID="{6BA5118D-32DC-4CDD-86F4-FBA94E39D2BF}" WorkUnitID="{70B4EEC7-7AFC-4F06-98AD-8877F4D75349}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{B75A9420-EA77-4E99-9ABA-9E5F320E1B1F}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>400</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Wisp_Ambient_01" ID="{AD731D71-5A37-4240-B6B9-1FC577C774BA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Golem" ID="{72DAF7A1-453F-416D-907C-DA564EC70C8F}" ShortID="422165469">
