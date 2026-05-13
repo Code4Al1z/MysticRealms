@@ -5099,6 +5099,14 @@ MonoBehaviour:
   hoverAmplitude: 0.3
   hoverFrequency: 0.8
   deathBurstParticles: {fileID: 1794535052567646470}
+  wispAmbientEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 19a47ab40513c35499d1aa7d348088d3, type: 2}
+  wispAmbientStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a56e4eeddf7236d4895faa090a1dad2c, type: 2}
   echoPulseHandler: {fileID: 2624870170446048014}
   chargeHandler: {fileID: 925677999122300136}
 --- !u!114 &925677999122300136
@@ -5120,7 +5128,7 @@ MonoBehaviour:
   wispChargeEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 2607cc8a5dc99094285363355e715b52, type: 2}
 --- !u!114 &2624870170446048014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5154,15 +5162,15 @@ MonoBehaviour:
   wispRecoverEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 30c0d2bc5aa55184aa9fd754fb3d330a, type: 2}
   wispSpeedRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 01e699428650cf642a9e98cea72b1869, type: 2}
   wispPulseStressRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: a06b59e4eed79d745a6083616f6b7e67, type: 2}
 --- !u!114 &1882024455260459916
 MonoBehaviour:
   m_ObjectHideFlags: 0

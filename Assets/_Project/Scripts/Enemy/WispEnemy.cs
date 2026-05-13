@@ -12,6 +12,10 @@ public class WispEnemy : BaseEnemy
     [Header("Death")]
     [SerializeField] private ParticleSystem deathBurstParticles;
 
+    [Header("Wwise")]
+    [SerializeField] private AK.Wwise.Event wispAmbientEvent;
+    [SerializeField] private AK.Wwise.Event wispAmbientStopEvent;
+
     [Header("Components")]
     [SerializeField] private WispEchoPulseHandler echoPulseHandler;
     [SerializeField] private WispChargeHandler chargeHandler;
@@ -21,6 +25,7 @@ public class WispEnemy : BaseEnemy
 
     private float hoverTimer = 0f;
     private float hoverBaseY;
+    private bool ambientPlaying = false;
 
     protected override void Awake()
     {
@@ -50,6 +55,8 @@ public class WispEnemy : BaseEnemy
 
         echoPulseHandler.Initialise(this);
         chargeHandler.Initialise(this, agent);
+
+        StartAmbientLoop();
     }
 
     public override string GetEnemyTypeID() => "Wisp";
@@ -116,6 +123,7 @@ public class WispEnemy : BaseEnemy
 
     protected override void OnEnemyDeath()
     {
+        StopAmbientLoop();
         chargeHandler.Cancel();
         echoPulseHandler.StopBodyParticles();
 
@@ -127,6 +135,20 @@ public class WispEnemy : BaseEnemy
 
     public void NotifyStatusEffectPublic(string effect, bool active)
         => NotifyStatusEffect(effect, active);
+
+    private void StartAmbientLoop()
+    {
+        if (wispAmbientEvent == null || ambientPlaying) return;
+        wispAmbientEvent.Post(gameObject);
+        ambientPlaying = true;
+    }
+
+    private void StopAmbientLoop()
+    {
+        if (wispAmbientStopEvent == null || !ambientPlaying) return;
+        wispAmbientStopEvent.Post(gameObject);
+        ambientPlaying = false;
+    }
 
     private void UpdateHover()
     {
