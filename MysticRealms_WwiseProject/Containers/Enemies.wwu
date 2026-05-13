@@ -8,11 +8,10 @@
 						<Sound Name="Wisp_Hit" ID="{65C5B8B6-1DAA-4792-89C7-F9DD2B23E0DB}" ShortID="540660230">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.15"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+									<ObjectRef Name="Attenuation_Wisp_SFX" ID="{2DD4DB90-0940-4748-B3F0-3FD9BB3B32CD}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -41,11 +40,10 @@
 						<Sound Name="Wisp_Death" ID="{58CD63C9-9BFB-46AA-B99E-9475FDA97E53}" ShortID="567062389">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+									<ObjectRef Name="Attenuation_Enemy_SFX" ID="{289534B3-0999-4F08-83CD-CAADF085F299}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -75,11 +73,10 @@
 						<Sound Name="Wisp_Charge" ID="{CFDF4FF0-A7E4-4D68-8C67-3A4B63BFA289}" ShortID="754349475">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.15"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+									<ObjectRef Name="Attenuation_Wisp_SFX" ID="{2DD4DB90-0940-4748-B3F0-3FD9BB3B32CD}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -143,11 +140,11 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="Golem_Hit_Random" ID="{867BE83A-7785-4BAD-B0AE-5778DDA773EE}" ShortID="638735239">
 							<PropertyList>
-								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.25"/>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+									<ObjectRef Name="Attenuation_Enemy_SFX" ID="{289534B3-0999-4F08-83CD-CAADF085F299}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -281,7 +278,7 @@
 						</RandomSequenceContainer>
 						<Sound Name="Golem_Death" ID="{7A2295CD-C2C0-42B8-8767-040C80150616}" ShortID="807869708">
 							<PropertyList>
-								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.3"/>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>4</Value>
@@ -290,7 +287,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+									<ObjectRef Name="Attenuation_Enemy_SFX" ID="{289534B3-0999-4F08-83CD-CAADF085F299}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -319,11 +316,11 @@
 						</Sound>
 						<SwitchContainer Name="Golem_Footstep_Surface" ID="{7CA00441-B222-4D30-9547-881065A4D99E}" ShortID="582255207">
 							<PropertyList>
-								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.2"/>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+									<ObjectRef Name="Attenuation_Footstep_Golem" ID="{2B878919-7C3C-40E1-BAA6-F926C1EA2386}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -1391,11 +1388,11 @@
 						</SwitchContainer>
 						<Sound Name="Golem_MeleeSwing" ID="{FFF73639-CA33-4CE6-9CC4-B4373BD07BC5}" ShortID="52821223">
 							<PropertyList>
-								<Property Name="AttenuationDistanceScaling" Type="Real32" Value="0.25"/>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+									<ObjectRef Name="Attenuation_Enemy_SFX" ID="{289534B3-0999-4F08-83CD-CAADF085F299}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>

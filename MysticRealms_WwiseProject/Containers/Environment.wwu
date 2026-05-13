@@ -10,6 +10,9 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -51,6 +54,9 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -93,6 +99,9 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -127,6 +136,9 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -164,6 +176,9 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -223,6 +238,9 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -260,6 +278,9 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -297,6 +318,9 @@
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -335,6 +359,9 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Environment" ID="{66FDC00F-40DE-4C9C-93E3-CF377274A4A0}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
@@ -631,6 +658,9 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Lamp_Attenuation" ID="{94E9C02C-62EB-4C1B-AE01-B080219C92F7}" WorkUnitID="{BE139DDF-24CC-4635-BF29-86C32E2916C8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
 								</Reference>
