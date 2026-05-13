@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{13BC737A-E38D-C813-F331-03DCEFEBC2EF}",
+    "Hash": "{77778AC9-98D0-78A7-5284-222FCB9A128E}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -108,6 +108,18 @@
       "Name": "Lamp_Energy",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Lamp_Energy",
       "GUID": "{DCF08911-3353-4438-A001-50DC6D933228}"
+     },
+     {
+      "Id": "2209950630",
+      "Name": "Wisp_PulseStress",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Wisp_PulseStress",
+      "GUID": "{6BA5118D-32DC-4CDD-86F4-FBA94E39D2BF}"
+     },
+     {
+      "Id": "3188202952",
+      "Name": "Wisp_Speed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Wisp_Speed",
+      "GUID": "{2EA45A2D-37DF-444B-A2B0-CE287125DB17}"
      },
      {
       "Id": "3773845682",
@@ -218,6 +230,6 @@
     ]
    }
   ],
-  "FileHash": "{42C97CDF-71F9-AE0D-ADBC-313B50D28269}"
+  "FileHash": "{97212DC0-4609-113F-8FE8-A92A7660D5C5}"
  }
 }

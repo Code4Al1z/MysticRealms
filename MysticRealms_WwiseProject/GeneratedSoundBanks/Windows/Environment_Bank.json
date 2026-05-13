@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9049C164-88B0-4D9B-A332-D9DF8F5D3A0B}",
     "Language": "SFX",
-    "Hash": "{DACA201C-5CA4-66A8-2AF4-2FDEA4D08B6A}",
+    "Hash": "{FD0C3A56-58D8-00F9-08D7-6C1FD36CC41D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Environment_Bank",
     "ShortName": "Environment_Bank",
     "Path": "Environment_Bank.bnk",
@@ -252,6 +252,7 @@
       "Name": "Play_EchoPulse_Start",
       "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_EchoPulse_Start",
       "GUID": "{2057F25B-2A81-4F62-B1A0-30B06BEBA1D3}",
+      "MaxAttenuation": "20",
       "DurationType": "Infinite",
       "PluginRefs": {
        "Custom": [
@@ -269,6 +270,7 @@
       "Name": "Play_EchoPulse_Stop",
       "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_EchoPulse_Stop",
       "GUID": "{0473117D-77FB-4EBD-B5E6-F136200586E3}",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "0.3",
       "DurationMax": "0.3",
@@ -285,6 +287,7 @@
       "Name": "Play_GateDoor_Close",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_Close",
       "GUID": "{587D98DB-D5BC-472F-B5C2-8F48288F0A48}",
+      "MaxAttenuation": "35",
       "DurationType": "OneShot",
       "DurationMin": "1",
       "DurationMax": "1",
@@ -299,6 +302,7 @@
       "Name": "Play_GateDoor_MovingLoop",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_MovingLoop",
       "GUID": "{D0F619B9-08AE-4B1C-8C73-6C041E7F0AA7}",
+      "MaxAttenuation": "35",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -311,6 +315,7 @@
       "Name": "Play_GateDoor_Open",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_Open",
       "GUID": "{92274D69-7645-4F82-AEC0-17D2BBCDB15E}",
+      "MaxAttenuation": "35",
       "DurationType": "OneShot",
       "DurationMin": "1",
       "DurationMax": "1",
@@ -325,6 +330,7 @@
       "Name": "Play_GateDoor_Stop",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_GateDoor_Stop",
       "GUID": "{30A86BF8-C25A-4561-93F6-EF14931A549C}",
+      "MaxAttenuation": "35",
       "DurationType": "OneShot",
       "DurationMin": "1",
       "DurationMax": "1",
@@ -339,6 +345,7 @@
       "Name": "Play_Lamp_Depleting",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Depleting",
       "GUID": "{2D080E10-56DD-4965-AE0E-AA74025CE3BA}",
+      "MaxAttenuation": "15",
       "DurationType": "Infinite",
       "PluginRefs": {
        "Custom": [
@@ -416,6 +423,7 @@
       "Name": "Play_Platform_StartMove",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Platform\\Play_Platform_StartMove",
       "GUID": "{AD1AD8D6-3A3D-44D5-A8FE-B610B2153C01}",
+      "MaxAttenuation": "35",
       "DurationType": "OneShot",
       "DurationMin": "0.68251455",
       "DurationMax": "0.68251455",
@@ -430,6 +438,7 @@
       "Name": "Play_Platform_StopMove",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Platform\\Play_Platform_StopMove",
       "GUID": "{72ECD7ED-3B35-476E-9521-B8EA3B3EA5A6}",
+      "MaxAttenuation": "35",
       "DurationType": "OneShot",
       "DurationMin": "0.4437401",
       "DurationMax": "0.4437401",
@@ -444,6 +453,7 @@
       "Name": "Play_Platform_TravelLoop",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Platform\\Play_Platform_TravelLoop",
       "GUID": "{78EEFEAD-FDDD-4AEC-AF4B-74959BA94FF1}",
+      "MaxAttenuation": "35",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -456,6 +466,7 @@
       "Name": "Play_ResonanceDoor_Close",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_ResonanceDoor_Close",
       "GUID": "{815417C8-3BFD-4E8E-AFFE-3A5557268D5E}",
+      "MaxAttenuation": "35",
       "DurationType": "OneShot",
       "DurationMin": "1",
       "DurationMax": "1",
@@ -473,6 +484,7 @@
       "Name": "Play_ResonanceDoor_Open",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Doors\\Play_ResonanceDoor_Open",
       "GUID": "{C2C9F5BB-4DC0-4748-AF6C-9BFD8013EDC8}",
+      "MaxAttenuation": "35",
       "DurationType": "OneShot",
       "DurationMin": "1",
       "DurationMax": "1",
@@ -487,6 +499,7 @@
       "Name": "Play_ResonanceHum_Depleted",
       "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_ResonanceHum_Depleted",
       "GUID": "{860B474D-8D19-49EC-96A4-ED9D47D8EFCA}",
+      "MaxAttenuation": "25",
       "DurationType": "OneShot",
       "DurationMin": "0.8",
       "DurationMax": "0.8",
@@ -508,6 +521,7 @@
       "Name": "Play_ResonanceHum_Start",
       "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_ResonanceHum_Start",
       "GUID": "{81769494-6367-4FC9-9010-37E5DB577F91}",
+      "MaxAttenuation": "25",
       "DurationType": "Infinite",
       "PluginRefs": {
        "Custom": [
@@ -528,6 +542,7 @@
       "Name": "Play_ResonanceHum_Stop",
       "ObjectPath": "\\Events\\Default Work Unit\\PlayerAbilities\\Play_ResonanceHum_Stop",
       "GUID": "{1C58F377-324F-4426-B618-A5B6A376DA00}",
+      "MaxAttenuation": "25",
       "DurationType": "OneShot",
       "DurationMin": "0.7",
       "DurationMax": "0.7",
@@ -571,6 +586,6 @@
     ]
    }
   ],
-  "FileHash": "{5748B074-265F-8617-F614-5B1E3D33F00B}"
+  "FileHash": "{EA5A1944-4E85-AEE8-D01C-0216350612A4}"
  }
 }

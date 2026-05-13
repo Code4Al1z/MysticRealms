@@ -10,19 +10,11 @@
     "Type": "User",
     "GUID": "{6D21033C-4256-47C1-BF54-1B1B2E4A89FE}",
     "Language": "SFX",
-    "Hash": "{327DCF1E-EB50-F7CE-B83E-A3E0CA9A75EB}",
+    "Hash": "{0CB5E948-391F-F3FA-35E7-EF9AAAAE2A7A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Enemies",
     "ShortName": "Enemies",
     "Path": "Enemies.bnk",
     "Media": [
-     {
-      "Id": "48132522",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Golem_Hit_01.wav",
-      "CachePath": "5A/{5A36635E-B222-8EF1-0B91-AEAC0B5C2F98}.wem"
-     },
      {
       "Id": "74810679",
       "Language": "SFX",
@@ -54,6 +46,14 @@
       "Location": "Memory",
       "ShortName": "Golem_Footstep_Stone_03.wav",
       "CachePath": "13/{13374BE4-4420-BE37-FCE3-346F80430FFC}.wem"
+     },
+     {
+      "Id": "169838703",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Golem_Knockback_01.wav",
+      "CachePath": "E0/{E01D497D-15FD-1979-49DC-6F4DF51F74E9}.wem"
      },
      {
       "Id": "242271553",
@@ -96,6 +96,14 @@
       "CachePath": "FD/{FDD1B2CE-410F-842B-9502-4E4E5F259118}.wem"
      },
      {
+      "Id": "348550136",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Golem_Knockback_03.wav",
+      "CachePath": "3B/{3BBCB548-3FFF-A05B-961B-AD0429C192C6}.wem"
+     },
+     {
       "Id": "358699782",
       "Language": "SFX",
       "Streaming": "false",
@@ -112,20 +120,20 @@
       "CachePath": "66/{6661DDCB-D069-0591-C775-0CC943863F36}.wem"
      },
      {
-      "Id": "423710600",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Golem_Hit_02.wav",
-      "CachePath": "40/{40186730-B323-2465-16A8-190E2A35606A}.wem"
-     },
-     {
       "Id": "425911221",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Footstep_Wood_01.wav",
       "CachePath": "CA/{CACDA211-ED98-1378-6615-036D142636B3}.wem"
+     },
+     {
+      "Id": "434960163",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Wisp_Ambient_01.wav",
+      "CachePath": "77/{7752D8F1-636A-23AD-E17D-9D485A36F517}.wem"
      },
      {
       "Id": "471634421",
@@ -160,12 +168,20 @@
       "CachePath": "C2/{C2997363-9E54-AA90-AF42-152911392412}.wem"
      },
      {
+      "Id": "620045671",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Golem_Knockback_02.wav",
+      "CachePath": "0A/{0AC36FA3-D1F0-1E01-0CC3-AAF6A32CB8C3}.wem"
+     },
+     {
       "Id": "634393758",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Golem_MeleeSwing_01.wav",
-      "CachePath": "7E/{7E25D3D7-95DE-DD42-1BED-318F1B480CED}.wem"
+      "CachePath": "9B/{9B6FC04F-2229-3205-0853-22F2D105B47A}.wem"
      },
      {
       "Id": "635134181",
@@ -224,12 +240,12 @@
       "CachePath": "71/{71FB87AA-354C-C772-85BB-166E86290790}.wem"
      },
      {
-      "Id": "893258507",
+      "Id": "910199839",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Golem_Hit_03.wav",
-      "CachePath": "1D/{1D237381-E233-5D6A-6DD4-8E9FB8A7A4F1}.wem"
+      "ShortName": "Wisp_Pulse_hit_01.wav",
+      "CachePath": "D7/{D777E95A-3088-5BE3-8F0D-C02FBDBD604D}.wem"
      },
      {
       "Id": "970492995",
@@ -299,12 +315,52 @@
        "LibId": "6881283"
       },
       {
+       "Id": "204995920",
+       "Name": "Flanger (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Wisp\\Wisp_Charge\\[Effect Slot [0]: (Flanger)]\\Flanger (Custom)",
+       "GUID": "{2BAA50C5-BF85-47A9-99B3-30ADBC32F453}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      },
+      {
        "Id": "344034413",
        "Name": "Gain (Custom)",
        "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Golem\\Golem_Footstep_Surface\\[Effect Slot [2]: (Gain)]\\Gain (Custom)",
        "GUID": "{8417B9F6-80CC-4431-9255-2F1423958C2B}",
        "LibName": "Wwise Gain",
        "LibId": "9109507"
+      },
+      {
+       "Id": "545495337",
+       "Name": "Parametric EQ (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Wisp\\Wisp_Charge\\[Effect Slot [1]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "GUID": "{1831DDE2-6358-4514-BB1E-EB233DFAAF54}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "674888103",
+       "Name": "Flanger (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Wisp\\Wisp_Recover\\[Effect Slot [0]: (Flanger)]\\Flanger (Custom)",
+       "GUID": "{CAD517C1-6893-4892-8523-E03BC9382699}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      },
+      {
+       "Id": "901496801",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Wisp\\Wisp_Charge\\Sine",
+       "GUID": "{6ADB0E8A-F03A-4C21-9426-7FB0DAF07F42}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      },
+      {
+       "Id": "1035839610",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Enemies\\Wisp\\Wisp_Recover\\Sine",
+       "GUID": "{05C27943-883E-4B22-9CCD-B7BFC3A15FC9}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
       }
      ]
     },
@@ -314,7 +370,7 @@
       "Name": "Play_Enemy_Death_Wisp",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Enemy_Death_Wisp",
       "GUID": "{61224603-D60E-4D79-ADCC-F53539B16E37}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "25",
       "DurationType": "OneShot",
       "DurationMin": "0.96119",
       "DurationMax": "0.96119",
@@ -329,18 +385,19 @@
       "Name": "Play_Enemy_Hit_Golem",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Golem\\Play_Enemy_Hit_Golem",
       "GUID": "{C9D1864C-F7F0-4D89-82A1-C6C6AB1F4542}",
+      "MaxAttenuation": "25",
       "DurationType": "OneShot",
-      "DurationMin": "0.18131",
-      "DurationMax": "0.33605",
+      "DurationMin": "0.54421",
+      "DurationMax": "0.86378",
       "MediaRefs": [
        {
-        "Id": "48132522"
+        "Id": "169838703"
        },
        {
-        "Id": "423710600"
+        "Id": "348550136"
        },
        {
-        "Id": "893258507"
+        "Id": "620045671"
        }
       ]
      },
@@ -349,7 +406,7 @@
       "Name": "Play_Enemy_Hit_Wisp",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Enemy_Hit_Wisp",
       "GUID": "{04F78477-4BCB-4237-913E-C289C2B8F9DC}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.93451",
       "DurationMax": "0.93451",
@@ -364,7 +421,7 @@
       "Name": "Play_Golem_Footstep",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Golem\\Play_Golem_Footstep",
       "GUID": "{48C9942F-FD2A-4ED7-80DA-2677EAC713A7}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "25",
       "DurationType": "OneShot",
       "DurationMin": "0.12022",
       "DurationMax": "0.8966418",
@@ -618,17 +675,101 @@
       "Name": "Play_Golem_MeleeSwing",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Golem\\Play_Golem_MeleeSwing",
       "GUID": "{FF87B9E5-9108-4DAA-9C1D-9839F5C36247}",
+      "MaxAttenuation": "25",
       "DurationType": "OneShot",
-      "DurationMin": "1.2",
-      "DurationMax": "1.2",
+      "DurationMin": "0.76143",
+      "DurationMax": "0.76143",
       "MediaRefs": [
        {
         "Id": "634393758"
        }
       ]
+     },
+     {
+      "Id": "3176539718",
+      "Name": "Play_Wisp_Ambient",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Wisp_Ambient",
+      "GUID": "{B28084B4-900C-464A-A13B-37F0F626FD4C}",
+      "MaxAttenuation": "15",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "434960163"
+       }
+      ]
+     },
+     {
+      "Id": "2427123306",
+      "Name": "Play_Wisp_Charge",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Wisp_Charge",
+      "GUID": "{71F139C5-2D08-413B-970D-9E3C1F77FFAF}",
+      "MaxAttenuation": "15",
+      "DurationType": "OneShot",
+      "DurationMin": "0.15",
+      "DurationMax": "0.15",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "204995920"
+        },
+        {
+         "Id": "545495337"
+        },
+        {
+         "Id": "901496801"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "2427205888",
+      "Name": "Play_Wisp_PulseHit",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Wisp_PulseHit",
+      "GUID": "{4D759606-B2E4-45C8-96E1-6239E1533D36}",
+      "MaxAttenuation": "15",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2",
+      "DurationMax": "1.2",
+      "MediaRefs": [
+       {
+        "Id": "910199839"
+       }
+      ]
+     },
+     {
+      "Id": "2206622046",
+      "Name": "Play_Wisp_Recover",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Wisp_Recover",
+      "GUID": "{CC8721B0-8E52-4DA6-BEF5-3E83434C6F0B}",
+      "MaxAttenuation": "15",
+      "DurationType": "OneShot",
+      "DurationMin": "0.3",
+      "DurationMax": "0.3",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "674888103"
+        },
+        {
+         "Id": "1035839610"
+        }
+       ]
+      }
      }
     ],
     "GameParameters": [
+     {
+      "Id": "2209950630",
+      "Name": "Wisp_PulseStress",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Wisp_PulseStress",
+      "GUID": "{6BA5118D-32DC-4CDD-86F4-FBA94E39D2BF}"
+     },
+     {
+      "Id": "3188202952",
+      "Name": "Wisp_Speed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Wisp_Speed",
+      "GUID": "{2EA45A2D-37DF-444B-A2B0-CE287125DB17}"
+     },
      {
       "Id": "4071059179",
       "Name": "Golem_Speed",
@@ -690,6 +831,6 @@
     ]
    }
   ],
-  "FileHash": "{215EA797-C56A-3CD6-7174-99F869781592}"
+  "FileHash": "{23880DA8-B42A-ACFF-73D5-9DD1DBACC2F1}"
  }
 }

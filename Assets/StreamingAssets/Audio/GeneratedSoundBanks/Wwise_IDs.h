@@ -37,6 +37,10 @@ namespace AK
         static const AkUniqueID PLAY_RESONANCEHUM_DEPLETED = 4169607118U;
         static const AkUniqueID PLAY_RESONANCEHUM_START = 1953327225U;
         static const AkUniqueID PLAY_RESONANCEHUM_STOP = 2563595731U;
+        static const AkUniqueID PLAY_WISP_AMBIENT = 3176539718U;
+        static const AkUniqueID PLAY_WISP_CHARGE = 2427123306U;
+        static const AkUniqueID PLAY_WISP_PULSEHIT = 2427205888U;
+        static const AkUniqueID PLAY_WISP_RECOVER = 2206622046U;
         static const AkUniqueID PLAYER_FOOTSTEP = 2453392179U;
         static const AkUniqueID PLAYER_LAND = 3629196698U;
     } // namespace EVENTS
@@ -94,6 +98,8 @@ namespace AK
         static const AkUniqueID PLAYER_SPEED = 1062779386U;
         static const AkUniqueID RESONANCEHUM_ENERGY = 3818301486U;
         static const AkUniqueID RESONANCEHUM_INTENSITY = 1925913377U;
+        static const AkUniqueID WISP_PULSESTRESS = 2209950630U;
+        static const AkUniqueID WISP_SPEED = 3188202952U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
