@@ -351,6 +351,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Stop_Wisp_Ambient" ID="{C73C65CE-4980-46F1-BA4E-42F2E226A867}">
+									<ChildrenList>
+										<Action Name="" ID="{FAAB921C-752B-47B1-9F2C-9280C7B38EC7}" ShortID="831930183">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Wisp_Ambient_Loop" ID="{433B848B-753F-4F07-89AE-9A92CE0025C5}" WorkUnitID="{C4B81293-275F-4562-9072-B5AC8688BFB9}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

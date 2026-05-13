@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2206622046	Play_Wisp_Recover			\Default Work Unit\Enemies\Wisp\Play_Wisp_Recover	
 	2427123306	Play_Wisp_Charge			\Default Work Unit\Enemies\Wisp\Play_Wisp_Charge	
 	2427205888	Play_Wisp_PulseHit			\Default Work Unit\Enemies\Wisp\Play_Wisp_PulseHit	
+	2434584008	Stop_Wisp_Ambient			\Default Work Unit\Enemies\Wisp\Stop_Wisp_Ambient	
 	2780685299	Play_Golem_MeleeSwing			\Default Work Unit\Enemies\Golem\Play_Golem_MeleeSwing	
 	2982724738	Play_Enemy_Hit_Wisp			\Default Work Unit\Enemies\Wisp\Play_Enemy_Hit_Wisp	
 	3176539718	Play_Wisp_Ambient			\Default Work Unit\Enemies\Wisp\Play_Wisp_Ambient	

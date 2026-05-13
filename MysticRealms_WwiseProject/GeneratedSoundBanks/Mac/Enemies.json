@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{6D21033C-4256-47C1-BF54-1B1B2E4A89FE}",
     "Language": "SFX",
-    "Hash": "{0CB5E948-391F-F3FA-35E7-EF9AAAAE2A7A}",
+    "Hash": "{C202CF1E-E87C-7F9B-B955-6401E875B1E7}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Enemies",
     "ShortName": "Enemies",
     "Path": "Enemies.bnk",
@@ -755,6 +755,21 @@
         }
        ]
       }
+     },
+     {
+      "Id": "2434584008",
+      "Name": "Stop_Wisp_Ambient",
+      "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Stop_Wisp_Ambient",
+      "GUID": "{C73C65CE-4980-46F1-BA4E-42F2E226A867}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "434960163"
+       }
+      ]
      }
     ],
     "GameParameters": [
@@ -831,6 +846,6 @@
     ]
    }
   ],
-  "FileHash": "{23880DA8-B42A-ACFF-73D5-9DD1DBACC2F1}"
+  "FileHash": "{2BFE6829-C895-F0F2-7691-AF3F35BBF42F}"
  }
 }

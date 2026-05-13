@@ -43,6 +43,7 @@ namespace AK
         static const AkUniqueID PLAY_WISP_RECOVER = 2206622046U;
         static const AkUniqueID PLAYER_FOOTSTEP = 2453392179U;
         static const AkUniqueID PLAYER_LAND = 3629196698U;
+        static const AkUniqueID STOP_WISP_AMBIENT = 2434584008U;
     } // namespace EVENTS
 
     namespace STATES
