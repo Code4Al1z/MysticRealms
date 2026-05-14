@@ -377,18 +377,32 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemyDamageable
 
     private Vector3 returnDestination;
 
+    private bool returnDestinationSet = false;
+
     private void TickReturn()
     {
         if (!agent.enabled || !agent.isOnNavMesh) return;
 
-        agent.speed = baseMoveSpeed;
-        agent.isStopped = false;
+        if (!returnDestinationSet)
+        {
+            agent.speed = baseMoveSpeed;
+            agent.isStopped = false;
+            agent.SetDestination(new Vector3(
+                returnDestination.x,
+                transform.position.y,
+                returnDestination.z));
+            returnDestinationSet = true;
+            return;
+        }
+
+        if (agent.pathPending) return;
 
         Vector2 currentXZ = new Vector2(transform.position.x, transform.position.z);
         Vector2 destinationXZ = new Vector2(returnDestination.x, returnDestination.z);
 
         if (Vector2.Distance(currentXZ, destinationXZ) <= agent.stoppingDistance + 0.35f)
         {
+            returnDestinationSet = false;
             leashOrigin = returnDestination;
             SetState(EnemyState.Idle);
         }

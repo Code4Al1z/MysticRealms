@@ -5071,7 +5071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WispEnemy
   enemyDisplayName: Enemy
-  maxHealth: 100
+  maxHealth: 40
   baseMoveSpeed: 3
   chaseSpeedBoost: 1.8
   viewRange: 10
@@ -5092,7 +5092,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  enableDebugLog: 1
+  enableDebugLog: 0
   wispPatrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -5123,7 +5123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WispChargeHandler
   chargeSpeed: 14
   chargeDistance: 4
-  contactDamage: 10
+  contactDamage: 7
   collectableValue: 1
   wispChargeEvent:
     idInternal: 0
