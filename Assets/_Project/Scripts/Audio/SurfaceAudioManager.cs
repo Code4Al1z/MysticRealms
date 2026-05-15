@@ -3,18 +3,19 @@ using System.Collections.Generic;
 
 /// <summary>
 /// Manages surface-based audio responses for Wwise integration (Footstep System)
-/// Reads surface type from Shader Graph enum and triggers appropriate Wwise events
-/// Fully expandable via Inspector - dynamically supports any number of surface types
-/// 
+/// Reads surface type from Shader Graph enum and triggers appropriate Wwise events.
+///
+/// Safe to use on multiple GameObjects simultaneously (player + golem etc).
+/// All Wwise switch state is scoped to the emitter GameObject — no global bleed.
+///
 /// WWISE SETUP REQUIRED:
-/// - Switch Group: "SurfaceType" with switches for each surface (e.g., Default, Wood, Metal, etc.)
-/// - Events: "Player_Footstep", "Player_Land" (optionally "Player_Jump")
+/// - Switch Group: "SurfaceType" with switches for each surface (Default, Wood, Metal, etc.)
+/// - Events: one footstep event per character type (e.g. Play_Player_Footstep, Play_Golem_Footstep)
 /// - Switch Containers for each event routing to correct surface sounds
-/// 
+///
 /// EXPANDABILITY:
 /// - Add new surface: Add switch to Wwise, add to surfaceSwitches list, add to surfaceMappings
-/// - Remove surface: Remove from all three locations
-/// - No code changes needed!
+/// - No code changes needed
 /// </summary>
 public class SurfaceAudioManager : MonoBehaviour
 {
@@ -27,20 +28,19 @@ public class SurfaceAudioManager : MonoBehaviour
     [SerializeField] private List<AK.Wwise.Switch> surfaceSwitches = new List<AK.Wwise.Switch>();
 
     [Header("Surface Audio Mappings")]
-    [Tooltip("Map each surface type enum value to its corresponding Wwise events. Size MUST be 7.")]
+    [Tooltip("Map each surface type enum value to its corresponding Wwise events.")]
     [SerializeField] private List<SurfaceAudioMapping> surfaceMappings = new List<SurfaceAudioMapping>();
-
-    [Header("Global Audio Settings - Optional")]
-    [Tooltip("Optional RTPC to set the current surface type as a numeric value (0-6)")]
-    [SerializeField] private AK.Wwise.RTPC surfaceTypeRTPC;
 
     [Header("Debug")]
     [Tooltip("Enable debug logging to see surface type detection in Console")]
     [SerializeField] private bool enableDebugLog = false;
 
-    // Current surface state
+    // Current surface state — local to this instance, never shared
     private int currentSurfaceIndex = -1;
     private string currentSurfaceName = "Unknown";
+
+    // The emitter this manager drives — set via Initialise() or falls back to own GameObject
+    private GameObject emitter;
 
     // Cache for performance
     private Dictionary<Collider, int> colliderSurfaceCache = new Dictionary<Collider, int>();
@@ -48,77 +48,78 @@ public class SurfaceAudioManager : MonoBehaviour
 
     private void Awake()
     {
-        // Convert shader property name to ID for faster lookups
         shaderPropertyID = Shader.PropertyToID(shaderEnumPropertyName);
 
-        // Initialize default mappings if empty
         if (surfaceMappings.Count == 0)
-        {
             InitializeDefaultMappings();
-        }
 
-        // Validate switch list matches mappings count
         if (surfaceSwitches.Count != surfaceMappings.Count)
         {
-            Debug.LogWarning($"[SurfaceAudioManager] surfaceSwitches count ({surfaceSwitches.Count}) does not match surfaceMappings count ({surfaceMappings.Count}). " +
-                           "Make sure to assign one switch per surface mapping.");
+            Debug.LogWarning($"[SurfaceAudioManager] on {gameObject.name}: surfaceSwitches count " +
+                $"({surfaceSwitches.Count}) does not match surfaceMappings count ({surfaceMappings.Count}).");
         }
 
-        // Check for null switches
-        for (int i = 0; i < surfaceSwitches.Count; i++)
-        {
-            if (surfaceSwitches[i] == null)
-            {
-                Debug.LogWarning($"[SurfaceAudioManager] surfaceSwitches[{i}] is null. Assign all switches in Inspector.");
-            }
-        }
+        // Default emitter is own GameObject — overridden by Initialise() if needed
+        emitter = gameObject;
+    }
+
+    /// <summary>
+    /// Call this from GolemFootstepHandler.Initialise() to tell the manager
+    /// which GameObject to post events and set switches on.
+    /// Not needed for the player since the manager sits on the player directly.
+    /// </summary>
+    public void Initialise(GameObject soundEmitter)
+    {
+        emitter = soundEmitter;
     }
 
     public void UpdateCurrentSurface(Collider hitCollider)
     {
         if (hitCollider == null)
         {
-            Debug.LogWarning("[SurfaceAudio] UpdateCurrentSurface called with null collider");
+            if (enableDebugLog)
+                Debug.LogWarning($"[SurfaceAudioManager] on {gameObject.name}: UpdateCurrentSurface called with null collider.");
             return;
         }
 
-        // Check cache first
         if (colliderSurfaceCache.TryGetValue(hitCollider, out int cachedSurfaceIndex))
         {
             SetCurrentSurface(cachedSurfaceIndex);
             return;
         }
 
-        // Get material
         Renderer renderer = hitCollider.GetComponent<Renderer>();
         if (renderer == null || renderer.sharedMaterial == null)
         {
-            Debug.LogWarning($"[SurfaceAudio] No renderer/material on {hitCollider.name}. Setting to Default (0)");
-            SetCurrentSurface(0); // Fallback to default
+            if (enableDebugLog)
+                Debug.LogWarning($"[SurfaceAudioManager] on {gameObject.name}: No renderer/material on {hitCollider.name}. Defaulting to surface 0.");
+            SetCurrentSurface(0);
             return;
         }
 
         Material material = renderer.sharedMaterial;
 
-        // Check for shader property
         if (material.HasProperty(shaderPropertyID))
         {
             float enumValue = material.GetFloat(shaderPropertyID);
             int surfaceIndex = Mathf.RoundToInt(enumValue);
             colliderSurfaceCache[hitCollider] = surfaceIndex;
             SetCurrentSurface(surfaceIndex);
-            Debug.Log($"[SurfaceAudio] Found surface type: {surfaceIndex} on {hitCollider.name}");
+
+            if (enableDebugLog)
+                Debug.Log($"[SurfaceAudioManager] on {gameObject.name}: Surface detected: {surfaceIndex} from {hitCollider.name}");
         }
         else
         {
-            Debug.LogWarning($"[SurfaceAudio] Material '{material.name}' missing property '{shaderEnumPropertyName}'. Setting to Default (0)");
-            SetCurrentSurface(0); // Fallback to default
+            if (enableDebugLog)
+                Debug.LogWarning($"[SurfaceAudioManager] on {gameObject.name}: Material '{material.name}' missing property '{shaderEnumPropertyName}'. Defaulting to 0.");
+            SetCurrentSurface(0);
         }
     }
 
     /// <summary>
-    /// Manually set the current surface by index
-    /// Automatically sets the Wwise switch for Switch Container routing
+    /// Sets the current surface index and updates the Wwise switch on the emitter.
+    /// Scoped entirely to the emitter — never touches global state.
     /// </summary>
     public void SetCurrentSurface(int surfaceIndex)
     {
@@ -126,166 +127,130 @@ public class SurfaceAudioManager : MonoBehaviour
 
         currentSurfaceIndex = surfaceIndex;
 
-        // Find matching mapping
         SurfaceAudioMapping mapping = GetMappingForIndex(surfaceIndex);
         currentSurfaceName = mapping != null ? mapping.surfaceName : "Unknown";
 
-        // CRITICAL: Set the Wwise switch (for Switch Container approach)
+        // Set the switch on the emitter only — this is what prevents cross-contamination
+        // between the player SurfaceAudioManager and the golem SurfaceAudioManager.
+        // Each emitter GameObject holds its own Wwise switch state independently.
         if (surfaceIndex >= 0 && surfaceIndex < surfaceSwitches.Count)
         {
             if (surfaceSwitches[surfaceIndex] != null)
             {
+                surfaceSwitches[surfaceIndex].SetValue(emitter);
+
                 if (enableDebugLog)
-                    Debug.Log($"[Wwise] Surface switch ready: {surfaceSwitches[surfaceIndex].Name}");
+                    Debug.Log($"[SurfaceAudioManager] on {gameObject.name}: Switch set to '{surfaceSwitches[surfaceIndex].Name}' on emitter '{emitter.name}'");
             }
             else
             {
-                Debug.LogWarning($"[SurfaceAudio] surfaceSwitches[{surfaceIndex}] is not assigned! Assign it in Inspector.");
+                Debug.LogWarning($"[SurfaceAudioManager] on {gameObject.name}: surfaceSwitches[{surfaceIndex}] is not assigned.");
             }
         }
         else if (surfaceIndex >= surfaceSwitches.Count)
         {
-            Debug.LogWarning($"[SurfaceAudio] Surface index {surfaceIndex} is out of range. surfaceSwitches has {surfaceSwitches.Count} elements. Add more switches or check shader enum values.");
-        }
-
-        // Optional: Update Wwise RTPC if assigned
-        if (surfaceTypeRTPC != null)
-        {
-            surfaceTypeRTPC.SetGlobalValue(surfaceIndex);
+            Debug.LogWarning($"[SurfaceAudioManager] on {gameObject.name}: Surface index {surfaceIndex} out of range. " +
+                $"surfaceSwitches has {surfaceSwitches.Count} elements.");
         }
 
         if (enableDebugLog)
-            Debug.Log($"[SurfaceAudio] Surface changed to: {currentSurfaceName} (Index: {surfaceIndex})");
+            Debug.Log($"[SurfaceAudioManager] on {gameObject.name}: Surface → {currentSurfaceName} (index {surfaceIndex})");
     }
 
     /// <summary>
-    /// Called when player takes a footstep - triggers surface-specific footstep sound
+    /// Called when a footstep should fire. Posts the event on the emitter.
+    /// Switch is already set in SetCurrentSurface — no need to set it again here,
+    /// but we set it again as a safety measure in case the emitter changed.
     /// </summary>
-    public void OnFootstep(GameObject emitter)
+    public void OnFootstep(GameObject eventEmitter)
     {
-        // Set the switch on the emitter (Player) before posting event
-        if (currentSurfaceIndex >= 0 && currentSurfaceIndex < surfaceSwitches.Count)
-        {
-            if (surfaceSwitches[currentSurfaceIndex] != null)
-            {
-                surfaceSwitches[currentSurfaceIndex].SetValue(emitter);
-            }
-        }
+        ApplySwitchToEmitter(eventEmitter);
 
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
         if (mapping != null && mapping.footstepEvent != null)
         {
-            mapping.footstepEvent.Post(emitter);
+            mapping.footstepEvent.Post(eventEmitter);
 
             if (enableDebugLog)
-                Debug.Log($"[SurfaceAudio] Footstep sound triggered for {currentSurfaceName} on {emitter.name}");
+                Debug.Log($"[SurfaceAudioManager] on {gameObject.name}: Footstep posted for '{currentSurfaceName}' on '{eventEmitter.name}'");
         }
         else if (enableDebugLog)
         {
-            Debug.LogWarning($"[SurfaceAudio] No footstep event assigned for surface: {currentSurfaceName}");
+            Debug.LogWarning($"[SurfaceAudioManager] on {gameObject.name}: No footstep event for surface '{currentSurfaceName}'");
         }
     }
 
     /// <summary>
-    /// Called when player jumps - triggers surface-specific jump sound
+    /// Called when the character jumps.
     /// </summary>
-    public void OnJump(GameObject emitter)
+    public void OnJump(GameObject eventEmitter)
     {
-        // Set the switch on the emitter before posting event
-        if (currentSurfaceIndex >= 0 && currentSurfaceIndex < surfaceSwitches.Count)
-        {
-            if (surfaceSwitches[currentSurfaceIndex] != null)
-            {
-                surfaceSwitches[currentSurfaceIndex].SetValue(emitter);
-            }
-        }
+        ApplySwitchToEmitter(eventEmitter);
 
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
         if (mapping != null && mapping.jumpEvent != null)
-        {
-            mapping.jumpEvent.Post(emitter);
-
-            if (enableDebugLog)
-                Debug.Log($"[SurfaceAudio] Jump sound triggered for {currentSurfaceName} on {emitter.name}");
-        }
+            mapping.jumpEvent.Post(eventEmitter);
     }
 
     /// <summary>
-    /// Called when player lands - triggers surface-specific landing sound
+    /// Called when the character lands.
     /// </summary>
-    public void OnLand(GameObject emitter)
+    public void OnLand(GameObject eventEmitter)
     {
-        // Set the switch on the emitter before posting event
-        if (currentSurfaceIndex >= 0 && currentSurfaceIndex < surfaceSwitches.Count)
-        {
-            if (surfaceSwitches[currentSurfaceIndex] != null)
-            {
-                surfaceSwitches[currentSurfaceIndex].SetValue(emitter);
-            }
-        }
+        ApplySwitchToEmitter(eventEmitter);
 
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
         if (mapping != null && mapping.landEvent != null)
         {
-            mapping.landEvent.Post(emitter);
+            mapping.landEvent.Post(eventEmitter);
 
             if (enableDebugLog)
-                Debug.Log($"[SurfaceAudio] Land sound triggered for {currentSurfaceName} on {emitter.name}");
+                Debug.Log($"[SurfaceAudioManager] on {gameObject.name}: Land posted for '{currentSurfaceName}' on '{eventEmitter.name}'");
         }
         else if (enableDebugLog)
         {
-            Debug.LogWarning($"[SurfaceAudio] No land event assigned for surface: {currentSurfaceName}");
+            Debug.LogWarning($"[SurfaceAudioManager] on {gameObject.name}: No land event for surface '{currentSurfaceName}'");
         }
     }
 
     /// <summary>
-    /// Get the mapping that matches the current surface index
-    /// </summary>
-    private SurfaceAudioMapping GetMappingForIndex(int index)
-    {
-        foreach (SurfaceAudioMapping mapping in surfaceMappings)
-        {
-            if (mapping.surfaceEnumIndex == index)
-            {
-                return mapping;
-            }
-        }
-        return null;
-    }
-
-    /// <summary>
-    /// Get current surface name (useful for debugging or UI)
-    /// </summary>
-    public string GetCurrentSurfaceName()
-    {
-        return currentSurfaceName;
-    }
-
-    /// <summary>
-    /// Get current surface index (0-6)
-    /// </summary>
-    public int GetCurrentSurfaceIndex()
-    {
-        return currentSurfaceIndex;
-    }
-
-    /// <summary>
-    /// Clear the collider cache (useful if materials change at runtime)
+    /// Clears the collider-to-surface cache. Call this if materials change at runtime.
     /// </summary>
     public void ClearCache()
     {
         colliderSurfaceCache.Clear();
         if (enableDebugLog)
-            Debug.Log("[SurfaceAudio] Cache cleared");
+            Debug.Log($"[SurfaceAudioManager] on {gameObject.name}: Cache cleared.");
     }
 
+    public string GetCurrentSurfaceName() => currentSurfaceName;
+    public int GetCurrentSurfaceIndex() => currentSurfaceIndex;
+
+    // ── Private helpers ───────────────────────────────────────────────────────
+
     /// <summary>
-    /// Initialize with default surface types from your shader
-    /// Creates empty mappings that you fill in the Inspector
+    /// Re-applies the current surface switch to a specific emitter.
+    /// Called before each event post to guarantee correctness.
     /// </summary>
+    private void ApplySwitchToEmitter(GameObject target)
+    {
+        if (currentSurfaceIndex < 0 || currentSurfaceIndex >= surfaceSwitches.Count) return;
+        if (surfaceSwitches[currentSurfaceIndex] == null) return;
+        surfaceSwitches[currentSurfaceIndex].SetValue(target);
+    }
+
+    private SurfaceAudioMapping GetMappingForIndex(int index)
+    {
+        foreach (SurfaceAudioMapping mapping in surfaceMappings)
+        {
+            if (mapping.surfaceEnumIndex == index)
+                return mapping;
+        }
+        return null;
+    }
+
     private void InitializeDefaultMappings()
     {
-        // Create mappings for the 7 surface types in your shader
         string[] defaultSurfaces = { "Default", "Wood", "Metal", "Stone", "Leaves", "Grass", "Soil" };
 
         for (int i = 0; i < defaultSurfaces.Length; i++)
@@ -301,17 +266,12 @@ public class SurfaceAudioManager : MonoBehaviour
         }
 
         if (enableDebugLog)
-            Debug.Log($"[SurfaceAudio] Initialized {defaultSurfaces.Length} default surface mappings");
+            Debug.Log($"[SurfaceAudioManager] on {gameObject.name}: Initialised {defaultSurfaces.Length} default surface mappings.");
     }
 
-    /// <summary>
-    /// Debug visualization in Scene view
-    /// </summary>
     private void OnDrawGizmos()
     {
         if (!enableDebugLog) return;
-
-        // Display current surface info in Scene view
 #if UNITY_EDITOR
         if (currentSurfaceIndex >= 0)
         {
@@ -323,33 +283,26 @@ public class SurfaceAudioManager : MonoBehaviour
 }
 
 /// <summary>
-/// Serializable class that maps a surface type to its Wwise events
-/// Fully editable in the Inspector
-/// 
-/// FOR SWITCH CONTAINER APPROACH (RECOMMENDED):
-/// - Assign the SAME event to all 7 surfaces (e.g., all use "Player_Footstep")
-/// - The Switch Container in Wwise routes to correct sound based on active switch
-/// 
-/// FOR INDIVIDUAL EVENTS APPROACH:
-/// - Assign different events per surface (e.g., "Player_Footstep_Wood", "Player_Footstep_Metal", etc.)
+/// Maps a surface type index to its Wwise events.
+/// Assign the same footstep event to all surfaces when using Switch Containers.
 /// </summary>
 [System.Serializable]
 public class SurfaceAudioMapping
 {
     [Header("Surface Identification")]
-    [Tooltip("Human-readable name (e.g., 'Wood', 'Metal'). Must match shader enum!")]
+    [Tooltip("Human-readable name matching the shader enum value.")]
     public string surfaceName = "Unnamed Surface";
 
     [Tooltip("Enum index from shader (0=Default, 1=Wood, 2=Metal, 3=Stone, 4=Leaves, 5=Grass, 6=Soil)")]
     public int surfaceEnumIndex = 0;
 
     [Header("Wwise Events")]
-    [Tooltip("Wwise event for footsteps. For Switch Container: Use 'Player_Footstep' for ALL surfaces")]
+    [Tooltip("Footstep event. For Switch Containers use the same event on all surfaces.")]
     public AK.Wwise.Event footstepEvent;
 
-    [Tooltip("Wwise event for jumps (OPTIONAL). For Switch Container: Use 'Player_Jump' for ALL surfaces")]
+    [Tooltip("Jump event (optional).")]
     public AK.Wwise.Event jumpEvent;
 
-    [Tooltip("Wwise event for lands. For Switch Container: Use 'Player_Land' for ALL surfaces")]
+    [Tooltip("Land event.")]
     public AK.Wwise.Event landEvent;
 }

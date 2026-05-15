@@ -28,7 +28,16 @@ public class GolemFootstepHandler : MonoBehaviour
         this.baseMoveSpeed = baseMoveSpeed;
 
         if (surfaceAudioManager == null)
+        {
             Debug.LogWarning("[GolemFootstepHandler] SurfaceAudioManager not assigned.");
+            return;
+        }
+
+        // Tell the SurfaceAudioManager to post events and set switches on the
+        // Golem's own GameObject, not on whatever GameObject it sits on.
+        // This prevents the golem's surface switches from bleeding into the
+        // player's Wwise switch state.
+        surfaceAudioManager.Initialise(gameObject);
     }
 
     public void Tick(bool isKnockedBack)

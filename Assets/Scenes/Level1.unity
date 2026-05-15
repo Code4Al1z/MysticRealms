@@ -3826,7 +3826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b19ee9ff44cee4b928611693a8dff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GolemFootstepHandler
-  surfaceAudioManager: {fileID: 1062195967}
+  surfaceAudioManager: {fileID: 868374194}
   footstepInterval: 0.75
   minSpeedForFootstep: 0.3
   groundCheck: {fileID: 229121478}
@@ -6904,7 +6904,7 @@ MonoBehaviour:
     footstepEvent:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: 00618d85af4b1704589538e18df7ea3a, type: 2}
     jumpEvent:
       idInternal: 0
       valueGuidInternal: 
@@ -6918,7 +6918,7 @@ MonoBehaviour:
     footstepEvent:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: 00618d85af4b1704589538e18df7ea3a, type: 2}
     jumpEvent:
       idInternal: 0
       valueGuidInternal: 
@@ -6932,7 +6932,7 @@ MonoBehaviour:
     footstepEvent:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: 00618d85af4b1704589538e18df7ea3a, type: 2}
     jumpEvent:
       idInternal: 0
       valueGuidInternal: 
@@ -6946,7 +6946,7 @@ MonoBehaviour:
     footstepEvent:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: 00618d85af4b1704589538e18df7ea3a, type: 2}
     jumpEvent:
       idInternal: 0
       valueGuidInternal: 
@@ -6960,7 +6960,7 @@ MonoBehaviour:
     footstepEvent:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: 00618d85af4b1704589538e18df7ea3a, type: 2}
     jumpEvent:
       idInternal: 0
       valueGuidInternal: 
@@ -6974,7 +6974,7 @@ MonoBehaviour:
     footstepEvent:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: 00618d85af4b1704589538e18df7ea3a, type: 2}
     jumpEvent:
       idInternal: 0
       valueGuidInternal: 
@@ -6988,7 +6988,7 @@ MonoBehaviour:
     footstepEvent:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 717b5da2ea0137d49b66001abeab1870, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: 00618d85af4b1704589538e18df7ea3a, type: 2}
     jumpEvent:
       idInternal: 0
       valueGuidInternal: 
@@ -6997,10 +6997,6 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
-  surfaceTypeRTPC:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: f0ab3079169342e40a4cb98d4ae42e50, type: 2}
   enableDebugLog: 1
 --- !u!4 &872661539 stripped
 Transform:
@@ -9014,10 +9010,6 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
-  surfaceTypeRTPC:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d754190c4ce5d984db49850b3def4359, type: 2}
   enableDebugLog: 0
 --- !u!1001 &1066235432
 PrefabInstance:
