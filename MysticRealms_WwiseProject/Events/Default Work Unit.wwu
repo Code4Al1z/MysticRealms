@@ -4,6 +4,13 @@
 		<WorkUnit Name="Default Work Unit" ID="{9432C570-040A-4D00-A420-5FF6D0984665}" PersistMode="Standalone">
 			<ChildrenList>
 				<Event Name="Player_Footstep" ID="{65BA12F1-2AAB-4AA1-9F64-C86862D3CBEC}">
+					<PropertyList>
+						<Property Name="LimitScope" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ChildrenList>
 						<Action Name="" ID="{475A43B5-051E-4106-9FBC-7B5B40780462}" ShortID="576494374">
 							<ReferenceList>
@@ -15,6 +22,13 @@
 					</ChildrenList>
 				</Event>
 				<Event Name="Player_Land" ID="{28221DBC-EF06-4F3D-843A-17CAEA0ECA43}">
+					<PropertyList>
+						<Property Name="LimitScope" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ChildrenList>
 						<Action Name="" ID="{4A21E69D-4E77-4201-BCEF-8087B673E734}" ShortID="857242746">
 							<ReferenceList>
@@ -30,6 +44,13 @@
 						<Folder Name="Platform" ID="{ABD4FA50-6DCE-4677-9DD5-B37F5D8BF1F4}" ShortID="519359984">
 							<ChildrenList>
 								<Event Name="Play_Platform_StartMove" ID="{AD1AD8D6-3A3D-44D5-A8FE-B610B2153C01}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{4D616557-47EC-47DC-9402-4EDB3E4A41D0}" ShortID="475177268">
 											<ReferenceList>
@@ -41,6 +62,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Platform_StopMove" ID="{72ECD7ED-3B35-476E-9521-B8EA3B3EA5A6}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{052445FA-02C9-431F-A7E8-9C243C297C46}" ShortID="386989040">
 											<ReferenceList>
@@ -52,6 +80,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Platform_TravelLoop" ID="{78EEFEAD-FDDD-4AEC-AF4B-74959BA94FF1}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{1C239AB3-CDAE-4220-A8DE-D6BDE2D763D0}" ShortID="238815151">
 											<ReferenceList>
@@ -67,6 +102,13 @@
 						<Folder Name="Doors" ID="{392C1E2D-662A-47BC-A441-9FA0436F4ADF}" ShortID="1066168765">
 							<ChildrenList>
 								<Event Name="Play_GateDoor_Open" ID="{92274D69-7645-4F82-AEC0-17D2BBCDB15E}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{9E2DE9B5-8B52-4F19-953C-4B3951F9EC22}" ShortID="791478177">
 											<ReferenceList>
@@ -78,6 +120,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_GateDoor_Close" ID="{587D98DB-D5BC-472F-B5C2-8F48288F0A48}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{26377134-3927-4655-BEE6-806BE50D09BC}" ShortID="115686383">
 											<ReferenceList>
@@ -89,6 +138,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_GateDoor_Stop" ID="{30A86BF8-C25A-4561-93F6-EF14931A549C}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{039BBF78-689F-4DD6-9E3A-9EE18711EBAB}" ShortID="720951821">
 											<ReferenceList>
@@ -100,6 +156,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_GateDoor_MovingLoop" ID="{D0F619B9-08AE-4B1C-8C73-6C041E7F0AA7}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{AAD2ED16-1CD8-4F95-B54C-1C4CCD09411A}" ShortID="118316014">
 											<ReferenceList>
@@ -111,6 +174,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_ResonanceDoor_Open" ID="{C2C9F5BB-4DC0-4748-AF6C-9BFD8013EDC8}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{B605FB88-41C7-4365-BE59-DC1EDD4DE32A}" ShortID="892868924">
 											<ReferenceList>
@@ -122,6 +192,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_ResonanceDoor_Close" ID="{815417C8-3BFD-4E8E-AFFE-3A5557268D5E}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{F3AFADE7-5BFA-4CA3-ADBC-EA4CE031D62C}" ShortID="960442384">
 											<ReferenceList>
@@ -137,6 +214,13 @@
 						<Folder Name="Lamp" ID="{76981147-10BD-4652-852E-8A0801A21DEE}" ShortID="879010007">
 							<ChildrenList>
 								<Event Name="Play_Lamp_Full" ID="{A05A401D-489F-4282-856A-65DD59E570F9}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{55BD4185-2627-40FB-81C3-8F9329458798}" ShortID="413351728">
 											<ReferenceList>
@@ -148,6 +232,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Lamp_Filling" ID="{EFB8782A-AE34-4D69-A4BE-1AE191EC7C91}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{CF0E8EB0-0CBA-4E25-8F65-7C0D94FABBBC}" ShortID="339018854">
 											<ReferenceList>
@@ -159,6 +250,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Lamp_Depleting" ID="{2D080E10-56DD-4965-AE0E-AA74025CE3BA}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{C8D68731-9ADA-44A6-8D43-6EF425DC8080}" ShortID="564985905">
 											<ReferenceList>
@@ -170,6 +268,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Lamp_Empty" ID="{31ADA175-E08F-4BBB-BCBC-7BA58804D6B3}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{D231104C-098A-476C-803E-99E1D3873C4C}" ShortID="652005006">
 											<ReferenceList>
@@ -187,6 +292,13 @@
 				<Folder Name="PlayerAbilities" ID="{A487F0E3-F22B-4B86-BF3B-D7B1406DFEB3}" ShortID="311357590">
 					<ChildrenList>
 						<Event Name="Play_EchoPulse_Start" ID="{2057F25B-2A81-4F62-B1A0-30B06BEBA1D3}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{B7B8A39D-9530-48AE-9E2E-E3B182B46452}" ShortID="304848000">
 									<ReferenceList>
@@ -198,6 +310,13 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_ResonanceHum_Depleted" ID="{860B474D-8D19-49EC-96A4-ED9D47D8EFCA}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{1D26292B-A47A-4858-82F2-33DBF9AF232F}" ShortID="574460176">
 									<ReferenceList>
@@ -209,6 +328,13 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_ResonanceHum_Start" ID="{81769494-6367-4FC9-9010-37E5DB577F91}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{D4E70AAA-63F8-4900-84C5-FCA8CEB4AB80}" ShortID="674973800">
 									<ReferenceList>
@@ -220,6 +346,13 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_EchoPulse_Stop" ID="{0473117D-77FB-4EBD-B5E6-F136200586E3}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{1F08EEFC-C4F7-4479-AD59-CE072D25B77C}" ShortID="246356694">
 									<ReferenceList>
@@ -231,6 +364,13 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_ResonanceHum_Stop" ID="{1C58F377-324F-4426-B618-A5B6A376DA00}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{D8D09675-8F8C-43D5-855D-375C95196127}" ShortID="477853232">
 									<ReferenceList>
@@ -248,6 +388,13 @@
 						<Folder Name="Golem" ID="{D00617CE-2144-49C8-AF4D-D18E36BE95B7}" ShortID="737214183">
 							<ChildrenList>
 								<Event Name="Play_Enemy_Hit_Golem" ID="{C9D1864C-F7F0-4D89-82A1-C6C6AB1F4542}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{9BD1F6E3-1D76-4973-8010-53448080A2AA}" ShortID="449455432">
 											<ReferenceList>
@@ -258,8 +405,23 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_Enemy_Death_Golem" ID="{2AE52EBE-1D49-4FFA-81E3-883106A04315}"/>
+								<Event Name="Play_Enemy_Death_Golem" ID="{2AE52EBE-1D49-4FFA-81E3-883106A04315}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+								</Event>
 								<Event Name="Play_Golem_Footstep" ID="{48C9942F-FD2A-4ED7-80DA-2677EAC713A7}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{A70A3798-A306-42FC-960F-87179B391FAD}" ShortID="29725807">
 											<ReferenceList>
@@ -271,6 +433,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Golem_MeleeSwing" ID="{FF87B9E5-9108-4DAA-9C1D-9839F5C36247}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{D75F5A48-95E1-44F3-8B01-E9511D9B4499}" ShortID="302477697">
 											<ReferenceList>
@@ -286,6 +455,13 @@
 						<Folder Name="Wisp" ID="{6D650AFC-4F6C-4E4B-8905-2E2CC5EBE0D0}" ShortID="10697475">
 							<ChildrenList>
 								<Event Name="Play_Enemy_Death_Wisp" ID="{61224603-D60E-4D79-ADCC-F53539B16E37}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{2D84FBDD-B5D6-4ACE-B19A-E91080343CC4}" ShortID="842072022">
 											<ReferenceList>
@@ -297,6 +473,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Enemy_Hit_Wisp" ID="{04F78477-4BCB-4237-913E-C289C2B8F9DC}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{B7AD22EF-EFDA-4ED4-BA5E-060DE5F036A9}" ShortID="431476853">
 											<ReferenceList>
@@ -308,6 +491,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Wisp_Charge" ID="{71F139C5-2D08-413B-970D-9E3C1F77FFAF}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{D7DB4178-9A29-4CE7-9002-62BF840D514C}" ShortID="837919524">
 											<ReferenceList>
@@ -319,6 +509,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Wisp_PulseHit" ID="{4D759606-B2E4-45C8-96E1-6239E1533D36}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{037D3AFA-B4BC-43ED-A9DA-B0CCB12B032C}" ShortID="476073506">
 											<ReferenceList>
@@ -330,6 +527,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Wisp_Recover" ID="{CC8721B0-8E52-4DA6-BEF5-3E83434C6F0B}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{2E1EBD1E-976B-4F4B-B445-905F6C7E2C6F}" ShortID="32491203">
 											<ReferenceList>
@@ -341,6 +545,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Wisp_Ambient" ID="{B28084B4-900C-464A-A13B-37F0F626FD4C}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{44A536F2-CDDB-4131-B27E-B99C662C7EB1}" ShortID="840052291">
 											<ReferenceList>
@@ -352,6 +563,13 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Stop_Wisp_Ambient" ID="{C73C65CE-4980-46F1-BA4E-42F2E226A867}">
+									<PropertyList>
+										<Property Name="LimitScope" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{FAAB921C-752B-47B1-9F2C-9280C7B38EC7}" ShortID="831930183">
 											<PropertyList>

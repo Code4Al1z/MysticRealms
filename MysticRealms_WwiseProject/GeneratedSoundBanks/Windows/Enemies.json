@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{6D21033C-4256-47C1-BF54-1B1B2E4A89FE}",
     "Language": "SFX",
-    "Hash": "{C202CF1E-E87C-7F9B-B955-6401E875B1E7}",
+    "Hash": "{F4F8918A-BAF1-9822-398B-F80277B68156}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Enemies",
     "ShortName": "Enemies",
     "Path": "Enemies.bnk",
@@ -846,6 +846,6 @@
     ]
    }
   ],
-  "FileHash": "{7A74F846-72D0-018C-8B00-32EF68BD2BB7}"
+  "FileHash": "{401BCF29-7886-528F-A160-C46C96DC9751}"
  }
 }

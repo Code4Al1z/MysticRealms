@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{2AE52EBE-1D49-4FFA-81E3-883106A04315}",
     "Language": "SFX",
-    "Hash": "{B250F7D0-22CC-ABA5-C9A2-661C6596189C}",
+    "Hash": "{D1D845EA-45AB-4696-7687-1B954386FF4C}",
     "ObjectPath": "Play_Enemy_Death_Golem",
     "ShortName": "Play_Enemy_Death_Golem",
     "Path": "Event/Play_Enemy_Death_Golem.bnk",
@@ -28,6 +28,6 @@
     ]
    }
   ],
-  "FileHash": "{85D8209B-ADEE-41EF-83F2-851B2E404FD5}"
+  "FileHash": "{AA17DFD5-CED1-E69F-2D04-F856CBC742B0}"
  }
 }

@@ -3,7 +3,7 @@
   "Project": {
    "Name": "MysticRealms_WwiseProject",
    "GUID": "{CBC869F6-78EC-4321-91E6-8DEE98FE4DD0}",
-   "Generator": "2025.1.6.9117"
+   "Generator": "2025.1.7.9143"
   },
   "CacheRoot": "../../../../MysticRealms_WwiseProject/.cache",
   "Platforms": [
@@ -31,6 +31,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{BEF49792-CE6E-51B5-3336-75ADD21B1ACA}"
+  "FileHash": "{4715EED9-6E85-56E6-E13E-34073D3C8A00}"
  }
 }
