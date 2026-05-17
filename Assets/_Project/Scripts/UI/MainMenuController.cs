@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+using UnityEngine.UI;
+using System.Collections;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -8,55 +9,71 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private string mainMenuSceneName = "MainMenu";
     [SerializeField] private string firstGameSceneName = "Scene1";
 
-    [Header("Audio Settings UI")]
-    [SerializeField] private List<GameObject> objectsToDisable;
-    [SerializeField] private List<GameObject> objectsToEnable;
+    [Header("Menu Panels")]
+    [SerializeField] private GameObject mainPanel;
+    [SerializeField] private GameObject audioSettingsPanel;
+
+    [Header("Buttons")]
+    [SerializeField] private Button continueButton;
+
+    [Header("Wwise")]
+    [SerializeField] private AK.Wwise.Event menuMusicEvent;
+    [SerializeField] private AK.Wwise.Event menuMusicStopEvent;
+
+    // The game scene already loaded when this menu opened.
+    // Null if this is a fresh startup with no prior game session.
+    private string existingGameSceneName;
+    private bool hasExistingGameSession;
+
+    // ── Lifecycle ─────────────────────────────────────────────────────────────
 
     private void Start()
     {
-        Time.timeScale = 0f; // Pause the game logic while in the main menu
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(mainMenuSceneName));
+        Time.timeScale = 0f;
+
+        existingGameSceneName = FindExistingGameScene();
+        hasExistingGameSession = !string.IsNullOrEmpty(existingGameSceneName);
+
+        // Grey out Continue if there is nothing to continue
+        if (continueButton != null)
+            continueButton.interactable = hasExistingGameSession;
+
+        SetPanel(mainPanel, true);
+        SetPanel(audioSettingsPanel, false);
+
+        if (menuMusicEvent != null)
+            menuMusicEvent.Post(gameObject);
     }
+
+    // ── New Game ──────────────────────────────────────────────────────────────
 
     public void NewGame()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(firstGameSceneName);
+        StartCoroutine(LoadFreshGame());
     }
+
+    // ── Continue ──────────────────────────────────────────────────────────────
 
     public void ContinueGame()
     {
-        Scene gameScene = GetBackgroundGameScene();
-
-        if (gameScene.IsValid())
+        if (!hasExistingGameSession)
         {
-            // Hand environmental control back to the game level
-            SceneManager.SetActiveScene(gameScene);
-
-            // Unfreeze the game logic
-            Time.timeScale = 1f;
-
-            // Remove the menu overlay
-            SceneManager.UnloadSceneAsync(mainMenuSceneName);
+            NewGame();
+            return;
         }
+
+        StartCoroutine(ResumeExistingGame());
     }
 
-    private Scene GetBackgroundGameScene()
-    {
-        for (int i = 0; i < SceneManager.sceneCount; i++)
-        {
-            Scene s = SceneManager.GetSceneAt(i);
-            if (s.isLoaded && s.name != mainMenuSceneName)
-                return s;
-        }
-        return default;
-    }
+    // ── Audio Settings ────────────────────────────────────────────────────────
 
     public void OpenAudioSettings(bool enable)
     {
-        objectsToDisable.ForEach(obj => obj.SetActive(!enable));
-        objectsToEnable.ForEach(obj => obj.SetActive(enable));
+        SetPanel(audioSettingsPanel, enable);
+        SetPanel(mainPanel, !enable);
     }
+
+    // ── Quit ─────────────────────────────────────────────────────────────────
 
     public void QuitGame()
     {
@@ -64,5 +81,71 @@ public class MainMenuController : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+
+    // ── Private ───────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Unloads any existing game scene, loads Level1 fresh, unloads menu.
+    /// </summary>
+    private IEnumerator LoadFreshGame()
+    {
+        StopMenuMusic();
+
+        if (hasExistingGameSession)
+            yield return SceneManager.UnloadSceneAsync(existingGameSceneName);
+
+        yield return SceneManager.LoadSceneAsync(
+            firstGameSceneName, LoadSceneMode.Additive);
+
+        SceneManager.SetActiveScene(
+            SceneManager.GetSceneByName(firstGameSceneName));
+
+        SceneManager.UnloadSceneAsync(mainMenuSceneName);
+
+        Time.timeScale = 1f;
+    }
+
+    /// <summary>
+    /// Makes the frozen game scene active again and unloads the menu.
+    /// Everything in the game scene is exactly where the player left it.
+    /// </summary>
+    private IEnumerator ResumeExistingGame()
+    {
+        StopMenuMusic();
+
+        SceneManager.SetActiveScene(
+            SceneManager.GetSceneByName(existingGameSceneName));
+
+        yield return SceneManager.UnloadSceneAsync(mainMenuSceneName);
+
+        Time.timeScale = 1f;
+    }
+
+    /// <summary>
+    /// Returns the name of any loaded scene that is not the MainMenu.
+    /// Returns null if only the MainMenu is loaded (fresh startup, no game yet).
+    /// </summary>
+    private string FindExistingGameScene()
+    {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene s = SceneManager.GetSceneAt(i);
+            if (s.isLoaded && s.name != mainMenuSceneName)
+                return s.name;
+        }
+        return null;
+    }
+
+    private void StopMenuMusic()
+    {
+        if (menuMusicStopEvent != null)
+            menuMusicStopEvent.Post(gameObject);
+    }
+
+    private void SetPanel(GameObject panel, bool active)
+    {
+        if (panel != null)
+            panel.SetActive(active);
     }
 }
