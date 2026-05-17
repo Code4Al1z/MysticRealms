@@ -14,7 +14,6 @@ public class WispEnemy : BaseEnemy
 
     [Header("Wwise")]
     [SerializeField] private AK.Wwise.Event wispAmbientEvent;
-    [SerializeField] private AK.Wwise.Event wispAmbientStopEvent;
 
     [Header("Components")]
     [SerializeField] private WispEchoPulseHandler echoPulseHandler;
@@ -25,7 +24,9 @@ public class WispEnemy : BaseEnemy
 
     private float hoverTimer = 0f;
     private float hoverBaseY;
-    private bool ambientPlaying = false;
+
+    // Store the playing ID so we can stop this exact voice instance
+    private uint ambientPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
 
     protected override void Awake()
     {
@@ -35,20 +36,13 @@ public class WispEnemy : BaseEnemy
 
     protected override void Start()
     {
-        // Save the placed Y BEFORE base.Start() runs.
-        // base.Start() enables the NavMeshAgent which snaps transform down to the
-        // NavMesh surface as a side effect. Saving first means hoverBaseY holds
-        // the height you placed the wisp at in the scene, not the ground Y.
         hoverBaseY = transform.position.y;
 
         base.Start();
 
-        // Tell the agent not to control Y at all.
-        // Do NOT assign agent.baseOffset here — leave the Inspector value alone.
         agent.updateUpAxis = false;
         agent.updateRotation = false;
 
-        // Restore our saved Y in case the agent pulled us down.
         Vector3 pos = transform.position;
         pos.y = hoverBaseY;
         transform.position = pos;
@@ -72,7 +66,6 @@ public class WispEnemy : BaseEnemy
         if (wispPatrolPoints == null || wispPatrolPoints.Length == 0) return;
         if (!agent.enabled || !agent.isOnNavMesh) return;
 
-        // Force destination Y to match current Y so the agent only steers XZ.
         Vector3 target = wispPatrolPoints[currentPatrolIndex].position;
         target.y = transform.position.y;
         agent.SetDestination(target);
@@ -89,8 +82,6 @@ public class WispEnemy : BaseEnemy
 
     protected override void OnEnemyUpdate()
     {
-        // Hover runs first and writes Y. Charge runs second but only touches XZ,
-        // so the two never conflict. Y is hover's exclusively.
         UpdateHover();
         chargeHandler.Tick();
         echoPulseHandler.Tick();
@@ -138,21 +129,25 @@ public class WispEnemy : BaseEnemy
 
     private void StartAmbientLoop()
     {
-        if (wispAmbientEvent == null || ambientPlaying) return;
-        wispAmbientEvent.Post(gameObject);
-        ambientPlaying = true;
+        if (wispAmbientEvent == null) return;
+        if (ambientPlayingID != AkUnitySoundEngine.AK_INVALID_PLAYING_ID) return;
+
+        // Store the playing ID so StopAmbientLoop can kill this exact voice.
+        ambientPlayingID = wispAmbientEvent.Post(gameObject);
+        Debug.LogWarning($"Wisp started ambient loop with playing ID {ambientPlayingID}");
     }
 
     private void StopAmbientLoop()
     {
-        if (wispAmbientStopEvent == null || !ambientPlaying) return;
-        wispAmbientStopEvent.Post(gameObject);
-        ambientPlaying = false;
+        if (ambientPlayingID == AkUnitySoundEngine.AK_INVALID_PLAYING_ID) return;
+
+        // Stop this specific playing instance with a short fade
+        AkUnitySoundEngine.StopPlayingID(ambientPlayingID, 300);
+        ambientPlayingID = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
     }
 
     private void UpdateHover()
     {
-        // Sole owner of transform.position.y. Always runs — charge only touches XZ.
         hoverTimer += Time.deltaTime * hoverFrequency * Mathf.PI * 2f;
         Vector3 pos = transform.position;
         pos.y = hoverBaseY + Mathf.Sin(hoverTimer) * hoverAmplitude;
@@ -161,8 +156,14 @@ public class WispEnemy : BaseEnemy
 
     private void CleanupBody()
     {
-        if (this != null && gameObject != null)
-            Destroy(gameObject);
+        if (this == null || gameObject == null) return;
+
+        // Belt-and-braces: stop the loop by playing ID first, then kill all
+        // remaining voices on this object before Unity destroys it.
+        StopAmbientLoop();
+        AkUnitySoundEngine.StopAll(gameObject);
+
+        Destroy(gameObject);
     }
 
     protected override void OnDrawGizmos()
