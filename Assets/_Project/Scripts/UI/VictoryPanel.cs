@@ -5,17 +5,6 @@ using TMPro;
 public class VictoryPanel : MonoBehaviour
 {
     [SerializeField] private TMP_Text summaryText;
-    [SerializeField] private Button   continueButton;
-    [SerializeField] private Button   mainMenuButton;
-
-    private void Awake()
-    {
-        if (continueButton != null)
-            continueButton.onClick.AddListener(OnContinue);
-        if (mainMenuButton != null)
-            mainMenuButton.onClick.AddListener(OnMainMenu);
-        gameObject.SetActive(false);
-    }
 
     private void OnEnable()
     {
@@ -27,20 +16,12 @@ public class VictoryPanel : MonoBehaviour
             summaryText.text = $"Collectables gathered: {ph.Collectables}";
     }
 
-    private void OnDestroy()
-    {
-        if (continueButton != null)
-            continueButton.onClick.RemoveListener(OnContinue);
-        if (mainMenuButton != null)
-            mainMenuButton.onClick.RemoveListener(OnMainMenu);
-    }
-
-    private void OnContinue()
+    public void OnContinue()
     {
         if (GameManager.Instance == null) return;
         GameManager.Instance.LoadNextLevel();
     }
-    private void OnMainMenu()
+    public void OnMainMenu()
     { 
         if (GameManager.Instance == null) return;
         GameManager.Instance.LoadMainMenu();
