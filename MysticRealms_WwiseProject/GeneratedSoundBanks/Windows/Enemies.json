@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{6D21033C-4256-47C1-BF54-1B1B2E4A89FE}",
     "Language": "SFX",
-    "Hash": "{F4F8918A-BAF1-9822-398B-F80277B68156}",
+    "Hash": "{151CE61E-A9F0-F0CA-A4CB-0A835730708F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Enemies",
     "ShortName": "Enemies",
     "Path": "Enemies.bnk",
@@ -406,7 +406,7 @@
       "Name": "Play_Enemy_Hit_Wisp",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Enemy_Hit_Wisp",
       "GUID": "{04F78477-4BCB-4237-913E-C289C2B8F9DC}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "0.93451",
       "DurationMax": "0.93451",
@@ -690,7 +690,7 @@
       "Name": "Play_Wisp_Ambient",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Wisp_Ambient",
       "GUID": "{B28084B4-900C-464A-A13B-37F0F626FD4C}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "20",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -703,7 +703,7 @@
       "Name": "Play_Wisp_Charge",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Wisp_Charge",
       "GUID": "{71F139C5-2D08-413B-970D-9E3C1F77FFAF}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "0.15",
       "DurationMax": "0.15",
@@ -726,7 +726,7 @@
       "Name": "Play_Wisp_PulseHit",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Wisp_PulseHit",
       "GUID": "{4D759606-B2E4-45C8-96E1-6239E1533D36}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "1.2",
       "DurationMax": "1.2",
@@ -741,7 +741,7 @@
       "Name": "Play_Wisp_Recover",
       "ObjectPath": "\\Events\\Default Work Unit\\Enemies\\Wisp\\Play_Wisp_Recover",
       "GUID": "{CC8721B0-8E52-4DA6-BEF5-3E83434C6F0B}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "20",
       "DurationType": "OneShot",
       "DurationMin": "0.3",
       "DurationMax": "0.3",
@@ -846,6 +846,6 @@
     ]
    }
   ],
-  "FileHash": "{401BCF29-7886-528F-A160-C46C96DC9751}"
+  "FileHash": "{074DE428-5057-B845-54DB-549513FF7D32}"
  }
 }

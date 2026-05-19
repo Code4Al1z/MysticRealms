@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9049C164-88B0-4D9B-A332-D9DF8F5D3A0B}",
     "Language": "SFX",
-    "Hash": "{DD4005A5-8ECB-43FC-200C-1529809BC5E2}",
+    "Hash": "{646407AC-E8F0-DCE9-7574-6A170792A72E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Environment_Bank",
     "ShortName": "Environment_Bank",
     "Path": "Environment_Bank.bnk",
@@ -608,6 +608,6 @@
     ]
    }
   ],
-  "FileHash": "{AC32E9E7-10CA-F023-1C1D-D5000775BEBE}"
+  "FileHash": "{43EF7CE6-9EFC-52DB-BFB1-EE2BBBB82C72}"
  }
 }

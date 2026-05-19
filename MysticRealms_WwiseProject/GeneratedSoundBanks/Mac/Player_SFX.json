@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{07D70A79-D52D-41FD-85B7-DE6DE329538B}",
     "Language": "SFX",
-    "Hash": "{60B00330-EDB1-4B6D-859C-616DF4120494}",
+    "Hash": "{0E916061-94AE-3727-BF92-D9B7A1E43353}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Player_SFX",
     "ShortName": "Player_SFX",
     "Path": "Player_SFX.bnk",
@@ -796,6 +796,6 @@
     ]
    }
   ],
-  "FileHash": "{78E07DF1-F2DF-8211-5E72-5396B5B4E573}"
+  "FileHash": "{8A6A7063-EA71-4EB5-C856-496F597CA0BC}"
  }
 }
