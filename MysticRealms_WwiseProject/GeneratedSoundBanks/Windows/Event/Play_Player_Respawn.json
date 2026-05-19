@@ -1,0 +1,51 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "4238880044",
+    "Type": "Event",
+    "GUID": "{C0F2441A-9E97-49AF-80E8-908ED0DEBFC0}",
+    "Language": "SFX",
+    "Hash": "{0308272D-5C30-7134-C67A-EF83BA24E34D}",
+    "ObjectPath": "Play_Player_Respawn",
+    "ShortName": "Play_Player_Respawn",
+    "Path": "Event/Play_Player_Respawn.bnk",
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "500053517",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Player\\Player_Respawn\\Sine",
+       "GUID": "{659800D3-2BD6-426A-A972-BC186FA0B61E}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "4238880044",
+      "Name": "Play_Player_Respawn",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerHealth\\Play_Player_Respawn",
+      "GUID": "{C0F2441A-9E97-49AF-80E8-908ED0DEBFC0}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.56568545",
+      "DurationMax": "0.56568545",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "500053517"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{E7A0A53D-DED8-30C4-F635-5BBDBC92020E}"
+ }
+}

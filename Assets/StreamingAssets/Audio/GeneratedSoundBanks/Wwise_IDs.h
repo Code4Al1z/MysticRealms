@@ -32,6 +32,10 @@ namespace AK
         static const AkUniqueID PLAY_PLATFORM_STARTMOVE = 3318357497U;
         static const AkUniqueID PLAY_PLATFORM_STOPMOVE = 4046392273U;
         static const AkUniqueID PLAY_PLATFORM_TRAVELLOOP = 411136912U;
+        static const AkUniqueID PLAY_PLAYER_COLLECT = 674059414U;
+        static const AkUniqueID PLAY_PLAYER_DEATH = 1835085974U;
+        static const AkUniqueID PLAY_PLAYER_HURT = 887999531U;
+        static const AkUniqueID PLAY_PLAYER_RESPAWN = 4238880044U;
         static const AkUniqueID PLAY_RESONANCEDOOR_CLOSE = 3367557195U;
         static const AkUniqueID PLAY_RESONANCEDOOR_OPEN = 616110093U;
         static const AkUniqueID PLAY_RESONANCEHUM_DEPLETED = 4169607118U;
@@ -42,6 +46,7 @@ namespace AK
         static const AkUniqueID PLAY_WISP_PULSEHIT = 2427205888U;
         static const AkUniqueID PLAY_WISP_RECOVER = 2206622046U;
         static const AkUniqueID PLAYER_FOOTSTEP = 2453392179U;
+        static const AkUniqueID PLAYER_HEALTHPERCENT = 567901342U;
         static const AkUniqueID PLAYER_LAND = 3629196698U;
         static const AkUniqueID STOP_WISP_AMBIENT = 2434584008U;
     } // namespace EVENTS
@@ -96,6 +101,7 @@ namespace AK
         static const AkUniqueID ECHOPULSE_FREQUENCY = 3773845682U;
         static const AkUniqueID GOLEM_SPEED = 4071059179U;
         static const AkUniqueID LAMP_ENERGY = 2086212122U;
+        static const AkUniqueID PLAYER_HEALTHPERCENT = 567901342U;
         static const AkUniqueID PLAYER_SPEED = 1062779386U;
         static const AkUniqueID RESONANCEHUM_ENERGY = 3818301486U;
         static const AkUniqueID RESONANCEHUM_INTENSITY = 1925913377U;

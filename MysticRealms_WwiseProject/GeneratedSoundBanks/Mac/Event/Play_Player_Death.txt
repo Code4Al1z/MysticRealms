@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1835085974	Play_Player_Death			\Default Work Unit\PlayerHealth\Play_Player_Death	
+

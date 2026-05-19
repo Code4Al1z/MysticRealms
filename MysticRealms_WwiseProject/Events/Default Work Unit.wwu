@@ -587,6 +587,91 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="PlayerHealth" ID="{43582780-3636-44EB-96E7-F284111E54D2}" ShortID="770948732">
+					<ChildrenList>
+						<Event Name="Play_Player_Hurt" ID="{480CD5EB-6AF0-4133-AA62-58BDDA8908AF}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{68BDA51D-D9C7-49B9-835F-8F5FF8E5A86F}" ShortID="265517866">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Hurt_Random" ID="{7E40441F-C754-4D5B-BCB8-E46163BF34A7}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Player_Death" ID="{3C2A304F-1FFA-495F-839B-67D30A2CEF7C}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{37D8EF1E-BFB5-4D9D-963B-89E2E11A1223}" ShortID="402677623">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Death_01" ID="{827166BA-DBDE-47A8-885B-C9E5585F9FB8}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Player_Respawn" ID="{C0F2441A-9E97-49AF-80E8-908ED0DEBFC0}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{4A6CDDED-0A14-434E-A445-303227992FAD}" ShortID="360513746">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Respawn" ID="{70615EB9-8048-4426-9D48-94E2B3138919}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Player_Collect" ID="{EB8F53E1-C7FF-4B94-A277-7B1A5A14765D}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{1621C204-84FC-4CBB-8570-26A24125432D}" ShortID="319813676">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Collect" ID="{AE229096-C77C-4649-BA56-52E9D75E91E9}" WorkUnitID="{F310E033-BC08-425F-8B3C-1DE34E135FF1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Player_HealthPercent" ID="{316A3815-05BE-4C88-901D-14216AB3AE71}">
+							<PropertyList>
+								<Property Name="LimitScope" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

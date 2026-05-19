@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	674059414	Play_Player_Collect			\Default Work Unit\PlayerHealth\Play_Player_Collect	
+

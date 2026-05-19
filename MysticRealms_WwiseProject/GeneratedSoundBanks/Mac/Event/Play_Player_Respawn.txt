@@ -1,0 +1,9 @@
+Event	ID	Name			Wwise Object Path	Notes
+	4238880044	Play_Player_Respawn			\Default Work Unit\PlayerHealth\Play_Player_Respawn	
+
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	832204567	Modulator Envelope (Custom)				
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	500053517	Sine	Wwise Sine		\Containers\Default Work Unit\Player\Player_Respawn\Sine	
+

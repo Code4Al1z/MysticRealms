@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "567901342",
+    "Type": "Event",
+    "GUID": "{316A3815-05BE-4C88-901D-14216AB3AE71}",
+    "Language": "SFX",
+    "Hash": "{10BE2DE8-8DEF-8BF0-2BC4-EFD0398F018E}",
+    "ObjectPath": "Player_HealthPercent",
+    "ShortName": "Player_HealthPercent",
+    "Path": "Event/Player_HealthPercent.bnk",
+    "Events": [
+     {
+      "Id": "567901342",
+      "Name": "Player_HealthPercent",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerHealth\\Player_HealthPercent",
+      "GUID": "{316A3815-05BE-4C88-901D-14216AB3AE71}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{77AA962F-A7F6-9887-557E-3168701F3F15}"
+ }
+}

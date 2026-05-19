@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1835085974",
+    "Type": "Event",
+    "GUID": "{3C2A304F-1FFA-495F-839B-67D30A2CEF7C}",
+    "Language": "SFX",
+    "Hash": "{53A69A04-C753-6DF1-C5DA-3EBCD3D5719D}",
+    "ObjectPath": "Play_Player_Death",
+    "ShortName": "Play_Player_Death",
+    "Path": "Event/Play_Player_Death.bnk",
+    "Media": [
+     {
+      "Id": "627874710",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Player_Death_01.wav",
+      "Path": "Media/627874710.wem",
+      "CachePath": "4A/{4A387C24-29B8-C16F-ECBF-C58E31142057}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1835085974",
+      "Name": "Play_Player_Death",
+      "ObjectPath": "\\Events\\Default Work Unit\\PlayerHealth\\Play_Player_Death",
+      "GUID": "{3C2A304F-1FFA-495F-839B-67D30A2CEF7C}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1326492",
+      "DurationMax": "1.1326492",
+      "MediaRefs": [
+       {
+        "Id": "627874710"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C8841470-FD55-81CD-2B7F-45EEBACEB3E0}"
+ }
+}
