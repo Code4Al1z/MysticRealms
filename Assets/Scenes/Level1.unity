@@ -10072,23 +10072,23 @@ MonoBehaviour:
   takeDamageEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 9e755095c9666384d927337750183ffe, type: 2}
   deathEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 9fb9c6c0e548f684eacc5452f853c08a, type: 2}
   respawnEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: e3523bae2cf7df44f9a49fc773960a09, type: 2}
   collectEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 55e48d58a1bfb83488b95bd1c18ab9a8, type: 2}
   healthPercentRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: be42b0f2dfc7e6a48a8115921ddbb12c, type: 2}
   enableDebugLog: 1
 --- !u!114 &1171630552
 MonoBehaviour:
