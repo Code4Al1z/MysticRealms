@@ -1,0 +1,9 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2737599675	Play_Portal_Enter			\Default Work Unit\Play_Portal_Enter	
+
+Effect plug-ins	ID	Name	Type				Notes
+	253902652	Flanger (Custom)	Wwise Flanger			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	523700838	Sine	Wwise Sine		\Containers\Default Work Unit\Portal\Portal_Enter\Sine	
+

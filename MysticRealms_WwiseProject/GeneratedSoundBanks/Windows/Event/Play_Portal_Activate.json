@@ -1,0 +1,62 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3707994708",
+    "Type": "Event",
+    "GUID": "{BAF45D72-8E0D-44A2-84C6-CF8E44981CF5}",
+    "Language": "SFX",
+    "Hash": "{613BFC3C-64C1-99C9-3E84-08139D2E7F7F}",
+    "ObjectPath": "Play_Portal_Activate",
+    "ShortName": "Play_Portal_Activate",
+    "Path": "Event/Play_Portal_Activate.bnk",
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "477588361",
+       "Name": "RoomVerb (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Portal\\Portal_Activate\\[Effect Slot [0]: (RoomVerb)]\\RoomVerb (Custom)",
+       "GUID": "{29537B08-B0DE-4B62-B870-982F783CE4B0}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "852113054",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Portal\\Portal_Activate\\Sine",
+       "GUID": "{DE5BB070-06B0-4F3C-8D1F-8CCCFDBC4A8F}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "3707994708",
+      "Name": "Play_Portal_Activate",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Portal_Activate",
+      "GUID": "{BAF45D72-8E0D-44A2-84C6-CF8E44981CF5}",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "1",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "477588361"
+        },
+        {
+         "Id": "852113054"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{9155261A-F0EE-E65E-0496-919430E89DE9}"
+ }
+}

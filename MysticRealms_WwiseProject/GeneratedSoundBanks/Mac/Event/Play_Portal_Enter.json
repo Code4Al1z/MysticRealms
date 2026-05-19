@@ -1,0 +1,62 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2737599675",
+    "Type": "Event",
+    "GUID": "{7779BB32-CFCE-4EE7-94EA-9C600D89F59F}",
+    "Language": "SFX",
+    "Hash": "{0FF97A7E-E78F-2F09-A9C2-4F2A94E00C97}",
+    "ObjectPath": "Play_Portal_Enter",
+    "ShortName": "Play_Portal_Enter",
+    "Path": "Event/Play_Portal_Enter.bnk",
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "253902652",
+       "Name": "Flanger (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Portal\\Portal_Enter\\[Effect Slot [0]: (Flanger)]\\Flanger (Custom)",
+       "GUID": "{B2125908-8F6A-4788-977D-377570E7A8EF}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      },
+      {
+       "Id": "523700838",
+       "Name": "Sine",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Portal\\Portal_Enter\\Sine",
+       "GUID": "{6FDCA289-BF2B-43C7-A37F-2FDB23044F6F}",
+       "LibName": "Wwise Sine",
+       "LibId": "6553602"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "2737599675",
+      "Name": "Play_Portal_Enter",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Portal_Enter",
+      "GUID": "{7779BB32-CFCE-4EE7-94EA-9C600D89F59F}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0412621",
+      "DurationMax": "1.0412621",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "253902652"
+        },
+        {
+         "Id": "523700838"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{E6FBE22E-CB9D-1BFA-166E-C65DE5B6DD5D}"
+ }
+}

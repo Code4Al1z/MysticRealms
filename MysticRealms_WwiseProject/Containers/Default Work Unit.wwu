@@ -7,6 +7,104 @@
 				<WorkUnit Name="Environment" ID="{DFBBB1F9-9AC5-4DF9-BF41-67AE351F1195}" PersistMode="Reference"/>
 				<WorkUnit Name="PlayerAbilities" ID="{DC53ACE3-25CF-4934-9F44-10D2701E15DD}" PersistMode="Reference"/>
 				<WorkUnit Name="Enemies" ID="{C4B81293-275F-4562-9072-B5AC8688BFB9}" PersistMode="Reference"/>
+				<Folder Name="Portal" ID="{6BAEAC9E-FF11-4EB2-AEE4-8E6A0A953410}" ShortID="839728521">
+					<ChildrenList>
+						<Sound Name="Portal_Activate" ID="{6F81E0C2-0C65-4BE3-85B5-F43FF5AF8771}" ShortID="89484348">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Sine" ID="{DE5BB070-06B0-4F3C-8D1F-8CCCFDBC4A8F}" ShortID="852113054" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+									<PropertyList>
+										<Property Name="SineFrequency" Type="Real32" Value="200"/>
+										<Property Name="SineGain" Type="Real32" Value="-6"/>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{A8283290-6AE0-4565-B9E8-6008620AFBA6}" ShortID="910179954">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="RoomVerb (Custom)" ID="{29537B08-B0DE-4B62-B870-982F783CE4B0}" ShortID="477588361" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<PropertyList>
+															<Property Name="DryLevel" Type="Real32" Value="0"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Sine" ID="{DE5BB070-06B0-4F3C-8D1F-8CCCFDBC4A8F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Portal_Enter" ID="{4B7B61F0-A0D8-46B2-B1C4-4966DEBF93C0}" ShortID="786252746">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-70</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Sine" ID="{6FDCA289-BF2B-43C7-A37F-2FDB23044F6F}" ShortID="523700838" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+									<PropertyList>
+										<Property Name="SineFrequency" Type="Real32" Value="300"/>
+										<Property Name="SineGain" Type="Real32" Value="-6"/>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{16428206-AB39-4491-AEC4-C66ED89816BF}" ShortID="163535413">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Flanger (Custom)" ID="{B2125908-8F6A-4788-977D-377570E7A8EF}" ShortID="253902652" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
+														<PropertyList>
+															<Property Name="ModDepth" Type="Real32" Value="35"/>
+															<Property Name="ModFrequency" Type="Real32" Value="5"/>
+															<Property Name="ModSmoothing" Type="Real32" Value="22"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Sine" ID="{6FDCA289-BF2B-43C7-A37F-2FDB23044F6F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

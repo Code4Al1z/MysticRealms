@@ -36,6 +36,8 @@ namespace AK
         static const AkUniqueID PLAY_PLAYER_DEATH = 1835085974U;
         static const AkUniqueID PLAY_PLAYER_HURT = 887999531U;
         static const AkUniqueID PLAY_PLAYER_RESPAWN = 4238880044U;
+        static const AkUniqueID PLAY_PORTAL_ACTIVATE = 3707994708U;
+        static const AkUniqueID PLAY_PORTAL_ENTER = 2737599675U;
         static const AkUniqueID PLAY_RESONANCEDOOR_CLOSE = 3367557195U;
         static const AkUniqueID PLAY_RESONANCEDOOR_OPEN = 616110093U;
         static const AkUniqueID PLAY_RESONANCEHUM_DEPLETED = 4169607118U;
