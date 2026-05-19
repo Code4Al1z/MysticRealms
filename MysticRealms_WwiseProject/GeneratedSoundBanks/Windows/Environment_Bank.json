@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{9049C164-88B0-4D9B-A332-D9DF8F5D3A0B}",
     "Language": "SFX",
-    "Hash": "{B58C954A-0B44-D882-0F73-219A418311B3}",
+    "Hash": "{DD4005A5-8ECB-43FC-200C-1529809BC5E2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Environment_Bank",
     "ShortName": "Environment_Bank",
     "Path": "Environment_Bank.bnk",
@@ -187,6 +187,14 @@
        "LibId": "6553602"
       },
       {
+       "Id": "870217544",
+       "Name": "Tremolo (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Filling\\[Effect Slot [1]: (Tremolo)]\\Tremolo (Custom)",
+       "GUID": "{DCC44B5D-2DE0-4AC9-A1FB-14B956D2ED9D}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      },
+      {
        "Id": "872248243",
        "Name": "Sine",
        "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Empty\\Lamp_Empty_01\\Sine",
@@ -217,6 +225,14 @@
        "GUID": "{4AA03476-E8EE-4E6C-8B48-B63FA13DFF49}",
        "LibName": "Wwise Sine",
        "LibId": "6553602"
+      },
+      {
+       "Id": "967718081",
+       "Name": "Matrix Reverb (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Environment\\Lamp\\Lamp_Empty\\[Effect Slot [1]: (Matrix Reverb)]\\Matrix Reverb (Custom)",
+       "GUID": "{F4C509FC-6DA6-4296-9841-CFE92284A45D}",
+       "LibName": "Wwise Matrix Reverb",
+       "LibId": "7536643"
       },
       {
        "Id": "1037976615",
@@ -345,7 +361,7 @@
       "Name": "Play_Lamp_Depleting",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Depleting",
       "GUID": "{2D080E10-56DD-4965-AE0E-AA74025CE3BA}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "25",
       "DurationType": "Infinite",
       "PluginRefs": {
        "Custom": [
@@ -363,7 +379,7 @@
       "Name": "Play_Lamp_Empty",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Empty",
       "GUID": "{31ADA175-E08F-4BBB-BCBC-7BA58804D6B3}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "25",
       "DurationType": "OneShot",
       "DurationMin": "1",
       "DurationMax": "1",
@@ -371,6 +387,9 @@
        "Custom": [
         {
          "Id": "872248243"
+        },
+        {
+         "Id": "967718081"
         }
        ],
        "ShareSets": [
@@ -385,12 +404,15 @@
       "Name": "Play_Lamp_Filling",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Filling",
       "GUID": "{EFB8782A-AE34-4D69-A4BE-1AE191EC7C91}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "25",
       "DurationType": "Infinite",
       "PluginRefs": {
        "Custom": [
         {
          "Id": "586149596"
+        },
+        {
+         "Id": "870217544"
         },
         {
          "Id": "940870896"
@@ -403,7 +425,7 @@
       "Name": "Play_Lamp_Full",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Lamp\\Play_Lamp_Full",
       "GUID": "{A05A401D-489F-4282-856A-65DD59E570F9}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "25",
       "DurationType": "OneShot",
       "DurationMin": "1",
       "DurationMax": "1",
@@ -586,6 +608,6 @@
     ]
    }
   ],
-  "FileHash": "{2A9DCC1C-7F6E-2123-FECC-B275CDAEFA42}"
+  "FileHash": "{708364C4-1E33-6D51-BF3B-0C2C11FDDBA2}"
  }
 }

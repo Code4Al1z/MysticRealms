@@ -133,7 +133,7 @@
 				</Attenuation>
 				<Attenuation Name="Lamp_Attenuation" ID="{94E9C02C-62EB-4C1B-AE01-B080219C92F7}" ShortID="388721678">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="15"/>
+						<Property Name="RadiusMax" Type="Real64" Value="25"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -149,13 +149,13 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>3</XPos>
+											<XPos>12.5</XPos>
 											<YPos>0</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>Log1</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>15</XPos>
+											<XPos>25</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -182,13 +182,13 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>5</XPos>
+											<XPos>12.5</XPos>
 											<YPos>0</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>Exp1</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>15</XPos>
+											<XPos>25</XPos>
 											<YPos>60</YPos>
 											<Flags>37</Flags>
 										</Point>

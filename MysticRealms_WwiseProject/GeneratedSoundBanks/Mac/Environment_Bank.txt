@@ -36,8 +36,10 @@ Effect plug-ins	ID	Name	Type				Notes
 	369804542	Lamp_Full_RoomVerb (Custom)	Wwise RoomVerb			
 	386532778	Lamp_Depleting_Tremolo (Custom)	Wwise Tremolo			
 	401304084	ResonanceHum_Stop_RoomVerb (Custom)	Wwise RoomVerb			
+	870217544	Tremolo (Custom)	Wwise Tremolo			
 	919275421	ResonanceHum_Start_Guitar_Distortion (Custom)	Wwise Guitar Distortion			
 	940870896	Lamp_Filling_Guitar_Distortion (Custom)	Wwise Guitar Distortion			
+	967718081	Matrix Reverb (Custom)	Wwise Matrix Reverb			
 	1037976615	EchoPulse_Start_Flanger (Custom)	Wwise Flanger			
 	2029104418	ResonanceHum_Depleted_Guitar_Distortion	Wwise Guitar Distortion			
 	4150311356	Lamp_Empty_Guitar_Distortion	Wwise Guitar Distortion			

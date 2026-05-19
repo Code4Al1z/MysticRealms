@@ -389,6 +389,11 @@
 						<RandomSequenceContainer Name="Lamp_Full" ID="{CF5F4AB4-9D76-4CEB-A2B7-559EBA83D53E}" ShortID="12183842">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>8</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -448,6 +453,11 @@
 						<RandomSequenceContainer Name="Lamp_Empty" ID="{C4F88B04-FD10-4327-939E-C048423A692D}" ShortID="848779160">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -493,6 +503,21 @@
 											</Reference>
 										</ReferenceList>
 									</EffectSlot>
+									<EffectSlot Name="" ID="{582132E7-8FFF-4331-B802-62E51979E8FD}" ShortID="830367554">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Matrix Reverb (Custom)" ID="{F4C509FC-6DA6-4296-9841-CFE92284A45D}" ShortID="967718081" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+														<PropertyList>
+															<Property Name="DryLevel" Type="Real32" Value="-8.3"/>
+															<Property Name="PreDelay" Type="Real32" Value="0.35"/>
+															<Property Name="WetLevel" Type="Real32" Value="-29"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
@@ -500,6 +525,11 @@
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -565,8 +595,11 @@
 													<Effect Name="Lamp_Filling_Guitar_Distortion (Custom)" ID="{AA6DD07D-AD20-4523-BD54-28B5F1D09032}" ShortID="940870896" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
 														<PropertyList>
 															<Property Name="DistortionDrive" Type="Real32" Value="30"/>
+															<Property Name="DistortionTone" Type="Real32" Value="0"/>
 															<Property Name="DistortionType" Type="int32" Value="1"/>
-															<Property Name="WetDryMix" Type="Real32" Value="25"/>
+															<Property Name="OutputLevel" Type="Real32" Value="6.5"/>
+															<Property Name="Rectification" Type="Real32" Value="30"/>
+															<Property Name="WetDryMix" Type="Real32" Value="35"/>
 														</PropertyList>
 														<ObjectLists>
 															<ObjectList Name="RTPC">
@@ -613,6 +646,23 @@
 											</Reference>
 										</ReferenceList>
 									</EffectSlot>
+									<EffectSlot Name="" ID="{40151EC1-63D8-478A-A2F1-7B33C04C9A63}" ShortID="418804517">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Tremolo (Custom)" ID="{DCC44B5D-2DE0-4AC9-A1FB-14B956D2ED9D}" ShortID="870217544" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
+														<PropertyList>
+															<Property Name="ModDepth" Type="Real32" Value="40"/>
+															<Property Name="ModFrequency" Type="Real32" Value="2"/>
+															<Property Name="ModPWM" Type="Real32" Value="98"/>
+															<Property Name="ModSmoothing" Type="Real32" Value="67"/>
+															<Property Name="OutputGain" Type="Real32" Value="5"/>
+														</PropertyList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
 								</ObjectList>
 								<ObjectList Name="RTPC">
 									<RTPC Name="" ID="{09063F56-55A5-4B60-93F4-7D8601DDEA65}" ShortID="721277278">
@@ -634,10 +684,11 @@
 																<XPos>0</XPos>
 																<YPos>-18</YPos>
 																<Flags>5</Flags>
+																<SegmentShape>Log2</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>-6</YPos>
+																<YPos>4</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -684,8 +735,9 @@
 												<Custom CreatedFrom="{44FB637A-BEBF-4A95-AE1F-1788ADD8EE5D}">
 													<Effect Name="Lamp_Depleting_Tremolo (Custom)" ID="{72CDD7BE-A38C-42A3-8763-7B9A46A8B1E4}" ShortID="386532778" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
 														<PropertyList>
-															<Property Name="ModDepth" Type="Real32" Value="20"/>
+															<Property Name="ModDepth" Type="Real32" Value="60"/>
 															<Property Name="ModFrequency" Type="Real32" Value="0.5"/>
+															<Property Name="OutputGain" Type="Real32" Value="11"/>
 														</PropertyList>
 													</Effect>
 												</Custom>
@@ -711,12 +763,12 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>0</YPos>
+																<YPos>-200</YPos>
 																<Flags>21</Flags>
 															</Point>
 															<Point>
 																<XPos>1</XPos>
-																<YPos>0</YPos>
+																<YPos>200</YPos>
 																<Flags>53</Flags>
 															</Point>
 														</PointList>
