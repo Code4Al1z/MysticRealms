@@ -103,10 +103,13 @@ namespace AK
         static const AkUniqueID ECHOPULSE_FREQUENCY = 3773845682U;
         static const AkUniqueID GOLEM_SPEED = 4071059179U;
         static const AkUniqueID LAMP_ENERGY = 2086212122U;
+        static const AkUniqueID MASTER_VOLUME = 4179668880U;
+        static const AkUniqueID MUSIC_VOLUME = 1006694123U;
         static const AkUniqueID PLAYER_HEALTHPERCENT = 567901342U;
         static const AkUniqueID PLAYER_SPEED = 1062779386U;
         static const AkUniqueID RESONANCEHUM_ENERGY = 3818301486U;
         static const AkUniqueID RESONANCEHUM_INTENSITY = 1925913377U;
+        static const AkUniqueID SFX_VOLUME = 1564184899U;
         static const AkUniqueID WISP_PULSESTRESS = 2209950630U;
         static const AkUniqueID WISP_SPEED = 3188202952U;
     } // namespace GAME_PARAMETERS
@@ -130,6 +133,7 @@ namespace AK
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
         static const AkUniqueID MUSIC_BUS = 2680856269U;
         static const AkUniqueID PLAYER_BUS = 1138681361U;
+        static const AkUniqueID SFX_BUS = 213475909U;
         static const AkUniqueID UI_BUS = 3247222208U;
     } // namespace BUSSES
 

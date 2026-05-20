@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{532126AD-0EE0-5593-73C7-D38D307B4820}",
+    "Hash": "{E5E630D5-DDAC-FE0C-E81B-075793C9DC80}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -38,37 +38,43 @@
      {
       "Id": "130819113",
       "Name": "Bus_Platform",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Environment_Bus\\Bus_Platform",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Bus\\Environment_Bus\\Bus_Platform",
       "GUID": "{581FCF3B-04CE-4BEB-83F2-8E9CB218CFA0}"
      },
      {
       "Id": "153992835",
       "Name": "Bus_Doors",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Environment_Bus\\Bus_Doors",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Bus\\Environment_Bus\\Bus_Doors",
       "GUID": "{73D2190D-99AD-45B7-8245-4A62FB656138}"
+     },
+     {
+      "Id": "213475909",
+      "Name": "SFX_Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Bus",
+      "GUID": "{BAD7146C-29E3-403C-9DD2-8DFD2AC84214}"
      },
      {
       "Id": "677043558",
       "Name": "Bus_Lamp",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Environment_Bus\\Bus_Lamp",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Bus\\Environment_Bus\\Bus_Lamp",
       "GUID": "{BCF952BD-0456-4931-9E81-08874D0B3B07}"
      },
      {
       "Id": "1138681361",
       "Name": "Player_Bus",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Player_Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Bus\\Player_Bus",
       "GUID": "{1C9C1EA0-B89B-4720-B3F8-88A439A49D86}"
      },
      {
       "Id": "1411040840",
       "Name": "Enemy_Bus",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Enemy_Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Bus\\Enemy_Bus",
       "GUID": "{839E1EF4-983D-4324-98CE-C89E6BDD62AC}"
      },
      {
       "Id": "1523166483",
       "Name": "Environment_Bus",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Environment_Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Bus\\Environment_Bus",
       "GUID": "{6A31E3DE-FBCD-45CE-BFD7-F3CF8105CD51}"
      },
      {
@@ -86,7 +92,7 @@
      {
       "Id": "3247222208",
       "Name": "UI_Bus",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\UI_Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Bus\\UI_Bus",
       "GUID": "{973E7F18-7E97-448E-8A4D-962DD635CBB4}"
      }
     ],
@@ -98,10 +104,22 @@
       "GUID": "{EADDD761-FC82-4FD7-8603-75E7495A6662}"
      },
      {
+      "Id": "1006694123",
+      "Name": "Music_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_Volume",
+      "GUID": "{F6D4334A-C159-41E4-9914-6948ADE9F805}"
+     },
+     {
       "Id": "1062779386",
       "Name": "Player_Speed",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Speed",
       "GUID": "{A0E3CD82-1EA2-43D3-8B84-159E19A4E667}"
+     },
+     {
+      "Id": "1564184899",
+      "Name": "SFX_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\SFX_Volume",
+      "GUID": "{1C3DA141-D5F8-4BC0-B5CF-8CD50AA067A2}"
      },
      {
       "Id": "1925913377",
@@ -150,6 +168,12 @@
       "Name": "Golem_Speed",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Golem_Speed",
       "GUID": "{024B9D93-0097-407C-A09F-7895089BD84D}"
+     },
+     {
+      "Id": "4179668880",
+      "Name": "Master_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Master_Volume",
+      "GUID": "{2C653807-7472-4F5E-B165-AD09BF6148BA}"
      }
     ],
     "StateGroups": [
@@ -236,6 +260,6 @@
     ]
    }
   ],
-  "FileHash": "{E02CE9EC-D068-72DB-CF52-0267B00F2A78}"
+  "FileHash": "{8A542FFA-7DB3-85B1-94F2-6C602FFBAC0A}"
  }
 }
