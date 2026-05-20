@@ -1,26 +1,46 @@
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
-    private uint playerBankID = 0;
+    [SerializeField] private List<AK.Wwise.Bank> banks = new List<AK.Wwise.Bank>();
 
     void Start()
     {
-        // Init.bnk is auto-loaded by Wwise, so just load Player_SFX
-        AKRESULT playerResult = AkUnitySoundEngine.LoadBank("Player_SFX", out playerBankID);
-        if (playerResult == AKRESULT.AK_Success)
-            Debug.Log("Player_SFX.bnk loaded successfully");
-        else
-            Debug.LogError($"Failed to load Player_SFX.bnk: {playerResult}");
+        for (int i = 0; i < banks.Count; i++)
+        {
+            if (banks[i] != null)
+            {
+                AKRESULT result = AkUnitySoundEngine.LoadBank(banks[i].ToString(), out uint bankID);
+                if (result == AKRESULT.AK_Success)
+                    Debug.Log($"{banks[i].ToString()} loaded successfully");
+                else
+                    Debug.LogError($"Failed to load {banks[i].ToString()}: {result}");
+            }
+            else
+            {
+                Debug.LogWarning($"Bank at index {i} is null, skipping load.");
+            }
+        }
     }
 
     void OnDestroy()
     {
-        if (playerBankID != 0)
+        for (int i = 0;i < banks.Count;i++)
         {
-            AkUnitySoundEngine.UnloadBank(playerBankID, IntPtr.Zero);
-            playerBankID = 0;
+            if (banks[i] != null)
+            {
+                AKRESULT result = AkUnitySoundEngine.UnloadBank(banks[i].ToString(), IntPtr.Zero);
+                if (result == AKRESULT.AK_Success)
+                    Debug.Log($"{banks[i].ToString()} unloaded successfully");
+                else
+                    Debug.LogError($"Failed to unload {banks[i].ToString()}: {result}");
+            }
+            else
+            {
+                Debug.LogWarning($"Bank at index {i} is null, skipping unload.");
+            }
         }
     }
 }
