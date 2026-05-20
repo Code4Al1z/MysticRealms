@@ -11142,15 +11142,15 @@ MonoBehaviour:
   masterVolumeRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c2be39c3d760ea1458960c702ac3e93d, type: 2}
   musicVolumeRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: cec492a427304e645a9f34289921f481, type: 2}
   sfxVolumeRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 1699c4ce4665d794cb146f6507738477, type: 2}
 --- !u!1001 &1266976962
 PrefabInstance:
   m_ObjectHideFlags: 0
