@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{BAF45D72-8E0D-44A2-84C6-CF8E44981CF5}",
     "Language": "SFX",
-    "Hash": "{613BFC3C-64C1-99C9-3E84-08139D2E7F7F}",
+    "Hash": "{DF68FFC7-54AD-2424-A41C-F530D408DFAC}",
     "ObjectPath": "Play_Portal_Activate",
     "ShortName": "Play_Portal_Activate",
     "Path": "Event/Play_Portal_Activate.bnk",
@@ -57,6 +57,6 @@
     ]
    }
   ],
-  "FileHash": "{374B2880-9734-3A49-2678-C009682C0407}"
+  "FileHash": "{971C8EA7-C65F-EF79-F996-3963A2B245FB}"
  }
 }

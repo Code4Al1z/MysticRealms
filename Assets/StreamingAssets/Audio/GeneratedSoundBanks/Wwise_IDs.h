@@ -117,6 +117,7 @@ namespace AK
         static const AkUniqueID ENEMIES = 2242381963U;
         static const AkUniqueID ENVIRONMENT_BANK = 430783581U;
         static const AkUniqueID PLAYER_SFX = 817096458U;
+        static const AkUniqueID UI_BANK = 1839668536U;
     } // namespace BANKS
 
     namespace BUSSES

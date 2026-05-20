@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{7779BB32-CFCE-4EE7-94EA-9C600D89F59F}",
     "Language": "SFX",
-    "Hash": "{0FF97A7E-E78F-2F09-A9C2-4F2A94E00C97}",
+    "Hash": "{C15099DF-84E4-2680-A088-62ECBFE3111E}",
     "ObjectPath": "Play_Portal_Enter",
     "ShortName": "Play_Portal_Enter",
     "Path": "Event/Play_Portal_Enter.bnk",
@@ -57,6 +57,6 @@
     ]
    }
   ],
-  "FileHash": "{E6FBE22E-CB9D-1BFA-166E-C65DE5B6DD5D}"
+  "FileHash": "{D65DCF31-96EB-6941-D623-6AA9C3C0F3D9}"
  }
 }
