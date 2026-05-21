@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private List<AK.Wwise.Bank> banks = new List<AK.Wwise.Bank>();
 
-    void Start()
+    void Awake()
     {
         for (int i = 0; i < banks.Count; i++)
         {
