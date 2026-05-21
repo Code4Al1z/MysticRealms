@@ -1469,6 +1469,7 @@ MonoBehaviour:
   labelColor: {r: 0.92, g: 0.96, b: 1, a: 1}
   labelHoverColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSpeed: 8
+  sounds: {fileID: 0}
 --- !u!4 &224039818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4150401722841622, guid: 6769acf0b2459b24c8dd85185449e35c, type: 3}
@@ -2149,7 +2150,7 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -4984,6 +4985,7 @@ GameObject:
   - component: {fileID: 646250700}
   - component: {fileID: 646250699}
   - component: {fileID: 646250703}
+  - component: {fileID: 646250704}
   m_Layer: 5
   m_Name: GameHUD
   m_TagString: Untagged
@@ -5098,6 +5100,19 @@ MonoBehaviour:
   gameOverPanel: {fileID: 958760396}
   victoryPanel: {fileID: 1243480904}
   levelData: {fileID: 11400000, guid: 98ff4a374ebd5cd4cbbc36857edbed6f, type: 2}
+--- !u!114 &646250704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646250698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf82938704cd5cf4badb086959497bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButtonSoundInitialiser
+  sounds: {fileID: 11400000, guid: 8c4b339d0173ca245bbd4ecb2254cdbe, type: 2}
 --- !u!4 &665823456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4147791387530772, guid: 8c4f8b011efee6947bd048c28fa4facd, type: 3}
@@ -10829,6 +10844,7 @@ MonoBehaviour:
   labelColor: {r: 0.92, g: 0.96, b: 1, a: 1}
   labelHoverColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSpeed: 8
+  sounds: {fileID: 0}
 --- !u!4 &1241679779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4268421217044388, guid: 393b72400b22928418bd19218f43a55a, type: 3}
@@ -12267,6 +12283,7 @@ MonoBehaviour:
   labelColor: {r: 0.92, g: 0.96, b: 1, a: 1}
   labelHoverColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSpeed: 8
+  sounds: {fileID: 0}
 --- !u!1001 &1417003403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13291,6 +13308,7 @@ MonoBehaviour:
   labelColor: {r: 0.92, g: 0.96, b: 1, a: 1}
   labelHoverColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSpeed: 8
+  sounds: {fileID: 0}
 --- !u!1 &1510373909
 GameObject:
   m_ObjectHideFlags: 0
@@ -15463,6 +15481,7 @@ MonoBehaviour:
   labelColor: {r: 0.92, g: 0.96, b: 1, a: 1}
   labelHoverColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSpeed: 8
+  sounds: {fileID: 0}
 --- !u!1001 &1787813502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16687,6 +16706,7 @@ MonoBehaviour:
   labelColor: {r: 0.92, g: 0.96, b: 1, a: 1}
   labelHoverColor: {r: 1, g: 1, b: 1, a: 1}
   transitionSpeed: 8
+  sounds: {fileID: 0}
 --- !u!222 &1989053522
 CanvasRenderer:
   m_ObjectHideFlags: 0
