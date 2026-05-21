@@ -16,10 +16,6 @@ public class MainMenuController : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button continueButton;
 
-    [Header("Wwise")]
-    [SerializeField] private AK.Wwise.Event menuMusicEvent;
-    [SerializeField] private AK.Wwise.Event menuMusicStopEvent;
-
     // The game scene already loaded when this menu opened.
     // Null if this is a fresh startup with no prior game session.
     private string existingGameSceneName;
@@ -41,8 +37,7 @@ public class MainMenuController : MonoBehaviour
         SetPanel(mainPanel, true);
         SetPanel(audioSettingsPanel, false);
 
-        if (menuMusicEvent != null)
-            menuMusicEvent.Post(gameObject);
+        // Music is handled by MusicManager which detects the scene automatically
     }
 
     // ── New Game ──────────────────────────────────────────────────────────────
@@ -90,8 +85,6 @@ public class MainMenuController : MonoBehaviour
     /// </summary>
     private IEnumerator LoadFreshGame()
     {
-        StopMenuMusic();
-
         if (hasExistingGameSession)
             yield return SceneManager.UnloadSceneAsync(existingGameSceneName);
 
@@ -112,8 +105,6 @@ public class MainMenuController : MonoBehaviour
     /// </summary>
     private IEnumerator ResumeExistingGame()
     {
-        StopMenuMusic();
-
         SceneManager.SetActiveScene(
             SceneManager.GetSceneByName(existingGameSceneName));
 
@@ -135,12 +126,6 @@ public class MainMenuController : MonoBehaviour
                 return s.name;
         }
         return null;
-    }
-
-    private void StopMenuMusic()
-    {
-        if (menuMusicStopEvent != null)
-            menuMusicStopEvent.Post(gameObject);
     }
 
     private void SetPanel(GameObject panel, bool active)
