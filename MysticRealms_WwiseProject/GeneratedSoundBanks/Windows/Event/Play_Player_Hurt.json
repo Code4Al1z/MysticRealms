@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{480CD5EB-6AF0-4133-AA62-58BDDA8908AF}",
     "Language": "SFX",
-    "Hash": "{950173B9-ED37-1998-42C6-61D864AC3699}",
+    "Hash": "{A4987A12-AC4D-2989-3ECB-8457E8E863E5}",
     "ObjectPath": "Play_Player_Hurt",
     "ShortName": "Play_Player_Hurt",
     "Path": "Event/Play_Player_Hurt.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Player_Hurt_02.wav",
       "Path": "Media/283054210.wem",
-      "CachePath": "46/{46B6EEB4-F10A-A611-345A-0A41D16A8596}.wem"
+      "CachePath": "1E/{1EB60596-4FB4-EAFA-6FA9-9A3415AED1AB}.wem"
      },
      {
       "Id": "321977027",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "Player_Hurt_03.wav",
       "Path": "Media/321977027.wem",
-      "CachePath": "81/{81D8682D-B52A-78AE-CDFC-001CF0AD3ED3}.wem"
+      "CachePath": "79/{799EB48F-AE65-7A60-27A4-1A45F48B656B}.wem"
      },
      {
       "Id": "1010587345",
@@ -40,7 +40,7 @@
       "Location": "Loose",
       "ShortName": "Player_Hurt_01.wav",
       "Path": "Media/1010587345.wem",
-      "CachePath": "AD/{ADE244D4-9E46-7A7F-6C07-88E6C6AF0B90}.wem"
+      "CachePath": "3B/{3BA3E95B-4F74-AB21-E0EE-FCF3ABEDB129}.wem"
      }
     ],
     "Events": [
@@ -50,8 +50,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\PlayerHealth\\Play_Player_Hurt",
       "GUID": "{480CD5EB-6AF0-4133-AA62-58BDDA8908AF}",
       "DurationType": "OneShot",
-      "DurationMin": "1.2",
-      "DurationMax": "1.2",
+      "DurationMin": "0.15288",
+      "DurationMax": "0.60143",
       "MediaRefs": [
        {
         "Id": "283054210"
@@ -67,6 +67,6 @@
     ]
    }
   ],
-  "FileHash": "{789B6AF7-914B-8962-F01B-0CCD75ED3931}"
+  "FileHash": "{932DA474-A4F0-5D40-7830-E4A3D9CDE8E1}"
  }
 }

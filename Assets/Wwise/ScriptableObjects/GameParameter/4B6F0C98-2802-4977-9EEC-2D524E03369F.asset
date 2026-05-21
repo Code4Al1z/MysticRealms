@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6d30574d8e9a546b1e7b9118c3d17c, type: 3}
+  m_Name: 4B6F0C98-2802-4977-9EEC-2D524E03369F
+  m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseRtpcReference
+  objectName: Kick_Pulse
+  id: 922906845
+  guid: 4B6F0C98-2802-4977-9EEC-2D524E03369F

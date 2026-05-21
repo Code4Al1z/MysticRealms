@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{6D21033C-4256-47C1-BF54-1B1B2E4A89FE}",
     "Language": "SFX",
-    "Hash": "{151CE61E-A9F0-F0CA-A4CB-0A835730708F}",
+    "Hash": "{F39CAA7A-3169-EF9A-C2A2-3EB296BCE0A3}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Enemies",
     "ShortName": "Enemies",
     "Path": "Enemies.bnk",
@@ -774,6 +774,12 @@
     ],
     "GameParameters": [
      {
+      "Id": "1997983146",
+      "Name": "Golem_ResonanceStress",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Golem_ResonanceStress",
+      "GUID": "{6B523B7E-78A5-4482-8596-C977C8DE80F7}"
+     },
+     {
       "Id": "2209950630",
       "Name": "Wisp_PulseStress",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Wisp_PulseStress",
@@ -846,6 +852,6 @@
     ]
    }
   ],
-  "FileHash": "{826DE7DD-728A-6B21-AFA1-8D6F02478FFE}"
+  "FileHash": "{5136FD27-A97A-FC18-915B-29612387376B}"
  }
 }

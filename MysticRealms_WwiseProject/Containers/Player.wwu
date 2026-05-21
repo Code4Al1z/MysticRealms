@@ -1897,6 +1897,11 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Player_Hurt_01" ID="{B2BDFC78-65AB-47C5-87A2-8A6D1659D439}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.39091"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.73978"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Player_Hurt_01.wav</AudioFile>
 									<MediaIDList>
@@ -1919,6 +1924,11 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Player_Hurt_02" ID="{6499FE45-0D96-4273-A0B8-6BDAE6C51717}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.56406"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.71694"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Player_Hurt_02.wav</AudioFile>
 									<MediaIDList>
@@ -1941,6 +1951,11 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Player_Hurt_03" ID="{BEA29DA3-1D9D-48DE-8535-5D1F6E96B95A}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0.59857"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.59857"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Player_Hurt_03.wav</AudioFile>
 									<MediaIDList>

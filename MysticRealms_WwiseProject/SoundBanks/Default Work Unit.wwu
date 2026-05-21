@@ -27,7 +27,12 @@
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="UI_Bank" ID="{33B6BB55-2A36-427D-BC83-70B564D89B8A}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Menu_Music" ID="{11230426-7EF5-4331-B06F-80EB63F0E75A}" WorkUnitID="{9432C570-040A-4D00-A420-5FF6D0984665}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_UI_Hover" ID="{76E487E0-F995-4525-BADA-0BF2D0BDD95D}" WorkUnitID="{9432C570-040A-4D00-A420-5FF6D0984665}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_UI_Click" ID="{DDD2C8CB-6D8E-48CB-B657-21A50D6C24DB}" WorkUnitID="{9432C570-040A-4D00-A420-5FF6D0984665}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Game_Music" ID="{E861AB9A-AA63-4BF6-A420-4C2F3F8DD876}" WorkUnitID="{9432C570-040A-4D00-A420-5FF6D0984665}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

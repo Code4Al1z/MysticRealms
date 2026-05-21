@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID PLAY_ENEMY_DEATH_WISP = 4220059257U;
         static const AkUniqueID PLAY_ENEMY_HIT_GOLEM = 103692789U;
         static const AkUniqueID PLAY_ENEMY_HIT_WISP = 2982724738U;
+        static const AkUniqueID PLAY_GAME_MUSIC = 4141037488U;
         static const AkUniqueID PLAY_GATEDOOR_CLOSE = 4102059022U;
         static const AkUniqueID PLAY_GATEDOOR_MOVINGLOOP = 1378571526U;
         static const AkUniqueID PLAY_GATEDOOR_OPEN = 194403786U;
@@ -29,6 +30,7 @@ namespace AK
         static const AkUniqueID PLAY_LAMP_EMPTY = 3672837954U;
         static const AkUniqueID PLAY_LAMP_FILLING = 3244476280U;
         static const AkUniqueID PLAY_LAMP_FULL = 2703900524U;
+        static const AkUniqueID PLAY_MENU_MUSIC = 2228153899U;
         static const AkUniqueID PLAY_PLATFORM_STARTMOVE = 3318357497U;
         static const AkUniqueID PLAY_PLATFORM_STOPMOVE = 4046392273U;
         static const AkUniqueID PLAY_PLATFORM_TRAVELLOOP = 411136912U;
@@ -43,6 +45,8 @@ namespace AK
         static const AkUniqueID PLAY_RESONANCEHUM_DEPLETED = 4169607118U;
         static const AkUniqueID PLAY_RESONANCEHUM_START = 1953327225U;
         static const AkUniqueID PLAY_RESONANCEHUM_STOP = 2563595731U;
+        static const AkUniqueID PLAY_UI_CLICK = 1749424733U;
+        static const AkUniqueID PLAY_UI_HOVER = 1339559671U;
         static const AkUniqueID PLAY_WISP_AMBIENT = 3176539718U;
         static const AkUniqueID PLAY_WISP_CHARGE = 2427123306U;
         static const AkUniqueID PLAY_WISP_PULSEHIT = 2427205888U;
@@ -101,9 +105,12 @@ namespace AK
     {
         static const AkUniqueID DOOR_OPENAMOUNT = 3849429492U;
         static const AkUniqueID ECHOPULSE_FREQUENCY = 3773845682U;
+        static const AkUniqueID GOLEM_RESONANCESTRESS = 1997983146U;
         static const AkUniqueID GOLEM_SPEED = 4071059179U;
+        static const AkUniqueID KICK_PULSE = 922906845U;
         static const AkUniqueID LAMP_ENERGY = 2086212122U;
         static const AkUniqueID MASTER_VOLUME = 4179668880U;
+        static const AkUniqueID MUSIC_AMPLITUDE = 1976104592U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
         static const AkUniqueID PLAYER_HEALTHPERCENT = 567901342U;
         static const AkUniqueID PLAYER_SPEED = 1062779386U;

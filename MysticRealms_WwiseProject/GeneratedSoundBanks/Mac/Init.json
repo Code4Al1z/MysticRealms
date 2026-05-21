@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{C1654D87-A9F8-401D-15DB-0052B1E0F5D3}",
+    "Hash": "{47F79BB6-0D35-89A5-D980-0A1993826FED}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -104,6 +104,12 @@
       "GUID": "{EADDD761-FC82-4FD7-8603-75E7495A6662}"
      },
      {
+      "Id": "922906845",
+      "Name": "Kick_Pulse",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Kick_Pulse",
+      "GUID": "{4B6F0C98-2802-4977-9EEC-2D524E03369F}"
+     },
+     {
       "Id": "1006694123",
       "Name": "Music_Volume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_Volume",
@@ -126,6 +132,18 @@
       "Name": "ResonanceHum_Intensity",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\ResonanceHum_Intensity",
       "GUID": "{2DB90B39-68D4-428C-97AE-0332A023E62C}"
+     },
+     {
+      "Id": "1976104592",
+      "Name": "Music_Amplitude",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_Amplitude",
+      "GUID": "{D24F03C5-BE6A-441F-AAAB-C384CD63B0AA}"
+     },
+     {
+      "Id": "1997983146",
+      "Name": "Golem_ResonanceStress",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Golem_ResonanceStress",
+      "GUID": "{6B523B7E-78A5-4482-8596-C977C8DE80F7}"
      },
      {
       "Id": "2086212122",
@@ -260,6 +278,6 @@
     ]
    }
   ],
-  "FileHash": "{49CBCA94-E303-7E4E-1514-72A007A54CA1}"
+  "FileHash": "{65E48CAB-5526-4CB6-A992-5B9151DBDF51}"
  }
 }

@@ -105,6 +105,127 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="UI" ID="{CF93EE97-ED5C-46C8-8476-95F834B4E48A}" ShortID="795836070">
+					<ChildrenList>
+						<Sound Name="UI_Hover" ID="{C8C8F175-CF3E-492C-A38E-6CC40CB91A92}" ShortID="11167231">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Hover" ID="{A54277F2-ECF5-4109-9239-6113690CBE91}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.56475"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.88991"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>UI_Hover.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="758371955"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Hover" ID="{A54277F2-ECF5-4109-9239-6113690CBE91}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UI_Click" ID="{8317BF1C-2BFD-46E7-8DF0-624EFC8DFFA3}" ShortID="603460723">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="UI_Bus" ID="{973E7F18-7E97-448E-8A4D-962DD635CBB4}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Click" ID="{A53DF421-0C20-4223-9EC3-61CF4B6C9701}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.63317"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>UI_Click.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="193756122"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Click" ID="{A53DF421-0C20-4223-9EC3-61CF4B6C9701}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Menu_Music" ID="{7CFCBF2F-AC5A-427B-899D-02F049C0F3B9}" ShortID="76513882">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music_Bus" ID="{D19BB0DF-D8F2-4D72-A31D-FA95EFE3A918}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="833636__nomagician__butterflow-menu-music-theme" ID="{749BDEC2-C44F-433C-9E3D-95FACA384E5F}">
+									<Language>SFX</Language>
+									<AudioFile>833636__nomagician__butterflow-menu-music-theme.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="753892718"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="833636__nomagician__butterflow-menu-music-theme" ID="{749BDEC2-C44F-433C-9E3D-95FACA384E5F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Game_Music" ID="{D55ACED5-CEB9-4EA0-BDDA-B942C64EFCA3}" ShortID="103544043">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music_Bus" ID="{D19BB0DF-D8F2-4D72-A31D-FA95EFE3A918}" WorkUnitID="{1C69EC9B-340F-442D-BBB5-A4785836B85A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="523366__zhr__relaxation-music-14" ID="{7D72534E-DAE7-44C5-8A37-D12CEF92FF86}">
+									<Language>SFX</Language>
+									<AudioFile>523366__zhr__relaxation-music-14.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="776029719"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="523366__zhr__relaxation-music-14" ID="{7D72534E-DAE7-44C5-8A37-D12CEF92FF86}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>
