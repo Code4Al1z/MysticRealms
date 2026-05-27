@@ -11,11 +11,7 @@
 					<ChildrenList>
 						<Sound Name="Portal_Activate" ID="{6F81E0C2-0C65-4BE3-85B5-F43FF5AF8771}" ShortID="89484348">
 							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>5</Value>
-									</ValueList>
-								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -26,13 +22,13 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<SourcePlugin Name="Sine" ID="{DE5BB070-06B0-4F3C-8D1F-8CCCFDBC4A8F}" ShortID="852113054" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
-									<PropertyList>
-										<Property Name="SineFrequency" Type="Real32" Value="200"/>
-										<Property Name="SineGain" Type="Real32" Value="-6"/>
-									</PropertyList>
+								<AudioFileSource Name="ForceFieldW" ID="{70A8FC12-C03A-4F9D-8C2C-8B87AE9A2628}">
 									<Language>SFX</Language>
-								</SourcePlugin>
+									<AudioFile>ForceFieldW.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="761351073"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="Effects">
@@ -52,7 +48,7 @@
 								</ObjectList>
 							</ObjectLists>
 							<ActiveSourceList>
-								<ActiveSource Name="Sine" ID="{DE5BB070-06B0-4F3C-8D1F-8CCCFDBC4A8F}" Platform="Linked"/>
+								<ActiveSource Name="ForceFieldW" ID="{70A8FC12-C03A-4F9D-8C2C-8B87AE9A2628}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Portal_Enter" ID="{4B7B61F0-A0D8-46B2-B1C4-4966DEBF93C0}" ShortID="786252746">
@@ -60,6 +56,11 @@
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>-70</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>11</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -108,13 +109,6 @@
 				<Folder Name="UI" ID="{CF93EE97-ED5C-46C8-8476-95F834B4E48A}" ShortID="795836070">
 					<ChildrenList>
 						<Sound Name="UI_Hover" ID="{C8C8F175-CF3E-492C-A38E-6CC40CB91A92}" ShortID="11167231">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>10</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>

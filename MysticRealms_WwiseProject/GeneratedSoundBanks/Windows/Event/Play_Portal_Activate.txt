@@ -4,6 +4,3 @@ Event	ID	Name			Wwise Object Path	Notes
 Effect plug-ins	ID	Name	Type				Notes
 	477588361	RoomVerb (Custom)	Wwise RoomVerb			
 
-Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
-	852113054	Sine	Wwise Sine		\Containers\Default Work Unit\Portal\Portal_Activate\Sine	
-

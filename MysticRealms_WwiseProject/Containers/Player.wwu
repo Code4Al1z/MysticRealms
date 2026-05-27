@@ -2085,6 +2085,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Player_Collect" ID="{AE229096-C77C-4649-BA56-52E9D75E91E9}" ShortID="605828764">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A7D5BDCC-F44A-4B6F-BBFF-503189C36ACE}"/>
@@ -2095,6 +2102,11 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="Player_Collect" ID="{0BD043BE-E96A-4F7A-8428-7ED6C83CEE9C}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.24872"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.24872"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Player_Collect.wav</AudioFile>
 							<MediaIDList>

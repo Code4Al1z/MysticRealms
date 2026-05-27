@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{EB8F53E1-C7FF-4B94-A277-7B1A5A14765D}",
     "Language": "SFX",
-    "Hash": "{BE024F3D-780D-5B67-2413-3553399FA290}",
+    "Hash": "{96EA5527-996E-320F-E449-47152B78D015}",
     "ObjectPath": "Play_Player_Collect",
     "ShortName": "Play_Player_Collect",
     "Path": "Event/Play_Player_Collect.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Player_Collect.wav",
       "Path": "Media/832837939.wem",
-      "CachePath": "5A/{5AFA021F-A51D-15B9-CA1E-00A1B80695A7}.wem"
+      "CachePath": "A8/{A87EAFCD-0EBB-A3CD-D114-602885B4CCFA}.wem"
      }
     ],
     "Events": [
@@ -32,8 +32,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\PlayerHealth\\Play_Player_Collect",
       "GUID": "{EB8F53E1-C7FF-4B94-A277-7B1A5A14765D}",
       "DurationType": "OneShot",
-      "DurationMin": "1.2",
-      "DurationMax": "1.2",
+      "DurationMin": "0.95128",
+      "DurationMax": "0.95128",
       "MediaRefs": [
        {
         "Id": "832837939"
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{E63E7A1B-1EF6-9E2F-66DF-869C0BE4B8F2}"
+  "FileHash": "{8E256105-64FA-EA3D-4B26-A9644485D453}"
  }
 }

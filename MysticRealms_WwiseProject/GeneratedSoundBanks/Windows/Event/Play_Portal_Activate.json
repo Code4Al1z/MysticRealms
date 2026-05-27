@@ -10,10 +10,21 @@
     "Type": "Event",
     "GUID": "{BAF45D72-8E0D-44A2-84C6-CF8E44981CF5}",
     "Language": "SFX",
-    "Hash": "{DF68FFC7-54AD-2424-A41C-F530D408DFAC}",
+    "Hash": "{2C3A34EA-9F56-D09D-A8AF-8C8C063FCDE0}",
     "ObjectPath": "Play_Portal_Activate",
     "ShortName": "Play_Portal_Activate",
     "Path": "Event/Play_Portal_Activate.bnk",
+    "Media": [
+     {
+      "Id": "761351073",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "ForceFieldW.wav",
+      "Path": "Media/761351073.wem",
+      "CachePath": "C4/{C4EAA797-54CD-89E1-871E-299760805725}.wem"
+     }
+    ],
     "Plugins": {
      "Custom": [
       {
@@ -23,14 +34,6 @@
        "GUID": "{29537B08-B0DE-4B62-B870-982F783CE4B0}",
        "LibName": "Wwise RoomVerb",
        "LibId": "7733251"
-      },
-      {
-       "Id": "852113054",
-       "Name": "Sine",
-       "ObjectPath": "\\Containers\\Default Work Unit\\Portal\\Portal_Activate\\Sine",
-       "GUID": "{DE5BB070-06B0-4F3C-8D1F-8CCCFDBC4A8F}",
-       "LibName": "Wwise Sine",
-       "LibId": "6553602"
       }
      ]
     },
@@ -40,16 +43,16 @@
       "Name": "Play_Portal_Activate",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Portal_Activate",
       "GUID": "{BAF45D72-8E0D-44A2-84C6-CF8E44981CF5}",
-      "DurationType": "OneShot",
-      "DurationMin": "1",
-      "DurationMax": "1",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "761351073"
+       }
+      ],
       "PluginRefs": {
        "Custom": [
         {
          "Id": "477588361"
-        },
-        {
-         "Id": "852113054"
         }
        ]
       }
@@ -57,6 +60,6 @@
     ]
    }
   ],
-  "FileHash": "{818DB3AE-6B04-C4D6-F4FB-113AB32FEA4B}"
+  "FileHash": "{9C37112F-59EA-9A8E-31F0-238008BA443E}"
  }
 }
