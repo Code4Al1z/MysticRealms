@@ -590,6 +590,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1562244960036215604, guid: 57d7e51b2b6b367478cafc1b195081b0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2048877695959462736, guid: 57d7e51b2b6b367478cafc1b195081b0, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1716,7 +1720,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 274103812}
-  - component: {fileID: 274103813}
   m_Layer: 10
   m_Name: AttackPoint
   m_TagString: Untagged
@@ -1739,27 +1742,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2543153746983025819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.203}
---- !u!135 &274103813
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274103811}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &291860853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3995,7 +3977,7 @@ MonoBehaviour:
   resonanceStressRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: aad864e5045f39942b7034e62064d52b, type: 2}
 --- !u!114 &556193792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4076,13 +4058,13 @@ MonoBehaviour:
   - {fileID: 1510373910}
   patrolStoppingDistance: 0.6
   attackPoint: {fileID: 274103812}
-  meleeRadius: 0.4
+  meleeRadius: 0.8
   meleeDamage: 15
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
   swingParticles: {fileID: 0}
-  deathParticles: {fileID: 0}
+  deathParticles: {fileID: 1487464632}
   meleeSwingEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -4127,6 +4109,7 @@ Transform:
   m_Children:
   - {fileID: 6346600599653044038}
   - {fileID: 229121478}
+  - {fileID: 1487464631}
   m_Father: {fileID: 629599907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &556193797
@@ -13149,6 +13132,93 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed081ac81fb86b2429df7c7517e14366, type: 3}
+--- !u!1001 &1487464630
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 556193796}
+    m_Modifications:
+    - target: {fileID: 5220071264055085988, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_Name
+      value: Green Death Particle URP
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774021493654583103, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774021493654583103, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+--- !u!4 &1487464631 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8440171760632619150, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+  m_PrefabInstance: {fileID: 1487464630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1487464632 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5774021493654583103, guid: 02adfff2664aaf54f8269fca64e3021b, type: 3}
+  m_PrefabInstance: {fileID: 1487464630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1489262692
 GameObject:
   m_ObjectHideFlags: 0
