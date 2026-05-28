@@ -2086,9 +2086,9 @@
 				</Sound>
 				<Sound Name="Player_Collect" ID="{AE229096-C77C-4649-BA56-52E9D75E91E9}" ShortID="605828764">
 					<PropertyList>
-						<Property Name="Volume" Type="Real64">
+						<Property Name="MakeUpGain" Type="Real64">
 							<ValueList>
-								<Value>-7</Value>
+								<Value>-14</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>

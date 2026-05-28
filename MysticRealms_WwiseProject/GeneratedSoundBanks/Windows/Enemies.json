@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{6D21033C-4256-47C1-BF54-1B1B2E4A89FE}",
     "Language": "SFX",
-    "Hash": "{F39CAA7A-3169-EF9A-C2A2-3EB296BCE0A3}",
+    "Hash": "{A9E43658-A421-B08F-0116-26712402BED2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Enemies",
     "ShortName": "Enemies",
     "Path": "Enemies.bnk",
@@ -96,6 +96,14 @@
       "CachePath": "FD/{FDD1B2CE-410F-842B-9502-4E4E5F259118}.wem"
      },
      {
+      "Id": "347199356",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Wisp_Hover.wav",
+      "CachePath": "62/{62C70246-8791-3A28-4760-301AD6F47D11}.wem"
+     },
+     {
       "Id": "348550136",
       "Language": "SFX",
       "Streaming": "false",
@@ -126,14 +134,6 @@
       "Location": "Memory",
       "ShortName": "Footstep_Wood_01.wav",
       "CachePath": "CA/{CACDA211-ED98-1378-6615-036D142636B3}.wem"
-     },
-     {
-      "Id": "434960163",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Wisp_Ambient_01.wav",
-      "CachePath": "77/{7752D8F1-636A-23AD-E17D-9D485A36F517}.wem"
      },
      {
       "Id": "471634421",
@@ -361,6 +361,16 @@
        "GUID": "{05C27943-883E-4B22-9CCD-B7BFC3A15FC9}",
        "LibName": "Wwise Sine",
        "LibId": "6553602"
+      }
+     ],
+     "ShareSets": [
+      {
+       "Id": "654807232",
+       "Name": "Chipmunk",
+       "ObjectPath": "\\Effects\\Factory Effects\\Pitch Shifter\\Transpose\\Chipmunk",
+       "GUID": "{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}",
+       "LibName": "Wwise Pitch Shifter",
+       "LibId": "8912899"
       }
      ]
     },
@@ -694,9 +704,16 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "434960163"
+        "Id": "347199356"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "654807232"
+        }
+       ]
+      }
      },
      {
       "Id": "2427123306",
@@ -767,9 +784,16 @@
       "DurationMax": "0",
       "MediaRefs": [
        {
-        "Id": "434960163"
+        "Id": "347199356"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "654807232"
+        }
+       ]
+      }
      }
     ],
     "GameParameters": [
@@ -852,6 +876,6 @@
     ]
    }
   ],
-  "FileHash": "{C7620519-0825-2A49-EF5E-D1E16D213928}"
+  "FileHash": "{AC4B00C7-BB50-C070-91CD-7DB3795E0415}"
  }
 }

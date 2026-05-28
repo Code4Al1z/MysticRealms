@@ -39,6 +39,7 @@ Effect plug-ins	ID	Name	Type				Notes
 	204995920	Flanger (Custom)	Wwise Flanger			
 	344034413	Gain (Custom)	Wwise Gain			
 	545495337	Parametric EQ (Custom)	Wwise Parametric EQ			
+	654807232	Chipmunk	Wwise Pitch Shifter			
 	674888103	Flanger (Custom)	Wwise Flanger			
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
@@ -56,11 +57,11 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	281619123	Footstep_Leaves_01	.cache\FB\{FB87BC0B-307D-5475-9AAB-7FFB758AC513}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Leaves_Footstep\Footstep_Leaves_01		172252
 	305407106	Footstep_Soil_01	.cache\92\{927F9547-B9C9-7C30-22D8-C55F452A6B2A}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Soil_Footstep\Footstep_Soil_01		55868
 	332751654	Footstep_Stone_01	.cache\FD\{FDD1B2CE-410F-842B-9502-4E4E5F259118}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Stone_Footstep\Footstep_Stone_01		41300
+	347199356	Wisp_Ambient_Loop	.cache\62\{62C70246-8791-3A28-4760-301AD6F47D11}.wem		\Containers\Default Work Unit\Enemies\Wisp\Wisp_Ambient_Loop		230496
 	348550136	Golem_Hit_03	.cache\3B\{3BBCB548-3FFF-A05B-961B-AD0429C192C6}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Hit_Random\Golem_Hit_03		104584
 	358699782	Footstep_Grass_04	.cache\30\{3040EDDB-C332-51BC-0948-E6927D87407A}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Grass_Footstep\Footstep_Grass_04		86392
 	423140782	Wisp_Hit	.cache\66\{6661DDCB-D069-0591-C775-0CC943863F36}.wem		\Containers\Default Work Unit\Enemies\Wisp\Wisp_Hit		179520
 	425911221	Footstep_Wood_01	.cache\CA\{CACDA211-ED98-1378-6615-036D142636B3}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Wood_Footstep\Footstep_Wood_01		62532
-	434960163	Wisp_Ambient_Loop	.cache\77\{7752D8F1-636A-23AD-E17D-9D485A36F517}.wem		\Containers\Default Work Unit\Enemies\Wisp\Wisp_Ambient_Loop		230496
 	471634421	Footstep_Soil_03	.cache\BA\{BA8A6A22-5993-17F4-8FD8-5B47FB67C769}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Soil_Footstep\Footstep_Soil_03		86924
 	506643693	Footstep_Wood_04	.cache\5A\{5A633E0B-BF24-DFEC-5842-6C421F189137}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Wood_Footstep\Footstep_Wood_04		73600
 	556324215	Footstep_Default_01	.cache\E1\{E13200F7-1F1E-4E9B-77CD-442CA4A7CF11}.wem		\Containers\Default Work Unit\Enemies\Golem\Golem_Footstep_Surface\Default_Footstep\Footstep_Default_01		132860

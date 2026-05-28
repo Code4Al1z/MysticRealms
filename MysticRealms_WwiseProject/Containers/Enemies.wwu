@@ -315,8 +315,24 @@
 										<MediaID ID="434960163"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="Wisp_Hover" ID="{2959F995-CB07-44CC-ABF7-04E8254E2E5D}">
+									<Language>SFX</Language>
+									<AudioFile>Wisp_Hover.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="347199356"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{3A3D0852-8A10-4053-A82B-02335BFC44E7}" ShortID="896502191">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+												<ObjectRef Name="Chipmunk" ID="{54F9F04F-0D14-46AB-B38B-21CFD2EB46F6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
 								<ObjectList Name="RTPC">
 									<RTPC Name="" ID="{9A9EBD29-1FC0-4386-8F98-E840D069BEF3}" ShortID="435734900">
 										<PropertyList>
@@ -383,7 +399,7 @@
 								</ObjectList>
 							</ObjectLists>
 							<ActiveSourceList>
-								<ActiveSource Name="Wisp_Ambient_01" ID="{AD731D71-5A37-4240-B6B9-1FC577C774BA}" Platform="Linked"/>
+								<ActiveSource Name="Wisp_Hover" ID="{2959F995-CB07-44CC-ABF7-04E8254E2E5D}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

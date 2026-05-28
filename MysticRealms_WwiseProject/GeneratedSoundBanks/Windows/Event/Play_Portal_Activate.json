@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{BAF45D72-8E0D-44A2-84C6-CF8E44981CF5}",
     "Language": "SFX",
-    "Hash": "{2C3A34EA-9F56-D09D-A8AF-8C8C063FCDE0}",
+    "Hash": "{74B6B7DC-384D-26AE-36FD-E8BF84AEFA68}",
     "ObjectPath": "Play_Portal_Activate",
     "ShortName": "Play_Portal_Activate",
     "Path": "Event/Play_Portal_Activate.bnk",
@@ -43,6 +43,7 @@
       "Name": "Play_Portal_Activate",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Portal_Activate",
       "GUID": "{BAF45D72-8E0D-44A2-84C6-CF8E44981CF5}",
+      "MaxAttenuation": "40",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -60,6 +61,6 @@
     ]
    }
   ],
-  "FileHash": "{9C37112F-59EA-9A8E-31F0-238008BA443E}"
+  "FileHash": "{A3812D84-E3AB-BD13-90C5-C5AFF397EB01}"
  }
 }
