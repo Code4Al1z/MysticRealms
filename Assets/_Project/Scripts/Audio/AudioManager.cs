@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         for (int i = 0; i < banks.Count; i++)
         {
             if (banks[i] != null)
