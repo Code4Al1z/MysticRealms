@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
                 AKRESULT result = AkUnitySoundEngine.LoadBank(banks[i].ToString(), out uint bankID);
                 if (result == AKRESULT.AK_Success)
                     Debug.Log($"{banks[i].ToString()} loaded successfully");
+                else if(result == AKRESULT.AK_BankAlreadyLoaded)
+                    Debug.LogWarning($"{banks[i].ToString()} is already loaded.");
                 else
                     Debug.LogError($"Failed to load {banks[i].ToString()}: {result}");
             }
