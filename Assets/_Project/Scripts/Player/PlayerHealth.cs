@@ -24,6 +24,12 @@ public class PlayerHealth : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool enableDebugLog = false;
 
+    // ─── Static instance ──────────────────────────────────────────────────────
+
+    public static PlayerHealth Instance { get; private set; }
+
+    // ─── Public state ─────────────────────────────────────────────────────────
+
     public float CurrentHealth => currentHealth;
     public float MaxHealth => maxHealth;
     public int Lives => currentLives;
@@ -32,12 +38,16 @@ public class PlayerHealth : MonoBehaviour
     public bool IsInvincible => invincibleTimer > 0f;
     public bool IsAlive => currentLives > 0 || currentHealth > 0f;
 
+    // ─── Events ───────────────────────────────────────────────────────────────
+
     public event System.Action<float, float> OnHealthChanged;
     public event System.Action<int> OnLifeLost;
     public event System.Action<int> OnLifeGained;
     public event System.Action OnGameOver;
     public event System.Action<int> OnCollectableChanged;
     public event System.Action<bool> OnInvincibilityChanged;
+
+    // ─── Private state ────────────────────────────────────────────────────────
 
     private float currentHealth;
     private int currentLives;
@@ -46,8 +56,11 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 spawnPosition;
     private PlayerDropTracker dropTracker;
 
+    // ─── Lifecycle ────────────────────────────────────────────────────────────
+
     private void Awake()
     {
+        Instance = this;
         currentHealth = maxHealth;
         currentLives = startingLives;
         spawnPosition = transform.position;
@@ -57,6 +70,11 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         UpdateHealthRTPC();
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this) Instance = null;
     }
 
     private void Update()
@@ -71,17 +89,17 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    // ─── Public API ───────────────────────────────────────────────────────────
+
     public void TakeDamage(float amount)
     {
         if (IsInvincible) return;
         if (currentLives <= 0 && currentHealth <= 0f) return;
 
         currentHealth = Mathf.Max(0f, currentHealth - amount);
-        if (takeDamageEvent != null)
-            takeDamageEvent.Post(gameObject);
+        if (takeDamageEvent != null) takeDamageEvent.Post(gameObject);
         UpdateHealthRTPC();
-        if (OnHealthChanged != null)
-            OnHealthChanged.Invoke(currentHealth, maxHealth);
+        if (OnHealthChanged != null) OnHealthChanged.Invoke(currentHealth, maxHealth);
 
         if (enableDebugLog)
             Debug.Log($"[PlayerHealth] -{amount:F1}  HP: {currentHealth:F1}/{maxHealth}");
@@ -119,29 +137,26 @@ public class PlayerHealth : MonoBehaviour
     {
         bool wasInvincible = IsInvincible;
         invincibleTimer = Mathf.Max(invincibleTimer, duration);
-        if (!wasInvincible && OnInvincibilityChanged != null) OnInvincibilityChanged.Invoke(true);
+        if (!wasInvincible && OnInvincibilityChanged != null)
+            OnInvincibilityChanged.Invoke(true);
     }
+
+    // ─── Private ──────────────────────────────────────────────────────────────
 
     private void HandleDeath()
     {
         currentLives--;
+        if (deathEvent != null) deathEvent.Post(gameObject);
 
         if (currentLives <= 0)
         {
             currentLives = 0;
-            if (deathEvent != null)
-                deathEvent.Post(gameObject);
-            if (OnLifeLost != null)
-                OnLifeLost.Invoke(0);
-            if (OnGameOver != null)
-                OnGameOver.Invoke();
+            if (OnLifeLost != null) OnLifeLost.Invoke(0);
+            if (OnGameOver != null) OnGameOver.Invoke();
         }
         else
         {
-            if (deathEvent != null)
-                deathEvent.Post(gameObject);
-            if (OnLifeLost != null)
-                OnLifeLost.Invoke(currentLives);
+            if (OnLifeLost != null) OnLifeLost.Invoke(currentLives);
             Respawn();
         }
     }
@@ -150,23 +165,19 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthRTPC();
-        if (OnHealthChanged != null)
-            OnHealthChanged.Invoke(currentHealth, maxHealth);
-
-        // Collectables kept on respawn intentionally.
-        // When enemy respawning is added, revisit:
-        // collectableCount = 0; OnCollectableChanged?.Invoke(0); // C# delegate — ?. is fine here
+        if (OnHealthChanged != null) OnHealthChanged.Invoke(currentHealth, maxHealth);
 
         Vector3 pos = spawnPosition;
         if (respawnPoint != null) pos = respawnPoint.position;
-        if (dropTracker != null && dropTracker.LastDropPoint != null) pos = dropTracker.LastDropPoint.position;
+        if (dropTracker != null && dropTracker.LastDropPoint != null)
+            pos = dropTracker.LastDropPoint.position;
+
         transform.position = pos;
 
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null) rb.linearVelocity = Vector3.zero;
 
-        if (respawnEvent != null)
-            respawnEvent.Post(gameObject);
+        if (respawnEvent != null) respawnEvent.Post(gameObject);
         GrantInvincibility(respawnInvincibilityTime);
 
         if (enableDebugLog)

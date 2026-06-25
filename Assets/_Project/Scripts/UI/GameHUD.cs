@@ -21,30 +21,26 @@ public class GameHUD : MonoBehaviour
     private PlayerHealth playerHealth;
     private PlayerAbilities playerAbilities;
 
+    // ─── Lifecycle ────────────────────────────────────────────────────────────
+
     private void Start()
     {
-        GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
-        if (playerGO != null)
+        if (PlayerHealth.Instance != null)
         {
-            playerHealth = playerGO.GetComponent<PlayerHealth>();
-            playerAbilities = playerGO.GetComponent<PlayerAbilities>();
-        }
+            playerHealth = PlayerHealth.Instance;
+            playerAbilities = playerHealth.GetComponent<PlayerAbilities>();
 
-        if (playerHealth != null)
-        {
-            if (playerHealthPanel != null)
-                playerHealthPanel.Initialise(playerHealth);
-            if (collectablePanel != null)
-                collectablePanel.Initialise(playerHealth, levelData);
+            if (playerHealthPanel != null) playerHealthPanel.Initialise(playerHealth);
+            if (collectablePanel != null) collectablePanel.Initialise(playerHealth, levelData);
+            if (abilityPanel != null && playerAbilities != null)
+                abilityPanel.Initialise(playerAbilities);
+
             playerHealth.OnGameOver += OnGameOver;
         }
         else
         {
-            Debug.LogWarning("[GameHUD] PlayerHealth not found.");
+            Debug.LogWarning("[GameHUD] PlayerHealth.Instance is null - player not found in scene.");
         }
-
-        if (playerAbilities != null && abilityPanel != null)
-                abilityPanel.Initialise(playerAbilities);
 
         if (GameManager.Instance != null)
             GameManager.Instance.OnStateChanged += OnStateChanged;
@@ -61,11 +57,15 @@ public class GameHUD : MonoBehaviour
             GameManager.Instance.OnStateChanged -= OnStateChanged;
     }
 
+    // ─── Input ────────────────────────────────────────────────────────────────
+
     private void Update()
     {
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
             TogglePause();
     }
+
+    // ─── State ────────────────────────────────────────────────────────────────
 
     private void OnStateChanged(GameManager.GameState state)
     {
@@ -79,6 +79,8 @@ public class GameHUD : MonoBehaviour
     }
 
     private void OnGameOver() => GameManager.Instance?.TriggerGameOver();
+
+    // ─── Public API ───────────────────────────────────────────────────────────
 
     public void TogglePause()
     {
@@ -114,33 +116,32 @@ public class GameHUD : MonoBehaviour
             abilityPanel.UnlockResonanceHum();
     }
 
+    // ─── Overlays ─────────────────────────────────────────────────────────────
+
     private void ShowPause()
     {
-        if (pauseLayer != null) 
+        if (pauseLayer != null)
             pauseLayer.SetActive(true);
     }
 
     private void ShowGameOver()
     {
         HideAllOverlays();
-        if (gameOverPanel != null) 
+        if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
     }
 
     private void ShowVictory()
     {
         HideAllOverlays();
-        if (victoryPanel != null) 
+        if (victoryPanel != null)
             victoryPanel.SetActive(true);
     }
 
     private void HideAllOverlays()
     {
-        if (pauseLayer != null) 
-            pauseLayer.SetActive(false);
-        if (gameOverPanel != null) 
-            gameOverPanel.SetActive(false);
-        if (victoryPanel != null) 
-            victoryPanel.SetActive(false);
+        if (pauseLayer != null) pauseLayer.SetActive(false);
+        if (gameOverPanel != null) gameOverPanel.SetActive(false);
+        if (victoryPanel != null) victoryPanel.SetActive(false);
     }
 }
