@@ -9,9 +9,7 @@ public class RockGolemEnemy : BaseEnemy
 
     [Header("Melee Attack")]
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private float meleeRadius = 1.2f;
     [SerializeField] private float meleeDamage = 15f;
-    [SerializeField] private LayerMask playerLayer;
     [SerializeField] private ParticleSystem swingParticles;
 
     [Header("Death")]
@@ -22,6 +20,7 @@ public class RockGolemEnemy : BaseEnemy
 
     [Header("Components")]
     [SerializeField] private GolemAnimator golemAnimator;
+    [SerializeField] private GolemAttackHitbox attackHitbox;
     [SerializeField] private GolemResonanceHandler resonanceHandler;
     [SerializeField] private GolemFootstepHandler footstepHandler;
 
@@ -99,13 +98,17 @@ public class RockGolemEnemy : BaseEnemy
         isAttackLocked = true;
         attackLockTimer = attackDuration;
 
-        Vector3 origin = attackPoint != null ? attackPoint.position : transform.position;
-
-        foreach (Collider col in Physics.OverlapSphere(origin, meleeRadius, playerLayer))
+        if (attackHitbox != null)
         {
-            if (col.TryGetComponent<PlayerHealth>(out var ph))
-                ph.TakeDamage(meleeDamage);
+            attackHitbox.Activate(meleeDamage, this);
+            Invoke(nameof(DeactivateHitbox), attackDuration * 0.5f);
         }
+    }
+
+    private void DeactivateHitbox()
+    {
+        if (attackHitbox != null)
+            attackHitbox.Deactivate();
     }
 
     protected override void AdvancePatrol()
@@ -200,12 +203,6 @@ public class RockGolemEnemy : BaseEnemy
                 if (i < golemPatrolPoints.Length - 1 && golemPatrolPoints[i + 1] != null)
                     Gizmos.DrawLine(golemPatrolPoints[i].position, golemPatrolPoints[i + 1].position);
             }
-        }
-
-        if (attackPoint != null)
-        {
-            Gizmos.color = new Color(1f, 0f, 0f, 0.25f);
-            Gizmos.DrawWireSphere(attackPoint.position, meleeRadius);
         }
     }
 }

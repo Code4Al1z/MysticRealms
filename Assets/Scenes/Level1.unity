@@ -1720,6 +1720,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 274103812}
+  - component: {fileID: 274103814}
+  - component: {fileID: 274103813}
   m_Layer: 10
   m_Name: AttackPoint
   m_TagString: Untagged
@@ -1742,6 +1744,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2543153746983025819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.203}
+--- !u!114 &274103813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274103811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d0570561b993a45bb2254df0f88185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GolemAttackHitbox
+--- !u!135 &274103814
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274103811}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &291860853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4058,11 +4093,7 @@ MonoBehaviour:
   - {fileID: 1510373910}
   patrolStoppingDistance: 0.6
   attackPoint: {fileID: 274103812}
-  meleeRadius: 0.8
   meleeDamage: 15
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 256
   swingParticles: {fileID: 0}
   deathParticles: {fileID: 1487464632}
   meleeSwingEvent:
@@ -4070,6 +4101,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 96277e08e3b70894aa253c5d9ed4d1c5, type: 2}
   golemAnimator: {fileID: 556193793}
+  attackHitbox: {fileID: 274103813}
   resonanceHandler: {fileID: 556193791}
   footstepHandler: {fileID: 556193792}
 --- !u!195 &556193795
@@ -9872,6 +9904,7 @@ GameObject:
   - component: {fileID: 1171630552}
   - component: {fileID: 1171630542}
   - component: {fileID: 1171630544}
+  - component: {fileID: 1171630553}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -10176,6 +10209,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b6496d6eb81e94886a65de6602cca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageNumberBridge
+--- !u!136 &1171630553
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171630539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 0.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1001 &1179480501
 PrefabInstance:
   m_ObjectHideFlags: 0
