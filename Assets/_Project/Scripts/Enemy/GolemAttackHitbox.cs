@@ -3,27 +3,22 @@ using UnityEngine;
 public class GolemAttackHitbox : MonoBehaviour
 {
     private float _damage;
-    private bool _active;
-    private RockGolemEnemy _owner;
+    private GolemAnimator _golemAnimator;
 
-    public void Activate(float damage, RockGolemEnemy owner)
+    public void Initialise(float damage, GolemAnimator golemAnimator)
     {
         _damage = damage;
-        _owner = owner;
-        _active = true;
+        _golemAnimator = golemAnimator;
     }
-
-    public void Deactivate() => _active = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!_active) return;
+        if (_golemAnimator == null || !_golemAnimator.IsAttacking) return;
 
         PlayerHealth ph = other.GetComponentInParent<PlayerHealth>();
         if (ph == null) return;
 
         Debug.Log($"[GolemAttackHitbox] Hit {other.name} for {_damage}");
         ph.TakeDamage(_damage);
-        Deactivate(); // one hit per swing
     }
 }

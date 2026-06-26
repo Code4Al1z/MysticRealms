@@ -8,7 +8,6 @@ public class RockGolemEnemy : BaseEnemy
     [SerializeField] private float patrolStoppingDistance = 0.6f;
 
     [Header("Melee Attack")]
-    [SerializeField] private Transform attackPoint;
     [SerializeField] private float meleeDamage = 15f;
     [SerializeField] private ParticleSystem swingParticles;
 
@@ -42,6 +41,10 @@ public class RockGolemEnemy : BaseEnemy
         base.Start();
         resonanceHandler.Initialise(this, agent, rb);
         footstepHandler.Initialise(agent, baseMoveSpeed);
+
+        if (attackHitbox != null)
+            attackHitbox.Initialise(meleeDamage, golemAnimator);
+
         SetNextPatrolTarget();
     }
 
@@ -97,18 +100,6 @@ public class RockGolemEnemy : BaseEnemy
 
         isAttackLocked = true;
         attackLockTimer = attackDuration;
-
-        if (attackHitbox != null)
-        {
-            attackHitbox.Activate(meleeDamage, this);
-            Invoke(nameof(DeactivateHitbox), attackDuration * 0.5f);
-        }
-    }
-
-    private void DeactivateHitbox()
-    {
-        if (attackHitbox != null)
-            attackHitbox.Deactivate();
     }
 
     protected override void AdvancePatrol()
