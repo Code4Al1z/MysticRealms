@@ -88,11 +88,6 @@ public class RockGolemEnemy : BaseEnemy
 
     protected override void PerformAttack()
     {
-        if (meleeSwingEvent != null)
-            meleeSwingEvent.Post(gameObject);
-        if (swingParticles != null)
-            swingParticles.Play();
-
         float attackDuration = golemAnimator != null
             ? golemAnimator.AttackClipLength()
             : attackCooldown;
@@ -112,6 +107,11 @@ public class RockGolemEnemy : BaseEnemy
         golemAnimator.SetIdle();
         yield return null; // wait one frame
         golemAnimator.SetAttack();
+
+        if (meleeSwingEvent != null)
+            meleeSwingEvent.Post(gameObject);
+        if (swingParticles != null)
+            swingParticles.Play();
     }
 
     protected override void AdvancePatrol()
