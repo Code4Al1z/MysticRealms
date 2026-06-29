@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -91,8 +92,6 @@ public class RockGolemEnemy : BaseEnemy
             meleeSwingEvent.Post(gameObject);
         if (swingParticles != null)
             swingParticles.Play();
-        if (golemAnimator != null)
-            golemAnimator.SetAttack();
 
         float attackDuration = golemAnimator != null
             ? golemAnimator.AttackClipLength()
@@ -100,6 +99,19 @@ public class RockGolemEnemy : BaseEnemy
 
         isAttackLocked = true;
         attackLockTimer = attackDuration;
+
+        StartCoroutine(TriggerAttackAnimation());
+    }
+
+    // Bounces through Idle for one frame so the animator registers
+    // the state change even when chaining attacks back to back.
+    private IEnumerator TriggerAttackAnimation()
+    {
+        if (golemAnimator == null) yield break;
+
+        golemAnimator.SetIdle();
+        yield return null; // wait one frame
+        golemAnimator.SetAttack();
     }
 
     protected override void AdvancePatrol()
