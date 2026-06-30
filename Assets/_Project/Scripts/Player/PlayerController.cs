@@ -119,7 +119,14 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
 
         if (isGrounded && !wasGrounded)
-            OnLand();
+        {
+            // Detect the collider landed on and pass it directly so the
+            // surface resolves in the same call as the sound post.
+            Collider[] landColliders = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer.value);
+            Collider landedOn = (landColliders != null && landColliders.Length > 0) ? landColliders[0] : null;
+            if (landedOn != null) lastSurfaceCollider = landedOn;
+            OnLand(landedOn);
+        }
 
         rb.linearDamping = isGrounded ? groundDrag : airDrag;
 
@@ -228,10 +235,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnLand()
+    private void OnLand(Collider landedOn = null)
     {
         if (surfaceAudioManager != null)
-            surfaceAudioManager.OnLand(gameObject);
+            surfaceAudioManager.OnLand(gameObject, landedOn);
     }
 
     private void PlayFootstep()

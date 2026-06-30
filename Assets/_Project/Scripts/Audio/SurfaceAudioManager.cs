@@ -158,12 +158,18 @@ public class SurfaceAudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Called when a footstep should fire. Posts the event on the emitter.
-    /// Switch is already set in SetCurrentSurface — no need to set it again here,
-    /// but we set it again as a safety measure in case the emitter changed.
+    /// Called when a footstep should fire. Pass the collider that was just
+    /// stepped on so the surface is resolved and the switch set in the same
+    /// call as the post — this guarantees the sound matches the surface under
+    /// the foot at the exact moment of contact, even on the first step onto
+    /// a new surface. If hitCollider is omitted, falls back to whatever
+    /// surface was last set via UpdateCurrentSurface.
     /// </summary>
-    public void OnFootstep(GameObject eventEmitter)
+    public void OnFootstep(GameObject eventEmitter, Collider hitCollider = null)
     {
+        if (hitCollider != null)
+            UpdateCurrentSurface(hitCollider);
+
         ApplySwitchToEmitter(eventEmitter);
 
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
@@ -181,10 +187,14 @@ public class SurfaceAudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Called when the character jumps.
+    /// Called when the character jumps. Pass the collider being jumped from
+    /// so the surface resolves correctly even on the first jump from a new surface.
     /// </summary>
-    public void OnJump(GameObject eventEmitter)
+    public void OnJump(GameObject eventEmitter, Collider hitCollider = null)
     {
+        if (hitCollider != null)
+            UpdateCurrentSurface(hitCollider);
+
         ApplySwitchToEmitter(eventEmitter);
 
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
@@ -193,10 +203,17 @@ public class SurfaceAudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Called when the character lands.
+    /// Called when the character lands. Pass the collider that was landed on
+    /// so the surface resolves and switch is set in the same call as the post —
+    /// this is what fixes the "first landing on a new surface plays the old
+    /// surface's sound" bug, since the switch is no longer set on a separate,
+    /// earlier call than the event post.
     /// </summary>
-    public void OnLand(GameObject eventEmitter)
+    public void OnLand(GameObject eventEmitter, Collider hitCollider = null)
     {
+        if (hitCollider != null)
+            UpdateCurrentSurface(hitCollider);
+
         ApplySwitchToEmitter(eventEmitter);
 
         SurfaceAudioMapping mapping = GetMappingForIndex(currentSurfaceIndex);
