@@ -21,6 +21,13 @@ public class GameHUD : MonoBehaviour
     private PlayerHealth playerHealth;
     private PlayerAbilities playerAbilities;
 
+    public static GameHUD Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // ─── Lifecycle ────────────────────────────────────────────────────────────
 
     private void Start()
@@ -50,6 +57,8 @@ public class GameHUD : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (Instance == this) Instance = null;
+
         if (playerHealth != null)
             playerHealth.OnGameOver -= OnGameOver;
 

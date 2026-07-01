@@ -24,6 +24,9 @@ public class RockGolemEnemy : BaseEnemy
     [SerializeField] private GolemResonanceHandler resonanceHandler;
     [SerializeField] private GolemFootstepHandler footstepHandler;
 
+    [Header("Boss")]
+    [SerializeField] private bool isBoss = false;
+
     private Rigidbody rb;
     private float attackLockTimer = 0f;
 
@@ -47,6 +50,10 @@ public class RockGolemEnemy : BaseEnemy
             attackHitbox.Initialise(meleeDamage, golemAnimator);
 
         SetNextPatrolTarget();
+
+        // Register as boss target if this golem is flagged as a boss
+        if (isBoss && GameHUD.Instance != null)
+            GameHUD.Instance.SetBossTarget(this);
     }
 
     public override string GetEnemyTypeID() => "RockGolem";

@@ -4063,7 +4063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3a23c87aebf9e4297d5a75cf44f674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RockGolemEnemy
-  enemyDisplayName: Enemy
+  enemyDisplayName: Rock Golem
   maxHealth: 120
   baseMoveSpeed: 3
   chaseSpeedBoost: 1
@@ -4092,7 +4092,6 @@ MonoBehaviour:
   - {fileID: 585982664}
   - {fileID: 1510373910}
   patrolStoppingDistance: 0.6
-  attackPoint: {fileID: 274103812}
   meleeDamage: 15
   swingParticles: {fileID: 0}
   deathParticles: {fileID: 1487464632}
@@ -4104,6 +4103,7 @@ MonoBehaviour:
   attackHitbox: {fileID: 274103813}
   resonanceHandler: {fileID: 556193791}
   footstepHandler: {fileID: 556193792}
+  isBoss: 1
 --- !u!195 &556193795
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9345,7 +9345,7 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 938e19d2821377542af62883475f1da8, type: 2}
-  enableDebugLog: 0
+  enableDebugLog: 1
 --- !u!1001 &1066235432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16936,7 +16936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69c232a6e46dee47a499d6d1511ad84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealthBarPanel
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 338627253}
   bossNameText: {fileID: 479640612}
 --- !u!1001 &2058579374
 PrefabInstance:
