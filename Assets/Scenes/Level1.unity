@@ -8240,6 +8240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 958760397}
+  - component: {fileID: 958760398}
   m_Layer: 5
   m_Name: GameOverLayer
   m_TagString: Untagged
@@ -8267,6 +8268,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &958760398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958760396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358b7c5d190f27a45aaed344ec895435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorEnabler
 --- !u!1001 &961442751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10737,6 +10750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1243480905}
+  - component: {fileID: 1243480906}
   m_Layer: 5
   m_Name: VictoryLayer
   m_TagString: Untagged
@@ -10764,6 +10778,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1243480906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243480904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358b7c5d190f27a45aaed344ec895435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorEnabler
 --- !u!1001 &1244230456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11456,6 +11482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1338417608}
+  - component: {fileID: 1338417609}
   m_Layer: 5
   m_Name: PauseLayer
   m_TagString: Untagged
@@ -11483,6 +11510,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1338417609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338417607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358b7c5d190f27a45aaed344ec895435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorEnabler
 --- !u!1001 &1350676750
 PrefabInstance:
   m_ObjectHideFlags: 0

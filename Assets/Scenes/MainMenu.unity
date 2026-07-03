@@ -3658,6 +3658,7 @@ GameObject:
   - component: {fileID: 953215869}
   - component: {fileID: 953215873}
   - component: {fileID: 953215874}
+  - component: {fileID: 953215875}
   m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -3782,6 +3783,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuButtonSoundInitialiser
   sounds: {fileID: 11400000, guid: 8c4b339d0173ca245bbd4ecb2254cdbe, type: 2}
+--- !u!114 &953215875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953215868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358b7c5d190f27a45aaed344ec895435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorEnabler
 --- !u!1 &1010525389
 GameObject:
   m_ObjectHideFlags: 0
