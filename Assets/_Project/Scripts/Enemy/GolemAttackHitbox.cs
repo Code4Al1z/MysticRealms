@@ -13,7 +13,7 @@ public class GolemAttackHitbox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_golemAnimator == null || !_golemAnimator.IsAttacking) return;
+        if (_golemAnimator == null) return;
 
         PlayerHealth ph = other.GetComponentInParent<PlayerHealth>();
         if (ph == null) return;

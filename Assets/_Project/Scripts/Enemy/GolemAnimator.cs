@@ -13,8 +13,6 @@ public class GolemAnimator : MonoBehaviour
 
     private int currentState = -1;
 
-    public bool IsAttacking => currentState == (int)State.Attack;
-
     private void SetState(int state)
     {
         if (state == currentState) return;
