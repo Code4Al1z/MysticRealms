@@ -10,6 +10,8 @@ public class AbilityPanel : MonoBehaviour
     private ResonanceHumAbility resonanceHum;
     private EchoPulseAbility echoPulse;
 
+    // ─── Initialise ───────────────────────────────────────────────────────────
+
     public void Initialise(PlayerAbilities abilities)
     {
         playerAbilities = abilities;
@@ -39,6 +41,8 @@ public class AbilityPanel : MonoBehaviour
             resonanceHum.OnEnergyChangedEvent -= OnResonanceEnergyChanged;
     }
 
+    // ─── Update ───────────────────────────────────────────────────────────────
+
     private void Update()
     {
         if (playerAbilities == null) return;
@@ -51,7 +55,7 @@ public class AbilityPanel : MonoBehaviour
     {
         if (echoPulse == null) return;
 
-        if (echoPulseSlot != null) 
+        if (echoPulseSlot != null)
             echoPulseSlot.SetLocked(echoPulse.IsLocked);
 
         if (echoPulse.IsLocked) return;
@@ -68,7 +72,7 @@ public class AbilityPanel : MonoBehaviour
     {
         if (resonanceHum == null) return;
 
-        if (resonanceHumSlot != null) 
+        if (resonanceHumSlot != null)
             resonanceHumSlot.SetLocked(resonanceHum.IsLocked);
 
         if (resonanceHum.IsLocked) return;
@@ -79,31 +83,33 @@ public class AbilityPanel : MonoBehaviour
             resonanceHumSlot.SetEnergy(resonanceHum.GetEnergyPercent());
         }
 
-        // Recharge delay countdown — show how long until recharging begins
+        // Recharge delay countdown
         if (!resonanceHum.IsActive() && resonanceHum.GetEnergyPercent() < 1f)
         {
             float delay = resonanceHum.GetRechargeDelayRemaining();
-            if (resonanceHumSlot != null) 
+            if (resonanceHumSlot != null)
                 resonanceHumSlot.SetRechargeTimer(delay);
         }
         else
         {
-            if (resonanceHumSlot != null) 
+            if (resonanceHumSlot != null)
                 resonanceHumSlot.SetRechargeTimer(0f);
         }
     }
 
     private void OnResonanceEnergyChanged(float energyPercent)
     {
-        if (resonanceHumSlot != null) 
+        if (resonanceHumSlot != null)
             resonanceHumSlot.SetEnergy(energyPercent);
     }
 
+    // ─── Unlock ───────────────────────────────────────────────────────────────
+
     public void UnlockEchoPulse()
     {
-        if (echoPulse != null) 
+        if (echoPulse != null)
             echoPulse.SetLocked(false);
-        if (echoPulseSlot != null) 
+        if (echoPulseSlot != null)
             echoPulseSlot.SetLocked(false);
     }
 
@@ -111,7 +117,7 @@ public class AbilityPanel : MonoBehaviour
     {
         if (resonanceHum != null)
             resonanceHum.SetLocked(false);
-        if (resonanceHumSlot != null) 
+        if (resonanceHumSlot != null)
             resonanceHumSlot.SetLocked(false);
     }
 }

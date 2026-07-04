@@ -7,21 +7,28 @@ public class AbilityRingUI : Graphic
     [Header("Ring Colours")]
     [SerializeField] private Color ringTrackColor = new Color(0.10f, 0.15f, 0.25f, 1f);
     [SerializeField] private Color ringFillColor = new Color(0.25f, 0.75f, 0.90f, 1f);
+    [SerializeField] private Color ringActiveColor = new Color(0.50f, 0.92f, 1.00f, 1f);
     [SerializeField] private Color ringLockedColor = new Color(0.25f, 0.22f, 0.35f, 1f);
-    [SerializeField] private Color shineColor = new Color(1f, 1f, 1f, 0.12f);
-    [SerializeField] private Color glowColor = new Color(0.25f, 0.75f, 0.90f, 0.30f);
 
     [Header("Ring Shape")]
     [SerializeField] private float ringWidth = 6f;
     [SerializeField] private int ringSegments = 56;
 
-    [Header("Glow")]
-    [SerializeField] private int glowLayers = 3;
-    [SerializeField] private float glowSpread = 3.5f;
+    [Header("Pulse (active state)")]
+    [Tooltip("How many times per second the ring pulses brighter while active")]
+    [SerializeField] private float pulseFrequency = 1.8f;
+    [Tooltip("How much brighter the ring gets at the pulse peak (0 = no pulse, 1 = full white)")]
+    [SerializeField] private float pulseStrength = 0.28f;
+
+    // ─── State set by AbilitySlotUI ───────────────────────────────────────────
 
     private float energy = 1f;
     private bool isLocked = true;
-    private float activeGlow = 0f;
+    private float activeGlow = 0f;   // 0..1 lerped from AbilitySlotUI
+
+    // ─── Internal ─────────────────────────────────────────────────────────────
+
+    private float _pulseTimer = 0f;
 
     public void UpdateState(float energy, bool isLocked, float activeGlow)
     {
@@ -29,6 +36,20 @@ public class AbilityRingUI : Graphic
         this.isLocked = isLocked;
         this.activeGlow = activeGlow;
         SetVerticesDirty();
+    }
+
+    private void Update()
+    {
+        if (activeGlow > 0.01f)
+        {
+            _pulseTimer += Time.deltaTime * pulseFrequency * Mathf.PI * 2f;
+            SetVerticesDirty();
+        }
+        else if (_pulseTimer != 0f)
+        {
+            _pulseTimer = 0f;
+            SetVerticesDirty();
+        }
     }
 
     protected override void OnPopulateMesh(VertexHelper vh)
@@ -40,42 +61,29 @@ public class AbilityRingUI : Graphic
         float cy = r.center.y;
         float radius = Mathf.Min(r.width, r.height) * 0.5f - 1f;
 
-        // Glow behind ring when active
-        if (activeGlow > 0.01f)
-        {
-            for (int g = glowLayers; g >= 1; g--)
-            {
-                float spread = glowSpread * g;
-                float alpha = glowColor.a * activeGlow / g;
-                Color gc = new Color(glowColor.r, glowColor.g, glowColor.b, alpha);
-                DrawArc(vh, cx, cy, radius + spread, ringWidth + spread * 0.5f, 0f, 360f, ringSegments, gc);
-            }
-        }
-
         // Ring track
         DrawArc(vh, cx, cy, radius, ringWidth, 0f, 360f, ringSegments,
             isLocked ? ringLockedColor : ringTrackColor);
 
-        // Ring fill
+        // Ring fill — colour lerps from normal to active, plus pulse on top
         if (!isLocked && energy > 0f)
         {
-            Color fill = Color.Lerp(ringFillColor, Color.white, activeGlow * 0.25f);
-            DrawArc(vh, cx, cy, radius, ringWidth, 90f, 90f - energy * 360f, ringSegments, fill);
-        }
+            float pulse = activeGlow > 0.01f
+                ? Mathf.Sin(_pulseTimer) * 0.5f + 0.5f   // 0..1
+                : 0f;
+            float brightness = activeGlow * pulseStrength * pulse;
 
-        // Shine arc when active
-        if (activeGlow > 0.01f)
-        {
-            Color shine = new Color(shineColor.r, shineColor.g, shineColor.b, shineColor.a * activeGlow);
-            DrawArc(vh, cx, cy, radius - ringWidth - 1f, (radius - ringWidth) * 0.55f,
-                110f, 70f, 16, shine);
+            Color fillBase = Color.Lerp(ringFillColor, ringActiveColor, activeGlow);
+            Color fill = Color.Lerp(fillBase, Color.white, brightness);
+
+            DrawArc(vh, cx, cy, radius, ringWidth, 90f, 90f - energy * 360f, ringSegments, fill);
         }
     }
 
     private void DrawArc(VertexHelper vh, float cx, float cy,
-        float radius, float width,
-        float startDeg, float endDeg,
-        int segs, Color c)
+                         float radius, float width,
+                         float startDeg, float endDeg,
+                         int segs, Color c)
     {
         float innerR = Mathf.Max(0f, radius - width);
         float step = (endDeg - startDeg) / segs;
